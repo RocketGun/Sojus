@@ -1,0 +1,298 @@
+#! C:/Program Files/Nuke6.3v8/Nuke6.3.exe -nx
+version 6.3 v8
+Group {
+ name AOV_Assemble
+ tile_color 0xffad00ff
+ note_font "Verdana Bold"
+ note_font_color 0x73ffff
+ addUserKnob {20 tab l "Vray Assemble"}
+ addUserKnob {4 chs l "layer passthrough" t "sets which AOVs to pass through and which to remove for speed purposes." M {"keep all" "remove lighting layers only" "keep rgba" ""}}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 12
+  ypos -586
+ }
+ Unpremult {
+  channels all
+  name Unpremult2
+  xpos 12
+  ypos -510
+ }
+set N19ffb760 [stack 0]
+ Dot {
+  name Dot1
+  xpos 1055
+  ypos -501
+ }
+push $N19ffb760
+add_layer {selfIllum selfIllum.red selfIllum.green selfIllum.blue selfIllum.alpha}
+ Shuffle {
+  in selfIllum
+  name Shuffle9
+  label "\[value in] to \[value out]"
+  xpos 798
+  ypos -447
+ }
+push $N19ffb760
+add_layer {refractFilter refractFilter.red refractFilter.green refractFilter.blue refractFilter.alpha}
+ Shuffle {
+  in refractFilter
+  name Shuffle8
+  label "\[value in] to \[value out]"
+  xpos 685
+  ypos -445
+  disable true
+ }
+push $N19ffb760
+add_layer {reflectFilter reflectFilter.red reflectFilter.green reflectFilter.blue reflectFilter.alpha}
+ Shuffle {
+  in reflectFilter
+  name Shuffle7
+  label "\[value in] to \[value out]"
+  xpos 566
+  ypos -445
+  disable true
+ }
+push $N19ffb760
+add_layer {specular specular.red specular.green specular.blue specular.alpha}
+ Shuffle {
+  in specular
+  name Shuffle6
+  label "\[value in] to \[value out]"
+  xpos 449
+  ypos -446
+ }
+push $N19ffb760
+add_layer {refract refract.red refract.green refract.blue refract.alpha}
+ Shuffle {
+  in refract
+  name Shuffle5
+  label "\[value in] to \[value out]"
+  xpos 342
+  ypos -445
+ }
+push $N19ffb760
+add_layer {reflect reflect.red reflect.green reflect.blue reflect.alpha}
+ Shuffle {
+  in reflect
+  name Shuffle4
+  label "\[value in] to \[value out]"
+  xpos 224
+  ypos -445
+ }
+push $N19ffb760
+add_layer {diffuse diffuse.red diffuse.green diffuse.blue diffuse.alpha}
+ Shuffle {
+  in diffuse
+  name Shuffle2
+  label "\[value in] to \[value out]"
+  xpos 114
+  ypos -447
+ }
+push $N19ffb760
+add_layer {rawGI rawGI.red rawGI.green rawGI.blue rawGI.alpha}
+ Shuffle {
+  in rawGI
+  name Shuffle3
+  label "\[value in] to \[value out]"
+  xpos 12
+  ypos -448
+ }
+push $N19ffb760
+add_layer {rawLight rawLight.red rawLight.green rawLight.blue rawLight.alpha}
+ Shuffle {
+  in rawLight
+  name Shuffle1
+  label "\[value in] to \[value out]"
+  xpos -101
+  ypos -449
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos -16
+  ypos -124
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge2
+  xpos 114
+  ypos -124
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge3
+  xpos 224
+  ypos -124
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge4
+  xpos 342
+  ypos -124
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge5
+  xpos 449
+  ypos -124
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge6
+  xpos 566
+  ypos -123
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge7
+  xpos 685
+  ypos -125
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge8
+  xpos 798
+  ypos -125
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 1021
+  ypos -130
+ }
+ Premult {
+  name Premult1
+  xpos 1021
+  ypos -92
+ }
+set N1a0d3990 [stack 0]
+ Remove {
+  operation keep
+  channels rgba
+  name Remove1
+  xpos 841
+  ypos 30
+ }
+push $N1a0d3990
+ Remove {
+  channels diffuse
+  channels2 rawGI
+  channels3 rawLight
+  channels4 reflect
+  name Remove2
+  xpos 1021
+  ypos -15
+ }
+add_layer {shadow shadow.red shadow.green shadow.blue shadow.alpha}
+ Remove {
+  channels refract
+  channels2 shadow
+  channels3 specular
+  name Remove3
+  xpos 1021
+  ypos 29
+ }
+push $N1a0d3990
+ Dot {
+  name Dot2
+  xpos 1169
+  ypos -88
+ }
+ Premult {
+  channels diffuse
+  name Premult2
+  xpos 1135
+  ypos -16
+ }
+ Premult {
+  channels rawGI
+  name Premult3
+  xpos 1135
+  ypos 22
+ }
+ Premult {
+  channels rawLight
+  name Premult4
+  xpos 1135
+  ypos 60
+ }
+ Premult {
+  channels reflect
+  name Premult5
+  xpos 1135
+  ypos 98
+ }
+ Premult {
+  channels refract
+  name Premult6
+  xpos 1135
+  ypos 136
+ }
+ Premult {
+  channels shadow
+  name Premult7
+  xpos 1135
+  ypos 174
+ }
+ Premult {
+  channels specular
+  name Premult8
+  xpos 1135
+  ypos 212
+ }
+ Premult {
+  channels reflectFilter
+  name Premult9
+  xpos 1135
+  ypos 248
+  disable true
+ }
+ Premult {
+  channels refractFilter
+  name Premult10
+  xpos 1135
+  ypos 284
+  disable true
+ }
+ Premult {
+  channels selfIllum
+  name Premult11
+  xpos 1135
+  ypos 320
+ }
+ Switch {
+  inputs 3
+  which {{parent.chs i}}
+  name Switch1
+  xpos 1021
+  ypos 355
+ }
+ Output {
+  name Output1
+  xpos 1021
+  ypos 427
+ }
+ Viewer {
+  gl_buffer_depth half-float
+  viewerProcess None
+  input_process false
+  name Viewer1
+  xpos 531
+  ypos 31
+ }
+end_group

@@ -1,0 +1,541 @@
+#! C:/Program Files/Nuke6.3v8/Nuke6.3.exe -nx
+version 6.3 v8
+Group {
+ name AOV_CC
+ tile_color 0x75ffff
+ note_font "Verdana Bold"
+ note_font_color 0xffaf00ff
+ addUserKnob {20 Lighting_CC_Tab l "Overall CC"}
+ addUserKnob {20 LIghting_CC l "Lighting CC" n 1}
+ addUserKnob {41 saturation T ColorCorrect1.saturation}
+ addUserKnob {41 gamma T ColorCorrect1.gamma}
+ addUserKnob {41 gain T ColorCorrect1.gain}
+ addUserKnob {41 offset T ColorCorrect1.offset}
+ addUserKnob {7 lighting_mix l "mix CC"}
+ lighting_mix 1
+ addUserKnob {6 CCdisable_lighting l "CC disable" +STARTLINE}
+ addUserKnob {6 Disable_lighting l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_lighting l "Show layer" -STARTLINE}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 GI_CC l "GI CC" n 1}
+ addUserKnob {41 saturation_4 l saturation T ColorCorrect5.saturation}
+ addUserKnob {41 gamma_4 l gamma T ColorCorrect5.gamma}
+ addUserKnob {41 gain_4 l gain T ColorCorrect5.gain}
+ addUserKnob {41 offset_4 l offset T ColorCorrect5.offset}
+ addUserKnob {7 GI_mix l "mix CC"}
+ GI_mix 1
+ addUserKnob {6 GI_CC_disable l "CC disable" +STARTLINE}
+ addUserKnob {6 GI_disable l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_GI l "show layer" -STARTLINE}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 Reflect_CC l "Reflect CC" n 1}
+ addUserKnob {41 saturation_1 l saturation T ColorCorrect2.saturation}
+ addUserKnob {41 gamma_1 l gamma T ColorCorrect2.gamma}
+ addUserKnob {41 gain_1 l gain T ColorCorrect2.gain}
+ addUserKnob {41 offset_1 l offset T ColorCorrect2.offset}
+ addUserKnob {7 Ref_mix l "mix CC"}
+ Ref_mix 1
+ addUserKnob {6 CC_disable_REF l "CC disable" +STARTLINE}
+ addUserKnob {6 Disable_Ref l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_Ref l "Show layer" -STARTLINE}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 Refract_CC l "Refract CC" n 1}
+ addUserKnob {41 saturation_5 l saturation T ColorCorrect6.saturation}
+ addUserKnob {41 gamma_5 l gamma T ColorCorrect6.gamma}
+ addUserKnob {41 gain_5 l gain T ColorCorrect6.gain}
+ addUserKnob {41 offset_5 l offset T ColorCorrect6.offset}
+ addUserKnob {7 Refract_mix l "mix CC"}
+ Refract_mix 1
+ addUserKnob {6 refract_CC_disable l "CC disable" +STARTLINE}
+ addUserKnob {6 Refract_disable l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_Refract l "show layer" -STARTLINE}
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 Spec_CC_1 l "Spec CC" n 1}
+ addUserKnob {41 saturation_2 l saturation T ColorCorrect3.saturation}
+ addUserKnob {41 gamma_2 l gamma T ColorCorrect3.gamma}
+ addUserKnob {41 gain_2 l gain T ColorCorrect3.gain}
+ addUserKnob {41 offset_2 l offset T ColorCorrect3.offset}
+ addUserKnob {7 Spec_mix l "mix CC"}
+ Spec_mix 1
+ addUserKnob {6 Spec_CC_disable l "CC disable" +STARTLINE}
+ addUserKnob {6 Disable_Spec l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_Spec l "Show layer" -STARTLINE}
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 SI_CC l "Self Illumination CC" n 1}
+ addUserKnob {41 saturation_3 l saturation T ColorCorrect4.saturation}
+ addUserKnob {41 gamma_3 l gamma T ColorCorrect4.gamma}
+ addUserKnob {41 gain_3 l gain T ColorCorrect4.gain}
+ addUserKnob {41 offset_3 l offset T ColorCorrect4.offset}
+ addUserKnob {7 SI_mix l "mix CC"}
+ SI_mix 1
+ addUserKnob {6 SI_CC_Disable l "CC disable" +STARTLINE}
+ addUserKnob {6 SI_Disable l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_SI l "Show layer" -STARTLINE}
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {20 SSS_CC l "SSS CC" n 1}
+ addUserKnob {41 saturation_6 l saturation T ColorCorrect7.saturation}
+ addUserKnob {41 gamma_6 l gamma T ColorCorrect7.gamma}
+ addUserKnob {41 gain_6 l gain T ColorCorrect7.gain}
+ addUserKnob {41 offset_6 l offset T ColorCorrect7.offset}
+ addUserKnob {7 SSS_mix l "mix CC"}
+ SSS_mix 1
+ addUserKnob {6 SSS_CC_Disable l "CC disable" +STARTLINE}
+ addUserKnob {6 SSS_Disable l "Disable layer" -STARTLINE}
+ addUserKnob {6 Show_SSS l "Show layer" -STARTLINE}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 324
+  ypos -225
+ }
+ Unpremult {
+  channels all
+  name Unpremult3
+  xpos 324
+  ypos -100
+ }
+ Dot {
+  name Dot130
+  xpos 358
+  ypos 6
+ }
+set Nbbe4e80 [stack 0]
+ Dot {
+  name Dot131
+  xpos 497
+  ypos 6
+ }
+set Nbbe51b0 [stack 0]
+ Dot {
+  name Dot132
+  xpos 617
+  ypos 6
+ }
+set Nbbe54e0 [stack 0]
+ Dot {
+  name Dot133
+  xpos 737
+  ypos 6
+ }
+set Nbbe5810 [stack 0]
+ Dot {
+  name Dot134
+  xpos 857
+  ypos 6
+ }
+set Nbbe5b40 [stack 0]
+ Dot {
+  name Dot9
+  xpos 1002
+  ypos 6
+ }
+set Nbbe5e70 [stack 0]
+ Dot {
+  name Dot11
+  xpos 1153
+  ypos 6
+ }
+add_layer {SSS SSS.red SSS.green SSS.blue SSS.alpha}
+ Shuffle {
+  in {SSS.red SSS.green SSS.blue -SSS.alpha}
+  in2 rgba
+  alpha alpha2
+  name Shuffle2
+  label SSS
+  xpos 1119
+  ypos 54
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply7
+  label "disable layer"
+  xpos 1119
+  ypos 116
+  disable {{SSS_Disable-1 i}}
+ }
+ ColorCorrect {
+  mix {{SSS_mix i}}
+  name ColorCorrect7
+  xpos 1119
+  ypos 190
+  disable {{SSS_CC_Disable i}}
+ }
+ Dot {
+  name Dot12
+  xpos 1153
+  ypos 712
+ }
+set Nbbe6e60 [stack 0]
+ Dot {
+  name Dot13
+  xpos 1153
+  ypos 1418
+ }
+push $Nbbe5e70
+add_layer {refract refract.red refract.green refract.blue refract.alpha}
+ Shuffle {
+  in refract
+  in2 rgba
+  alpha alpha2
+  name Shuffle1
+  label refract
+  xpos 968
+  ypos 55
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply6
+  label "disable layer"
+  xpos 968
+  ypos 119
+  disable {{Refract_disable-1 i}}
+ }
+ ColorCorrect {
+  mix {{Refract_mix i}}
+  name ColorCorrect6
+  xpos 968
+  ypos 177
+  disable {{refract_CC_disable i}}
+ }
+ Dot {
+  name Dot5
+  xpos 1002
+  ypos 641
+ }
+set N19f41e00 [stack 0]
+ Dot {
+  name Dot10
+  xpos 1002
+  ypos 1307
+ }
+push $Nbbe5b40
+add_layer {selfIllum selfIllum.red selfIllum.green selfIllum.blue selfIllum.alpha}
+ Shuffle {
+  in selfIllum
+  in2 rgba
+  alpha alpha2
+  name Shuffle44
+  label SelfIllum
+  xpos 823
+  ypos 55
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply4
+  label "disable layer"
+  xpos 823
+  ypos 120
+  disable {{SI_Disable-1 i}}
+ }
+ ColorCorrect {
+  mix {{SI_mix i}}
+  name ColorCorrect4
+  xpos 823
+  ypos 178
+  disable {{SI_CC_Disable i}}
+ }
+ Dot {
+  name Dot142
+  xpos 857
+  ypos 527
+ }
+set N19f42df0 [stack 0]
+ Dot {
+  name Dot8
+  xpos 857
+  ypos 1194
+ }
+push $Nbbe5810
+add_layer {lighting lighting.red lighting.green lighting.blue lighting.alpha}
+ Shuffle {
+  in lighting
+  in2 rgba
+  alpha alpha2
+  name Shuffle43
+  label lighting
+  xpos 703
+  ypos 58
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply1
+  label "disable layer"
+  xpos 703
+  ypos 120
+  disable {{Disable_lighting-1 i}}
+ }
+ ColorCorrect {
+  mix {{lighting_mix i}}
+  name ColorCorrect1
+  xpos 703
+  ypos 177
+  disable {{CCdisable_lighting i}}
+ }
+ Dot {
+  name Dot141
+  xpos 737
+  ypos 451
+ }
+set N19f43de0 [stack 0]
+ Dot {
+  name Dot7
+  xpos 737
+  ypos 1105
+ }
+push $Nbbe54e0
+add_layer {GI GI.red GI.green GI.blue GI.alpha}
+ Shuffle {
+  in GI
+  in2 rgba
+  alpha alpha2
+  name Shuffle42
+  label GI
+  xpos 583
+  ypos 50
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply5
+  label "disable layer"
+  xpos 583
+  ypos 124
+  disable {{GI_disable-1 i}}
+ }
+ ColorCorrect {
+  mix {{GI_mix i}}
+  name ColorCorrect5
+  xpos 583
+  ypos 180
+  disable {{GI_CC_disable i}}
+ }
+ Dot {
+  name Dot140
+  xpos 617
+  ypos 384
+ }
+set N19f44dd0 [stack 0]
+ Dot {
+  name Dot3
+  xpos 617
+  ypos 1013
+ }
+push $Nbbe51b0
+add_layer {specular specular.red specular.green specular.blue specular.alpha}
+ Shuffle {
+  in specular
+  in2 rgba
+  alpha alpha2
+  name Shuffle41
+  label spec
+  xpos 463
+  ypos 55
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply3
+  label "disable layer"
+  xpos 463
+  ypos 122
+  disable {{Disable_Spec-1 i}}
+ }
+ ColorCorrect {
+  mix {{Spec_mix i}}
+  name ColorCorrect3
+  xpos 463
+  ypos 180
+  disable {{Spec_CC_disable i}}
+ }
+ Dot {
+  name Dot139
+  xpos 497
+  ypos 324
+ }
+set N19ff7e00 [stack 0]
+ Dot {
+  name Dot1
+  xpos 497
+  ypos 746
+ }
+ Dot {
+  name Dot6
+  xpos 497
+  ypos 923
+ }
+push $Nbbe4e80
+add_layer {reflect reflect.red reflect.green reflect.blue reflect.alpha}
+ Shuffle {
+  in reflect
+  in2 rgba
+  alpha alpha2
+  name Shuffle40
+  label ref
+  xpos 324
+  ypos 50
+ }
+ Multiply {
+  channels rgb
+  value 0
+  name Multiply2
+  label "disable layer"
+  xpos 324
+  ypos 120
+  disable {{Disable_Ref-1 i}}
+ }
+ ColorCorrect {
+  mix {{Ref_mix i}}
+  name ColorCorrect2
+  xpos 324
+  ypos 178
+  disable {{CC_disable_REF i}}
+ }
+set N19ff8df0 [stack 0]
+ Dot {
+  name Dot2
+  xpos 250
+  ypos 183
+ }
+ Dot {
+  name Dot4
+  xpos 250
+  ypos 813
+ }
+push $Nbbe6e60
+push $N19f41e00
+push $N19ff8df0
+push $N19ff7e00
+ Merge2 {
+  inputs 2
+  operation plus
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge84
+  xpos 324
+  ypos 321
+ }
+push $N19f44dd0
+ Merge2 {
+  inputs 2
+  operation plus
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge85
+  xpos 324
+  ypos 389
+ }
+push $N19f43de0
+ Merge2 {
+  inputs 2
+  operation plus
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge86
+  xpos 324
+  ypos 448
+ }
+push $N19f42df0
+ Merge2 {
+  inputs 2
+  operation plus
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge87
+  xpos 324
+  ypos 524
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge1
+  xpos 324
+  ypos 634
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge2
+  xpos 324
+  ypos 709
+ }
+set N19ffadd0 [stack 0]
+ Switch {
+  inputs 2
+  which {{Show_Ref i}}
+  name Switch1
+  xpos 324
+  ypos 810
+ }
+ Switch {
+  inputs 2
+  which {{Show_Spec i}}
+  name Switch2
+  xpos 324
+  ypos 918
+ }
+ Switch {
+  inputs 2
+  which {{Show_GI i}}
+  name Switch5
+  xpos 324
+  ypos 1008
+ }
+ Switch {
+  inputs 2
+  which {{Show_lighting i}}
+  name Switch3
+  xpos 324
+  ypos 1100
+ }
+ Switch {
+  inputs 2
+  which {{Show_SI i}}
+  name Switch4
+  xpos 324
+  ypos 1189
+ }
+ Switch {
+  inputs 2
+  which {{Show_Refract i}}
+  name Switch6
+  xpos 324
+  ypos 1302
+ }
+ Switch {
+  inputs 2
+  which {{Show_SSS i}}
+  name Switch7
+  xpos 324
+  ypos 1411
+ }
+ Premult {
+  channels all
+  name Premult5
+  xpos 324
+  ypos 1616
+ }
+ Output {
+  name Output1
+  xpos 324
+  ypos 1754
+ }
+push $N19ffadd0
+ Viewer {
+  gl_buffer_depth half-float
+  input_process false
+  name Viewer1
+  selected true
+  xpos 324
+  ypos 86
+ }
+end_group

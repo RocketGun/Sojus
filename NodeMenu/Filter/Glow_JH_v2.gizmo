@@ -1,0 +1,92 @@
+#! /rakete/tools/Nuke-installs/Nuke6.3v1/Nuke6.3 -nx
+version 6.3 v1
+Group {
+ name "Glow_JH_v2"
+ note_font "Bitstream Vera Sans"
+ mapsize {0.15 0.15}
+ addUserKnob {20 User}
+ addUserKnob {41 range T Keyer7.range}
+ addUserKnob {41 operation T Keyer7.operation}
+ addUserKnob {41 size l "Big Blur" T BigBlur.size}
+ addUserKnob {41 size_1 l "Medium Blur" T MediumBlur.size}
+ addUserKnob {41 size_2 l "Small Blur" T SmallBlur.size}
+ addUserKnob {41 multiply l "Big Gain" T BigGain.multiply}
+ addUserKnob {41 multiply_1 l "Medium Gain" T MediumGain.multiply}
+ addUserKnob {41 multiply_2 l "Small Gain" T SmallGain.multiply}
+}
+ Input {
+  inputs 0
+  name BG_Input
+  xpos 736
+  ypos 238
+ }
+ Keyer {
+  operation "luminance key"
+  name Keyer7
+  xpos 736
+  ypos 278
+ }
+ Premult {
+  name Premult6
+  xpos 736
+  ypos 338
+ }
+set N18676df0 [stack 0]
+ Blur {
+  size 10
+  name SmallBlur
+  xpos 923
+  ypos 362
+ }
+ Grade {
+  channels rgba
+  name SmallGain
+  xpos 923
+  ypos 400
+ }
+push $N18676df0
+ Blur {
+  size 30
+  name MediumBlur
+  xpos 829
+  ypos 362
+ }
+ Grade {
+  channels rgba
+  name MediumGain
+  xpos 829
+  ypos 400
+ }
+push $N18676df0
+ Blur {
+  size 60
+  name BigBlur
+  xpos 736
+  ypos 364
+ }
+ Grade {
+  channels rgba
+  name BigGain
+  xpos 736
+  ypos 402
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge26
+  xpos 829
+  ypos 445
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge27
+  xpos 923
+  ypos 445
+ }
+ Output {
+  name Output1
+  xpos 923
+  ypos 527
+ }
+end_group
