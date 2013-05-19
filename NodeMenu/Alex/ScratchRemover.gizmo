@@ -1,0 +1,148 @@
+#! /Applications/Nuke6.0v6-32/Nuke6.0v6.app/Contents/MacOS/Nuke6.0v6 -nx
+version 6.0 v6
+Group {
+ inputs 2
+}
+ Input {
+  inputs 0
+  name Matte
+  xpos -918
+  ypos -579
+ }
+ Dot {
+  name Dot7
+  xpos -884
+  ypos -463
+ }
+set N268af450 [stack 0]
+push $N268af450
+ Transform {
+  translate {3 0}
+  center {1367 780}
+  shutteroffset centred
+  name Transform5
+  xpos -1089
+  ypos -340
+ }
+ Merge2 {
+  inputs 2
+  operation in
+  name Merge4
+  xpos -1089
+  ypos -261
+ }
+ Dot {
+  name Dot5
+  xpos -1055
+  ypos -139
+ }
+ Input {
+  inputs 0
+  name Image
+  xpos -689
+  ypos -581
+  number 1
+ }
+ Dot {
+  name Dot4
+  selected true
+  xpos -655
+  ypos -504
+ }
+set N29815ce0 [stack 0]
+ Dot {
+  name Dot3
+  xpos -1205
+  ypos -504
+ }
+ Transform {
+  translate {-3 0}
+  center {1367 780}
+  shutteroffset centred
+  name Transform3
+  xpos -1239
+  ypos -235
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -1239
+  ypos -147
+ }
+ Blur {
+  channels alpha
+  size 10
+  name Blur3
+  label "size: \[value size]"
+  xpos -1239
+  ypos -113
+ }
+ set C2d1db670 [stack 0]
+ Premult {
+  name Premult1
+  xpos -1239
+  ypos -26
+ }
+push $N268af450
+push $N268af450
+ Transform {
+  translate {{-parent.Transform5.translate.main.x i} 0}
+  center {1367 780}
+  shutteroffset centred
+  name Transform4
+  xpos -779
+  ypos -339
+ }
+ Merge2 {
+  inputs 2
+  operation in
+  name Merge3
+  xpos -779
+  ypos -261
+ }
+ Dot {
+  name Dot6
+  xpos -745
+  ypos -144
+ }
+push $N29815ce0
+ Transform {
+  translate {{-parent.Transform3.translate.main.x i} 0}
+  center {1367 780}
+  shutteroffset centred
+  name Transform2
+  xpos -685
+  ypos -235
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -685
+  ypos -152
+ }
+clone $C2d1db670 {
+  xpos -685
+  ypos -111
+  selected false
+ }
+ Premult {
+  name Premult2
+  xpos -685
+  ypos -13
+ }
+ Merge2 {
+  inputs 2
+  name Merge6
+  xpos -916
+  ypos 93
+ }
+ Output {
+  name Output1
+  xpos -916
+  ypos 193
+ }
+end_group

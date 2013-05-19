@@ -1,0 +1,81 @@
+#! /Applications/Nuke7.0v6/NukeX7.0v6.app/../Nuke7.0v6.app/Contents/MacOS/Nuke7.0v6 -nx
+version 7.0 v6
+Gizmo {
+ inputs 4
+ addUserKnob {20 User l "Image Based 3D Transformation Matrix"}
+ addUserKnob {41 position l Position T driver.position}
+ addUserKnob {41 translation l Translation T driver.translation}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  color {{"\[sample Color red driver.position.x driver.position.y]"} {"\[sample Color green driver.position.x driver.position.y]"} {"\[sample Color blue driver.position.x driver.position.y]"} {"\[sample Color alpha driver.position.x driver.position.y]"}}
+  format "256 256 0 0 256 256 1 square_256"
+  name Constant4
+  xpos 309
+  ypos -76
+ }
+ Input {
+  inputs 0
+  name Geo
+  label Geo
+  xpos 494
+  ypos -193
+  number 1
+ }
+ TransformGeo {
+  translate {{(fmod(position.y,2)?0:0.5*translation.x)+(position.x*translation.x)-translation.x} {-(position.y-1)*translation.y} 0}
+  rotate {{"\[sample Rotation red driver.position.x driver.position.y]*360"} {"\[sample Rotation green driver.position.x driver.position.y]*360"} {"\[sample Rotation blue driver.position.x driver.position.y]*360"}}
+  scaling {{"\[sample Scale red driver.position.x driver.position.y]"} {"\[sample Scale green driver.position.x driver.position.y]"} {"\[sample Scale blue driver.position.x driver.position.y]"}}
+  name TransformGeo194
+  xpos 494
+  ypos -34
+  addUserKnob {20 User}
+  addUserKnob {12 position l Position}
+  position {{parent.driver.position} {parent.driver.position}}
+  addUserKnob {12 translation l Translation}
+  translation {0.877 0.707}
+ }
+ ApplyMaterial {
+  inputs 2
+  name ApplyMaterial2
+  xpos 494
+  ypos 62
+ }
+ Output {
+  name Output1
+  xpos 494
+  ypos 129
+ }
+ Input {
+  inputs 0
+  name Color
+  xpos 326
+  ypos -191
+ }
+ NoOp {
+  inputs 0
+  name driver
+  xpos 827
+  ypos -97
+  addUserKnob {20 User}
+  addUserKnob {12 position l Position}
+  position {1 1}
+  addUserKnob {12 translation l Translation}
+  translation {0.877 0.707}
+ }
+ Input {
+  inputs 0
+  name Rotation
+  xpos 641
+  ypos -190
+  number 2
+ }
+ Input {
+  inputs 0
+  name Scale
+  xpos 785
+  ypos -187
+  number 3
+ }
+end_group

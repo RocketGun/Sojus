@@ -1,0 +1,113 @@
+#! C:/Program Files/Nuke/Nuke5.1.exe -nx
+version 5.1300
+Group {
+ addUserKnob {20 User}
+ addUserKnob {41 gamma T Tolerance.gamma}
+ addUserKnob {41 gain T Tolerance.gain}
+ addUserKnob {41 offset T Tolerance.offset}
+ addUserKnob {26 ""}
+ addUserKnob {3 Master_Blur}
+ Master_Blur 3
+ addUserKnob {3 Blur_X}
+ addUserKnob {3 Blur_Y}
+ addUserKnob {26 ""}
+ addUserKnob {41 Darkness T Clamp2.minimum}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -230
+  ypos 207
+ }
+ Dot {
+  name Dot6
+  xpos -196
+  ypos 242
+ }
+set N1c1b63f0 [stack 0]
+ Dot {
+  name Dot5
+  xpos -86
+  ypos 242
+ }
+set N1c1373f8 [stack 0]
+ ColorCorrect {
+  gamma 3.2
+  gain 4
+  offset -1
+  name Tolerance
+  xpos 6
+  ypos 238
+ }
+ Saturation {
+  saturation 0
+  mode Maximum
+  name Saturation1
+  xpos 6
+  ypos 277
+ }
+push $N1c1373f8
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.alpha
+  name Copy1
+  xpos -120
+  ypos 271
+ }
+ Clamp {
+  name Clamp1
+  selected true
+  xpos -120
+  ypos 312
+ }
+ Blur {
+  size {{Master_Blur+Blur_X i} {Master_Blur+Blur_Y i}}
+  name Blur
+  xpos -120
+  ypos 351
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos -120
+  ypos 390
+ }
+ Clamp {
+  name Clamp2
+  xpos -120
+  ypos 417
+ }
+set Nb5f52c0 [stack 0]
+ Premult {
+  name Premult1
+  xpos -120
+  ypos 480
+ }
+push $N1c1b63f0
+ Dot {
+  name Dot1
+  xpos -196
+  ypos 511
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge1
+  xpos -120
+  ypos 507
+ }
+ Output {
+  name Output1
+  xpos -120
+  ypos 607
+ }
+push $Nb5f52c0
+ Viewer {
+  name Viewer1
+  xpos 36
+  ypos 546
+ }
+end_group

@@ -1,0 +1,603 @@
+#! C:/Program Files/Nuke6.1v1/Nuke6.1.exe -nx
+version 6.1 v1
+Group {
+ inputs 2
+ label Loupe
+ addUserKnob {20 User}
+ addUserKnob {41 translate T Transform2.translate}
+ addUserKnob {41 scale T Transform2.scale}
+ addUserKnob {41 Amount T Merge2.mix}
+ addUserKnob {41 size_1 l "Blur Lens" T Blur1.size}
+ addUserKnob {20 Edge}
+ addUserKnob {41 WhiteEdge l visibility T ColorCorrect1.gamma}
+ addUserKnob {41 size T Blur2.size}
+ addUserKnob {41 mix_2 l Shadow T Merge9.mix}
+ addUserKnob {26 ""}
+ addUserKnob {41 offset T HueShift1.hue_rotation}
+ addUserKnob {41 scale_1 l scale T Transform1.scale}
+ addUserKnob {41 mix T Merge6.mix}
+ addUserKnob {20 sharpen}
+ addUserKnob {41 channels T Sharpen1.channels}
+ addUserKnob {41 minimum T Sharpen1.minimum}
+ addUserKnob {41 maximum T Sharpen1.maximum}
+ addUserKnob {41 amount T Sharpen1.amount}
+ addUserKnob {41 size_2 l size T Sharpen1.size}
+ addUserKnob {41 filter T Sharpen1.filter}
+ addUserKnob {41 quality l "" -STARTLINE T Sharpen1.quality}
+ addUserKnob {41 crop l "crop to format" T Sharpen1.crop}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask l "" -STARTLINE T Sharpen1.maskChannelMask}
+ addUserKnob {41 maskChannelInput l "" -STARTLINE T Sharpen1.maskChannelInput}
+ addUserKnob {41 inject T Sharpen1.inject}
+ addUserKnob {41 invert_mask l invert T Sharpen1.invert_mask}
+ addUserKnob {41 fringe T Sharpen1.fringe}
+ addUserKnob {41 mix_1 l mix T Sharpen1.mix}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant3
+  xpos -52
+  ypos -496
+ }
+ Radial {
+  cliptype none
+  area {0 0 512 512}
+  softness 0
+  plinear true
+  name Radial1
+  xpos -52
+  ypos -424
+ }
+ Dot {
+  name Dot2
+  xpos -18
+  ypos -331
+ }
+set N20b69a70 [stack 0]
+ Dot {
+  name Dot29
+  xpos -206
+  ypos -331
+ }
+set N20b69ce0 [stack 0]
+ Transform {
+  translate {648 186}
+  center {256 256}
+  black_outside false
+  name Transform2
+  tile_color 0xff0000ff
+  gl_color 0xff0000ff
+  xpos -240
+  ypos -81
+ }
+ set C20b69f50 [stack 0]
+push $N20b69ce0
+ Dot {
+  name Dot11
+  xpos -641
+  ypos -331
+ }
+set N20b6a910 [stack 0]
+ Dot {
+  name Dot14
+  xpos -819
+  ypos -331
+ }
+set N20b6ab80 [stack 0]
+ Dot {
+  name Dot3
+  xpos -1001
+  ypos -331
+ }
+set N20b6adf0 [stack 0]
+ Dot {
+  name Dot20
+  xpos -1325
+  ypos -331
+ }
+set N20b6b060 [stack 0]
+ Dot {
+  name Dot22
+  xpos -1387
+  ypos -288
+ }
+ Erode {
+  channels all
+  size {{-parent.Erode3.size/2 i}}
+  name Erode2
+  xpos -1421
+  ypos -232
+ }
+push $N20b6b060
+ Dot {
+  name Dot21
+  xpos -1252
+  ypos -290
+ }
+ Erode {
+  channels all
+  size 4
+  name Erode3
+  xpos -1286
+  ypos -234
+ }
+ Merge2 {
+  inputs 2
+  operation out
+  name Merge1
+  xpos -1361
+  ypos -175
+ }
+ Blur {
+  size 3
+  name Blur5
+  xpos -1361
+  ypos -149
+ }
+clone $C20b69f50 {
+  xpos -1361
+  ypos 127
+  selected false
+ }
+push $N20b6a910
+ Dot {
+  name Dot8
+  xpos -641
+  ypos -287
+ }
+set N21121db0 [stack 0]
+ Dot {
+  name Dot9
+  xpos -676
+  ypos -216
+ }
+push $N21121db0
+ Blur {
+  size 18
+  name Blur3
+  xpos -622
+  ypos -231
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge5
+  xpos -670
+  ypos -93
+ }
+clone $C20b69f50 {
+  xpos -670
+  ypos -60
+  selected false
+ }
+ Dot {
+  name Dot19
+  xpos -636
+  ypos 7
+ }
+ Group {
+  inputs 0
+  name UV
+  xpos -353
+  ypos -275
+  addUserKnob {20 User}
+  addUserKnob {41 FrameSize l width/height T Reformat1.box_width}
+  addUserKnob {41 box_height l "" -STARTLINE T Reformat1.box_height}
+ }
+  Constant {
+   inputs 0
+   channels rgb
+   color {0 0 0 0}
+   format "720 576 0 0 720 576 1.067 PAL_1"
+   name Constant1
+   xpos -258
+   ypos -106
+  }
+  Reformat {
+   type "to box"
+   format "720 576 0 0 720 576 1.067 PAL_1"
+   box_width {{root.format.r i}}
+   box_height {{root.format.t i}}
+   box_fixed true
+   name Reformat1
+   xpos -258
+   ypos -32
+  }
+set N21123d60 [stack 0]
+  Ramp {
+   p0 {0 0}
+   p1 {{parent.Reformat1.box_width i} 0}
+   color {1 0 0 1}
+   name Ramp1
+   xpos -339
+   ypos 7
+  }
+push $N21123d60
+  Ramp {
+   p0 {0 0}
+   p1 {0 {parent.Reformat1.box_height}}
+   color {0 1 0 1}
+   name Ramp2
+   xpos -171
+   ypos 8
+  }
+  Merge2 {
+   inputs 2
+   operation plus
+   name Merge1
+   xpos -268
+   ypos 56
+  }
+  Shuffle {
+   alpha white
+   name Shuffle1
+   selected true
+   xpos -268
+   ypos 83
+  }
+set N20c91ae0 [stack 0]
+  Output {
+   name Output1
+   xpos -268
+   ypos 156
+  }
+push $N20c91ae0
+  Viewer {
+   name Viewer1
+   xpos -403
+   ypos 94
+  }
+ end_group
+ Dot {
+  name Dot15
+  xpos -319
+  ypos -183
+ }
+set N20bc0920 [stack 0]
+ Dot {
+  name Dot17
+  xpos -421
+  ypos -185
+ }
+set N20bc0b90 [stack 0]
+ Dot {
+  name Dot16
+  xpos -541
+  ypos -183
+ }
+ Transform {
+  scale 5.9
+  center {{parent.UV.Reformat1.box_width/2 i} {parent.UV.Reformat1.box_height/2 i}}
+  black_outside false
+  name Transform1
+  selected true
+  xpos -575
+  ypos -52
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge7
+  xpos -575
+  ypos 3
+ }
+ HueShift {
+  name HueShift1
+  xpos -575
+  ypos 29
+ }
+ Dot {
+  name Dot10
+  xpos -541
+  ypos 84
+ }
+push $N20b69a70
+ Blur {
+  size 2
+  name Blur6
+  xpos -118
+  ypos -254
+ }
+push $N20b69a70
+ Blur {
+  size 50
+  name Blur1
+  xpos -1
+  ypos -254
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge3
+  xpos -52
+  ypos -190
+ }
+clone $C20b69f50 {
+  xpos -52
+  ypos -129
+  selected false
+ }
+ Dot {
+  name Dot6
+  xpos -18
+  ypos -16
+ }
+set N20bc4130 [stack 0]
+push $N20bc0b90
+ Constant {
+  inputs 0
+  channels rgb
+  color 0.995
+  name Constant5
+  xpos -524
+  ypos -170
+ }
+ ColorTransfer {
+  inputs 2
+  ROI {{parent.Transform2.translate+256-15 i x1 0 x95 0} {parent.Transform2.translate+256-15 i x1 0 x95 0} {ROI.x+30 i x1 1920 x94 173 x95 720} {ROI.y+30 i x1 1080 x94 140 x95 576}}
+  name ColorTransfer1
+  xpos -455
+  ypos -88
+ }
+set N20bc4610 [stack 0]
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos -455
+  ypos -49
+ }
+ Dot {
+  name Dot7
+  xpos -421
+  ypos -16
+ }
+push $N20bc0920
+ Merge2 {
+  inputs 2+1
+  mix 0.5
+  name Merge2
+  xpos -353
+  ypos -20
+ }
+ Merge2 {
+  inputs 2
+  mix 0.718
+  name Merge6
+  xpos -353
+  ypos 80
+ }
+ Shuffle {
+  alpha white
+  name Shuffle2
+  xpos -353
+  ypos 106
+ }
+ Dot {
+  name Dot1
+  xpos -319
+  ypos 143
+ }
+ Input {
+  inputs 0
+  name BG
+  xpos -77
+  ypos 24
+  number 1
+ }
+ STMap {
+  inputs 2
+  channels rgb
+  uv rgb
+  name STMap1
+  xpos -77
+  ypos 139
+ }
+set N20c0f550 [stack 0]
+ Dot {
+  name Dot25
+  xpos 226
+  ypos 143
+ }
+ Blur {
+  size 6.4
+  name Blur7
+  xpos 192
+  ypos 198
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -1361
+  ypos 184
+ }
+ Premult {
+  name Premult1
+  xpos -1361
+  ypos 262
+ }
+set N20c10660 [stack 0]
+ Dot {
+  name Dot28
+  xpos -364
+  ypos 266
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge11
+  xpos -240
+  ypos 412
+ }
+push $N20c10660
+ Dot {
+  name Dot26
+  xpos -1327
+  ypos 336
+ }
+push $N20b6adf0
+ Dot {
+  name Dot4
+  xpos -1044
+  ypos -285
+ }
+push $N20b6adf0
+ Blur {
+  size 50
+  name Blur2
+  xpos -990
+  ypos -300
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge4
+  xpos -1035
+  ypos -233
+ }
+clone $C20b69f50 {
+  xpos -1035
+  ypos -157
+  selected false
+ }
+ ColorCorrect {
+  gamma 0.75
+  name ColorCorrect1
+  xpos -1035
+  ypos -138
+ }
+ Clamp {
+  name Clamp1
+  xpos -1035
+  ypos -22
+ }
+ Dot {
+  name Dot5
+  xpos -1001
+  ypos 299
+ }
+push $N20b6ab80
+ Dot {
+  name Dot12
+  xpos -819
+  ypos -296
+ }
+set N20c13c00 [stack 0]
+ Dot {
+  name Dot13
+  xpos -870
+  ypos -246
+ }
+push $N20c13c00
+ Blur {
+  size 16
+  name Blur4
+  xpos -800
+  ypos -240
+ }
+ Transform {
+  translate {3 -2}
+  center {128 128}
+  name Transform3
+  xpos -800
+  ypos -195
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge8
+  xpos -848
+  ypos -122
+ }
+ ColorCorrect {
+  channels all
+  gain 3.7
+  name ColorCorrect2
+  xpos -848
+  ypos -47
+ }
+ Invert {
+  name Invert1
+  xpos -845
+  ypos -9
+ }
+clone $C20b69f50 {
+  xpos -845
+  ypos 36
+  selected false
+ }
+ Clamp {
+  name Clamp2
+  xpos -845
+  ypos 62
+ }
+ Dot {
+  name Dot18
+  xpos -811
+  ypos 242
+ }
+push $N20bc4130
+ Dot {
+  name Dot27
+  xpos 140
+  ypos -16
+ }
+ Dot {
+  name Dot24
+  xpos 140
+  ypos 179
+ }
+push $N20c0f550
+ Sharpen {
+  inputs 1+1
+  channels rgb
+  amount 0
+  name Sharpen1
+  xpos -77
+  ypos 175
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  mix 0.27
+  name Merge9
+  xpos -77
+  ypos 238
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name white_edge
+  xpos -77
+  ypos 295
+ }
+ Merge2 {
+  inputs 2
+  name Merge10
+  xpos -77
+  ypos 346
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -77
+  ypos 406
+ }
+ Output {
+  name Output1
+  xpos -77
+  ypos 463
+ }
+push $N20bc4610
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 406
+  ypos 505
+ }
+end_group

@@ -1,0 +1,103 @@
+#! C:/Program Files (x86)/Nuke6.0v1/Nuke6.0.exe -nx
+version 6.0 v1
+Group {
+ name CHannelsShift
+ addUserKnob {20 User}
+ addUserKnob {41 translate l translate_RED T T_red.translate}
+ addUserKnob {41 rotate l rotate_RED T T_red.rotate}
+ addUserKnob {41 translate_1 l translate_BLUE T T_BLUE.translate}
+ addUserKnob {41 rotate_1 l rotate_BLUE T T_BLUE.rotate}
+ addUserKnob {41 translate_2 l translate_GREEN T T_GREEN.translate}
+ addUserKnob {41 rotate_2 l rotate_GREEN T T_GREEN.rotate}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -453
+  ypos 227
+ }
+ Dot {
+  name Dot2
+  xpos -453
+  ypos 267
+ }
+set N165426c0 [stack 0]
+ Dot {
+  name Dot1
+  xpos -581
+  ypos 267
+ }
+set N1652b6b0 [stack 0]
+ Dot {
+  name Dot3
+  xpos -650
+  ypos 267
+ }
+ Shuffle {
+  red black
+  green black
+  alpha blue
+  name BLUE
+  xpos -682
+  ypos 435
+ }
+ Transform {
+  center {960 540}
+  name T_BLUE
+  xpos -682
+  ypos 461
+ }
+push $N1652b6b0
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name GREEN
+  xpos -613
+  ypos 368
+ }
+ Transform {
+  center {960 540}
+  name T_GREEN
+  xpos -613
+  ypos 394
+ }
+push $N165426c0
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name RED
+  xpos -485
+  ypos 306
+ }
+ Transform {
+  center {960 540}
+  name T_red
+  xpos -485
+  ypos 332
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  Bchannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  name Merge1
+  xpos -485
+  ypos 394
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  Bchannels {rgba.red rgba.green -rgba.blue rgba.alpha}
+  name Merge2
+  xpos -485
+  ypos 461
+ }
+ Output {
+  name Output1
+  xpos -485
+  ypos 561
+ }
+end_group

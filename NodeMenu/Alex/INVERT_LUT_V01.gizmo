@@ -1,0 +1,119 @@
+#! C:/Program Files/Nuke6.2v1/Nuke6.2.exe -nx
+Group {
+ name LutReverse
+ help "first create in lut root directory red green and blue curves and copy info from original curve than use gizmo by picking right curves"
+ addUserKnob {20 User}
+ addUserKnob {41 colorspace_3 l MASTER T master.colorspace}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 colorspace_2 l RED T red.colorspace}
+ addUserKnob {41 colorspace_1 l GREEN T green.colorspace}
+ addUserKnob {41 colorspace l BLUE T blue.colorspace}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -451
+  ypos 203
+ }
+ Dot {
+  name Dot2
+  xpos -451
+  ypos 243
+ }
+set N17bbbf60 [stack 0]
+ Dot {
+  name Dot1
+  xpos -579
+  ypos 243
+ }
+set N18504e30 [stack 0]
+ Dot {
+  name Dot3
+  xpos -715
+  ypos 243
+ }
+ Shuffle {
+  red black
+  green black
+  alpha black
+  name BLUE
+  xpos -749
+  ypos 314
+ }
+ ApplyLUT {
+  invert true
+  name blue
+  xpos -749
+  ypos 340
+ }
+ Dot {
+  name Dot5
+  xpos -715
+  ypos 465
+ }
+push $N18504e30
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name GREEN
+  xpos -613
+  ypos 309
+ }
+ ApplyLUT {
+  invert true
+  name green
+  xpos -613
+  ypos 335
+ }
+ Dot {
+  name Dot4
+  xpos -579
+  ypos 398
+ }
+push $N17bbbf60
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name RED
+  xpos -485
+  ypos 316
+ }
+ ApplyLUT {
+  invert true
+  name red
+  xpos -485
+  ypos 342
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  Bchannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  name Merge1
+  xpos -485
+  ypos 394
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  Bchannels {rgba.red rgba.green -rgba.blue rgba.alpha}
+  name Merge2
+  xpos -485
+  ypos 461
+ }
+ ApplyLUT {
+  invert true
+  name master
+  selected true
+  xpos -485
+  ypos 507
+ }
+ Output {
+  name Output1
+  xpos -485
+  ypos 561
+ }
+end_group

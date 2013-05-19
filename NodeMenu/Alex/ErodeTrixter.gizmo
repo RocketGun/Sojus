@@ -1,0 +1,74 @@
+#! /usr/local/Nuke6.1v3/Nuke6.1 -nx
+version 6.1 v3
+Group {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {41 size l Erode T FilterErode1.size}
+ addUserKnob {41 size_1 l Blur T Blur1.size}
+ addUserKnob {41 add l Amount T Grade4.add}
+}
+ Input {
+  inputs 0
+  name Mask
+  xpos 47
+  ypos 211
+  number 1
+ }
+ Dot {
+  name Dot1
+  xpos 81
+  ypos 401
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -309
+  ypos 203
+ }
+ Dot {
+  name Dot12
+  xpos -275
+  ypos 243
+ }
+set Ndd077c30 [stack 0]
+ Dot {
+  name Dot11
+  xpos -105
+  ypos 243
+ }
+ FilterErode {
+  channels rgba
+  size 80
+  filter gaussian
+  name FilterErode1
+  xpos -139
+  ypos 286
+ }
+ Blur {
+  name Blur1
+  xpos -139
+  ypos 330
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  name Merge1
+  selected true
+  xpos -139
+  ypos 396
+ }
+push $Ndd077c30
+ Grade {
+  inputs 1+1
+  invert_mask true
+  unpremult rgba.alpha
+  name Grade4
+  xpos -309
+  ypos 389
+ }
+ Output {
+  name Output1
+  xpos -309
+  ypos 520
+ }
+end_group

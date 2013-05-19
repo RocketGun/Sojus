@@ -1,0 +1,174 @@
+#! C:/Program Files/Nuke6.3v5/Nuke6.3.exe -nx
+Group {
+ name MyDistort
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {7 Amount R 0 100}
+ addUserKnob {7 DistortInnerX l "Distort Inner X" R 0 2}
+ DistortInnerX 1
+ addUserKnob {7 DistortInnerY l "Distort Inner Y" -STARTLINE R 0 2}
+ DistortInnerY 1
+ addUserKnob {7 DistortX l "Distort Edge X" R 0 2}
+ DistortX 1
+ addUserKnob {7 DistortY l "Distort Edge Y" -STARTLINE R 0 2}
+ DistortY 1
+ addUserKnob {41 Edge_Blur T Edget.size}
+ addUserKnob {41 Edge T STMap1.filter}
+ addUserKnob {6 Mask l "Use Mask" -STARTLINE}
+}
+ Input {
+  inputs 0
+  name Matte
+  xpos -434
+  ypos 543
+  number 1
+ }
+ Dot {
+  name Dot4
+  xpos -400
+  ypos 623
+ }
+set N25bf9070 [stack 0]
+add_layer {rgba rgba.water}
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos -434
+  ypos 921
+  disable {{parent.Mask i}}
+ }
+ Dot {
+  name Dot2
+  xpos -400
+  ypos 998
+ }
+push $N25bf9070
+ Dot {
+  name Dot5
+  xpos -510
+  ypos 623
+ }
+ Blur {
+  name Edget
+  note_font_size 20
+  xpos -544
+  ypos 712
+ }
+ Dot {
+  name Dot3
+  xpos -510
+  ypos 811
+ }
+set N33006470 [stack 0]
+ Dot {
+  name Dot6
+  xpos -510
+  ypos 872
+ }
+set N25454250 [stack 0]
+ EdgeDetectWrapper {
+  name EdgeDetectWrapper1
+  xpos -544
+  ypos 921
+ }
+push $N25454250
+push $N33006470
+ Reformat {
+  inputs 0
+  type "to box"
+  format "720 576 0 0 720 576 1.067 PAL_1"
+  box_width {{root.format.r i}}
+  box_height {{root.format.t i}}
+  box_fixed true
+  name Reformat1
+  xpos -735
+  ypos 573
+ }
+set N330067a0 [stack 0]
+ Ramp {
+  p0 {0 0}
+  p1 {{parent.Reformat1.box_width i} 0}
+  color {1 0 0 1}
+  name Ramp1
+  xpos -816
+  ypos 627
+ }
+push $N330067a0
+ Ramp {
+  p0 {0 0}
+  p1 {0 {parent.Reformat1.box_height}}
+  color {0 1 0 1}
+  name Ramp2
+  xpos -648
+  ypos 628
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos -745
+  ypos 676
+ }
+ Shuffle {
+  alpha white
+  name Shuffle2
+  xpos -745
+  ypos 702
+ }
+ Blur {
+  inputs 1+1
+  size {{parent.Amount*100 i}}
+  name Amount
+  xpos -745
+  ypos 801
+ }
+ ColorCorrect {
+  inputs 1+1
+  saturation {{parent.DistortInnerX i} {parent.DistortInnerY i} 1 1}
+  name ColorCorrect2
+  xpos -745
+  ypos 868
+ }
+ ColorCorrect {
+  inputs 1+1
+  saturation {{parent.DistortX i} {parent.DistortY i} 1 1}
+  name ColorCorrect1
+  xpos -745
+  ypos 927
+ }
+ Dot {
+  name Dot1
+  xpos -711
+  ypos 998
+ }
+ Input {
+  inputs 0
+  name FG
+  xpos -609
+  ypos 517
+ }
+ STMap {
+  inputs 2+1
+  channels rgb
+  uv rgb
+  blur_scale 0
+  maskChannel -rgba.alpha
+  name STMap1
+  xpos -609
+  ypos 994
+ }
+ Output {
+  name Output1
+  xpos -609
+  ypos 1283
+ }
+ Viewer {
+  inputs 0
+  frame 108
+  viewerProcess None
+  input_process false
+  name Viewer1
+  xpos -319
+  ypos 1058
+ }
+end_group

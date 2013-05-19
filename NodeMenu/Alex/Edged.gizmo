@@ -1,0 +1,404 @@
+#! /usr/local/Nuke6.1v3/Nuke6.1 -nx
+Group {
+ name Edges
+ inputs 3
+ tile_color 0xa9a9ff
+ note_font "Verdana Bold Bold Bold"
+ note_font_size 16
+ addUserKnob {20 Edges}
+ addUserKnob {20 Darkening n 1}
+ addUserKnob {41 size l Erode T Erode1.size}
+ addUserKnob {41 size_1 l "Edge Blur" T Blur1.size}
+ addUserKnob {41 mix l Amount T Merge4.mix}
+ addUserKnob {41 size_2 l Blur T Blur3.size}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 Brightening n 1}
+ addUserKnob {41 ErodeBright l Erode T Erode2.size}
+ addUserKnob {41 size_3 l "Edge Blur" T Blur2.size}
+ addUserKnob {41 mix_1 l Amount T Merge3.mix}
+ addUserKnob {41 size_4 l Blur T Blur4.size}
+ addUserKnob {6 Glows l Glow +STARTLINE}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+}
+ Input {
+  inputs 0
+  name C
+  note_font "Verdana Bold Bold Bold Bold"
+  xpos -1002
+  ypos 125
+ }
+ Dot {
+  name Dot8
+  xpos -968
+  ypos 335
+ }
+set N2cd913b0 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos -787
+  ypos 249
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -787
+  ypos 323
+ }
+ Dot {
+  name Dot6
+  xpos -753
+  ypos 535
+ }
+set N9b664c0 [stack 0]
+ Dot {
+  name Dot23
+  xpos -337
+  ypos 535
+ }
+ Dot {
+  name Dot29
+  xpos -337
+  ypos 927
+ }
+set N3a34b920 [stack 0]
+ Dot {
+  name Dot24
+  xpos -337
+  ypos 1156
+ }
+set N242a2cc0 [stack 0]
+ Dot {
+  name Dot27
+  xpos -337
+  ypos 1640
+ }
+push $N242a2cc0
+ Dot {
+  name Dot10
+  xpos -868
+  ypos 1156
+ }
+ Invert {
+  name Invert2
+  xpos -902
+  ypos 1338
+ }
+ Erode {
+  size -20
+  name Erode2
+  xpos -902
+  ypos 1376
+ }
+ Blur {
+  size 10
+  name Blur2
+  xpos -902
+  ypos 1414
+ }
+ Dot {
+  name Dot12
+  xpos -868
+  ypos 1523
+ }
+ Input {
+  inputs 0
+  name BG
+  note_font "Verdana Bold Bold Bold Bold Bold Bold"
+  xpos -230
+  ypos 167
+  number 2
+ }
+set N9b1bea0 [stack 0]
+ Dot {
+  name Dot15
+  xpos -541
+  ypos 229
+ }
+ Dot {
+  name Dot5
+  xpos -548
+  ypos 629
+ }
+set N2d0828b0 [stack 0]
+ Dot {
+  name Dot25
+  xpos -427
+  ypos 629
+ }
+ Dot {
+  name Dot28
+  xpos -427
+  ypos 927
+ }
+ Dot {
+  name Dot26
+  xpos -427
+  ypos 1272
+ }
+ Dot {
+  name Dot13
+  xpos -663
+  ypos 1272
+ }
+set N2cc37a00 [stack 0]
+push $N2cd913b0
+ Dot {
+  name Dot11
+  xpos -968
+  ypos 549
+ }
+set N2ceeecc0 [stack 0]
+ Dot {
+  name Dot21
+  xpos -1154
+  ypos 549
+ }
+ Dot {
+  name Dot22
+  xpos -1154
+  ypos 1192
+ }
+ Dot {
+  name Dot16
+  xpos -757
+  ypos 1192
+ }
+ Dot {
+  name Dot17
+  xpos -757
+  ypos 1396
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -697
+  ypos 1392
+ }
+ Clamp {
+  name Clamp3
+  xpos -697
+  ypos 1418
+ }
+ Colorspace {
+  colorspace_out CIE-Lab
+  name Colorspace2
+  xpos -697
+  ypos 1467
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle1
+  xpos -697
+  ypos 1493
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge2
+  xpos -697
+  ypos 1519
+ }
+ Blur {
+  size 5
+  name Blur4
+  xpos -697
+  ypos 1555
+ }
+ set C2d016430 [stack 0]
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge6
+  xpos -697
+  ypos 1635
+ }
+ Dot {
+  name Dot18
+  xpos -663
+  ypos 1718
+ }
+push $N2cc37a00
+ Dot {
+  name Dot19
+  xpos -1144
+  ypos 1272
+ }
+clone $C2d016430 {
+  xpos -1176
+  ypos 1590
+  selected false
+ }
+ Clamp {
+  name Clamp4
+  xpos -1178
+  ypos 1647
+  disable {{Glows i}}
+ }
+ Dot {
+  name Dot20
+  xpos -1144
+  ypos 1718
+ }
+push $N3a34b920
+push $N9b664c0
+ Invert {
+  name Invert1
+  xpos -787
+  ypos 695
+ }
+ Erode {
+  size -20
+  name Erode1
+  xpos -787
+  ypos 733
+ }
+ Blur {
+  size 10
+  name Blur1
+  xpos -787
+  ypos 771
+ }
+ Dot {
+  name Dot3
+  xpos -753
+  ypos 879
+ }
+push $N2ceeecc0
+ Dot {
+  name Dot7
+  xpos -642
+  ypos 549
+ }
+ Dot {
+  name Dot2
+  xpos -642
+  ypos 693
+ }
+push $N2d0828b0
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge8
+  xpos -582
+  ypos 688
+ }
+ Clamp {
+  name Clamp1
+  xpos -582
+  ypos 726
+ }
+ Colorspace {
+  colorspace_out CIE-Lab
+  name Colorspace1
+  xpos -582
+  ypos 764
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  xpos -582
+  ypos 790
+ }
+ Blur {
+  size 5
+  name Blur3
+  xpos -582
+  ypos 818
+ }
+ set C2cbff870 [stack 0]
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge9
+  xpos -582
+  ypos 874
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge7
+  xpos -582
+  ypos 922
+ }
+ Dot {
+  name Dot4
+  xpos -548
+  ypos 964
+ }
+push $N2d0828b0
+ Dot {
+  name Dot9
+  xpos -1095
+  ypos 629
+ }
+clone $C2cbff870 {
+  xpos -1129
+  ypos 857
+  selected false
+ }
+ Clamp {
+  name Clamp2
+  xpos -1129
+  ypos 912
+ }
+ Dot {
+  name Dot1
+  xpos -1095
+  ypos 964
+ }
+push $N2ceeecc0
+ Merge2 {
+  inputs 2+1
+  operation multiply
+  mix 0
+  name Merge4
+  xpos -1010
+  ypos 959
+  disable {{parent.disable.right i x207 1}}
+ }
+ Merge2 {
+  inputs 2+1
+  operation screen
+  mix 0
+  name Merge3
+  xpos -1010
+  ypos 1713
+  disable {{parent.disable.right i}}
+ }
+ Dot {
+  name Dot14
+  xpos -976
+  ypos 1794
+ }
+push $N9b1bea0
+ Merge2 {
+  inputs 2
+  name Merge5
+  xpos -230
+  ypos 1817
+ }
+set N37dc29b0 [stack 0]
+ Output {
+  name Output1
+  xpos -230
+  ypos 1958
+ }
+push $N37dc29b0
+ Viewer {
+  viewerProcess lin2vid
+  input_process false
+  name Viewer1
+  selected true
+  xpos -1156
+  ypos 1870
+ }
+end_group

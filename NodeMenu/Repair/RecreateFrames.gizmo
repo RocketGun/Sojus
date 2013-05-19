@@ -1,0 +1,94 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name RecreateFrames
+ label "Fr. \[value firstbad] - \[value lastbad]"
+ addUserKnob {20 User l RecreateFrames}
+ addUserKnob {3 firstbad l "first bad frame"}
+ firstbad 1
+ addUserKnob {3 lastbad l "last bad frame"}
+ lastbad 3
+ addUserKnob {26 ""}
+ addUserKnob {41 method l Method T OFlow1.method}
+ addUserKnob {41 filtering l Filtering T OFlow1.filtering}
+ addUserKnob {41 warpMode l "Warp Mode" T OFlow1.warpMode}
+ addUserKnob {41 correctLuminance l "Correct Luminance" T OFlow1.correctLuminance}
+ addUserKnob {41 automaticShutterTime l "Automatic Shutter Time" T OFlow1.automaticShutterTime}
+ addUserKnob {41 shutterTime l "Shutter Time" T OFlow1.shutterTime}
+ addUserKnob {41 shutterSamples l "Shutter Samples" T OFlow1.shutterSamples}
+ addUserKnob {41 vectorDetail l "Vector Detail" T OFlow1.vectorDetail}
+ addUserKnob {41 smoothness l Smoothness T OFlow1.smoothness}
+ addUserKnob {41 blockSize l "Block Size" T OFlow1.blockSize}
+ addUserKnob {20 Tolerances n 2}
+ addUserKnob {41 weightRed l "Weight Red" T OFlow1.weightRed}
+ addUserKnob {41 weightGreen l "Weight Green" T OFlow1.weightGreen}
+ addUserKnob {41 weightBlue l "Weight Blue" T OFlow1.weightBlue}
+ addUserKnob {20 "" n -1}
+ addUserKnob {41 showVectors l "Show Vectors" T OFlow1.showVectors}
+ addUserKnob {41 about l About T OFlow1.about}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 33
+  ypos -220
+ }
+set N35928fa0 [stack 0]
+ FrameHold {
+  first_frame {{parent.lastbad+1 i}}
+  name FrameHold2
+  xpos 190
+  ypos -175
+ }
+push $N35928fa0
+ FrameHold {
+  first_frame {{parent.firstbad-1 i}}
+  name FrameHold1
+  xpos 98
+  ypos -175
+ }
+ Switch {
+  inputs 2
+  which {{curve i 0 1}}
+  name Switch1
+  xpos 101
+  ypos -143
+ }
+ OFXuk.co.thefoundry.time.oflow_v100 {
+  method Motion
+  timing "Source Frame"
+  timingFrame {{(t-(parent.firstbad-1))/(parent.lastbad-parent.firstbad+2)}}
+  timingSpeed 0.5
+  filtering Normal
+  warpMode Normal
+  correctLuminance false
+  automaticShutterTime false
+  shutterTime 0
+  shutterSamples 1
+  vectorDetail 0.2
+  smoothness 0.5
+  blockSize 6
+  Tolerances 0
+  weightRed 0.3
+  weightGreen 0.6
+  weightBlue 0.1
+  showVectors false
+  cacheBreaker false
+  name OFlow1
+  xpos 101
+  ypos -119
+ }
+push $N35928fa0
+ Switch {
+  inputs 2
+  which {{t<parent.firstbad?0:(t>parent.lastbad?0:1) i}}
+  name Switch2
+  xpos 33
+  ypos -81
+ }
+ Output {
+  name Output1
+  xpos 33
+  ypos -29
+ }
+end_group

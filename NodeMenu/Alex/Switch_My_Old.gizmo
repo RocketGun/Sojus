@@ -1,0 +1,45 @@
+#! /usr/local/Nuke6.2v4/Nuke6.2 -nx
+
+Group {
+ name S
+ inputs 2
+ tile_color 0xd60000ff
+ label passes
+ note_font "DejaVu Sans Bold"
+ note_font_size 30
+ addUserKnob {20 Choose}
+ addUserKnob {1 Message_1}
+ Message_1 beauty
+ addUserKnob {1 Message_2 -STARTLINE}
+ Message_2 passes
+ addUserKnob {22 Take_1 T "n = nuke.selectedNode()\nn\['which'].setValue(0)\n\n\ni=nuke.thisNode()\nu = i\['Message_1'].value()\ni\['icon'].setValue(\"down_arrow_32x32.png\")\ni\['label'].setValue(u)" +STARTLINE}
+ addUserKnob {22 Take_2 -STARTLINE T "n = nuke.selectedNode()\nn\['which'].setValue(1)\n\n\n\n\ni=nuke.thisNode()\nu = i\['Message_2'].value()\ni\['icon'].setValue(\"right_arrow_32x32.png\")\ni\['label'].setValue(u)"}
+ addUserKnob {22 Toggle T "n = nuke.selectedNode()\ncurrent = n\['which'].getValue()\nif current == 0:\n    n\['which'].setValue(1)\n    i=nuke.thisNode()\n    u = i\['Message_2'].value()\n    i\['label'].setValue(u)\n    i\['tile_color'].setValue(3590324479.0)\n    i\['icon'].setValue(\"right_arrow_32x32.png\")\nelse:\n    n\['which'].setValue(0)\n    i=nuke.thisNode()\n    u = i\['Message_1'].value()\n    i\['label'].setValue(u)\n    i\['icon'].setValue(\"down_arrow_32x32.png\")\n    i\['tile_color'].setValue(2577716223.0)" +STARTLINE}
+}
+ Input {
+  inputs 0
+  name Input2
+  xpos -424
+  ypos 215
+  number 1
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -230
+  ypos 197
+ }
+ Switch {
+  inputs 2
+  which 1
+  name Switch1
+  selected true
+  xpos -311
+  ypos 280
+ }
+ Output {
+  name Output1
+  xpos -311
+  ypos 356
+ }
+end_group

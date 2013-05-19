@@ -1,0 +1,378 @@
+#! /usr/local/Nuke6.2v4/Nuke6.2 -nx
+
+Group {
+ name Grain_Curve
+ inputs 2
+ tile_color 0xc5c5ff
+ note_font "Bitstream Vera Sans"
+ mapsize {0.15 0.15}
+ addUserKnob {20 Grain}
+ addUserKnob {41 seed T Grain2_1.seed}
+ addUserKnob {41 presets l "" -STARTLINE T Grain2_1.presets}
+ addUserKnob {6 freeze +STARTLINE}
+ addUserKnob {41 first_frame l frame -STARTLINE T FrameHold1.first_frame}
+ addUserKnob {41 black l "black lift" T Grade1.black}
+ addUserKnob {26 "" l "@b;Size"}
+ addUserKnob {41 red_size l red T Grain2_1.red_size}
+ addUserKnob {41 green_size l green T Grain2_1.green_size}
+ addUserKnob {41 blue_size l blue T Grain2_1.blue_size}
+ addUserKnob {26 "" l "@b;Irregularity"}
+ addUserKnob {41 red_i l red T Grain2_1.red_i}
+ addUserKnob {41 green_i l green T Grain2_1.green_i}
+ addUserKnob {41 blue_i l blue T Grain2_1.blue_i}
+ addUserKnob {26 "" l "@b;Intensity"}
+ addUserKnob {41 red_m l red T Grain2_1.red_m}
+ addUserKnob {41 green_m l green T Grain2_1.green_m}
+ addUserKnob {41 blue_m l blue T Grain2_1.blue_m}
+ addUserKnob {26 s l "@b;Softness"}
+ addUserKnob {41 red_blur l "Blur red" T BlurRed.size}
+ addUserKnob {41 green_blur l "Blur green" T BlurGreen.size}
+ addUserKnob {41 blue_blur l "Blur blue" T BlurBlue.size}
+ addUserKnob {26 ss l "@b;Sharpness"}
+ addUserKnob {41 red_sharpen l "Sharpen red" T SharpenRed.amount}
+ addUserKnob {41 green_sharpen l "Sharpen green" T SharpenGreen.amount}
+ addUserKnob {41 blue_sharpen l "Sharpen blue" T SharpenBlue.amount}
+ addUserKnob {26 line1 l "" +STARTLINE}
+ addUserKnob {41 saturation l Saturation T SaturationGrain.saturation}
+ addUserKnob {20 GrainAmount l Amount}
+ addUserKnob {41 lut l "" +STARTLINE T ColorLookup1.lut}
+ addUserKnob {20 mask_tab l Mask}
+ addUserKnob {41 mask_from l Mask T Copy2.from0}
+ addUserKnob {41 invert_mask l invert -STARTLINE T MergeMaskl.invert_mask}
+ addUserKnob {41 fringe -STARTLINE T MergeMaskl.fringe}
+ addUserKnob {41 mix T MergeMaskl.mix}
+}
+ Input {
+  inputs 0
+  name Image
+  xpos -147
+  ypos -611
+ }
+ Grade {
+  black_clamp false
+  name Grade1
+  xpos -147
+  ypos -463
+ }
+ Dot {
+  name Dot5
+  xpos -113
+  ypos -382
+ }
+set N7976c80 [stack 0]
+ Dot {
+  name Dot2
+  xpos -113
+  ypos -186
+ }
+set N7979b30 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  color 0.5
+  name Constant1
+  xpos -1030
+  ypos -723
+ }
+ Reformat {
+  type "to box"
+  box_width {{Image.width i}}
+  box_height {{Image.height i}}
+  box_fixed true
+  clamp true
+  name Reformat1
+  xpos -1030
+  ypos -609
+ }
+ Shuffle {
+  alpha white
+  name ShuffleAlpha1
+  xpos -1030
+  ypos -11
+ }
+set N798a0c0 [stack 0]
+ Dot {
+  name Dot1
+  xpos -1216
+  ypos -6
+ }
+ Dot {
+  name Dot4
+  xpos -1216
+  ypos 1146
+ }
+ Input {
+  inputs 0
+  name Mask
+  xpos -700
+  ypos 859
+  number 1
+ }
+ Invert {
+  name Invert1
+  xpos -700
+  ypos 893
+ }
+push $N7976c80
+ ColorLookup {
+  channels rgb
+  lut {master {}
+    red {curve 1 1}
+    green {curve 1 1}
+    blue {curve C 1 1}
+    alpha {curve C 1 1}}
+  name ColorLookup1
+  xpos -304
+  ypos -387
+ }
+ Clamp {
+  name Clamp1
+  xpos -446
+  ypos -394
+ }
+ Dot {
+  name Dot11
+  xpos -556
+  ypos -382
+ }
+set N79b4970 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name ShuffleBlue
+  xpos -590
+  ypos -173
+ }
+push $N798a0c0
+ Grain2 {
+  name Grain2_1
+  label "Kodak 5248"
+  xpos -1128
+  ypos 120
+  red_size 1.05
+  green_size 1.1
+  blue_size 1.15
+  red_i 0.675
+  green_i 0.655
+  blue_i 0.765
+  red_m 0.89
+  green_m 0.915
+  blue_m 0.075
+  black {0 0 0}
+  minimum {0 0 0}
+ }
+set N79c1b40 [stack 0]
+push $N798a0c0
+ Keymix {
+  inputs 3
+  name KeymixBlue
+  xpos -810
+  ypos 312
+ }
+ Dot {
+  name Dot13
+  xpos -776
+  ypos 534
+ }
+push $N79b4970
+ Dot {
+  name Dot10
+  xpos -666
+  ypos -382
+ }
+set N7a10bd0 [stack 0]
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name ShuffleGreen
+  xpos -700
+  ypos -173
+ }
+push $N79c1b40
+push $N798a0c0
+ Keymix {
+  inputs 3
+  name KeymixGreen
+  xpos -920
+  ypos 312
+ }
+ Dot {
+  name Dot12
+  xpos -886
+  ypos 452
+ }
+push $N7a10bd0
+ Dot {
+  name Dot9
+  xpos -776
+  ypos -382
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name ShuffleRed
+  xpos -810
+  ypos -173
+ }
+push $N79c1b40
+push $N798a0c0
+ Keymix {
+  inputs 3
+  name KeymixRed
+  xpos -1030
+  ypos 312
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  name CopyGreen
+  xpos -1030
+  ypos 440
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  name CopyBlue
+  xpos -1030
+  ypos 522
+ }
+ Shuffle {
+  alpha white
+  name Shuffle3
+  xpos -1030
+  ypos 589
+ }
+ Blur {
+  channels {rgba.red -rgba.green -rgba.blue}
+  name BlurRed
+  xpos -1030
+  ypos 642
+ }
+ Blur {
+  channels {-rgba.red rgba.green -rgba.blue}
+  name BlurGreen
+  xpos -1030
+  ypos 690
+ }
+ Blur {
+  channels {-rgba.red -rgba.green rgba.blue}
+  name BlurBlue
+  xpos -1030
+  ypos 738
+ }
+ Sharpen {
+  channels {rgba.red -rgba.green -rgba.blue}
+  amount 0
+  name SharpenRed
+  xpos -1030
+  ypos 786
+ }
+ Sharpen {
+  channels {-rgba.red rgba.green -rgba.blue}
+  amount 0
+  name SharpenGreen
+  xpos -1030
+  ypos 834
+ }
+ Sharpen {
+  channels {-rgba.red -rgba.green rgba.blue}
+  amount 0
+  name SharpenBlue
+  xpos -1030
+  ypos 882
+ }
+ Saturation {
+  name SaturationGrain
+  xpos -1030
+  ypos 941
+ }
+ FrameHold {
+  name FrameHold1
+  xpos -1030
+  ypos 982
+  disable {{parent.freeze-1 i}}
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -1030
+  ypos 1032
+ }
+ Merge2 {
+  inputs 2
+  maskChannelMask -rgba.alpha
+  maskChannelInput rgba.alpha
+  name MergeMaskl
+  xpos -1030
+  ypos 1134
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge13
+  xpos -147
+  ypos 1142
+ }
+push $N798a0c0
+ Dot {
+  name Dot7
+  xpos -446
+  ypos -6
+ }
+ Dot {
+  name Dot8
+  xpos -446
+  ypos 1254
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge14
+  xpos -147
+  ypos 1249
+ }
+push $N7979b30
+ Dot {
+  name Dot3
+  xpos 36
+  ypos -186
+ }
+ Dot {
+  name Dot6
+  xpos 36
+  ypos 1254
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  from1 rgba.green
+  to1 rgba.green
+  from2 rgba.blue
+  to2 rgba.blue
+  name Copy1
+  xpos -147
+  ypos 1332
+ }
+ Grade {
+  black {{parent.Grade1.black i x232 0.9}}
+  reverse true
+  black_clamp false
+  name Grade2
+  selected true
+  xpos -147
+  ypos 1433
+ }
+ Output {
+  name Output1
+  xpos -147
+  ypos 1491
+ }
+end_group

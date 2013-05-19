@@ -1,0 +1,226 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name "IconBuilder"
+ addUserKnob {20 User l IconBuilder}
+ addUserKnob {4 shape l Use M {Shape Image ""}}
+ addUserKnob {6 outline l Outline +STARTLINE}
+ outline true
+ addUserKnob {6 backdrop l Backdrop -STARTLINE}
+ addUserKnob {20 color l Color n 1}
+ addUserKnob {18 fcolor l Shape}
+ fcolor {0.4072401226 0.4072401226 0.4072401226}
+ addUserKnob {18 ocolor l Outline}
+ ocolor {0.03189602867 0.03189602867 0.03189602867}
+ addUserKnob {18 bcolor l Backdrop}
+ bcolor {0.03189602867 0.03189602867 0.03189602867}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 c l "" +STARTLINE T "IconBuilder v0.1 by jonas@mischlicht.com"}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  color {{parent.bcolor i} {parent.bcolor i} {parent.bcolor i} {parent.bcolor i}}
+  name Constant6
+  xpos 539
+  ypos -140
+ }
+ Dot {
+  name Dot1
+  xpos 573
+  ypos -58
+ }
+set N1e3c28c0 [stack 0]
+ Crop {
+  box {21 21 235 235}
+  name Crop3
+  xpos 539
+  ypos -32
+ }
+ Input {
+  inputs 0
+  name In
+  xpos 1067
+  ypos -685
+ }
+ Dot {
+  name Dot5
+  xpos 1101
+  ypos -415
+ }
+set N1e3cd580 [stack 0]
+ Dot {
+  name Dot2
+  xpos 1101
+  ypos -342
+ }
+push $N1e3cd580
+ Expression {
+  channel0 {-rgba.red -rgba.green -rgba.blue}
+  expr0 0
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  expr1 0
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  expr2 0
+  channel3 {rgba.alpha none none rgba.alpha}
+  expr3 a==0?0:a
+  name AlphaError
+  label "To avid Gizmo being in state of\nerror without something plugged in input."
+  xpos 926
+  ypos -429
+ }
+ Ramp {
+  inputs 0
+  opacity 0.405
+  p0 {0 0}
+  p1 {0 256}
+  name Ramp2
+  xpos 926
+  ypos -460
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {{parent.fcolor i} {parent.fcolor i} {parent.fcolor i} {parent.fcolor i}}
+  name Constant4
+  xpos 816
+  ypos -559
+ }
+ Merge2 {
+  inputs 2
+  mix 0.16
+  name Merge4
+  xpos 816
+  ypos -460
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy4
+  xpos 816
+  ypos -423
+ }
+ Premult {
+  name Premult3
+  xpos 816
+  ypos -389
+ }
+ Switch {
+  inputs 2
+  which {{parent.shape i}}
+  name Switch1
+  xpos 816
+  ypos -345
+ }
+ Dot {
+  name Dot6
+  xpos 850
+  ypos -286
+ }
+set N1e404a10 [stack 0]
+ Dot {
+  name Dot7
+  xpos 885
+  ypos -180
+ }
+push $N1e404a10
+ EdgeDetectWrapper {
+  threshold 3.6
+  name EdgeDetectWrapper2
+  xpos 676
+  ypos -294
+ }
+ FilterErode {
+  size 0
+  name FilterErode1
+  xpos 676
+  ypos -260
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {{parent.ocolor i} {parent.ocolor i} {parent.ocolor i} {parent.ocolor i}}
+  name Constant1
+  xpos 541
+  ypos -230
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy5
+  xpos 676
+  ypos -211
+ }
+ Premult {
+  name Premult4
+  xpos 676
+  ypos -177
+ }
+push $N1e404a10
+ Merge2 {
+  inputs 2
+  name Merge5
+  xpos 786
+  ypos -177
+ }
+ Switch {
+  inputs 2
+  which {{!parent.outline i}}
+  name Switch2
+  xpos 816
+  ypos -135
+ }
+ Crop {
+  box {32 32 224 224}
+  name Crop4
+  xpos 816
+  ypos -111
+ }
+set N1e437140 [stack 0]
+push $N1e3c28c0
+ Merge2 {
+  inputs 2
+  name Merge6
+  xpos 714
+  ypos -61
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy6
+  xpos 714
+  ypos -37
+ }
+push $N1e437140
+ Switch {
+  inputs 2
+  which {{parent.backdrop i}}
+  name Switch3
+  selected true
+  xpos 816
+  ypos -32
+ }
+set N1e44d040 [stack 0]
+ Reformat {
+  format "24 24 0 0 24 24 1 icon"
+  name Reformat2
+  xpos 816
+  ypos 26
+ }
+ Output {
+  name Output1
+  xpos 816
+  ypos 176
+ }
+push $N1e44d040
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 1086
+  ypos -113
+ }
+end_group

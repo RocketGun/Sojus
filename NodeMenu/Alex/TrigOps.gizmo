@@ -1,0 +1,215 @@
+#! C:/Program Files/Nuke6.3v5/Nuke6.3.exe -nx
+Group {
+ name TrigOps
+ addUserKnob {20 Math2D l "Math 2D"}
+ addUserKnob {41 pA l "Point A" T Pythag.pA}
+ addUserKnob {41 pB l "Point B" T Pythag.pB}
+ addUserKnob {41 pC l "Point C" T Pythag.pC}
+ addUserKnob {41 hypot l "Distance A-B" T Pythag.hypot}
+ addUserKnob {41 dX l "Delta X (A-B)" T Pythag.dX}
+ addUserKnob {41 dY l "Delta Y(A-B)" T Pythag.dY}
+ addUserKnob {41 deg l "Angle (Deg)(A-B-Horizon)" T Pythag.deg}
+ addUserKnob {41 rad l "Angle (Rad)" T Pythag.rad}
+ addUserKnob {41 AngleABC l "Angle (Deg) (ABC)" T Pythag.AngleABC}
+ addUserKnob {20 Math3D l "Math 3D"}
+ addUserKnob {41 ca l A T Pythag.ca}
+ addUserKnob {41 po l B T Pythag.po}
+ addUserKnob {41 Distance T Pythag.Distance}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -620
+  ypos -184
+ }
+ NoOp {
+  name Pythag
+  xpos -610
+  ypos -138
+  addUserKnob {20 Math l "Math 2D"}
+  addUserKnob {12 L l INVISIBLE +INVISIBLE}
+  L {{pA-1000} {pA}}
+  addUserKnob {12 R l INVISIBLE +INVISIBLE}
+  R {{pA+1000} {pA}}
+  addUserKnob {12 pA l "Point A"}
+  pA {1019 38}
+  addUserKnob {12 pB l "Point B"}
+  pB {924 694}
+  addUserKnob {12 pC l "Point C"}
+  pC {1796 285}
+  addUserKnob {7 hypot l "Distance A-B" R -1000 1000}
+  hypot {{sqrt(pow2(dX)+pow2(dY))}}
+  addUserKnob {7 dX l "Delta X (A-B)" -STARTLINE R -1000 1000}
+  dX {{pB.x-pA.x}}
+  addUserKnob {7 dY l "Delta Y(A-B)" -STARTLINE R -1000 1000}
+  dY {{pB.y-pA.y}}
+  addUserKnob {7 deg l "Angle (Deg)(A-B-Horizon)" R -180 180}
+  deg {{degrees(rad)}}
+  addUserKnob {7 rad l "Angle (Rad)" -STARTLINE R 0 3.14159}
+  rad {{atan2(dY,dX)}}
+  addUserKnob {16 AngleABC l "Angle (Deg) (ABC)"}
+  AngleABC {{degrees(atan2(pA.x-pB.x,pA.y-pB.y)-atan2(pC.x-pB.x,pC.y-pB.y))}}
+  addUserKnob {20 Math3D l "Math 3D"}
+  addUserKnob {13 ca l A}
+  addUserKnob {13 po l B}
+  addUserKnob {7 Distance}
+  Distance {{sqrt(pow((ca.x-po.x),2)+pow((ca.y-po.y),2)+pow((ca.z-po.z),2))}}
+ }
+ RotoPaint {
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 960 S 0 540 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 4
+  Node: {
+   NodeName: "Brush4" {
+    Flag: 1600
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 458.769 S 0 404.154 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 L 0 4096 0.5 2 0 0 "Pythag.L" 1 0 348 L 0 4096 0.5 2 0 0 "Pythag.L" 1 0 501 S 0 1 0 0 L 0 4096 0.5 2 0 0 "Pythag.R" 1 0 564 L 0 4096 0.5 2 0 0 "Pythag.R" 1 0 349 S 0 1 0 
+     NumOfAttributes: 46
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 1 "go" S 0 1 "bo" S 0 1 "ao" S 0 1 "opc" S 0 1 "bs" S 0 5 "bsp" S 0 0.05 "h" S 0 0.2 "bm" S 0 0 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "bt" S 0 0 "bu" S 0 1 "inv" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "ltn" S 0 115 "ltm" S 0 115 "ltt" S 0 0 "ws" S 0 0 "we" S 0 1 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 "tt" S 0 14 "nv" S 0 1 "view1" S 0 1 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Brush3" {
+    Flag: 1600
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 760 S 0 453.692 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 L 0 4096 0.5 2 0 0 "Pythag.pB" 1 0 668 L 0 4096 0.5 2 0 0 "Pythag.pB" 1 0 586 S 0 1 0 0 L 0 4096 0.5 2 0 0 "Pythag.pA" 1 0 991.5 L 0 4096 0.5 2 0 0 "Pythag.pA" 1 0 597.5 S 0 1 0 
+     NumOfAttributes: 47
+     "vis" S 0 1 "r" S 0 0 "g" S 0 0 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 1 "ao" S 0 1 "opc" S 0 1 "bs" S 0 5 "bsp" S 0 0.05 "h" S 0 0.5 "bm" S 0 0 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "bt" S 0 0 "bu" S 0 1 "inv" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "ltn" S 0 115 "ltm" S 0 115 "ltt" S 0 0 "ws" S 0 0 "we" S 0 1 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 "tt" S 0 14 "nv" S 0 1 "view1" S 0 1 "pt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Brush2" {
+    Flag: 1600
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 760 S 0 453.692 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 L 0 4096 0.5 2 0 0 "Pythag.pB" 1 0 632 L 0 4096 0.5 2 0 0 "Pythag.pB" 1 0 518 S 0 1 0 0 L 0 4096 0.5 2 0 0 "Pythag.pC" 1 0 977.5 L 0 4096 0.5 2 0 0 "Pythag.pC" 1 0 332.5 S 0 1 0 
+     NumOfAttributes: 47
+     "vis" S 0 1 "r" S 0 0 "g" S 0 1 "b" S 0 0 "a" S 0 1 "ro" S 0 0 "go" S 0 1 "bo" S 0 0 "ao" S 0 1 "opc" S 0 1 "bs" S 0 5 "bsp" S 0 0.05 "h" S 0 0.5 "bm" S 0 0 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "bt" S 0 0 "bu" S 0 1 "inv" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "ltn" S 0 115 "ltm" S 0 115 "ltt" S 0 0 "ws" S 0 0 "we" S 0 1 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 "tt" S 0 14 "nv" S 0 1 "view1" S 0 1 "pt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Brush1" {
+    Flag: 1600
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 760 S 0 453.692 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 L 0 4096 0.5 2 0 0 "Pythag.pA" 1 0 670 L 0 4096 0.5 2 0 0 "Pythag.pA" 1 0 543 S 0 1 0 0 L 0 4096 0.5 2 0 0 "Pythag.pC" 1 0 989.5 L 0 4096 0.5 2 0 0 "Pythag.pC" 1 0 507.5 S 0 1 0 
+     NumOfAttributes: 46
+     "vis" S 0 1 "r" S 0 1 "g" S 0 0 "b" S 0 0 "a" S 0 1 "ro" S 0 1 "go" S 0 0 "bo" S 0 0 "ao" S 0 1 "opc" S 0 1 "bs" S 0 5 "bsp" S 0 0.05 "h" S 0 0.5 "bm" S 0 0 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "bt" S 0 0 "bu" S 0 1 "inv" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "ltn" S 0 115 "ltm" S 0 115 "ltt" S 0 0 "ws" S 0 0 "we" S 0 1 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 "tt" S 0 14 "nv" S 0 1 "view1" S 0 1 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 tt 14 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_show_paint_selection true
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  color {1 1 1 1}
+  colorOverlay {1 1 1 1}
+  lifetime_type "all frames"
+  lifetime_start 115
+  lifetime_end 115
+  locked true
+  motionblur_on true
+  brush_size 5
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint2
+  xpos -456
+  ypos -119
+ }
+ Text {
+  opacity 0.5
+  message "\[value Pythag.deg]"
+  font C:/Windows/Fonts/david.ttf
+  size 100
+  yjustify bottom
+  Transform 1
+  box {0 0 960 550}
+  translate {{parent.Pythag.pA i} {parent.Pythag.pA i}}
+  name Text1
+  label "B A H"
+  note_font_size 20
+  xpos -433
+  ypos -62
+ }
+ Text {
+  opacity 0.5
+  message "\[value Pythag.AngleABC]"
+  font C:/Windows/Fonts/david.ttf
+  size 100
+  yjustify bottom
+  Transform 1
+  box {0 0 960 550}
+  translate {{parent.Pythag.pB i} {parent.Pythag.pB i}}
+  name Text2
+  xpos -502
+  ypos 42
+ }
+set N834cef40 [stack 0]
+ Output {
+  name Output1
+  xpos -502
+  ypos 111
+ }
+push $N834cef40
+ Viewer {
+  rgb_only true
+  input_process false
+  name Viewer1
+  xpos -260
+  ypos -10
+  hide_input true
+ }
+end_group

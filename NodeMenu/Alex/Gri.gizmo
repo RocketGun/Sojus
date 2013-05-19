@@ -1,0 +1,33 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+version 6.3 v4
+Group {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -584
+  ypos 509
+ }
+add_layer {rgb rgb.UV}
+add_layer {rgba redguard1.glow rgba.beta rgba.water}
+ Colorspace {
+  colorspace_out sRGB
+  name Colorspace1
+  xpos -584
+  ypos 549
+ }
+ Grid {
+  opacity 0.25
+  number 6
+  size 3
+  color {1 0 0 1}
+  name Grid1
+  xpos -584
+  ypos 587
+ }
+ Output {
+  name Output1
+  xpos -584
+  ypos 687
+ }
+end_group

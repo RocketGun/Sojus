@@ -1,0 +1,238 @@
+#! C:/Program Files/Nuke/Nuke5.1.exe -nx
+version 5.1300
+Group {
+ addUserKnob {20 Control}
+ addUserKnob {26 ""}
+ addUserKnob {41 Offset T Transform1.translate}
+ addUserKnob {41 InnerBlur T Blur3.size}
+ addUserKnob {41 OuterBlur T Blur4.size}
+ addUserKnob {41 Width T Blur1.size}
+ addUserKnob {41 Opacity T ColorCorrect1.gain}
+ addUserKnob {6 Show +STARTLINE}
+ Show true
+ addUserKnob {41 linear l "linear interpolate" -STARTLINE T Bezier1.linear}
+ addUserKnob {41 shape -STARTLINE T Bezier1.shape}
+ addUserKnob {26 "" T " is scratch removal tool, offset the image 90 degrees to your scratch, adjust softnes (sometimes it will work :)"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -248
+  ypos -115
+ }
+ Dot {
+  name Dot1
+  xpos -214
+  ypos -73
+ }
+set Nc7dee80 [stack 0]
+ Dot {
+  name Dot3
+  xpos -321
+  ypos -73
+ }
+ Dot {
+  name Dot2
+  xpos -523
+  ypos -73
+ }
+ Bezier {
+  output alpha
+  replace true
+  points {{
+{225.6 734.9}
+{227.7 -544.5}
+{971.9 -504.8}
+{938.5 783}
+}}
+  shape {{curve i L x1 0}}
+  linear true
+  center {128 128}
+  name Bezier1
+  selected true
+  xpos -557
+  ypos 18
+ }
+set Nf30ce18 [stack 0]
+ Dot {
+  name Dot8
+  xpos -326
+  ypos 28
+ }
+set Nb9cdbe8 [stack 0]
+ Dot {
+  name Dot4
+  xpos -52
+  ypos 28
+ }
+set Nf1dbda0 [stack 0]
+ Blur {
+  size 4
+  name Blur1
+  xpos -86
+  ypos 138
+ }
+push $Nf1dbda0
+ Dot {
+  name Dot7
+  xpos 80
+  ypos 28
+ }
+ Blur {
+  size {{parent.Blur1.size i}}
+  name Blur2
+  xpos 46
+  ypos 141
+ }
+ Merge2 {
+  inputs 2
+  operation out
+  name Merge3
+  xpos -18
+  ypos 204
+ }
+ ColorCorrect {
+  channels alpha
+  gain 5
+  name ColorCorrect1
+  xpos -18
+  ypos 231
+ }
+ Blur {
+  name Blur4
+  xpos -18
+  ypos 270
+ }
+ Dot {
+  name Dot5
+  xpos 16
+  ypos 317
+ }
+push $Nf30ce18
+ Erode {
+  size -0.4
+  name Erode1
+  xpos -557
+  ypos 57
+ }
+ set Cc709968 [stack 0]
+set Nf485038 [stack 0]
+ Blur {
+  name Blur3
+  xpos -639
+  ypos 95
+ }
+ set Cf0eaf98 [stack 0]
+ Dot {
+  name Dot9
+  xpos -605
+  ypos 182
+ }
+push $Nf485038
+ Transform {
+  center {128 128}
+  name Transform1
+  xpos -557
+  ypos 135
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -557
+  ypos 172
+ }
+ ColorCorrect {
+  gamma {1 1 5 1}
+  name ColorCorrect2
+  xpos -561
+  ypos 212
+  disable {{parent.ColorCorrect3.disable i}}
+ }
+ Premult {
+  name Premult1
+  xpos -557
+  ypos 235
+ }
+push $Nb9cdbe8
+ Invert {
+  channels alpha
+  name Invert1
+  xpos -360
+  ypos 46
+ }
+clone $Cc709968 {
+  xpos -360
+  ypos 85
+  selected false
+ }
+set Nf60cd38 [stack 0]
+clone $Cf0eaf98 {
+  xpos -455
+  ypos 97
+  selected false
+ }
+ Dot {
+  name Dot10
+  xpos -421
+  ypos 172
+ }
+push $Nf60cd38
+ Transform {
+  translate {{-parent.Transform1.translate i} {-parent.Transform1.translate i}}
+  center {128 128}
+  name Transform2
+  xpos -364
+  ypos 135
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -364
+  ypos 162
+ }
+ ColorCorrect {
+  gamma {5 1 1 1}
+  name ColorCorrect3
+  xpos -364
+  ypos 201
+  disable {{!Show i}}
+ }
+ Premult {
+  name Premult2
+  xpos -364
+  ypos 239
+ }
+ Merge2 {
+  inputs 2
+  name Merge1
+  xpos -455
+  ypos 273
+ }
+ Dot {
+  name Dot6
+  xpos -421
+  ypos 317
+ }
+push $Nc7dee80
+ Merge2 {
+  inputs 2+1
+  name Merge2
+  xpos -248
+  ypos 313
+ }
+ Output {
+  name Output1
+  xpos -248
+  ypos 413
+ }
+ Viewer {
+  inputs 0
+  name Viewer1
+  xpos 92
+  ypos 270
+ }
+end_group

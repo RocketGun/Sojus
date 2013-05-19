@@ -1,0 +1,108 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name SimpleKeyer
+ tile_color 0x9900ff
+ addUserKnob {20 User l SimpleKeyer}
+ addUserKnob {4 screen l "Screen Type" M {greenscreen bluescreen redscreen}}
+ addUserKnob {41 black l "Clean Foreground" T Expression3.black}
+ addUserKnob {41 white l "Clean Background" T Expression3.white}
+ addUserKnob {41 invert T Expression3.invert}
+ addUserKnob {41 premult T Expression3.premult}
+ addUserKnob {26 ""}
+ addUserKnob {26 from l "" +STARTLINE T "v0.9 (2012 by jonas@mischlicht.com)"}
+}
+ Input {
+  inputs 0
+  name fg
+  xpos 173
+  ypos -70
+ }
+set N1cf995a0 [stack 0]
+ Expression {
+  temp_name0 x
+  temp_expr0 (invert?0:1)+((invert?1:-1)*max(0,min(1,(r-max(b,g)-black)/(white-black))))
+  expr0 r*(premult?x:1)
+  expr1 g*(premult?x:1)
+  expr2 b*(premult?x:1)
+  expr3 x
+  name Expression2
+  xpos 344
+  ypos 18
+  addUserKnob {20 User}
+  addUserKnob {7 black R 0 0.2}
+  black {{parent.Expression3.black i}}
+  addUserKnob {7 white R 0 0.2}
+  white {{parent.Expression3.white i}}
+  addUserKnob {6 invert +STARTLINE}
+  invert {{parent.Expression3.invert i}}
+  addUserKnob {6 premult +STARTLINE}
+  premult {{parent.Expression3.premult i}}
+ }
+push $N1cf995a0
+ Expression {
+  temp_name0 x
+  temp_expr0 (invert?0:1)+((invert?1:-1)*max(0,min(1,(b-max(r,g)-black)/(white-black))))
+  expr0 r*(premult?x:1)
+  expr1 g*(premult?x:1)
+  expr2 b*(premult?x:1)
+  expr3 x
+  name Expression1
+  xpos 173
+  ypos 15
+  addUserKnob {20 User}
+  addUserKnob {7 black R 0 0.2}
+  black {{parent.Expression3.black i}}
+  addUserKnob {7 white R 0 0.2}
+  white {{parent.Expression3.white i}}
+  addUserKnob {6 invert +STARTLINE}
+  invert {{parent.Expression3.invert i}}
+  addUserKnob {6 premult +STARTLINE}
+  premult {{parent.Expression3.premult i}}
+ }
+push $N1cf995a0
+ Expression {
+  temp_name0 x
+  temp_expr0 (invert?0:1)+((invert?1:-1)*max(0,min(1,(g-max(r,b)-black)/(white-black))))
+  expr0 r*(premult?x:1)
+  expr1 g*(premult?x:1)
+  expr2 b*(premult?x:1)
+  expr3 x
+  name Expression3
+  xpos 15
+  ypos 8
+  addUserKnob {20 User}
+  addUserKnob {7 black R 0 0.2}
+  addUserKnob {7 white R 0 0.2}
+  white 0.2
+  addUserKnob {6 invert +STARTLINE}
+  addUserKnob {6 premult +STARTLINE}
+ }
+ Switch {
+  inputs 3
+  which {{parent.screen i}}
+  name Switch1
+  xpos 173
+  ypos 66
+ }
+ Clamp {
+  MinClampTo_enable true
+  MaxClampTo_enable true
+  name Clamp1
+  xpos 173
+  ypos 90
+ }
+set N1e1b9b80 [stack 0]
+ Output {
+  name Output1
+  xpos 173
+  ypos 134
+ }
+push $N1e1b9b80
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 173
+  ypos 124
+ }
+end_group

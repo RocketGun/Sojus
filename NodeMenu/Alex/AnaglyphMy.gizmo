@@ -1,0 +1,28 @@
+#! /usr/local/Nuke6.1v3/Nuke6.1 -nx
+version 6.1 v3
+Gizmo {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -895
+  ypos 48
+ }
+ Colorspace {
+  colorspace_out sRGB
+  name Colorspace1
+  xpos -895
+  ypos 88
+ }
+ Anaglyph {
+  views {left right}
+  name Anaglyph1
+  xpos -895
+  ypos 152
+ }
+ Output {
+  name Output1
+  xpos -895
+  ypos 252
+ }
+end_group

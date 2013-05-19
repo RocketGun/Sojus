@@ -1,0 +1,120 @@
+#! /usr/local/Nuke6.2v4/Nuke6.2 -nx
+Group {
+ name Offset
+ help "Scrolls the image while translating."
+ tile_color 0x7e74ff
+ addUserKnob {20 Offset}
+ addUserKnob {12 translate}
+ addUserKnob {41 filter t "Use Impulse to move in integer pixel values.\nUse Cubic for subpixel interpolation.  However there is a (0.5, 0.5) pixel offset." T STMap1.filter}
+}
+ Group {
+  inputs 0
+  name UV
+  label "\[value root.format.r]/\[value root.format.t]"
+  selected true
+  xpos -216
+  ypos -314
+  postage_stamp true
+ }
+  Reformat {
+   inputs 0
+   type "to box"
+   format "720 576 0 0 720 576 1.067 PAL_1"
+   box_width {{root.format.r i}}
+   box_height {{root.format.t i}}
+   box_fixed true
+   name Reformat1
+   xpos -258
+   ypos -47
+  }
+set N4e317e80 [stack 0]
+  Ramp {
+   p0 {-0.5 0}
+   p1 {{parent.Reformat1.box_width-0.5 i} 0}
+   color {1 0 0 1}
+   name Ramp1
+   xpos -350
+   ypos 3
+  }
+set N4d54b960 [stack 0]
+push $N4e317e80
+  Ramp {
+   p0 {0 -0.5}
+   p1 {0 {parent.Reformat1.box_height-0.5 i}}
+   color {0 1 0 1}
+   name Ramp2
+   xpos -168
+  }
+  Merge2 {
+   inputs 2
+   operation plus
+   name Merge1
+   xpos -268
+   ypos 56
+  }
+  Shuffle {
+   alpha white
+   name Shuffle1
+   xpos -268
+   ypos 83
+  }
+  Output {
+   name Output1
+   xpos -268
+   ypos 156
+  }
+push $N4d54b960
+  Viewer {
+   viewerProcess lin2vid
+   input_process false
+   name Viewer1
+   xpos -531
+   ypos 133
+  }
+ end_group
+ Expression {
+  expr0 x/width
+  expr1 y/height
+  expr2 0
+  name SetUVs
+  xpos -216
+  ypos -219
+ }
+ Expression {
+  temp_name0 oX
+  temp_expr0 (parent.translate.x%width)
+  temp_name1 oY
+  temp_expr1 (parent.translate.y%height)
+  expr0 oX<0?r-(oX/width)-1:r-1+(1-oX/width)
+  expr1 oY<0?g-(oY/height)-1:g-1+(1-oY/height)
+  name Offset
+  xpos -216
+  ypos -191
+ }
+ Expression {
+  expr0 r<0?(1+r):r
+  expr1 g<0?(1+g):g
+  name Repeat
+  xpos -216
+  ypos -165
+ }
+ Input {
+  inputs 0
+  name Input
+  xpos -298
+  ypos -313
+ }
+ STMap {
+  inputs 2
+  channels rgb
+  uv rgb
+  filter Impulse
+  name STMap1
+  xpos -298
+  ypos -84
+ }
+ Output {
+  name Output1
+  xpos -298
+ }
+end_group

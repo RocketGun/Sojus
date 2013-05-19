@@ -1,0 +1,212 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+
+Group {
+ name BGOverlay
+ inputs 4
+ tile_color 0xa3a500ff
+ note_font "Verdana Bold Bold Bold Bold"
+ note_font_size 13
+ note_font_color 0x7aff
+ addUserKnob {20 User}
+ addUserKnob {41 AmountWhite -STARTLINE T Ammount.whitepoint}
+ addUserKnob {41 AmountBlack T Ammount.blackpoint}
+ addUserKnob {26 ""}
+ addUserKnob {26 ColorCorrection}
+ addUserKnob {41 gain T CC.gain}
+ addUserKnob {41 gamma T CC.gamma}
+ addUserKnob {41 offset T CC.offset}
+ addUserKnob {26 ""}
+ addUserKnob {7 Blur l "Blur BG" R 0 100}
+ addUserKnob {7 Blur2 l "Blur Matte" R 0 10}
+ addUserKnob {6 PreviewMatte l "Preview Matte" -STARTLINE}
+ PreviewMatte true
+}
+ Input {
+  inputs 0
+  name FG
+  xpos -165
+  ypos -422
+  number 2
+ }
+ Dot {
+  name Dot6
+  xpos -131
+  ypos -302
+ }
+ Shuffle {
+  alpha white
+  name Shuffle3
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos -165
+  ypos -220
+ }
+ Input {
+  inputs 0
+  name FG_Despilled
+  xpos 15
+  ypos -389
+ }
+ Dot {
+  name Dot4
+  xpos 49
+  ypos -324
+ }
+ Shuffle {
+  alpha white
+  name Shuffle2
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos 15
+  ypos -224
+ }
+ Dot {
+  name Dot3
+  xpos 49
+  ypos -157
+ }
+set N35dc7db0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -165
+  ypos -161
+ }
+ Blur {
+  size {{parent.Blur2 i}}
+  name BlurMate
+  label BlurMatte
+  note_font_size 20
+  xpos -165
+  ypos -119
+ }
+ Saturation {
+  saturation 0
+  mode Maximum
+  name Saturation1
+  xpos -165
+  ypos -9
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle4
+  xpos -165
+  ypos 26
+ }
+ Grade {
+  channels alpha
+  name Ammount
+  xpos -165
+  ypos 66
+ }
+set N35ebccf0 [stack 0]
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 290
+  ypos -10
+  hide_input true
+ }
+push $N35ebccf0
+ Dot {
+  name Dot1
+  xpos -131
+  ypos 153
+ }
+set N35ebd020 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle5
+  xpos -165
+  ypos 355
+ }
+ Input {
+  inputs 0
+  name Mask
+  xpos -274
+  ypos 136
+  number 3
+ }
+ Dot {
+  name Dot7
+  xpos -240
+  ypos 240
+ }
+push $N35ebd020
+ Input {
+  inputs 0
+  name BG
+  xpos -55
+  ypos -423
+  number 1
+ }
+ Dot {
+  name Dot5
+  xpos -21
+  ypos -303
+ }
+ Shuffle {
+  alpha white
+  name Shuffle1
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos -55
+  ypos 9
+ }
+ Blur {
+  size {{parent.Blur i}}
+  name Blur1
+  xpos -55
+  ypos 58
+ }
+ ColorCorrect {
+  shadows 0
+  midtones 0
+  name CC
+  xpos -55
+  ypos 108
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge3
+  xpos -55
+  ypos 149
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge4
+  xpos -55
+  ypos 236
+ }
+ Dot {
+  name Dot2
+  xpos -21
+  ypos 279
+ }
+push $N35dc7db0
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 15
+  ypos 275
+ }
+ Switch {
+  inputs 2
+  which {{parent.PreviewMatte i}}
+  name Switch1
+  xpos 15
+  ypos 355
+ }
+ Output {
+  name Output1
+  xpos 15
+  ypos 445
+ }
+end_group

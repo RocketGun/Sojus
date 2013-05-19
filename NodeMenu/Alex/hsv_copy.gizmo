@@ -1,0 +1,149 @@
+#! C:/Program Files (x86)/Nuke5.1v1/Nuke.exe -nx
+version 5.1100
+Group {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {4 test M {copy_hue copy_saturation copy_value}}
+ test copy_saturation
+ addUserKnob {41 hue_amount T hu.weight1}
+ addUserKnob {41 saturation_amount T sat.weight1}
+ addUserKnob {41 value_amount T val.weight1}
+}
+ Input {
+  inputs 0
+  name From
+  xpos -159
+  ypos 86
+  number 1
+ }
+set N237dd710 [stack 0]
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace7
+  xpos -15
+  ypos 180
+ }
+ Input {
+  inputs 0
+  name To
+  xpos -373
+  ypos 81
+ }
+set N23ebeb40 [stack 0]
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace8
+  xpos -107
+  ypos 179
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  name Copy3
+  xpos -71
+  ypos 218
+ }
+ Colorspace {
+  colorspace_in HSV
+  name Colorspace9
+  xpos -71
+  ypos 257
+ }
+push $N23ebeb40
+ Blend {
+  inputs 2
+  weight0 {{-weight1+4 i x7 0}}
+  weight1 4
+  name val
+  xpos -71
+  ypos 301
+ }
+push $N237dd710
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace4
+  xpos -209
+  ypos 178
+ }
+push $N23ebeb40
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace5
+  xpos -301
+  ypos 177
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  name Copy2
+  xpos -265
+  ypos 216
+ }
+ Colorspace {
+  colorspace_in HSV
+  name Colorspace6
+  xpos -265
+  ypos 255
+ }
+push $N23ebeb40
+ Blend {
+  inputs 2
+  weight0 {{-weight1+4}}
+  weight1 4
+  name sat
+  selected true
+  xpos -265
+  ypos 307
+ }
+push $N237dd710
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace2
+  xpos -409
+  ypos 180
+ }
+push $N23ebeb40
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace1
+  xpos -501
+  ypos 179
+ }
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.red
+  name Copy1
+  xpos -465
+  ypos 218
+ }
+ Colorspace {
+  colorspace_in HSV
+  name Colorspace3
+  xpos -465
+  ypos 257
+ }
+push $N23ebeb40
+ Blend {
+  inputs 2
+  weight0 {{-weight1+4 i}}
+  weight1 4
+  name hu
+  xpos -423
+  ypos 304
+ }
+ Switch {
+  inputs 3
+  which {{test i}}
+  name Switch1
+  xpos -265
+  ypos 371
+ }
+ Output {
+  name Output1
+  xpos -257
+  ypos 418
+ }
+end_group

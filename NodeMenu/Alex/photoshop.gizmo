@@ -1,0 +1,304 @@
+#! /Applications/Nuke5.0v2/Nuke5.0v2.app/Contents/MacOS/Nuke5.0 -nx
+version 5.0200
+Group {
+ inputs 2
+ name PS
+ label "PSv3b"
+ help "How to Use:\n\nBG: Select your BG layer\nL1, L2, L3 to L7: Select your layers (orderly)\n\nIf you have more then 7 layer, add another\nPS gizmo and select BG to RGBA, and add other layers. Second Imput for add matte to alpha (BG alpha is not added)"
+ addUserKnob {20 User l PS_v03}
+ addUserKnob {41 in l BG T Shuffle1.in}
+ addUserKnob {41 in_1 l L1 T Shuffle2.in}
+ addUserKnob {41 operation T Merge1.operation}
+ addUserKnob {41 mix T Merge1.mix}
+ addUserKnob {6 DisableMerge1 l "Disable Merge"}
+ addUserKnob {6 Premult1 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 in_2 l L2 T Shuffle3.in}
+ addUserKnob {41 operation_1 l operation T Merge2.operation}
+ addUserKnob {41 mix_1 l mix T Merge2.mix}
+ addUserKnob {6 DisableMerge2 l "Disable Merge"}
+ addUserKnob {6 Premult2 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 in_3 l L3 T Shuffle12.in}
+ addUserKnob {41 operation_2 l operation T Merge3.operation}
+ addUserKnob {41 mix_2 l mix T Merge3.mix}
+ addUserKnob {6 DisableMerge3 l "Disable Merge"}
+ addUserKnob {6 Premult3 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 in_4 l L4 T Shuffle4.in}
+ addUserKnob {41 operation_3 l operation T Merge4.operation}
+ addUserKnob {41 mix_3 l mix T Merge4.mix}
+ addUserKnob {6 DisableMerge4 l "Disable Merge"}
+ addUserKnob {6 Premult4 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 in_5 l L5 T Shuffle5.in}
+ addUserKnob {41 operation_4 l operation T Merge5.operation}
+ addUserKnob {41 mix_4 l mix T Merge5.mix}
+ addUserKnob {6 DisableMerge5 l "Disable Merge"}
+ addUserKnob {6 Premult5 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 in_6 l L6 T Shuffle6.in}
+ addUserKnob {41 operation_5 l operation T Merge6.operation}
+ addUserKnob {41 mix_5 l mix T Merge6.mix}
+ addUserKnob {6 DisableMerge6 l "Disable Merge"}
+ addUserKnob {6 Premult6 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 in_7 l L7 T Shuffle7.in}
+ addUserKnob {41 operation_6 l operation T Merge7.operation}
+ addUserKnob {41 mix_6 l mix T Merge7.mix}
+ addUserKnob {6 DisableMerge7 l "Disable Merge"}
+ addUserKnob {6 Premult7 l Premult}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "" T "Powered By Kyo"}
+ addUserKnob {20 a l HowToUse}
+ addUserKnob {26 "" l "" T "BG = Sellect you BG layer\nL1,L2,L3..L7 = Sellect your layers (orderly)\nFirst D = It's for disable merging\nSecond D = It's for premult for each layer "}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "" T "If you have more than 7 layer, add an other\nPS gizmo and sellcet BG to rgba, and add \nother layers .. Second input for add matte\nto alpha (BG alpha is not added)\n\nThx."}
+ addUserKnob {26 "" l ""}
+ addUserKnob {26 "" l "" T "Powered By Kyo"}
+}
+ Input {
+  inputs 0
+  name Alpha
+  xpos 628
+  ypos 569
+  number 1
+ }
+ Input {
+  inputs 0
+  name PSD
+  selected true
+  xpos 173
+  ypos -751
+ }
+set N4ccac90 [stack 0]
+ Dot {
+  name Dot2
+  xpos 413
+  ypos -579
+ }
+ Shuffle {
+  in none
+  name Shuffle2
+  xpos 379
+  ypos -458
+ }
+ Premult {
+  name Premult1
+  xpos 320
+  ypos -414
+  disable {{Premult1}}
+ }
+set N4cd00a0 [stack 0]
+push $N4ccac90
+ Dot {
+  name Dot3
+  xpos 27
+  ypos -579
+ }
+ Shuffle {
+  in none
+  name Shuffle1
+  xpos -7
+  ypos -438
+ }
+ Merge2 {
+  inputs 2
+  name Merge1
+  xpos 210
+  ypos -340
+  disable {{DisableMerge1}}
+ }
+set N4cd5bd0 [stack 0]
+ Shuffle {
+  in none
+  name Shuffle3
+  xpos -54
+  ypos -258
+ }
+ Premult {
+  name Premult2
+  xpos -54
+  ypos -192
+  disable {{Premult2}}
+ }
+set N4cdb9b0 [stack 0]
+push $N4cd5bd0
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 210
+  ypos -192
+  disable {{DisableMerge2}}
+ }
+set N4cdd1c0 [stack 0]
+ Shuffle {
+  in none
+  name Shuffle12
+  xpos -53
+  ypos -116
+ }
+ Premult {
+  name Premult3
+  xpos -53
+  ypos -66
+  disable {{Premult3}}
+ }
+set N4ce2e90 [stack 0]
+push $N4cdd1c0
+ Merge2 {
+  inputs 2
+  name Merge3
+  xpos 210
+  ypos -66
+  disable {{DisableMerge3}}
+ }
+set N4ce46a0 [stack 0]
+ Shuffle {
+  in none
+  name Shuffle4
+  xpos -59
+  ypos 26
+ }
+ Premult {
+  name Premult4
+  xpos -59
+  ypos 80
+  disable {{Premult4}}
+ }
+set N4cea370 [stack 0]
+push $N4ce46a0
+ Merge2 {
+  inputs 2
+  name Merge4
+  xpos 210
+  ypos 80
+  disable {{DisableMerge4}}
+ }
+set N4cebb80 [stack 0]
+ Shuffle {
+  in none
+  name Shuffle5
+  xpos -64
+  ypos 149
+ }
+ Premult {
+  name Premult5
+  xpos -64
+  ypos 202
+  disable {{Premult5}}
+ }
+set N4cf1890 [stack 0]
+push $N4cebb80
+ Merge2 {
+  inputs 2
+  name Merge5
+  xpos 210
+  ypos 202
+  disable {{DisableMerge5}}
+ }
+set N4cf30a0 [stack 0]
+ Shuffle {
+  in none
+  name Shuffle6
+  xpos -69
+  ypos 297
+ }
+ Premult {
+  name Premult6
+  xpos -69
+  ypos 324
+  disable {{Premult6}}
+ }
+set N4cf8d70 [stack 0]
+push $N4cf30a0
+ Merge2 {
+  inputs 2
+  name Merge6
+  xpos 210
+  ypos 324
+  disable {{DisableMerge6}}
+ }
+set N4cfa580 [stack 0]
+ Shuffle {
+  in none
+  name Shuffle7
+  xpos -65
+  ypos 407
+ }
+ Premult {
+  name Premult7
+  xpos -65
+  ypos 446
+  disable {{Premult7}}
+ }
+set Nb100250 [stack 0]
+push $N4cf8d70
+push $N4cf1890
+push $N4cea370
+push $N4ce2e90
+push $N4cdb9b0
+push $N4cd00a0
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge1
+  xpos 450
+  ypos -205
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge2
+  xpos 450
+  ypos -79
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge4
+  xpos 450
+  ypos 67
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge5
+  xpos 450
+  ypos 189
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge3
+  xpos 450
+  ypos 311
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge6
+  xpos 450
+  ypos 433
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge7
+  xpos 450
+  ypos 556
+ }
+push $Nb100250
+push $N4cfa580
+ Merge2 {
+  inputs 2
+  name Merge7
+  xpos 210
+  ypos 446
+  disable {{DisableMerge7}}
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 210
+  ypos 569
+ }
+ Output {
+  name Output1
+  xpos 210
+  ypos 681
+ }
+end_group

@@ -1,0 +1,198 @@
+#! C:/Program Files/Nuke6.2v1/Nuke6.2.exe -nx
+version 6.2 v1
+Group {
+ name "StereoCam"
+ tile_color 0x660c16ff
+ gl_color 0x3f0c13ff
+ addUserKnob {20 Cam3D l "3D Controls"}
+ addUserKnob {7 InterAxial}
+ InterAxial 0.065
+ addUserKnob {7 Converge l Convergence R -0.2 -20}
+ Converge -1
+ addUserKnob {26 ""}
+ addUserKnob {41 disable_1 l "Disable/Enable Screen Plane" T Card1.disable}
+ addUserKnob {41 value l Opacity T Multiply1.value}
+ addUserKnob {6 Preview2 l "Anaglyph Preview" +STARTLINE}
+ Preview2 true
+ addUserKnob {20 Camera l Cam}
+ addUserKnob {41 file_menu l "Import Export Motion" T CameraAnimation.file_menu}
+ addUserKnob {26 ""}
+ addUserKnob {7 focus l "Focal Length"}
+ focus 24
+ addUserKnob {26 ""}
+ addUserKnob {41 translate l Translate T CameraAnimation.translate}
+ addUserKnob {41 rotate l Rotate T CameraAnimation.rotate}
+ addUserKnob {20 Rendering}
+ addUserKnob {41 antialiasing l Antialiasing T Renderer.antialiasing}
+ addUserKnob {41 filter l Filter T Renderer.filter}
+ addUserKnob {41 shutter l Shutter T Renderer.shutter}
+ addUserKnob {41 samples l "Motion Samples" T Renderer.samples}
+ addUserKnob {26 ""}
+ addUserKnob {41 format l "output format" T Reformat1.format}
+}
+ Axis2 {
+  inputs 0
+  selectable false
+  name CameraAnimation
+  label input
+  selected true
+  xpos -71
+  ypos 177
+ }
+set N4d8d7e0 [stack 0]
+ Camera2 {
+  translate {{(InterAxial)/2*-1} 0 0}
+  rotate {0 {"Convergence.translate.x-translate.x >= 0 ? 270-degrees(atan((Convergence.translate.z-translate.z)/(Convergence.translate.x-translate.x))): -degrees(atan((Convergence.translate.z-translate.z)/(Convergence.translate.x-translate.x)))-270"} 0}
+  uniform_scale 0.2
+  focal {{focus}}
+  name CamLeft
+  xpos -214
+  ypos 253
+ }
+push $N4d8d7e0
+ Axis2 {
+  translate {0 0 {Converge i}}
+  name Convergence
+  xpos -69
+  ypos 269
+ }
+ CheckerBoard2 {
+  inputs 0
+  format {{{parent.Reformat1.format}}}
+  name CheckerBoard1
+  xpos -337
+  ypos 338
+ }
+ Multiply {
+  value 0.02
+  name Multiply1
+  xpos -227
+  ypos 355
+ }
+ Card2 {
+  display textured+lines
+  selectable false
+  rows 3
+  columns 3
+  uniform_scale {{Convergence.translate.left.z*1}}
+  use_vertical_lock true
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name Card1
+  xpos -78
+  ypos 361
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo1
+  xpos 12
+  ypos 361
+ }
+ Input {
+  inputs 0
+  name Geo
+  xpos -334
+  ypos 415
+ }
+ Scene {
+  inputs 2
+  name Scene1
+  xpos -68
+  ypos 395
+ }
+set N9845660 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  format "1280 720 0 0 1280 720 1 720p"
+  name Constant1
+  xpos -78
+  ypos 539
+ }
+ Reformat {
+  format "1280 720 0 0 1280 720 1 720p"
+  name Reformat1
+  xpos -78
+  ypos 501
+ }
+set N9845e70 [stack 0]
+ ScanlineRender {
+  inputs 3
+  shutter 0.25
+  output_motion_vectors_type accurate
+  name Renderer
+  xpos -224
+  ypos 474
+ }
+ set C9846120 [stack 0]
+set N9846120 [stack 0]
+ Saturation {
+  saturation 0
+  name Saturation1
+  xpos -224
+  ypos 561
+ }
+ set C98463d0 [stack 0]
+push $N4d8d7e0
+ Camera2 {
+  translate {{(InterAxial)/2 i} 0 0}
+  rotate {0 {"Convergence.translate.x-translate.x >= 0 ? 270-degrees(atan((Convergence.translate.z-translate.z)/(Convergence.translate.x-translate.x))): -degrees(atan((Convergence.translate.z-translate.z)/(Convergence.translate.x-translate.x)))-270" i} 0}
+  uniform_scale 0.2
+  focal {{focus i x200 24}}
+  focal_point 5
+  name CamRight
+  xpos 76
+  ypos 248
+ }
+push $N9845660
+push $N9845e70
+clone $C9846120 {
+  inputs 3
+  xpos 66
+  ypos 471
+  selected false
+ }
+set N9846930 [stack 0]
+clone $C98463d0 {
+  xpos 66
+  ypos 561
+  selected false
+ }
+ ShuffleCopy {
+  inputs 2
+  red red
+  name RedCyan
+  xpos -20
+  ypos 623
+ }
+push $N9846930
+push $N9846120
+ JoinViews {
+  inputs 2
+  name JoinViews1
+  xpos -131
+  ypos 624
+  viewassoc "left\nright"
+ }
+ Switch {
+  inputs 2
+  which {{Preview2}}
+  name Switch1
+  xpos -75
+  ypos 688
+ }
+ Output {
+  name Output1
+  xpos -75
+  ypos 719
+ }
+end_group

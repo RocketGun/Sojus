@@ -1,0 +1,70 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+Group {
+ name UV
+ help "Please insert your BG image to set resolution of your UV image :)"
+ tile_color 0x9900ff
+ note_font "Verdana Bold Bold"
+ note_font_color 0x510000ff
+ addUserKnob {20 User}
+ addUserKnob {26 tip l "" +STARTLINE T "Hi, if i forgot - this node will generate UV map in size of my input image, good luck to me"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -293
+  ypos -52
+ }
+ Remove {
+  name Remove1
+  selected true
+  xpos -293
+  ypos -26
+ }
+ Reformat {
+  type "to box"
+  format "720 576 0 0 720 576 1.067 PAL_1"
+  box_width {{Input1.bbox.w i}}
+  box_height {{Input1.bbox.t i}}
+  box_fixed true
+  scale {1 1}
+  name Reformat1
+  xpos -293
+  ypos 42
+ }
+set N303f6450 [stack 0]
+ Ramp {
+  p0 {-0.5 0}
+  p1 {{parent.Reformat1.box_width-0.5 i} 0}
+  color {1 0 0 1}
+  name Ramp1
+  xpos -379
+  ypos 82
+ }
+push $N303f6450
+ Ramp {
+  p0 {0 -0.5}
+  p1 {0 {parent.Reformat1.box_height-0.5 i}}
+  color {0 1 0 1}
+  name Ramp2
+  xpos -202
+  ypos 79
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos -302
+  ypos 135
+ }
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos -302
+  ypos 162
+ }
+ Output {
+  name Output1
+  xpos -302
+  ypos 235
+ }
+end_group

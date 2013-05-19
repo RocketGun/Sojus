@@ -1,0 +1,69 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+version 6.3 v4
+Gizmo {
+}
+ CheckerBoard2 {
+  inputs 0
+  color0 {0.4 0.4 0.4 1}
+  color2 {0.4 0.4 0.4 1}
+  centerlinewidth 0
+  name CheckerBoard1
+  xpos 633
+  ypos -390
+ }
+ Reformat {
+  type "to box"
+  box_width {{Boss.bbox.r i}}
+  box_height {{Boss.bbox.t i}}
+  box_fixed true
+  name Reformat1
+  xpos 633
+  ypos -242
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 428
+  ypos -372
+ }
+ Dot {
+  name Boss
+  xpos 462
+  ypos -243
+ }
+add_layer {rgb rgb.UV}
+add_layer {rgba redguard1.glow rgba.beta rgba.water}
+ Colorspace {
+  colorspace_out sRGB
+  name Colorspace1
+  xpos 428
+  ypos -178
+ }
+ Dot {
+  name Dot1
+  xpos 462
+  ypos -78
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge1
+  xpos 633
+  ypos -82
+ }
+set N2570a660 [stack 0]
+ Output {
+  name Output1
+  xpos 633
+  ypos 18
+ }
+push $N2570a660
+ Viewer {
+  useGPUForViewer false
+  viewerProcess None
+  name Viewer1
+  xpos 1060
+  ypos -10
+  hide_input true
+ }
+end_group

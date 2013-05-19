@@ -1,0 +1,140 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name "RoughEdge"
+ help "displacement based on noise\nv1.0 - 090321 - fs\n"
+ mapsize {0.15 0.15}
+ addUserKnob {20 Settings l RoughEdge -STARTLINE}
+ addUserKnob {7 amount R 0 200}
+ amount 10
+ addUserKnob {7 size R 0 200}
+ size 20
+ addUserKnob {7 detail R 0 5}
+ detail 2
+ addUserKnob {26 ""}
+ addUserKnob {12 translate}
+ addUserKnob {7 rotate R 0 180}
+ addUserKnob {7 seed R 0 10}
+}
+ Input {
+  inputs 0
+  name In
+  xpos -60
+  ypos -261
+ }
+ Dot {
+  name Dot1
+  xpos -26
+  ypos -185
+ }
+set N1da9e9b0 [stack 0]
+ Dot {
+  name Dot4
+  xpos -160
+  ypos -185
+ }
+ AdjBBox {
+  numpixels {{parent.IDistort2.uv_scale i}}
+  name AdjBBox1
+  xpos -194
+  ypos 83
+ }
+ Dot {
+  name Dot3
+  xpos -160
+  ypos 166
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos -283
+  ypos -280
+ }
+ Reformat {
+  type "to box"
+  box_width {{Dot1.width}}
+  box_height {{Dot1.height}}
+  box_fixed true
+  name Reformat1
+  xpos -283
+  ypos -185
+ }
+ Noise {
+  size {{parent.size i}}
+  zoffset {{parent.seed i}}
+  lacunarity {{parent.detail i}}
+  translate {{parent.translate i} {parent.translate i}}
+  rotate {{parent.rotate i}}
+  center {960 540}
+  name Noise3
+  xpos -283
+  ypos -140
+ }
+ Grade {
+  white 2
+  add -0.5
+  black_clamp false
+  name Grade31
+  xpos -283
+  ypos -114
+ }
+ Dot {
+  name Dot2
+  xpos -249
+  ypos -51
+ }
+push $N1da9e9b0
+add_layer {displ displ.red displ.green}
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 displ.red
+  from1 rgba.green
+  to1 displ.green
+  name Copy6
+  xpos -60
+  ypos -68
+ }
+ IDistort {
+  uv {displ.red -displ.green}
+  uv_scale {{parent.amount i}}
+  name IDistort1
+  xpos -60
+  ypos -3
+ }
+ IDistort {
+  uv {-displ.red displ.green}
+  uv_scale {{parent.amount i}}
+  name IDistort2
+  xpos -60
+  ypos 35
+ }
+ Remove {
+  channels displ
+  name Remove1
+  xpos -60
+  ypos 86
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos -60
+  ypos 162
+ }
+set N1da1ea90 [stack 0]
+ Output {
+  name Output1
+  xpos -60
+  ypos 299
+ }
+push $N1da1ea90
+ Viewer {
+  viewerProcess None
+  input_process false
+  name Viewer1
+  xpos 180
+  ypos -10
+  hide_input true
+ }
+end_group

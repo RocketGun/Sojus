@@ -1,0 +1,196 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+Group {
+ name EdgeDetect_My
+ inputs 2
+ note_font "Verdana Bold Bold Bold Bold"
+ addUserKnob {20 User}
+ addUserKnob {7 Size R 0 20}
+ Size 3
+ addUserKnob {7 Blur R 0 20}
+ addUserKnob {41 translate l offset T InnerTransform.translate}
+ addUserKnob {6 Mask +STARTLINE}
+ addUserKnob {6 Inside -STARTLINE}
+ addUserKnob {6 Outside -STARTLINE}
+ addUserKnob {41 disable_1 l "Use alpha" t "Use alpha as pattern for edge detect, otherwise rgb will be used" -STARTLINE T Expression1.disable}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 sence l "" +STARTLINE T "Threshhold tweek"}
+ addUserKnob {41 blackpoint T Tweek.blackpoint}
+ addUserKnob {41 whitepoint -STARTLINE T Tweek.whitepoint}
+}
+ Input {
+  inputs 0
+  name Mask
+  xpos -351
+  ypos -498
+  number 1
+ }
+add_layer {rgba rgba.water}
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos -311
+  ypos 160
+  disable {{parent.Mask i}}
+ }
+ Dot {
+  name Dot8
+  xpos -277
+  ypos 291
+ }
+ Input {
+  inputs 0
+  name Source
+  xpos -450
+  ypos -655
+ }
+ Grade {
+  channels rgba
+  black_clamp false
+  name Tweek
+  selected true
+  xpos -450
+  ypos -591
+ }
+ Expression {
+  expr3 (r+g+b)/3
+  name Expression1
+  xpos -450
+  ypos -554
+ }
+ Dot {
+  name Dot10
+  xpos -416
+  ypos -476
+ }
+set N364fa170 [stack 0]
+ Dot {
+  name Dot1
+  xpos -550
+  ypos -476
+ }
+set N364fa4a0 [stack 0]
+ Dot {
+  name Dot3
+  xpos -801
+  ypos -476
+ }
+set N364fa7d0 [stack 0]
+ Dot {
+  name Dot5
+  xpos -962
+  ypos -476
+ }
+ Dot {
+  name Dot6
+  xpos -962
+  ypos -26
+ }
+set N364fae30 [stack 0]
+ Dot {
+  name Dot7
+  xpos -962
+  ypos 75
+ }
+push $N364fae30
+push $N364fa7d0
+ Blur {
+  size {{parent.Size i}}
+  name Blur1
+  xpos -835
+  ypos -438
+ }
+ set C364fb490 [stack 0]
+ Clamp {
+  name Clamp1
+  xpos -835
+  ypos -400
+ }
+ TransformMasked {
+  center {1024 778}
+  name InnerTransform
+  xpos -835
+  ypos -362
+ }
+ Dot {
+  name Dot4
+  xpos -801
+  ypos -272
+ }
+push $N364fa4a0
+clone $C364fb490 {
+  xpos -584
+  ypos -436
+  selected false
+ }
+ Clamp {
+  name Clamp2
+  xpos -581
+  ypos -398
+ }
+ Dot {
+  name Dot2
+  xpos -547
+  ypos -272
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge1
+  xpos -719
+  ypos -276
+ }
+ Grade {
+  channels alpha
+  multiply 20
+  gamma 0.4
+  black_clamp false
+  name Grade1
+  xpos -719
+  ypos -239
+ }
+ Clamp {
+  name Clamp3
+  xpos -719
+  ypos -201
+ }
+ Blur {
+  size {{parent.Blur i}}
+  name Blur2
+  xpos -719
+  ypos -153
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge2
+  xpos -719
+  ypos -30
+  disable {{!parent.Inside i}}
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge3
+  xpos -719
+  ypos 71
+  disable {{!parent.Outside i}}
+ }
+ Dot {
+  name Dot9
+  xpos -685
+  ypos 291
+ }
+push $N364fa170
+ Merge2 {
+  inputs 2+1
+  operation copy
+  name Merge4
+  xpos -450
+  ypos 286
+ }
+ Output {
+  name Output1
+  xpos -450
+  ypos 487
+ }
+end_group

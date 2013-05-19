@@ -1,0 +1,141 @@
+#! /usr/local/Nuke5.0v2b2/Nuke5.0 -nx
+version 5.0200
+Group {
+ addUserKnob {20 User}
+ addUserKnob {41 area T Radial1.area}
+ addUserKnob {41 scale T loupe_zoom.scale}
+ addUserKnob {41 rotate T loupe_zoom.rotate}
+ addUserKnob {41 skew T loupe_zoom.skew}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 edge_softness T Radial1.edge_softness}
+ addUserKnob {41 Distort l "lens distort" T IDistort1.uv_scale}
+ addUserKnob {26 "" l ""}
+ addUserKnob {41 motionblur T loupe_zoom.motionblur}
+ addUserKnob {41 shutter T loupe_zoom.shutter}
+ addUserKnob {41 shutteroffset T loupe_zoom.shutteroffset}
+ addUserKnob {41 disable_GlassShading l @Disable T Merge1.disable}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -440
+  ypos -271
+ }
+ NoOp {
+  name NoOp1
+  xpos -440
+  ypos -231
+ }
+set N981bfc8 [stack 0]
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha black
+  name Shuffle1
+  xpos -320
+  ypos -231
+ }
+ Radial {
+  area {241 166 401 323}
+  softness {{Radial1.edge_softness i x1 0.48305085}}
+  color 10
+  p1 {107 299}
+  p0 {101.5 33}
+  name Radial1
+  xpos -320
+  ypos -165
+  addUserKnob {20 User}
+  addUserKnob {7 edge_softness R 0 3}
+  edge_softness 0.74
+ }
+set N9f58d40 [stack 0]
+ ColorCorrect {
+  channels {rgba.red rgba.green rgba.blue rgba.alpha}
+  saturation 0.508035
+  contrast 0.0825034
+  gamma 1.12733
+  gain 0.294364
+  name ColorCorrect1
+  xpos -210
+  ypos -118
+ }
+push $N9f58d40
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge3
+  xpos -210
+  ypos -13
+ }
+push $N9f58d40
+push $N9f58d40
+push $N981bfc8
+add_layer {dis dis.red dis.green dis.blue dis.alpha}
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 dis
+  name ShuffleCopy1
+  xpos -440
+  ypos -12
+ }
+ TransformMasked {
+  channels rgba
+  scale 1.8
+  center {{"(Radial1.area.x + Radial1.area.r)/2" i x1 989} {"(Radial1.area.y + Radial1.area.t)/2" i x1 433.25}}
+  maskChannel dis.red
+  maskFrom input
+  name loupe_zoom
+  xpos -440
+  ypos 152
+ }
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 dis
+  name ShuffleCopy2
+  xpos -320
+  ypos 159
+ }
+ PerspDistort {
+  channels rgba
+  maskChannel dis.red
+  maskFrom input
+  fringe true
+  name PerspDistort1
+  xpos -320
+  ypos 186
+  disable true
+ }
+ IDistort {
+  uv dis
+  uv_scale 0
+  maskChannel rgba.red
+  premultiplied true
+  name IDistort1
+  xpos -320
+  ypos 225
+ }
+ Merge2 {
+  inputs 2
+  invert_mask true
+  name Merge1
+  selected true
+  xpos -210
+  ypos 232
+ }
+ Output {
+  name Output1
+  xpos -210
+  ypos 332
+ }
+end_group

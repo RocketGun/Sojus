@@ -1,0 +1,95 @@
+#! E:/Program Files (x86)/Nuke6.0v4/Nuke6.0.exe -nx
+version 6.0 v4
+Group {
+ inputs 3
+}
+ Input {
+  inputs 0
+  name FG
+  xpos -733
+  ypos 201
+ }
+ Clamp {
+  name Clamp3
+  xpos -733
+  ypos 227
+ }
+set N41f057f0 [stack 0]
+ Input {
+  inputs 0
+  name MaskFG
+  xpos -1055
+  ypos 268
+  number 2
+ }
+ Input {
+  inputs 0
+  name BG
+  xpos -933
+  ypos 195
+  number 1
+ }
+ Clamp {
+  name Clamp2
+  xpos -933
+  ypos 221
+ }
+ Merge2 {
+  inputs 2
+  operation max
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  mix 0.994
+  name Merge4
+  xpos -933
+  ypos 276
+ }
+set N3acabea0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge2
+  xpos -933
+  ypos 380
+ }
+ Dot {
+  name Dot1
+  xpos -899
+  ypos 546
+ }
+push $N3acabea0
+push $N41f057f0
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos -733
+  ypos 380
+ }
+ Clamp {
+  name Clamp1
+  xpos -733
+  ypos 450
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge3
+  xpos -733
+  ypos 542
+ }
+set N3acacad0 [stack 0]
+ Output {
+  name Output1
+  xpos -733
+  ypos 642
+ }
+push $N3acacad0
+ Viewer {
+  input_process false
+  MonitorOutEnable true
+  name Viewer1
+  selected true
+  xpos -1094
+  ypos 402
+ }
+end_group

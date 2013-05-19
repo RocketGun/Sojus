@@ -1,0 +1,1319 @@
+#! C:/Program Files/Nuke6.0v4/Nuke6.0.exe -nx
+version 6.0 v4
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {3 Time}
+ Time 5
+}
+ Input {
+  inputs 0
+  name Axis
+  label Axis
+  xpos 1020
+  ypos -947
+  number 1
+ }
+ Axis2 {
+  name Moover
+  xpos 1030
+  ypos -880
+ }
+ Axis2 {
+  translate {{curve(frame+Time) i R x1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve(frame+Time) i R x1 0.001500000013 0.003632653039 0.009132653475 0.01665306091 0.02484693937 0.03236734867 0.03786734864 0.03999999911 0.03924247622 0.03714814782 0.03398437425 0.03001851775 0.02551794052 0.02074999921 0.01598205976 0.0114814816 0.007515625097 0.004351851996 0.002257523127 0.001500000013 0.003632653039 0.009132653475 0.01665306091 0.02484693937 0.03236734867 0.03786734864 0.03999999911 0.03924247622 0.03714814782 0.03398437425 0.03001851775 0.02551794052 0.02074999921 0.01598205976 0.0114814816 0.007515625097 0.004351851996 0.002257523127 0.001500000013 0.003632653039 0.009132653475 0.01665306091 0.02484693937 0.03236734867 0.03786734864 0.03999999911 0.03924247622 0.03714814782 0.03398437425 0.03001851775 0.02551794052 0.02074999921 0.01598205976 0.0114814816 0.007515625097 0.004351851996 0.002257523127 0.001500000013 0.003632653039 0.009132653475 0.01665306091 0.02484693937 0.03236734867 0.03786734864 0.03999999911 0.03924247622 0.03714814782 0.03398437425 0.03001851775 0.02551794052 0.02074999921 0.01598205976 0.0114814816 0.007515625097 0.004351851996 0.002257523127 0.001500000013 0.003632653039 0.009132653475 0.01665306091 0.02484693937 0.03236734867 0.03786734864 0.03999999911 0.03924247622 0.03714814782 0.03398437425 0.03001851775 0.02551794052 0.02074999921 0.01598205976 0.0114814816 0.007515625097 0.004351851996 0.002257523127 0.001500000013 0.003632653039 0.009132653475 0.01665306091 0.02484693937} {curve(frame+Time) i R x1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  name Body
+  xpos 1030
+  ypos -758
+ }
+set N5163a350 [stack 0]
+ Read {
+  inputs 0
+  file "C:/Program Files/Nuke6.0v4/plugins/user/user/Pic/DWHJ_20.jpg"
+  format "1600 1200 0 0 1600 1200 1 "
+  name Read1
+  xpos 484
+  ypos -1067
+ }
+set N5163b1f0 [stack 0]
+ RotoPaint {
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  output alpha
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Shape1" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 4.5 S 0 2 S 0 0 S 0 1 S 0 1 S 0 0 S 0 404.188 S 0 595 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 24
+      0 S 0 2 S 0 -0.5 0 0 S 0 286 S 0 630 0 0 S 0 -2 S 0 0.5 0 0 S 0 -16 S 0 0.5 0 0 S 0 422.5 S 0 652 0 0 S 0 16 S 0 -0.5 0 0 S 0 -13 S 0 11 0 0 S 0 458.5 S 0 645.5 0 0 S 0 13 S 0 -11 0 0 S 0 -3 S 0 13 0 0 S 0 479.5 S 0 614.5 0 0 S 0 3 S 0 -13 0 0 S 0 12 S 0 16 0 0 S 0 487.5 S 0 572 0 0 S 0 -12 S 0 -16 0 0 S 0 35.5 S 0 4.5 0 0 S 0 454 S 0 532 0 0 S 0 -35.5 S 0 -4.5 0 0 S 0 16.5 S 0 -8.5 0 0 S 0 360 S 0 538 0 0 S 0 -16.5 S 0 8.5 0 0 S 0 8 S 0 -21.5 0 0 S 0 285.5 S 0 576 0 0 S 0 -8 S 0 21.5 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 24
+      0 S 0 2 S 0 -0.5 0 0 S 0 0 S 0 0 0 0 S 0 -2 S 0 0.5 0 0 S 0 -16 S 0 0.5 0 0 S 0 0 S 0 0 0 0 S 0 16 S 0 -0.5 0 0 S 0 -13 S 0 11 0 0 S 0 0 S 0 0 0 0 S 0 13 S 0 -11 0 0 S 0 -3 S 0 13 0 0 S 0 0 S 0 0 0 0 S 0 3 S 0 -13 0 0 S 0 12 S 0 16 0 0 S 0 0 S 0 0 0 0 S 0 -12 S 0 -16 0 0 S 0 35.5 S 0 4.5 0 0 S 0 0 S 0 0 0 0 S 0 -35.5 S 0 -4.5 0 0 S 0 16.5 S 0 -8.5 0 0 S 0 0 S 0 0 0 0 S 0 -16.5 S 0 8.5 0 0 S 0 8 S 0 -21.5 0 0 S 0 0 S 0 0 0 0 S 0 -8 S 0 21.5 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 72 "ltm" S 0 72 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  lifetime_type "all frames"
+  lifetime_start 72
+  lifetime_end 72
+  locked false
+  translate {4.5 2}
+  center {404.1875 595}
+  motionblur_shutter_offset_type centred
+  source_transform_center {960 540}
+  name RotoPaint6
+  xpos 599
+  ypos -925
+ }
+push $N5163b1f0
+ Transform {
+  translate {8.5 19.5}
+  rotate -21.30037241
+  center {440.5 602}
+  name Transform2
+  xpos 330
+  ypos -919
+ }
+push $N5163b1f0
+ Merge2 {
+  inputs 2+1
+  name Merge1
+  xpos 484
+  ypos -882
+ }
+ Shuffle {
+  alpha black
+  name Shuffle1
+  xpos 484
+  ypos -856
+ }
+set N3d4f3da0 [stack 0]
+ RotoPaint {
+  toolbar_brush_size 186
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_start 90
+  toolbar_lifetime_end 90
+  toolbar_paint_source foreground
+  toolbar_effect_parameter1 15
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  output rgb
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 46
+  Node: {
+   NodeName: "Stroke46" {
+    Flag: 576
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1456.33 S 0 484 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 1460 S 0 486 S 0 1 0 0 S 0 1456 S 0 484 S 0 1 0 0 S 0 1453 S 0 482 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 186 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke45" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1445.5 S 0 487 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 S 0 1444 S 0 487 S 0 1 0 0 S 0 1447 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 186 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke44" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1364.33 S 0 487.333 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 1363 S 0 487 S 0 1 0 0 S 0 1362 S 0 488 S 0 1 0 0 S 0 1368 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 186 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke43" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1318 S 0 478.5 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 S 0 1318 S 0 479 S 0 1 0 0 S 0 1318 S 0 478 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 186 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke42" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 505.25 S 0 496.5 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 4
+     0 S 0 540 S 0 497 S 0 1 0 0 S 0 533 S 0 498 S 0 1 0 0 S 0 491 S 0 498 S 0 1 0 0 S 0 457 S 0 493 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 95 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke41" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 531 S 0 495.333 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 530 S 0 497 S 0 1 0 0 S 0 529 S 0 498 S 0 1 0 0 S 0 534 S 0 491 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 95 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke40" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 506 S 0 483.333 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 504 S 0 484 S 0 1 0 0 S 0 504 S 0 485 S 0 1 0 0 S 0 510 S 0 481 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 95 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke39" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 476.667 S 0 489.333 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 474 S 0 491 S 0 1 0 0 S 0 475 S 0 490 S 0 1 0 0 S 0 481 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 196 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke38" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 419.5 S 0 471 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 S 0 418 S 0 474 S 0 1 0 0 S 0 421 S 0 468 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 196 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke37" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 364.975 S 0 472.375 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 40
+     0 S 0 402 S 0 481 S 0 1 0 0 S 0 410 S 0 491 S 0 1 0 0 S 0 409 S 0 482 S 0 1 0 0 S 0 401 S 0 468 S 0 1 0 0 S 0 407 S 0 486 S 0 1 0 0 S 0 403 S 0 486 S 0 1 0 0 S 0 398 S 0 469 S 0 1 0 0 S 0 402 S 0 484 S 0 1 0 0 S 0 391 S 0 480 S 0 1 0 0 S 0 384 S 0 463 S 0 1 0 0 S 0 389 S 0 480 S 0 1 0 0 S 0 382 S 0 481 S 0 1 0 0 S 0 374 S 0 466 S 0 1 0 0 S 0 380 S 0 475 S 0 1 0 0 S 0 371 S 0 478 S 0 1 0 0 S 0 359 S 0 463 S 0 1 0 0 S 0 362 S 0 474 S 0 1 0 0 S 0 348 S 0 474 S 0 1 0 0 S 0 336 S 0 460 S 0 1 0 0 S 0 346 S 0 475 S 0 1 0 0 S 0 334 S 0 474 S 0 1 0 0 S 0 325 S 0 463 S 0 1 0 0 S 0 330 S 0 475 S 0 1 0 0 S 0 312 S 0 469 S 0 1 0 0 S 0 312 S 0 463 S 0 1 0 0 S 0 349 S 0 466 S 0 1 0 0 S 0 376 S 0 467 S 0 1 0 0 S 0 353 S 0 467 S 0 1 0 0 S 0 310 S 0 466 S 0 1 0 0 S 0 330 S 0 467 S 0 1 0 0 S 0 335 S 0 467 S 0 1 0 0 S 0 379 S 0 472 S 0 1 0 0 S 0 373 S 0 472 S 0 1 0 0 S 0 324 S 0 466 S 0 1 0 0 S 0 350 S 0 468 S 0 1 0 0 S 0 395 S 0 474 S 0 1 0 0 S 0 380 S 0 475 S 0 1 0 0 S 0 328 S 0 468 S 0 1 0 0 S 0 356 S 0 467 S 0 1 0 0 S 0 394 S 0 473 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 8 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke36" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 524.667 S 0 497 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 522 S 0 500 S 0 1 0 0 S 0 523 S 0 499 S 0 1 0 0 S 0 529 S 0 492 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 8 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke35" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 486.444 S 0 498.056 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 18
+     0 S 0 468 S 0 503 S 0 1 0 0 S 0 462 S 0 505 S 0 1 0 0 S 0 478 S 0 498 S 0 1 0 0 S 0 491 S 0 493 S 0 1 0 0 S 0 498 S 0 491 S 0 1 0 0 S 0 502 S 0 490 S 0 1 0 0 S 0 498 S 0 490 S 0 1 0 0 S 0 475 S 0 496 S 0 1 0 0 S 0 472 S 0 496 S 0 1 0 0 S 0 445 S 0 502 S 0 1 0 0 S 0 493 S 0 504 S 0 1 0 0 S 0 506 S 0 502 S 0 1 0 0 S 0 498 S 0 499 S 0 1 0 0 S 0 496 S 0 499 S 0 1 0 0 S 0 469 S 0 505 S 0 1 0 0 S 0 498 S 0 498 S 0 1 0 0 S 0 502 S 0 497 S 0 1 0 0 S 0 505 S 0 497 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 8 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke34" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 463.731 S 0 466.077 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 26
+     0 S 0 445 S 0 466 S 0 1 0 0 S 0 446 S 0 466 S 0 1 0 0 S 0 479 S 0 476 S 0 1 0 0 S 0 481 S 0 476 S 0 1 0 0 S 0 485 S 0 476 S 0 1 0 0 S 0 470 S 0 469 S 0 1 0 0 S 0 449 S 0 467 S 0 1 0 0 S 0 472 S 0 464 S 0 1 0 0 S 0 498 S 0 464 S 0 1 0 0 S 0 485 S 0 469 S 0 1 0 0 S 0 451 S 0 466 S 0 1 0 0 S 0 467 S 0 462 S 0 1 0 0 S 0 487 S 0 464 S 0 1 0 0 S 0 469 S 0 464 S 0 1 0 0 S 0 449 S 0 461 S 0 1 0 0 S 0 478 S 0 462 S 0 1 0 0 S 0 481 S 0 467 S 0 1 0 0 S 0 445 S 0 466 S 0 1 0 0 S 0 442 S 0 466 S 0 1 0 0 S 0 443 S 0 458 S 0 1 0 0 S 0 482 S 0 463 S 0 1 0 0 S 0 478 S 0 470 S 0 1 0 0 S 0 462 S 0 469 S 0 1 0 0 S 0 449 S 0 467 S 0 1 0 0 S 0 431 S 0 460 S 0 1 0 0 S 0 433 S 0 460 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 8 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke33" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 479.563 S 0 501.188 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 16
+     0 S 0 450 S 0 504 S 0 1 0 0 S 0 455 S 0 504 S 0 1 0 0 S 0 485 S 0 498 S 0 1 0 0 S 0 488 S 0 497 S 0 1 0 0 S 0 482 S 0 497 S 0 1 0 0 S 0 463 S 0 500 S 0 1 0 0 S 0 461 S 0 502 S 0 1 0 0 S 0 456 S 0 509 S 0 1 0 0 S 0 458 S 0 509 S 0 1 0 0 S 0 488 S 0 503 S 0 1 0 0 S 0 499 S 0 498 S 0 1 0 0 S 0 498 S 0 498 S 0 1 0 0 S 0 485 S 0 506 S 0 1 0 0 S 0 486 S 0 506 S 0 1 0 0 S 0 509 S 0 494 S 0 1 0 0 S 0 510 S 0 494 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 8 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke32" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 459.182 S 0 499.364 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 11
+     0 S 0 455 S 0 497 S 0 1 0 0 S 0 455 S 0 498 S 0 1 0 0 S 0 464 S 0 499 S 0 1 0 0 S 0 466 S 0 498 S 0 1 0 0 S 0 451 S 0 499 S 0 1 0 0 S 0 461 S 0 498 S 0 1 0 0 S 0 463 S 0 498 S 0 1 0 0 S 0 468 S 0 500 S 0 1 0 0 S 0 450 S 0 503 S 0 1 0 0 S 0 449 S 0 503 S 0 1 0 0 S 0 469 S 0 500 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.009 "g" S 0 0.00407439 "b" S 0 0.00305301 "a" S 0 1 "bs" S 0 8 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke31" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 327.667 S 0 471.333 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 334 S 0 472 S 0 1 0 0 S 0 330 S 0 470 S 0 1 0 0 S 0 319 S 0 472 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.045 "g" S 0 0.020372 "b" S 0 0.0152651 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke30" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 374.5 S 0 471.5 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 2
+     0 S 0 382 S 0 473 S 0 1 0 0 S 0 367 S 0 470 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.045 "g" S 0 0.020372 "b" S 0 0.0152651 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke29" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 526.25 S 0 483.75 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 4
+     0 S 0 535 S 0 481 S 0 1 0 0 S 0 532 S 0 481 S 0 1 0 0 S 0 523 S 0 486 S 0 1 0 0 S 0 515 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.045 "g" S 0 0.020372 "b" S 0 0.0152651 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke28" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 499 S 0 477.667 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 503 S 0 484 S 0 1 0 0 S 0 497 S 0 475 S 0 1 0 0 S 0 497 S 0 474 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.045 "g" S 0 0.020372 "b" S 0 0.0152651 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke27" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 473.75 S 0 478 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 8
+     0 S 0 462 S 0 476 S 0 1 0 0 S 0 460 S 0 474 S 0 1 0 0 S 0 463 S 0 469 S 0 1 0 0 S 0 479 S 0 481 S 0 1 0 0 S 0 485 S 0 490 S 0 1 0 0 S 0 481 S 0 485 S 0 1 0 0 S 0 474 S 0 473 S 0 1 0 0 S 0 486 S 0 476 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.045 "g" S 0 0.020372 "b" S 0 0.0152651 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke26" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 436.25 S 0 483.625 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 8
+     0 S 0 415 S 0 494 S 0 1 0 0 S 0 416 S 0 486 S 0 1 0 0 S 0 438 S 0 484 S 0 1 0 0 S 0 446 S 0 488 S 0 1 0 0 S 0 442 S 0 481 S 0 1 0 0 S 0 439 S 0 475 S 0 1 0 0 S 0 446 S 0 480 S 0 1 0 0 S 0 448 S 0 481 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.045 "g" S 0 0.020372 "b" S 0 0.0152651 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke25" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 537 S 0 482.833 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 6
+     0 S 0 532 S 0 487 S 0 1 0 0 S 0 533 S 0 486 S 0 1 0 0 S 0 546 S 0 482 S 0 1 0 0 S 0 545 S 0 484 S 0 1 0 0 S 0 533 S 0 480 S 0 1 0 0 S 0 533 S 0 478 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.215 "g" S 0 0.0973327 "b" S 0 0.072933 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke24" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 489.75 S 0 484.75 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 4
+     0 S 0 470 S 0 484 S 0 1 0 0 S 0 469 S 0 486 S 0 1 0 0 S 0 508 S 0 484 S 0 1 0 0 S 0 512 S 0 485 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.215 "g" S 0 0.0973327 "b" S 0 0.072933 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke23" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 357 S 0 470.429 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 7
+     0 S 0 380 S 0 468 S 0 1 0 0 S 0 377 S 0 468 S 0 1 0 0 S 0 353 S 0 464 S 0 1 0 0 S 0 346 S 0 474 S 0 1 0 0 S 0 338 S 0 475 S 0 1 0 0 S 0 335 S 0 469 S 0 1 0 0 S 0 370 S 0 475 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.215 "g" S 0 0.0973327 "b" S 0 0.072933 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke22" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 443 S 0 486.667 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 3
+     0 S 0 452 S 0 499 S 0 1 0 0 S 0 434 S 0 488 S 0 1 0 0 S 0 443 S 0 473 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.215 "g" S 0 0.0973327 "b" S 0 0.072933 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke21" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 457 S 0 482.4 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 10
+     0 S 0 468 S 0 491 S 0 1 0 0 S 0 461 S 0 485 S 0 1 0 0 S 0 455 S 0 476 S 0 1 0 0 S 0 451 S 0 467 S 0 1 0 0 S 0 479 S 0 478 S 0 1 0 0 S 0 484 S 0 498 S 0 1 0 0 S 0 450 S 0 503 S 0 1 0 0 S 0 432 S 0 478 S 0 1 0 0 S 0 432 S 0 475 S 0 1 0 0 S 0 458 S 0 473 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.215 "g" S 0 0.0973327 "b" S 0 0.072933 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke20" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 456 S 0 476.5 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 10
+     0 S 0 448 S 0 474 S 0 1 0 0 S 0 448 S 0 476 S 0 1 0 0 S 0 456 S 0 485 S 0 1 0 0 S 0 448 S 0 473 S 0 1 0 0 S 0 446 S 0 469 S 0 1 0 0 S 0 464 S 0 480 S 0 1 0 0 S 0 466 S 0 491 S 0 1 0 0 S 0 451 S 0 474 S 0 1 0 0 S 0 461 S 0 468 S 0 1 0 0 S 0 472 S 0 475 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 0.215 "g" S 0 0.0973327 "b" S 0 0.072933 "a" S 0 1 "bs" S 0 102 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 0 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke19" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 364.583 S 0 474.833 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 12
+     0 S 0 466 S 0 486 S 0 1 0 0 S 0 455 S 0 485 S 0 1 0 0 S 0 391 S 0 472 S 0 1 0 0 S 0 406 S 0 475 S 0 1 0 0 S 0 431 S 0 487 S 0 1 0 0 S 0 388 S 0 476 S 0 1 0 0 S 0 336 S 0 466 S 0 1 0 0 S 0 319 S 0 469 S 0 1 0 0 S 0 318 S 0 475 S 0 1 0 0 S 0 313 S 0 475 S 0 1 0 0 S 0 287 S 0 468 S 0 1 0 0 S 0 265 S 0 464 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 95 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke18" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 609.154 S 0 474.077 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 13
+     0 S 0 566 S 0 484 S 0 1 0 0 S 0 569 S 0 482 S 0 1 0 0 S 0 623 S 0 478 S 0 1 0 0 S 0 631 S 0 479 S 0 1 0 0 S 0 601 S 0 475 S 0 1 0 0 S 0 584 S 0 473 S 0 1 0 0 S 0 624 S 0 472 S 0 1 0 0 S 0 660 S 0 475 S 0 1 0 0 S 0 640 S 0 474 S 0 1 0 0 S 0 600 S 0 467 S 0 1 0 0 S 0 604 S 0 467 S 0 1 0 0 S 0 605 S 0 467 S 0 1 0 0 S 0 612 S 0 470 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 95 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke17" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 531.231 S 0 482.385 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 13
+     0 S 0 509 S 0 491 S 0 1 0 0 S 0 538 S 0 487 S 0 1 0 0 S 0 564 S 0 490 S 0 1 0 0 S 0 548 S 0 486 S 0 1 0 0 S 0 540 S 0 485 S 0 1 0 0 S 0 497 S 0 481 S 0 1 0 0 S 0 504 S 0 480 S 0 1 0 0 S 0 548 S 0 485 S 0 1 0 0 S 0 558 S 0 487 S 0 1 0 0 S 0 518 S 0 481 S 0 1 0 0 S 0 498 S 0 473 S 0 1 0 0 S 0 538 S 0 472 S 0 1 0 0 S 0 546 S 0 473 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 95 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 2 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 15 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke16" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1450.12 S 0 484.12 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 25
+     0 S 0 1414 S 0 480 S 0 1 0 0 S 0 1432 S 0 482 S 0 1 0 0 S 0 1447 S 0 490 S 0 1 0 0 S 0 1434 S 0 488 S 0 1 0 0 S 0 1411 S 0 475 S 0 1 0 0 S 0 1434 S 0 479 S 0 1 0 0 S 0 1454 S 0 491 S 0 1 0 0 S 0 1445 S 0 491 S 0 1 0 0 S 0 1440 S 0 475 S 0 1 0 0 S 0 1463 S 0 479 S 0 1 0 0 S 0 1474 S 0 490 S 0 1 0 0 S 0 1464 S 0 486 S 0 1 0 0 S 0 1466 S 0 476 S 0 1 0 0 S 0 1480 S 0 484 S 0 1 0 0 S 0 1482 S 0 488 S 0 1 0 0 S 0 1478 S 0 479 S 0 1 0 0 S 0 1490 S 0 475 S 0 1 0 0 S 0 1499 S 0 480 S 0 1 0 0 S 0 1489 S 0 485 S 0 1 0 0 S 0 1477 S 0 481 S 0 1 0 0 S 0 1453 S 0 484 S 0 1 0 0 S 0 1423 S 0 487 S 0 1 0 0 S 0 1404 S 0 492 S 0 1 0 0 S 0 1397 S 0 493 S 0 1 0 0 S 0 1403 S 0 493 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 307 "sty" S 0 -149 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke15" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1388.32 S 0 483.08 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 25
+     0 S 0 1343 S 0 487 S 0 1 0 0 S 0 1345 S 0 486 S 0 1 0 0 S 0 1374 S 0 487 S 0 1 0 0 S 0 1374 S 0 492 S 0 1 0 0 S 0 1345 S 0 494 S 0 1 0 0 S 0 1349 S 0 480 S 0 1 0 0 S 0 1382 S 0 481 S 0 1 0 0 S 0 1385 S 0 481 S 0 1 0 0 S 0 1394 S 0 490 S 0 1 0 0 S 0 1379 S 0 487 S 0 1 0 0 S 0 1376 S 0 481 S 0 1 0 0 S 0 1400 S 0 485 S 0 1 0 0 S 0 1403 S 0 485 S 0 1 0 0 S 0 1414 S 0 488 S 0 1 0 0 S 0 1392 S 0 485 S 0 1 0 0 S 0 1394 S 0 478 S 0 1 0 0 S 0 1422 S 0 479 S 0 1 0 0 S 0 1429 S 0 485 S 0 1 0 0 S 0 1396 S 0 481 S 0 1 0 0 S 0 1398 S 0 469 S 0 1 0 0 S 0 1423 S 0 474 S 0 1 0 0 S 0 1418 S 0 485 S 0 1 0 0 S 0 1388 S 0 484 S 0 1 0 0 S 0 1391 S 0 475 S 0 1 0 0 S 0 1394 S 0 478 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 245 "sty" S 0 -139 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke14" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1281.94 S 0 482 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 32
+     0 S 0 1253 S 0 480 S 0 1 0 0 S 0 1248 S 0 481 S 0 1 0 0 S 0 1252 S 0 475 S 0 1 0 0 S 0 1267 S 0 480 S 0 1 0 0 S 0 1249 S 0 482 S 0 1 0 0 S 0 1229 S 0 481 S 0 1 0 0 S 0 1260 S 0 478 S 0 1 0 0 S 0 1298 S 0 482 S 0 1 0 0 S 0 1286 S 0 486 S 0 1 0 0 S 0 1228 S 0 486 S 0 1 0 0 S 0 1220 S 0 486 S 0 1 0 0 S 0 1248 S 0 487 S 0 1 0 0 S 0 1270 S 0 487 S 0 1 0 0 S 0 1258 S 0 487 S 0 1 0 0 S 0 1226 S 0 486 S 0 1 0 0 S 0 1241 S 0 481 S 0 1 0 0 S 0 1283 S 0 480 S 0 1 0 0 S 0 1309 S 0 485 S 0 1 0 0 S 0 1302 S 0 484 S 0 1 0 0 S 0 1304 S 0 476 S 0 1 0 0 S 0 1342 S 0 476 S 0 1 0 0 S 0 1346 S 0 481 S 0 1 0 0 S 0 1308 S 0 481 S 0 1 0 0 S 0 1304 S 0 475 S 0 1 0 0 S 0 1334 S 0 480 S 0 1 0 0 S 0 1326 S 0 488 S 0 1 0 0 S 0 1296 S 0 479 S 0 1 0 0 S 0 1302 S 0 475 S 0 1 0 0 S 0 1320 S 0 487 S 0 1 0 0 S 0 1320 S 0 492 S 0 1 0 0 S 0 1296 S 0 480 S 0 1 0 0 S 0 1297 S 0 480 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 170 "sty" S 0 -116 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke13" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1098.24 S 0 492.468 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 79
+     0 S 0 1038 S 0 496 S 0 1 0 0 S 0 1039 S 0 496 S 0 1 0 0 S 0 1068 S 0 488 S 0 1 0 0 S 0 1045 S 0 487 S 0 1 0 0 S 0 1021 S 0 493 S 0 1 0 0 S 0 1037 S 0 502 S 0 1 0 0 S 0 1066 S 0 496 S 0 1 0 0 S 0 1061 S 0 494 S 0 1 0 0 S 0 1032 S 0 498 S 0 1 0 0 S 0 1018 S 0 505 S 0 1 0 0 S 0 1034 S 0 514 S 0 1 0 0 S 0 1042 S 0 517 S 0 1 0 0 S 0 1028 S 0 516 S 0 1 0 0 S 0 1003 S 0 515 S 0 1 0 0 S 0 998 S 0 516 S 0 1 0 0 S 0 1020 S 0 520 S 0 1 0 0 S 0 1025 S 0 521 S 0 1 0 0 S 0 1001 S 0 517 S 0 1 0 0 S 0 978 S 0 517 S 0 1 0 0 S 0 986 S 0 517 S 0 1 0 0 S 0 1016 S 0 516 S 0 1 0 0 S 0 1030 S 0 516 S 0 1 0 0 S 0 1015 S 0 516 S 0 1 0 0 S 0 1008 S 0 516 S 0 1 0 0 S 0 990 S 0 514 S 0 1 0 0 S 0 1056 S 0 502 S 0 1 0 0 S 0 1081 S 0 500 S 0 1 0 0 S 0 1066 S 0 499 S 0 1 0 0 S 0 1043 S 0 500 S 0 1 0 0 S 0 1062 S 0 494 S 0 1 0 0 S 0 1102 S 0 494 S 0 1 0 0 S 0 1097 S 0 497 S 0 1 0 0 S 0 1055 S 0 492 S 0 1 0 0 S 0 1060 S 0 482 S 0 1 0 0 S 0 1114 S 0 485 S 0 1 0 0 S 0 1123 S 0 491 S 0 1 0 0 S 0 1082 S 0 490 S 0 1 0 0 S 0 1063 S 0 476 S 0 1 0 0 S 0 1064 S 0 475 S 0 1 0 0 S 0 1100 S 0 476 S 0 1 0 0 S 0 1120 S 0 490 S 0 1 0 0 S 0 1099 S 0 496 S 0 1 0 0 S 0 1072 S 0 481 S 0 1 0 0 S 0 1108 S 0 472 S 0 1 0 0 S 0 1136 S 0 479 S 0 1 0 0 S 0 1129 S 0 485 S 0 1 0 0 S 0 1096 S 0 475 S 0 1 0 0 S 0 1106 S 0 466 S 0 1 0 0 S 0 1141 S 0 476 S 0 1 0 0 S 0 1144 S 0 490 S 0 1 0 0 S 0 1121 S 0 486 S 0 1 0 0 S 0 1133 S 0 469 S 0 1 0 0 S 0 1159 S 0 474 S 0 1 0 0 S 0 1168 S 0 487 S 0 1 0 0 S 0 1151 S 0 487 S 0 1 0 0 S 0 1170 S 0 472 S 0 1 0 0 S 0 1188 S 0 486 S 0 1 0 0 S 0 1188 S 0 487 S 0 1 0 0 S 0 1174 S 0 498 S 0 1 0 0 S 0 1168 S 0 478 S 0 1 0 0 S 0 1188 S 0 469 S 0 1 0 0 S 0 1192 S 0 492 S 0 1 0 0 S 0 1177 S 0 492 S 0 1 0 0 S 0 1188 S 0 474 S 0 1 0 0 S 0 1198 S 0 476 S 0 1 0 0 S 0 1189 S 0 493 S 0 1 0 0 S 0 1198 S 0 479 S 0 1 0 0 S 0 1204 S 0 481 S 0 1 0 0 S 0 1196 S 0 494 S 0 1 0 0 S 0 1181 S 0 493 S 0 1 0 0 S 0 1171 S 0 476 S 0 1 0 0 S 0 1183 S 0 484 S 0 1 0 0 S 0 1164 S 0 497 S 0 1 0 0 S 0 1127 S 0 490 S 0 1 0 0 S 0 1136 S 0 485 S 0 1 0 0 S 0 1157 S 0 488 S 0 1 0 0 S 0 1121 S 0 487 S 0 1 0 0 S 0 1117 S 0 481 S 0 1 0 0 S 0 1136 S 0 484 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 170 "sty" S 0 -116 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke12" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 762.968 S 0 481.581 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 31
+     0 S 0 703 S 0 480 S 0 1 0 0 S 0 701 S 0 480 S 0 1 0 0 S 0 737 S 0 476 S 0 1 0 0 S 0 761 S 0 469 S 0 1 0 0 S 0 758 S 0 473 S 0 1 0 0 S 0 725 S 0 476 S 0 1 0 0 S 0 715 S 0 478 S 0 1 0 0 S 0 744 S 0 474 S 0 1 0 0 S 0 773 S 0 478 S 0 1 0 0 S 0 773 S 0 482 S 0 1 0 0 S 0 738 S 0 482 S 0 1 0 0 S 0 720 S 0 475 S 0 1 0 0 S 0 757 S 0 479 S 0 1 0 0 S 0 788 S 0 493 S 0 1 0 0 S 0 779 S 0 499 S 0 1 0 0 S 0 737 S 0 482 S 0 1 0 0 S 0 743 S 0 478 S 0 1 0 0 S 0 778 S 0 486 S 0 1 0 0 S 0 791 S 0 497 S 0 1 0 0 S 0 757 S 0 490 S 0 1 0 0 S 0 752 S 0 488 S 0 1 0 0 S 0 722 S 0 473 S 0 1 0 0 S 0 761 S 0 474 S 0 1 0 0 S 0 797 S 0 486 S 0 1 0 0 S 0 797 S 0 487 S 0 1 0 0 S 0 766 S 0 472 S 0 1 0 0 S 0 775 S 0 469 S 0 1 0 0 S 0 823 S 0 490 S 0 1 0 0 S 0 851 S 0 504 S 0 1 0 0 S 0 833 S 0 491 S 0 1 0 0 S 0 797 S 0 468 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 -40 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke11" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 696.929 S 0 477.071 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 14
+     0 S 0 658 S 0 470 S 0 1 0 0 S 0 661 S 0 470 S 0 1 0 0 S 0 695 S 0 476 S 0 1 0 0 S 0 700 S 0 474 S 0 1 0 0 S 0 707 S 0 475 S 0 1 0 0 S 0 706 S 0 475 S 0 1 0 0 S 0 706 S 0 476 S 0 1 0 0 S 0 707 S 0 476 S 0 1 0 0 S 0 709 S 0 478 S 0 1 0 0 S 0 714 S 0 481 S 0 1 0 0 S 0 710 S 0 481 S 0 1 0 0 S 0 694 S 0 482 S 0 1 0 0 S 0 690 S 0 481 S 0 1 0 0 S 0 700 S 0 484 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 -40 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke10" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 651.667 S 0 486.933 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 15
+     0 S 0 596 S 0 488 S 0 1 0 0 S 0 598 S 0 487 S 0 1 0 0 S 0 622 S 0 488 S 0 1 0 0 S 0 626 S 0 487 S 0 1 0 0 S 0 636 S 0 487 S 0 1 0 0 S 0 642 S 0 487 S 0 1 0 0 S 0 652 S 0 487 S 0 1 0 0 S 0 656 S 0 486 S 0 1 0 0 S 0 662 S 0 486 S 0 1 0 0 S 0 668 S 0 486 S 0 1 0 0 S 0 674 S 0 487 S 0 1 0 0 S 0 680 S 0 487 S 0 1 0 0 S 0 686 S 0 487 S 0 1 0 0 S 0 689 S 0 487 S 0 1 0 0 S 0 688 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 0 "sty" S 0 -40 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke9" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 606.5 S 0 485.786 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 14
+     0 S 0 570 S 0 486 S 0 1 0 0 S 0 568 S 0 487 S 0 1 0 0 S 0 574 S 0 487 S 0 1 0 0 S 0 586 S 0 487 S 0 1 0 0 S 0 595 S 0 486 S 0 1 0 0 S 0 605 S 0 485 S 0 1 0 0 S 0 611 S 0 486 S 0 1 0 0 S 0 614 S 0 485 S 0 1 0 0 S 0 620 S 0 485 S 0 1 0 0 S 0 623 S 0 485 S 0 1 0 0 S 0 625 S 0 484 S 0 1 0 0 S 0 630 S 0 485 S 0 1 0 0 S 0 634 S 0 486 S 0 1 0 0 S 0 636 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 -3 "sty" S 0 -63 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke8" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 564.067 S 0 487.667 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 15
+     0 S 0 524 S 0 490 S 0 1 0 0 S 0 524 S 0 491 S 0 1 0 0 S 0 539 S 0 491 S 0 1 0 0 S 0 546 S 0 490 S 0 1 0 0 S 0 551 S 0 488 S 0 1 0 0 S 0 556 S 0 488 S 0 1 0 0 S 0 562 S 0 487 S 0 1 0 0 S 0 566 S 0 486 S 0 1 0 0 S 0 572 S 0 486 S 0 1 0 0 S 0 578 S 0 486 S 0 1 0 0 S 0 584 S 0 486 S 0 1 0 0 S 0 588 S 0 486 S 0 1 0 0 S 0 589 S 0 486 S 0 1 0 0 S 0 590 S 0 487 S 0 1 0 0 S 0 592 S 0 487 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 -3 "sty" S 0 -76 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke7" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 517.429 S 0 484.071 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 14
+     0 S 0 479 S 0 485 S 0 1 0 0 S 0 481 S 0 485 S 0 1 0 0 S 0 498 S 0 490 S 0 1 0 0 S 0 503 S 0 490 S 0 1 0 0 S 0 508 S 0 487 S 0 1 0 0 S 0 514 S 0 486 S 0 1 0 0 S 0 520 S 0 485 S 0 1 0 0 S 0 526 S 0 485 S 0 1 0 0 S 0 529 S 0 484 S 0 1 0 0 S 0 532 S 0 481 S 0 1 0 0 S 0 535 S 0 481 S 0 1 0 0 S 0 539 S 0 480 S 0 1 0 0 S 0 541 S 0 479 S 0 1 0 0 S 0 539 S 0 479 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 -4 "sty" S 0 -93 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke6" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 472.077 S 0 477.308 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 13
+     0 S 0 437 S 0 478 S 0 1 0 0 S 0 445 S 0 479 S 0 1 0 0 S 0 451 S 0 478 S 0 1 0 0 S 0 457 S 0 479 S 0 1 0 0 S 0 464 S 0 480 S 0 1 0 0 S 0 468 S 0 481 S 0 1 0 0 S 0 472 S 0 481 S 0 1 0 0 S 0 475 S 0 480 S 0 1 0 0 S 0 482 S 0 478 S 0 1 0 0 S 0 491 S 0 475 S 0 1 0 0 S 0 496 S 0 474 S 0 1 0 0 S 0 499 S 0 472 S 0 1 0 0 S 0 500 S 0 470 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 -7 "sty" S 0 -113 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke5" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 393.258 S 0 471.968 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 31
+     0 S 0 342 S 0 463 S 0 1 0 0 S 0 342 S 0 464 S 0 1 0 0 S 0 359 S 0 466 S 0 1 0 0 S 0 370 S 0 466 S 0 1 0 0 S 0 372 S 0 466 S 0 1 0 0 S 0 377 S 0 466 S 0 1 0 0 S 0 380 S 0 467 S 0 1 0 0 S 0 385 S 0 468 S 0 1 0 0 S 0 389 S 0 468 S 0 1 0 0 S 0 394 S 0 469 S 0 1 0 0 S 0 397 S 0 470 S 0 1 0 0 S 0 403 S 0 472 S 0 1 0 0 S 0 409 S 0 472 S 0 1 0 0 S 0 414 S 0 473 S 0 1 0 0 S 0 416 S 0 473 S 0 1 0 0 S 0 419 S 0 474 S 0 1 0 0 S 0 418 S 0 474 S 0 1 0 0 S 0 397 S 0 470 S 0 1 0 0 S 0 368 S 0 470 S 0 1 0 0 S 0 361 S 0 472 S 0 1 0 0 S 0 358 S 0 472 S 0 1 0 0 S 0 359 S 0 470 S 0 1 0 0 S 0 372 S 0 470 S 0 1 0 0 S 0 396 S 0 474 S 0 1 0 0 S 0 410 S 0 476 S 0 1 0 0 S 0 420 S 0 478 S 0 1 0 0 S 0 425 S 0 479 S 0 1 0 0 S 0 430 S 0 481 S 0 1 0 0 S 0 436 S 0 484 S 0 1 0 0 S 0 436 S 0 482 S 0 1 0 0 S 0 437 S 0 482 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 -7 "sty" S 0 -113 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke4" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 337.6 S 0 462.2 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 20
+     0 S 0 341 S 0 462 S 0 1 0 0 S 0 340 S 0 462 S 0 1 0 0 S 0 338 S 0 461 S 0 1 0 0 S 0 349 S 0 460 S 0 1 0 0 S 0 350 S 0 460 S 0 1 0 0 S 0 340 S 0 460 S 0 1 0 0 S 0 332 S 0 461 S 0 1 0 0 S 0 338 S 0 462 S 0 1 0 0 S 0 346 S 0 464 S 0 1 0 0 S 0 343 S 0 464 S 0 1 0 0 S 0 330 S 0 464 S 0 1 0 0 S 0 324 S 0 463 S 0 1 0 0 S 0 331 S 0 463 S 0 1 0 0 S 0 343 S 0 466 S 0 1 0 0 S 0 344 S 0 466 S 0 1 0 0 S 0 331 S 0 463 S 0 1 0 0 S 0 322 S 0 462 S 0 1 0 0 S 0 332 S 0 460 S 0 1 0 0 S 0 341 S 0 460 S 0 1 0 0 S 0 337 S 0 461 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 2 "sty" S 0 -100 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke3" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 331.429 S 0 468.286 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 14
+     0 S 0 356 S 0 472 S 0 1 0 0 S 0 348 S 0 470 S 0 1 0 0 S 0 324 S 0 470 S 0 1 0 0 S 0 338 S 0 470 S 0 1 0 0 S 0 350 S 0 470 S 0 1 0 0 S 0 334 S 0 468 S 0 1 0 0 S 0 317 S 0 467 S 0 1 0 0 S 0 319 S 0 467 S 0 1 0 0 S 0 331 S 0 468 S 0 1 0 0 S 0 338 S 0 468 S 0 1 0 0 S 0 329 S 0 468 S 0 1 0 0 S 0 313 S 0 466 S 0 1 0 0 S 0 319 S 0 466 S 0 1 0 0 S 0 324 S 0 466 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 4 "sty" S 0 -90 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke2" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 342.038 S 0 469.115 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 26
+     0 S 0 414 S 0 475 S 0 1 0 0 S 0 409 S 0 475 S 0 1 0 0 S 0 364 S 0 474 S 0 1 0 0 S 0 352 S 0 472 S 0 1 0 0 S 0 388 S 0 475 S 0 1 0 0 S 0 389 S 0 478 S 0 1 0 0 S 0 365 S 0 470 S 0 1 0 0 S 0 342 S 0 467 S 0 1 0 0 S 0 344 S 0 467 S 0 1 0 0 S 0 359 S 0 470 S 0 1 0 0 S 0 366 S 0 470 S 0 1 0 0 S 0 348 S 0 467 S 0 1 0 0 S 0 320 S 0 466 S 0 1 0 0 S 0 310 S 0 468 S 0 1 0 0 S 0 322 S 0 470 S 0 1 0 0 S 0 323 S 0 470 S 0 1 0 0 S 0 334 S 0 470 S 0 1 0 0 S 0 323 S 0 468 S 0 1 0 0 S 0 313 S 0 467 S 0 1 0 0 S 0 319 S 0 467 S 0 1 0 0 S 0 317 S 0 467 S 0 1 0 0 S 0 313 S 0 468 S 0 1 0 0 S 0 307 S 0 464 S 0 1 0 0 S 0 310 S 0 464 S 0 1 0 0 S 0 320 S 0 464 S 0 1 0 0 S 0 322 S 0 464 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 4 "sty" S 0 -112 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Stroke1" {
+    Flag: 512
+    NodeType: 5
+    CubicCurve: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 427.967 S 0 479.433 
+     Type: 3 Flag: 2080 Dim: 3
+     NumOfPoints: 60
+     0 S 0 449 S 0 490 S 0 1 0 0 S 0 443 S 0 490 S 0 1 0 0 S 0 430 S 0 487 S 0 1 0 0 S 0 431 S 0 487 S 0 1 0 0 S 0 448 S 0 487 S 0 1 0 0 S 0 440 S 0 487 S 0 1 0 0 S 0 422 S 0 485 S 0 1 0 0 S 0 430 S 0 480 S 0 1 0 0 S 0 448 S 0 484 S 0 1 0 0 S 0 445 S 0 487 S 0 1 0 0 S 0 428 S 0 487 S 0 1 0 0 S 0 432 S 0 479 S 0 1 0 0 S 0 451 S 0 479 S 0 1 0 0 S 0 454 S 0 482 S 0 1 0 0 S 0 433 S 0 482 S 0 1 0 0 S 0 425 S 0 478 S 0 1 0 0 S 0 442 S 0 474 S 0 1 0 0 S 0 449 S 0 479 S 0 1 0 0 S 0 444 S 0 481 S 0 1 0 0 S 0 438 S 0 481 S 0 1 0 0 S 0 433 S 0 479 S 0 1 0 0 S 0 431 S 0 476 S 0 1 0 0 S 0 431 S 0 475 S 0 1 0 0 S 0 432 S 0 473 S 0 1 0 0 S 0 438 S 0 472 S 0 1 0 0 S 0 444 S 0 473 S 0 1 0 0 S 0 448 S 0 475 S 0 1 0 0 S 0 450 S 0 478 S 0 1 0 0 S 0 450 S 0 479 S 0 1 0 0 S 0 450 S 0 480 S 0 1 0 0 S 0 450 S 0 481 S 0 1 0 0 S 0 431 S 0 478 S 0 1 0 0 S 0 437 S 0 473 S 0 1 0 0 S 0 448 S 0 480 S 0 1 0 0 S 0 442 S 0 484 S 0 1 0 0 S 0 425 S 0 480 S 0 1 0 0 S 0 428 S 0 481 S 0 1 0 0 S 0 428 S 0 482 S 0 1 0 0 S 0 426 S 0 482 S 0 1 0 0 S 0 414 S 0 482 S 0 1 0 0 S 0 413 S 0 481 S 0 1 0 0 S 0 416 S 0 480 S 0 1 0 0 S 0 419 S 0 480 S 0 1 0 0 S 0 419 S 0 481 S 0 1 0 0 S 0 416 S 0 481 S 0 1 0 0 S 0 413 S 0 481 S 0 1 0 0 S 0 407 S 0 480 S 0 1 0 0 S 0 402 S 0 479 S 0 1 0 0 S 0 400 S 0 478 S 0 1 0 0 S 0 404 S 0 475 S 0 1 0 0 S 0 410 S 0 475 S 0 1 0 0 S 0 407 S 0 475 S 0 1 0 0 S 0 397 S 0 473 S 0 1 0 0 S 0 398 S 0 473 S 0 1 0 0 S 0 408 S 0 474 S 0 1 0 0 S 0 409 S 0 475 S 0 1 0 0 S 0 404 S 0 474 S 0 1 0 0 S 0 403 S 0 474 S 0 1 0 0 S 0 407 S 0 474 S 0 1 0 0 S 0 408 S 0 474 S 0 1 0 
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "bs" S 0 65 "bsp" S 0 0.05 "opc" S 0 1 "inv" S 0 0 "h" S 0 0.2 "src" S 0 1 "bm" S 0 0 "bt" S 0 0 "bu" S 0 1 "dt" S 0 1 "ds" S 0 0 "dh" S 0 0 "nv" S 0 1 "view1" S 0 1 "stx" S 0 4 "sty" S 0 -112 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sf" S 0 1 "ltn" S 0 90 "ltm" S 0 90 "ltt" S 0 2 "ws" S 0 0 "we" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "ep1" S 0 0 "ep2" S 0 0 "ep3" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  color {1 1 1 1}
+  paint_source foreground
+  lifetime_start 90
+  lifetime_end 90
+  center {1456.333374 484}
+  brush_type blur
+  brush_size 186
+  brush_spacing 0.05000000075
+  brush_hardness 0.200000003
+  effect_parameter1 15
+  source_transform_center {960 540}
+  name RotoPaint5
+  xpos 355
+  ypos -750
+ }
+ RotoPaint {
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {800 600}
+  output alpha
+  replace true
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 2
+  Node: {
+   NodeName: "Shape2" {
+    Flag: 512
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1288.66 S 0 429.526 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 48
+      0 S 0 -1.4942 S 0 -0.132813 0 0 S 0 953.411 S 0 490.618 0 0 S 0 1.49408 S 0 0.132874 0 0 S 0 -31.2876 S 0 -3.78613 0 0 S 0 1010.32 S 0 471.585 0 0 S 0 31.2876 S 0 3.78616 0 0 S 0 -20.6959 S 0 -4.35019 0 0 S 0 1109.36 S 0 465.963 0 0 S 0 20.696 S 0 4.35022 0 0 S 0 -12.6282 S 0 0.88501 0 0 S 0 1193.16 S 0 471.911 0 0 S 0 12.6278 S 0 -0.884888 0 0 S 0 -10.1824 S 0 1.60443 0 0 S 0 1298 S 0 476 0 0 S 0 10.182 S 0 -1.60443 0 0 S 0 -6.82861 S 0 3.4086 0 0 S 0 1378.46 S 0 480.727 0 0 S 0 6.82886 S 0 -3.40854 0 0 S 0 -15.5386 S 0 -5.89948 0 0 S 0 1424.89 S 0 472.307 0 0 S 0 15.5386 S 0 5.89951 0 0 S 0 -8.83179 S 0 -2.29123 0 0 S 0 1482.84 S 0 480.977 0 0 S 0 8.83179 S 0 2.29138 0 0 S 0 16.2916 S 0 -2.56717 0 0 S 0 1491.92 S 0 491.823 0 0 S 0 -16.2914 S 0 2.56708 0 0 S 0 7.91357 S 0 -4.31604 0 0 S 0 1453 S 0 502 0 0 S 0 -7.91309 S 0 4.31604 0 0 S 0 5.20166 S 0 -2.04721 0 0 S 0 1405.79 S 0 500.727 0 0 S 0 -5.20178 S 0 2.04742 0 0 S 0 8.9646 S 0 0.797211 0 0 S 0 1383.82 S 0 493.756 0 0 S 0 -8.96448 S 0 -0.797119 0 0 S 0 12.3959 S 0 -3.91742 0 0 S 0 1203.56 S 0 490.405 0 0 S 0 -12.3956 S 0 3.91742 0 0 S 0 17.6527 S 0 -0.940155 0 0 S 0 1109 S 0 489 0 0 S 0 -17.6526 S 0 0.940094 0 0 S 0 28.7975 S 0 3.56485 0 0 S 0 1040.65 S 0 493.488 0 0 S 0 -28.7974 S 0 -3.56476 0 0 S 0 14.4982 S 0 6.30896 0 0 S 0 968.462 S 0 524.585 0 0 S 0 -14.4981 S 0 -6.30896 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 48
+      0 S 0 -1.4942 S 0 -0.132813 0 0 S 0 0 S 0 0 0 0 S 0 1.49408 S 0 0.132874 0 0 S 0 -31.2876 S 0 -3.78613 0 0 S 0 0 S 0 0 0 0 S 0 31.2876 S 0 3.78616 0 0 S 0 -20.6959 S 0 -4.35019 0 0 S 0 0 S 0 0 0 0 S 0 20.696 S 0 4.35022 0 0 S 0 -12.6282 S 0 0.88501 0 0 S 0 0 S 0 0 0 0 S 0 12.6278 S 0 -0.884888 0 0 S 0 -10.1824 S 0 1.60443 0 0 S 0 0 S 0 0 0 0 S 0 10.182 S 0 -1.60443 0 0 S 0 -6.82861 S 0 3.4086 0 0 S 0 0 S 0 0 0 0 S 0 6.82886 S 0 -3.40854 0 0 S 0 -15.5386 S 0 -5.89948 0 0 S 0 0 S 0 0 0 0 S 0 15.5386 S 0 5.89951 0 0 S 0 -8.83179 S 0 -2.29123 0 0 S 0 0 S 0 0 0 0 S 0 8.83179 S 0 2.29138 0 0 S 0 16.2916 S 0 -2.56717 0 0 S 0 0 S 0 0 0 0 S 0 -16.2914 S 0 2.56708 0 0 S 0 7.91357 S 0 -4.31604 0 0 S 0 0 S 0 0 0 0 S 0 -7.91309 S 0 4.31604 0 0 S 0 5.20166 S 0 -2.04721 0 0 S 0 0 S 0 0 0 0 S 0 -5.20178 S 0 2.04742 0 0 S 0 8.9646 S 0 0.797211 0 0 S 0 0 S 0 0 0 0 S 0 -8.96448 S 0 -0.797119 0 0 S 0 12.3959 S 0 -3.91742 0 0 S 0 0 S 0 0 0 0 S 0 -12.3956 S 0 3.91742 0 0 S 0 17.6527 S 0 -0.940155 0 0 S 0 0 S 0 0 0 0 S 0 -17.6526 S 0 0.940094 0 0 S 0 28.7975 S 0 3.56485 0 0 S 0 0 S 0 0 0 0 S 0 -28.7974 S 0 -3.56476 0 0 S 0 14.4982 S 0 6.30896 0 0 S 0 0 S 0 0 0 0 S 0 -14.4981 S 0 -6.30896 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 1 "ltm" S 0 1 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Shape1" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 769.571 S 0 485 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 57
+      0 S 0 4 S 0 -2 0 0 S 0 310 S 0 495 0 0 S 0 -4 S 0 2 0 0 S 0 -8 S 0 -9 0 0 S 0 413 S 0 512 0 0 S 0 8 S 0 9 0 0 S 0 -14 S 0 -2 0 0 S 0 448 S 0 516 0 0 S 0 7 S 0 1 0 0 S 0 -48.625 S 0 5 0 0 S 0 553 S 0 499 0 0 S 0 48.625 S 0 -5 0 0 S 0 -7.5 S 0 -2 0 0 S 0 669 S 0 497 0 0 S 0 15 S 0 4 0 0 S 0 -21 S 0 -3 0 0 S 0 795 S 0 557 0 0 S 0 21 S 0 3 0 0 S 0 -28.101 S 0 7.43854 0 0 S 0 981 S 0 549 0 0 S 0 34 S 0 -9 0 0 S 0 -25 S 0 2 0 0 S 0 1117 S 0 518 0 0 S 0 25 S 0 -2 0 0 S 0 -17 S 0 1 0 0 S 0 1193 S 0 519 0 0 S 0 17 S 0 -1 0 0 S 0 1 S 0 6 0 0 S 0 1229 S 0 483 0 0 S 0 -1 S 0 -6 0 0 S 0 25 S 0 7 0 0 S 0 1188 S 0 455 0 0 S 0 -25 S 0 -7 0 0 S 0 19 S 0 10 0 0 S 0 1121 S 0 435 0 0 S 0 -19 S 0 -10 0 0 S 0 27 S 0 10 0 0 S 0 1004 S 0 432 0 0 S 0 -27 S 0 -10 0 0 S 0 31 S 0 1 0 0 S 0 926 S 0 420 0 0 S 0 -31 S 0 -1 0 0 S 0 25 S 0 -8 0 0 S 0 787 S 0 428 0 0 S 0 -13.6365 S 0 4.36371 0 0 S 0 26 S 0 -2 0 0 S 0 666 S 0 467 0 0 S 0 -26 S 0 2 0 0 S 0 17 S 0 -1 0 0 S 0 553 S 0 476 0 0 S 0 -17 S 0 1 0 0 S 0 15 S 0 5 0 0 S 0 448 S 0 464 0 0 S 0 -15 S 0 -5 0 0 S 0 10.5344 S 0 -6.48273 0 0 S 0 411 S 0 475 0 0 S 0 -13 S 0 8 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 57
+      0 S 0 4 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 -4 S 0 2 0 0 S 0 -8 S 0 -9 0 0 S 0 0 S 0 0 0 0 S 0 8 S 0 9 0 0 S 0 -14 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 7 S 0 1 0 0 S 0 -48.625 S 0 5 0 0 S 0 0 S 0 0 0 0 S 0 48.625 S 0 -5 0 0 S 0 -7.5 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 15 S 0 4 0 0 S 0 -21 S 0 -3 0 0 S 0 0 S 0 0 0 0 S 0 21 S 0 3 0 0 S 0 -28.101 S 0 7.43854 0 0 S 0 0 S 0 0 0 0 S 0 34 S 0 -9 0 0 S 0 -25 S 0 2 0 0 S 0 0 S 0 0 0 0 S 0 25 S 0 -2 0 0 S 0 -17 S 0 1 0 0 S 0 0 S 0 0 0 0 S 0 17 S 0 -1 0 0 S 0 1 S 0 6 0 0 S 0 0 S 0 0 0 0 S 0 -1 S 0 -6 0 0 S 0 25 S 0 7 0 0 S 0 0 S 0 0 0 0 S 0 -25 S 0 -7 0 0 S 0 19 S 0 10 0 0 S 0 0 S 0 0 0 0 S 0 -19 S 0 -10 0 0 S 0 27 S 0 10 0 0 S 0 0 S 0 0 0 0 S 0 -27 S 0 -10 0 0 S 0 31 S 0 1 0 0 S 0 0 S 0 0 0 0 S 0 -31 S 0 -1 0 0 S 0 25 S 0 -8 0 0 S 0 0 S 0 0 0 0 S 0 -13.6365 S 0 4.36371 0 0 S 0 26 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 -26 S 0 2 0 0 S 0 17 S 0 -1 0 0 S 0 0 S 0 0 0 0 S 0 -17 S 0 1 0 0 S 0 15 S 0 5 0 0 S 0 0 S 0 0 0 0 S 0 -15 S 0 -5 0 0 S 0 10.5344 S 0 -6.48273 0 0 S 0 0 S 0 0 0 0 S 0 -13 S 0 8 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 1 "ltm" S 0 1 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  lifetime_type "all frames"
+  center {769.5709839 485}
+  motionblur_shutter_offset_type centred
+  source_transform_center {800 600}
+  name RotoPaint4
+  xpos 355
+  ypos -715
+ }
+ FrameHold {
+  first_frame 90
+  name FrameHold1
+  xpos 355
+  ypos -675
+ }
+ Premult {
+  name Premult3
+  xpos 355
+  ypos -590
+ }
+ Card2 {
+  rows 10
+  columns 10
+  type bicubic
+  uv_position {0.3525638878 0.3525638878}
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.375 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1250000149 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.375 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1250000149 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5022000074 -0.3799999952 -0.07850000262} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.125 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.125 0} 0 {0 -0.125 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.125 0} 0 {0 -0.125 0} 0 {0.5 0.5 0} 
+1 {0.5022000074 -0.004999999888 -0.07850000262} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.125 0} 0 {0 -0.1249999953 0} 0 {1 0.5 0} 
+1 {-0.5 0.375 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1250000149 0} 0 {0 1 0} 
+1 {0 0.375 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1250000149 0} 0 {0.5 1 0} 
+1 {0.5022000074 0.3700000048 -0.07850000262} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1250000149 0} 0 {1 1 0} }
+  drawPosition {-0.147436142 -0.1105770767 0}
+  name Card4
+  xpos 355
+  ypos -537
+ }
+set N514b1430 [stack 0]
+ TransformGeo {
+  inputs 2
+  rotate {90 0 0}
+  pivot {0 -0.07 0}
+  name TransformGeo4
+  xpos 355
+  ypos -482
+ }
+push $N5163a350
+ Axis2 {
+  translate {-0.03200000152 0.03200000152 0}
+  rotate {{-parent.Wings.rotate.main i R x1 -57 -79.31690979 -100.2887878 -118.5705948 -132.8173065 -141.6838684 -143.8202972 -138.5595703 -127.5222702 -112.7506256 -96.2868576 -80.17321014 -66.45191956 -57.16521454 -52.75334167 -51.19320297 -51.00665283 -52.0952301 -54.53118134 -57 -79.31690979 -100.2887878 -118.5705948 -132.8173065 -141.6838684 -143.8202972 -138.5595703 -127.5222702 -112.7506256 -96.2868576 -80.17321014 -66.45191956 -57.16521454 -52.75334167 -51.19320297 -51.00665283 -52.0952301 -54.53118134 -57 -79.31690979 -100.2887878 -118.5705948 -132.8173065 -141.6838684 -143.8202972 -138.5595703 -127.5222702 -112.7506256 -96.2868576 -80.17321014 -66.45191956 -57.16521454 -52.75334167 -51.19320297 -51.00665283 -52.0952301 -54.53118134 -57 -79.31690979 -100.2887878 -118.5705948 -132.8173065 -141.6838684 -143.8202972 -138.5595703 -127.5222702 -112.7506256 -96.2868576 -80.17321014 -66.45191956 -57.16521454 -52.75334167 -51.19320297 -51.00665283 -52.0952301 -54.53118134 -57 -79.31690979 -100.2887878 -118.5705948 -132.8173065 -141.6838684 -143.8202972 -138.5595703 -127.5222702 -112.7506256 -96.2868576 -80.17321014 -66.45191956 -57.16521454 -52.75334167 -51.19320297 -51.00665283 -52.0952301 -54.53118134 -57 -79.31690979 -100.2887878 -118.5705948 -132.8173065} {-parent.Wings.rotate.main i R x1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {-parent.Wings.rotate.main i R x1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  pivot {0.1 -0.08 0}
+  name Axis2
+  xpos 1139
+  ypos -595
+ }
+push $N3d4f3da0
+ RotoPaint {
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  output alpha
+  replace true
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Shape1" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1069.44 S 0 726.219 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 96
+      0 S 0 -1 S 0 0 0 0 S 0 826 S 0 547 0 0 S 0 1 S 0 0 0 0 S 0 -8 S 0 -12 0 0 S 0 925 S 0 681 0 0 S 0 8 S 0 12 0 0 S 0 -1 S 0 -19 0 0 S 0 986 S 0 748 0 0 S 0 1 S 0 19 0 0 S 0 1 S 0 -6 0 0 S 0 991 S 0 916 0 0 S 0 -1 S 0 6 0 0 S 0 -1 S 0 8 0 0 S 0 1013 S 0 896 0 0 S 0 1 S 0 -8 0 0 S 0 -1 S 0 2 0 0 S 0 1018 S 0 870 0 0 S 0 1 S 0 -2 0 0 S 0 -6 S 0 -7 0 0 S 0 1031 S 0 859 0 0 S 0 6 S 0 7 0 0 S 0 -6 S 0 -12 0 0 S 0 1041 S 0 889 0 0 S 0 6 S 0 12 0 0 S 0 -10 S 0 4 0 0 S 0 1059 S 0 929 0 0 S 0 10 S 0 -4 0 0 S 0 2 S 0 9 0 0 S 0 1075 S 0 902 0 0 S 0 -2 S 0 -9 0 0 S 0 -2 S 0 4 0 0 S 0 1072 S 0 871 0 0 S 0 2 S 0 -4 0 0 S 0 -6 S 0 -13 0 0 S 0 1100 S 0 892 0 0 S 0 6 S 0 13 0 0 S 0 6 S 0 15 0 0 S 0 1128 S 0 895 0 0 S 0 -6 S 0 -15 0 0 S 0 -3 S 0 7 0 0 S 0 1110 S 0 846 0 0 S 0 3 S 0 -7 0 0 S 0 -10 S 0 -11 0 0 S 0 1151 S 0 860 0 0 S 0 10 S 0 11 0 0 S 0 24 S 0 20 0 0 S 0 1191 S 0 866 0 0 S 0 -24 S 0 -20 0 0 S 0 4 S 0 6 0 0 S 0 1145 S 0 825 0 0 S 0 -4 S 0 -6 0 0 S 0 -17 S 0 -1 0 0 S 0 1192 S 0 816 0 0 S 0 17 S 0 1 0 0 S 0 6 S 0 18 0 0 S 0 1211 S 0 776 0 0 S 0 -6 S 0 -18 0 0 S 0 -7 S 0 11 0 0 S 0 1198 S 0 732 0 0 S 0 7 S 0 -11 0 0 S 0 -4 S 0 5 0 0 S 0 1196 S 0 685 0 0 S 0 4 S 0 -5 0 0 S 0 -6 S 0 6 0 0 S 0 1192 S 0 663 0 0 S 0 6 S 0 -6 0 0 S 0 -1 S 0 4 0 0 S 0 1187 S 0 636 0 0 S 0 1 S 0 -4 0 0 S 0 3 S 0 5 0 0 S 0 1177 S 0 618 0 0 S 0 -3 S 0 -5 0 0 S 0 8 S 0 7 0 0 S 0 1160 S 0 590 0 0 S 0 -8 S 0 -7 0 0 S 0 11 S 0 24 0 0 S 0 1127 S 0 536 0 0 S 0 -11 S 0 -24 0 0 S 0 27 S 0 3 0 0 S 0 1106 S 0 506 0 0 S 0 -27 S 0 -3 0 0 S 0 21 S 0 6 0 0 S 0 1068 S 0 503 0 0 S 0 -21 S 0 -6 0 0 S 0 10 S 0 12 0 0 S 0 994 S 0 473 0 0 S 0 -10 S 0 -12 0 0 S 0 15 S 0 -1 0 0 S 0 889 S 0 451 0 0 S 0 -15 S 0 1 0 0 S 0 9 S 0 -26 0 0 S 0 838 S 0 463 0 0 S 0 -9 S 0 26 0 0 S 0 6 S 0 -12 0 0 S 0 825 S 0 499 0 0 S 0 -6 S 0 12 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 96
+      0 S 0 -1 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 1 S 0 0 0 0 S 0 -8 S 0 -12 0 0 S 0 0 S 0 0 0 0 S 0 8 S 0 12 0 0 S 0 -1 S 0 -19 0 0 S 0 0 S 0 0 0 0 S 0 1 S 0 19 0 0 S 0 1 S 0 -6 0 0 S 0 0 S 0 0 0 0 S 0 -1 S 0 6 0 0 S 0 -1 S 0 8 0 0 S 0 0 S 0 0 0 0 S 0 1 S 0 -8 0 0 S 0 -1 S 0 2 0 0 S 0 0 S 0 0 0 0 S 0 1 S 0 -2 0 0 S 0 -6 S 0 -7 0 0 S 0 0 S 0 0 0 0 S 0 6 S 0 7 0 0 S 0 -6 S 0 -12 0 0 S 0 0 S 0 0 0 0 S 0 6 S 0 12 0 0 S 0 -10 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 10 S 0 -4 0 0 S 0 2 S 0 9 0 0 S 0 0 S 0 0 0 0 S 0 -2 S 0 -9 0 0 S 0 -2 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 2 S 0 -4 0 0 S 0 -6 S 0 -13 0 0 S 0 0 S 0 0 0 0 S 0 6 S 0 13 0 0 S 0 6 S 0 15 0 0 S 0 0 S 0 0 0 0 S 0 -6 S 0 -15 0 0 S 0 -3 S 0 7 0 0 S 0 0 S 0 0 0 0 S 0 3 S 0 -7 0 0 S 0 -10 S 0 -11 0 0 S 0 0 S 0 0 0 0 S 0 10 S 0 11 0 0 S 0 24 S 0 20 0 0 S 0 0 S 0 0 0 0 S 0 -24 S 0 -20 0 0 S 0 4 S 0 6 0 0 S 0 0 S 0 0 0 0 S 0 -4 S 0 -6 0 0 S 0 -17 S 0 -1 0 0 S 0 0 S 0 0 0 0 S 0 17 S 0 1 0 0 S 0 6 S 0 18 0 0 S 0 0 S 0 0 0 0 S 0 -6 S 0 -18 0 0 S 0 -7 S 0 11 0 0 S 0 0 S 0 0 0 0 S 0 7 S 0 -11 0 0 S 0 -4 S 0 5 0 0 S 0 0 S 0 0 0 0 S 0 4 S 0 -5 0 0 S 0 -6 S 0 6 0 0 S 0 0 S 0 0 0 0 S 0 6 S 0 -6 0 0 S 0 -1 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 1 S 0 -4 0 0 S 0 3 S 0 5 0 0 S 0 0 S 0 0 0 0 S 0 -3 S 0 -5 0 0 S 0 8 S 0 7 0 0 S 0 0 S 0 0 0 0 S 0 -8 S 0 -7 0 0 S 0 11 S 0 24 0 0 S 0 0 S 0 0 0 0 S 0 -11 S 0 -24 0 0 S 0 27 S 0 3 0 0 S 0 0 S 0 0 0 0 S 0 -27 S 0 -3 0 0 S 0 21 S 0 6 0 0 S 0 0 S 0 0 0 0 S 0 -21 S 0 -6 0 0 S 0 10 S 0 12 0 0 S 0 0 S 0 0 0 0 S 0 -10 S 0 -12 0 0 S 0 15 S 0 -1 0 0 S 0 0 S 0 0 0 0 S 0 -15 S 0 1 0 0 S 0 9 S 0 -26 0 0 S 0 0 S 0 0 0 0 S 0 -9 S 0 26 0 0 S 0 6 S 0 -12 0 0 S 0 0 S 0 0 0 0 S 0 -6 S 0 12 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 1 "ltm" S 0 1 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  lifetime_type "all frames"
+  center {1069.4375 726.21875}
+  motionblur_shutter_offset_type centred
+  source_transform_center {960 540}
+  name RotoPaint2
+  xpos 787
+  ypos -832
+ }
+ Premult {
+  name Premult2
+  xpos 787
+  ypos -771
+ }
+set N51641c00 [stack 0]
+ Card2 {
+  rows 1
+  columns 1
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name Card3
+  xpos 1006
+  ypos -540
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo3
+  xpos 1006
+  ypos -486
+ }
+push $N5163a350
+ Axis2 {
+  translate {-0.03200000152 0.03200000152 0}
+  rotate {{curve(frame+Time) i R x1 57 79.31690979 100.2887878 118.5705948 132.8173065 141.6838684 143.8202972 138.5595703 127.5222702 112.7506256 96.2868576 80.17321014 66.45191956 57.16521454 52.75334167 51.19320297 51.00665283 52.0952301 54.53118134 57 79.31690979 100.2887878 118.5705948 132.8173065 141.6838684 143.8202972 138.5595703 127.5222702 112.7506256 96.2868576 80.17321014 66.45191956 57.16521454 52.75334167 51.19320297 51.00665283 52.0952301 54.53118134 57 79.31690979 100.2887878 118.5705948 132.8173065 141.6838684 143.8202972 138.5595703 127.5222702 112.7506256 96.2868576 80.17321014 66.45191956 57.16521454 52.75334167 51.19320297 51.00665283 52.0952301 54.53118134 57 79.31690979 100.2887878 118.5705948 132.8173065 141.6838684 143.8202972 138.5595703 127.5222702 112.7506256 96.2868576 80.17321014 66.45191956 57.16521454 52.75334167 51.19320297 51.00665283 52.0952301 54.53118134 57 79.31690979 100.2887878 118.5705948 132.8173065 141.6838684 143.8202972 138.5595703 127.5222702 112.7506256 96.2868576 80.17321014 66.45191956 57.16521454 52.75334167 51.19320297 51.00665283 52.0952301 54.53118134 57 79.31690979 100.2887878 118.5705948 132.8173065} {curve(frame+Time) i R x1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve(frame+Time) i R x1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  pivot {0.1 -0.08 0}
+  name Wings
+  xpos 820
+  ypos -586
+ }
+push $N51641c00
+ Card2 {
+  rows 1
+  columns 1
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name Card2
+  xpos 622
+  ypos -501
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo1
+  xpos 622
+  ypos -444
+ }
+push $N5163a350
+push $N3d4f3da0
+ RotoPaint {
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  output alpha
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Shape1" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1240.33 S 0 402 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 63
+      0 S 0 -1 S 0 -1 0 0 S 0 1045 S 0 393 0 0 S 0 1 S 0 1 0 0 S 0 -3 S 0 -2 0 0 S 0 1068 S 0 396 0 0 S 0 3 S 0 2 0 0 S 0 -4 S 0 0 0 0 S 0 1099 S 0 397 0 0 S 0 4 S 0 0 0 0 S 0 -10 S 0 -2 0 0 S 0 1132 S 0 396 0 0 S 0 10 S 0 2 0 0 S 0 -4 S 0 1 0 0 S 0 1169 S 0 407 0 0 S 0 4 S 0 -1 0 0 S 0 -3.70996 S 0 -6.18362 0 0 S 0 1180 S 0 417 0 0 S 0 3 S 0 5 0 0 S 0 2 S 0 -5 0 0 S 0 1187 S 0 432 0 0 S 0 -2 S 0 5 0 0 S 0 5 S 0 -2 0 0 S 0 1165 S 0 449 0 0 S 0 -5 S 0 2 0 0 S 0 4 S 0 -3 0 0 S 0 1142 S 0 459 0 0 S 0 -4 S 0 3 0 0 S 0 -6 S 0 -8 0 0 S 0 1123 S 0 468 0 0 S 0 6 S 0 8 0 0 S 0 -20 S 0 -5 0 0 S 0 1159 S 0 488 0 0 S 0 20 S 0 5 0 0 S 0 -26 S 0 1 0 0 S 0 1254 S 0 494 0 0 S 0 26 S 0 -1 0 0 S 0 -27 S 0 4 0 0 S 0 1396 S 0 488 0 0 S 0 27 S 0 -4 0 0 S 0 -9 S 0 27 0 0 S 0 1565 S 0 485 0 0 S 0 9 S 0 -27 0 0 S 0 10 S 0 41 0 0 S 0 1580 S 0 383 0 0 S 0 -10 S 0 -41 0 0 S 0 22 S 0 17 0 0 S 0 1545 S 0 276 0 0 S 0 -22 S 0 -17 0 0 S 0 20 S 0 -11 0 0 S 0 1411 S 0 249 0 0 S 0 -20 S 0 11 0 0 S 0 17 S 0 -8 0 0 S 0 1318 S 0 304 0 0 S 0 -17 S 0 8 0 0 S 0 18 S 0 -4 0 0 S 0 1225 S 0 340 0 0 S 0 -18 S 0 4 0 0 S 0 10 S 0 -1 0 0 S 0 1164 S 0 357 0 0 S 0 -10 S 0 1 0 0 S 0 1 S 0 -2 0 0 S 0 1120 S 0 364 0 0 S 0 -1 S 0 2 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 63
+      0 S 0 -1 S 0 -1 0 0 S 0 0 S 0 0 0 0 S 0 1 S 0 1 0 0 S 0 -3 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 3 S 0 2 0 0 S 0 -4 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 4 S 0 0 0 0 S 0 -10 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 10 S 0 2 0 0 S 0 -4 S 0 1 0 0 S 0 0 S 0 0 0 0 S 0 4 S 0 -1 0 0 S 0 -3.70996 S 0 -6.18362 0 0 S 0 0 S 0 0 0 0 S 0 3 S 0 5 0 0 S 0 2 S 0 -5 0 0 S 0 0 S 0 0 0 0 S 0 -2 S 0 5 0 0 S 0 5 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 -5 S 0 2 0 0 S 0 4 S 0 -3 0 0 S 0 0 S 0 0 0 0 S 0 -4 S 0 3 0 0 S 0 -6 S 0 -8 0 0 S 0 0 S 0 0 0 0 S 0 6 S 0 8 0 0 S 0 -20 S 0 -5 0 0 S 0 0 S 0 0 0 0 S 0 20 S 0 5 0 0 S 0 -26 S 0 1 0 0 S 0 0 S 0 0 0 0 S 0 26 S 0 -1 0 0 S 0 -27 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 27 S 0 -4 0 0 S 0 -9 S 0 27 0 0 S 0 0 S 0 0 0 0 S 0 9 S 0 -27 0 0 S 0 10 S 0 41 0 0 S 0 0 S 0 0 0 0 S 0 -10 S 0 -41 0 0 S 0 22 S 0 17 0 0 S 0 0 S 0 0 0 0 S 0 -22 S 0 -17 0 0 S 0 20 S 0 -11 0 0 S 0 0 S 0 0 0 0 S 0 -20 S 0 11 0 0 S 0 17 S 0 -8 0 0 S 0 0 S 0 0 0 0 S 0 -17 S 0 8 0 0 S 0 18 S 0 -4 0 0 S 0 0 S 0 0 0 0 S 0 -18 S 0 4 0 0 S 0 10 S 0 -1 0 0 S 0 0 S 0 0 0 0 S 0 -10 S 0 1 0 0 S 0 1 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 -1 S 0 2 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 69 "ltm" S 0 69 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  lifetime_type "all frames"
+  lifetime_start 69
+  lifetime_end 69
+  center {1240.333374 402}
+  motionblur_shutter_offset_type centred
+  source_transform_center {960 540}
+  name RotoPaint3
+  xpos 594
+  ypos -762
+ }
+push $N3d4f3da0
+ ColorCorrect {
+  inputs 1+1
+  gain 0.012
+  name ColorCorrect1
+  xpos 484
+  ypos -755
+ }
+ Transform {
+  rotate 18.10374384
+  center {800 600}
+  name Transform1
+  xpos 484
+  ypos -690
+ }
+ RotoPaint {
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {800 600}
+  output alpha
+  replace true
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 2
+  Node: {
+   NodeName: "Shape2" {
+    Flag: 512
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 1288.66 S 0 429.526 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 57
+      0 S 0 -1.37146 S 0 -0.607758 0 0 S 0 965.226 S 0 448.347 0 0 S 0 1.37134 S 0 0.607788 0 0 S 0 -28.3932 S 0 -13.6774 0 0 S 0 1025.23 S 0 448.69 0 0 S 0 28.3933 S 0 13.6775 0 0 S 0 -18.186 S 0 -10.7944 0 0 S 0 1119.59 S 0 523.321 0 0 S 0 18.186 S 0 10.7944 0 0 S 0 -12.2384 S 0 -3.23627 0 0 S 0 1196.99 S 0 555.985 0 0 S 0 12.2382 S 0 3.23633 0 0 S 0 -10.1554 S 0 -1.76624 0 0 S 0 1295.34 S 0 567.305 0 0 S 0 10.1553 S 0 1.76624 0 0 S 0 -7.56323 S 0 1.02332 0 0 S 0 1370.74 S 0 576.11 0 0 S 0 7.56335 S 0 -1.02319 0 0 S 0 -12.8044 S 0 -10.5969 0 0 S 0 1417.4 S 0 583.118 0 0 S 0 12.8046 S 0 10.597 0 0 S 0 -7.62036 S 0 -5.01794 0 0 S 0 1469.46 S 0 610.021 0 0 S 0 7.62024 S 0 5.01807 0 0 S 0 16.2485 S 0 2.82593 0 0 S 0 1474.55 S 0 623.215 0 0 S 0 -16.2485 S 0 -2.82599 0 0 S 0 -3.86475 S 0 -6.08801 0 0 S 0 1430.73 S 0 614.732 0 0 S 0 3.86462 S 0 6.08801 0 0 S 0 8.88269 S 0 -1.53235 0 0 S 0 1441.36 S 0 626.549 0 0 S 0 -8.88257 S 0 1.53235 0 0 S 0 5.9425 S 0 2.63367 0 0 S 0 1417.13 S 0 620.737 0 0 S 0 -5.94263 S 0 -2.63367 0 0 S 0 4.67517 S 0 4.25958 0 0 S 0 1399.41 S 0 610.145 0 0 S 0 -4.67493 S 0 -4.25952 0 0 S 0 5.58411 S 0 -0.259644 0 0 S 0 1390.16 S 0 603.859 0 0 S 0 -5.58411 S 0 0.259766 0 0 S 0 8.22803 S 0 3.64661 0 0 S 0 1371.61 S 0 590.172 0 0 S 0 -8.22815 S 0 -3.64661 0 0 S 0 12.9967 S 0 0.291016 0 0 S 0 1200.87 S 0 576.846 0 0 S 0 -12.9967 S 0 -0.291016 0 0 S 0 17.0121 S 0 4.80505 0 0 S 0 1118.13 S 0 535.253 0 0 S 0 -17.0121 S 0 -4.80511 0 0 S 0 26.1077 S 0 12.6646 0 0 S 0 1045.67 S 0 527.206 0 0 S 0 -26.1076 S 0 -12.6645 0 0 S 0 11.6877 S 0 10.6489 0 0 S 0 968.514 S 0 485.353 0 0 S 0 -11.6876 S 0 -10.6489 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 57
+      0 S 0 -1.37146 S 0 -0.607758 0 0 S 0 0 S 0 0 0 0 S 0 1.37134 S 0 0.607788 0 0 S 0 -28.3932 S 0 -13.6774 0 0 S 0 0 S 0 0 0 0 S 0 28.3933 S 0 13.6775 0 0 S 0 -18.186 S 0 -10.7944 0 0 S 0 0 S 0 0 0 0 S 0 18.186 S 0 10.7944 0 0 S 0 -12.2384 S 0 -3.23627 0 0 S 0 0 S 0 0 0 0 S 0 12.2382 S 0 3.23633 0 0 S 0 -10.1554 S 0 -1.76624 0 0 S 0 0 S 0 0 0 0 S 0 10.1553 S 0 1.76624 0 0 S 0 -7.56323 S 0 1.02332 0 0 S 0 0 S 0 0 0 0 S 0 7.56335 S 0 -1.02319 0 0 S 0 -12.8044 S 0 -10.5969 0 0 S 0 0 S 0 0 0 0 S 0 12.8046 S 0 10.597 0 0 S 0 -7.62036 S 0 -5.01794 0 0 S 0 0 S 0 0 0 0 S 0 7.62024 S 0 5.01807 0 0 S 0 16.2485 S 0 2.82593 0 0 S 0 0 S 0 0 0 0 S 0 -16.2485 S 0 -2.82599 0 0 S 0 -3.86475 S 0 -6.08801 0 0 S 0 0 S 0 0 0 0 S 0 3.86462 S 0 6.08801 0 0 S 0 8.88269 S 0 -1.53235 0 0 S 0 0 S 0 0 0 0 S 0 -8.88257 S 0 1.53235 0 0 S 0 5.9425 S 0 2.63367 0 0 S 0 0 S 0 0 0 0 S 0 -5.94263 S 0 -2.63367 0 0 S 0 4.67517 S 0 4.25958 0 0 S 0 0 S 0 0 0 0 S 0 -4.67493 S 0 -4.25952 0 0 S 0 5.58411 S 0 -0.259644 0 0 S 0 0 S 0 0 0 0 S 0 -5.58411 S 0 0.259766 0 0 S 0 8.22803 S 0 3.64661 0 0 S 0 0 S 0 0 0 0 S 0 -8.22815 S 0 -3.64661 0 0 S 0 12.9967 S 0 0.291016 0 0 S 0 0 S 0 0 0 0 S 0 -12.9967 S 0 -0.291016 0 0 S 0 17.0121 S 0 4.80505 0 0 S 0 0 S 0 0 0 0 S 0 -17.0121 S 0 -4.80511 0 0 S 0 26.1077 S 0 12.6646 0 0 S 0 0 S 0 0 0 0 S 0 -26.1076 S 0 -12.6645 0 0 S 0 11.6877 S 0 10.6489 0 0 S 0 0 S 0 0 0 0 S 0 -11.6876 S 0 -10.6489 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 1 "ltm" S 0 1 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+  Node: {
+   NodeName: "Shape1" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 769.571 S 0 485 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 66
+      0 S 0 2.92395 S 0 -3.38382 0 0 S 0 316.346 S 0 478.966 0 0 S 0 -2.92395 S 0 3.38382 0 0 S 0 -10.8448 S 0 -5.23361 0 0 S 0 416.413 S 0 516.377 0 0 S 0 10.8448 S 0 5.23358 0 0 S 0 -13.6932 S 0 3.53491 0 0 S 0 467 S 0 537 0 0 S 0 4.38187 S 0 -1.1311 0 0 S 0 -25.1609 S 0 7.13135 0 0 S 0 512.5 S 0 514 0 0 S 0 53.467 S 0 -15.1541 0 0 S 0 -10.2 S 0 -2.72 0 0 S 0 655 S 0 491 0 0 S 0 15 S 0 4 0 0 S 0 -21 S 0 -3 0 0 S 0 795 S 0 557 0 0 S 0 21 S 0 3 0 0 S 0 -29 S 0 -2 0 0 S 0 981 S 0 572 0 0 S 0 29 S 0 2 0 0 S 0 -25 S 0 2 0 0 S 0 1122 S 0 572 0 0 S 0 25 S 0 -2 0 0 S 0 -17 S 0 1 0 0 S 0 1190 S 0 569 0 0 S 0 17 S 0 -1 0 0 S 0 1 S 0 6 0 0 S 0 1235 S 0 553 0 0 S 0 -1 S 0 -6 0 0 S 0 25 S 0 7 0 0 S 0 1187 S 0 514 0 0 S 0 -25 S 0 -7 0 0 S 0 19 S 0 10 0 0 S 0 1125 S 0 503 0 0 S 0 -19 S 0 -10 0 0 S 0 27 S 0 10 0 0 S 0 997 S 0 448 0 0 S 0 -27 S 0 -10 0 0 S 0 31 S 0 1 0 0 S 0 926 S 0 420 0 0 S 0 -31 S 0 -1 0 0 S 0 13 S 0 -4 0 0 S 0 869 S 0 421 0 0 S 0 -13 S 0 4 0 0 S 0 14 S 0 3 0 0 S 0 795 S 0 436 0 0 S 0 -14 S 0 -3 0 0 S 0 26 S 0 -2 0 0 S 0 682 S 0 451 0 0 S 0 -26 S 0 2 0 0 S 0 20 S 0 -6 0 0 S 0 609 S 0 464 0 0 S 0 -20 S 0 6 0 0 S 0 17 S 0 -1 0 0 S 0 553 S 0 476 0 0 S 0 -17 S 0 1 0 0 S 0 15.7695 S 0 -1.14972 0 0 S 0 473.114 S 0 480.853 0 0 S 0 -15.7695 S 0 1.14972 0 0 S 0 12.2312 S 0 -1.84296 0 0 S 0 407.037 S 0 483.451 0 0 S 0 -12.2313 S 0 1.84296 0 0 S 0 13.7688 S 0 1.84979 0 0 S 0 363.96 S 0 484.055 0 0 S 0 -13.7687 S 0 -1.84973 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 66
+      0 S 0 2.92395 S 0 -3.38382 0 0 S 0 0 S 0 0 0 0 S 0 -2.92395 S 0 3.38382 0 0 S 0 -10.8448 S 0 -5.23361 0 0 S 0 0 S 0 0 0 0 S 0 10.8448 S 0 5.23358 0 0 S 0 -13.6932 S 0 3.53491 0 0 S 0 0 S 0 0 0 0 S 0 4.38187 S 0 -1.1311 0 0 S 0 -25.1609 S 0 7.13135 0 0 S 0 0 S 0 0 0 0 S 0 53.467 S 0 -15.1541 0 0 S 0 -10.2 S 0 -2.72 0 0 S 0 0 S 0 0 0 0 S 0 15 S 0 4 0 0 S 0 -21 S 0 -3 0 0 S 0 0 S 0 0 0 0 S 0 21 S 0 3 0 0 S 0 -29 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 29 S 0 2 0 0 S 0 -25 S 0 2 0 0 S 0 0 S 0 0 0 0 S 0 25 S 0 -2 0 0 S 0 -17 S 0 1 0 0 S 0 0 S 0 0 0 0 S 0 17 S 0 -1 0 0 S 0 1 S 0 6 0 0 S 0 0 S 0 0 0 0 S 0 -1 S 0 -6 0 0 S 0 25 S 0 7 0 0 S 0 0 S 0 0 0 0 S 0 -25 S 0 -7 0 0 S 0 19 S 0 10 0 0 S 0 0 S 0 0 0 0 S 0 -19 S 0 -10 0 0 S 0 27 S 0 10 0 0 S 0 0 S 0 0 0 0 S 0 -27 S 0 -10 0 0 S 0 31 S 0 1 0 0 S 0 0 S 0 0 0 0 S 0 -31 S 0 -1 0 0 S 0 13 S 0 -4 0 0 S 0 0 S 0 0 0 0 S 0 -13 S 0 4 0 0 S 0 14 S 0 3 0 0 S 0 0 S 0 0 0 0 S 0 -14 S 0 -3 0 0 S 0 26 S 0 -2 0 0 S 0 0 S 0 0 0 0 S 0 -26 S 0 2 0 0 S 0 20 S 0 -6 0 0 S 0 0 S 0 0 0 0 S 0 -20 S 0 6 0 0 S 0 17 S 0 -1 0 0 S 0 0 S 0 0 0 0 S 0 -17 S 0 1 0 0 S 0 15.7695 S 0 -1.14972 0 0 S 0 0 S 0 0 0 0 S 0 -15.7695 S 0 1.14972 0 0 S 0 12.2312 S 0 -1.84296 0 0 S 0 0 S 0 0 0 0 S 0 -12.2313 S 0 1.84296 0 0 S 0 13.7688 S 0 1.84979 0 0 S 0 0 S 0 0 0 0 S 0 -13.7687 S 0 -1.84973 0 
+     }
+     NumOfAttributes: 27
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 1 "ltm" S 0 1 "ltt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  lifetime_type "all frames"
+  locked false
+  center {769.5714111 485}
+  motionblur_shutter_offset_type centred
+  source_transform_center {800 600}
+  name RotoPaint1
+  xpos 484
+  ypos -664
+ }
+ Premult {
+  name Premult1
+  xpos 484
+  ypos -624
+ }
+ Card2 {
+  rows 10
+  columns 10
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name Card1
+  xpos 484
+  ypos -547
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo2
+  selected true
+  xpos 484
+  ypos -466
+ }
+ Scene {
+  inputs 4
+  name Scene1
+  xpos 494
+  ypos -389
+ }
+set N51d26090 [stack 0]
+ Output {
+  name Output1
+  xpos 484
+  ypos -188
+ }
+push $N5163a350
+push $N514b1430
+ TransformGeo {
+  inputs 2
+  rotate {62.69400406 0 0}
+  pivot {0 -0.07 0}
+  name TransformGeo6
+  xpos 86
+  ypos -480
+  disable true
+ }
+push $N5163a350
+push $N514b1430
+ TransformGeo {
+  inputs 2
+  rotate {123.9660034 0 0}
+  pivot {0 -0.07 0}
+  name TransformGeo5
+  xpos 186
+  ypos -481
+  disable true
+ }
+push $N51d26090
+ Viewer {
+  frame 41
+  fps 25
+  input_process false
+  name Viewer1
+  xpos 484
+  ypos -307
+ }
+end_group

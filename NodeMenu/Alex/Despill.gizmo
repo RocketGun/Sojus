@@ -1,0 +1,68 @@
+#! E:/Program Files (x86)/Nuke6.0v4/Nuke6.0.exe -nx
+version 6.0 v4
+Group {
+ addUserKnob {20 Despill}
+ addUserKnob {41 hue l "" -STARTLINE T HueCorrect1.hue}
+ addUserKnob {41 mix T Merge2.mix}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -620
+  ypos 251
+ }
+ Dot {
+  name Dot1
+  xpos -586
+  ypos 295
+ }
+set N39c937b0 [stack 0]
+ Dot {
+  name Dot2
+  xpos -696
+  ypos 295
+ }
+push $N39c937b0
+ HueCorrect {
+  name HueCorrect1
+  selected true
+  xpos -620
+  ypos 360
+ }
+set N39c93c90 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -730
+  ypos 360
+ }
+ Colorspace {
+  colorspace_out HSL
+  name Colorspace1
+  xpos -730
+  ypos 404
+ }
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle1
+  xpos -730
+  ypos 430
+ }
+push $N39c93c90
+ Merge2 {
+  inputs 2
+  operation screen
+  mix 0
+  name Merge2
+  xpos -620
+  ypos 430
+ }
+ Output {
+  name Output1
+  xpos -620
+  ypos 531
+ }
+end_group

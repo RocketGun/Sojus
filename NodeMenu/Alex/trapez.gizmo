@@ -1,0 +1,54 @@
+#! C:/Program Files/Nuke5.1v3/Nuke5.1.exe -nx
+version 5.1300
+Group {
+ addUserKnob {20 User}
+ addUserKnob {7 bottom R -0.5 5}
+ bottom 1.56
+ addUserKnob {7 topper R -0.5 5}
+ topper 0.64
+ addUserKnob {41 translate T TransformGeo1.translate}
+ addUserKnob {41 rotate T TransformGeo1.rotate}
+ addUserKnob {41 scaling l scale T TransformGeo1.scaling}
+ addUserKnob {41 uniform_scale l "uniform scale" T TransformGeo1.uniform_scale}
+ addUserKnob {41 skew T TransformGeo1.skew}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 216
+  ypos -127
+ }
+ Cube {
+  pivot {{parent.Trilinear1.p0 i} {parent.Trilinear1.p0 i} {parent.Trilinear1.p0 i}}
+  name Cube2
+  xpos 216
+  ypos -89
+ }
+ Trilinear {
+  p0 {{-parent.bottom-.5 i x1 0.496} -0.5 {this.x i}}
+  p1 {{-parent.topper-.5 i} 0.5 {this.x i}}
+  p2 {{-p1.x i} {p1.y i} {p1.z i}}
+  p3 {{-p0.x i} {p0.y i} {p0.z i}}
+  p4 {{p0.x i} {p0.y i} {-p0.z i}}
+  p5 {{p1.x i} {p1.y i} {-p1.z i}}
+  p6 {{-p1.x i} {p1.y i} {p5.z i}}
+  p7 {{-p0.x i} {p0.y i} {-p0.x i}}
+  name Trilinear1
+  xpos 216
+  ypos -62
+ }
+ TransformGeo {
+  scaling {1 2 1}
+  uniform_scale 1.08
+  pivot {{parent.Trilinear1.p0 i} {parent.Trilinear1.p0 i} {parent.Trilinear1.p0 i}}
+  name TransformGeo1
+  selected true
+  xpos 216
+  ypos -35
+ }
+ Output {
+  name Output1
+  xpos 216
+  ypos 10
+ }
+end_group

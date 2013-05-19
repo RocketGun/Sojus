@@ -1,0 +1,216 @@
+#! E:/Program Files (x86)/Nuke6.0v4/Nuke6.0.exe -nx
+version 6.0 v4
+Group {
+ name BG_Fix
+ inputs 5
+ help "Hallo :)\nThis node is for cleanning uneven lighted GreenScreen\ninputs:\nGS - your greenscreen fith an actor\nBG - your greenscreen with no actor\nColor - your gs color without defected lightening(can be solid)\nIn - in mask for KeyLigjt\nOut - out mask for Keylight\nDo not forget to set View to Screen Matte\nEnjoy \n:)"
+ tile_color 0x8700ff
+ gl_color 0x8700ff
+ addUserKnob {20 KeyLight}
+ addUserKnob {4 GizmoView t "Choise for view or Matte pulled by KeyLight or final clean Plate" M {Final Matte}}
+ addUserKnob {41 show l "                    KeyLight View" -STARTLINE T Keylight1.show}
+ addUserKnob {26 Tip l "" -STARTLINE T "    View suppose to be sat on Screen Matte"}
+ addUserKnob {41 screenColour l "Screen Colour" T Keylight1.screenColour}
+ addUserKnob {41 screenGain l "Screen Gain" T Keylight1.screenGain}
+ addUserKnob {41 screenBalance l "Screen Balance" T Keylight1.screenBalance}
+ addUserKnob {41 alphaBias l "Alpha Bias" T Keylight1.alphaBias}
+ addUserKnob {41 preBlur l "Screen PreBlur" T Keylight1.preBlur}
+ addUserKnob {20 "Screen Matte" n 2}
+ addUserKnob {41 screenClipMin l "Clip Black" T Keylight1.screenClipMin}
+ addUserKnob {41 screenClipMax l "Clip White" T Keylight1.screenClipMax}
+ addUserKnob {41 screenClipRollback l "Clip Rollback" T Keylight1.screenClipRollback}
+ addUserKnob {41 screenGrowShrink l "Screen Dilate" T Keylight1.screenGrowShrink}
+ addUserKnob {41 screenSoftness l "Screen Softness" T Keylight1.screenSoftness}
+ addUserKnob {41 screenDespotBlack l "Screen Despot Black" T Keylight1.screenDespotBlack}
+ addUserKnob {41 screenDespotWhite l "Screen Despot White" T Keylight1.screenDespotWhite}
+ addUserKnob {41 screenReplaceMethod l "Screen Replace" T Keylight1.screenReplaceMethod}
+ addUserKnob {41 screenReplaceColour l "Screen Replace Colour" T Keylight1.screenReplaceColour}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 Tuning n 2}
+ addUserKnob {41 midPoint l "Mid Tones At" T Keylight1.midPoint}
+ addUserKnob {41 lowGain l "Shadow Gain" T Keylight1.lowGain}
+ addUserKnob {41 midGain l "Midtones Gain" T Keylight1.midGain}
+ addUserKnob {41 highGain l "Highlights Gain" T Keylight1.highGain}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 "Inside Mask" n 2}
+ addUserKnob {41 sourceAlphaHandling l "Source Alpha" T Keylight1.sourceAlphaHandling}
+ addUserKnob {41 insideReplaceMethod l "Inside Replace" T Keylight1.insideReplaceMethod}
+ addUserKnob {41 insideReplaceColour l "Inside Replace Colour" T Keylight1.insideReplaceColour}
+ addUserKnob {20 "" n -1}
+ addUserKnob {20 Crops n 2}
+ addUserKnob {41 SourceXMethod l "X Method" T Keylight1.SourceXMethod}
+ addUserKnob {41 SourceYMethod l "Y Method" T Keylight1.SourceYMethod}
+ addUserKnob {41 SourceEdgeColour l "Edge Colour" T Keylight1.SourceEdgeColour}
+ addUserKnob {41 SourceCropL l Left T Keylight1.SourceCropL}
+ addUserKnob {41 SourceCropR l Right T Keylight1.SourceCropR}
+ addUserKnob {41 SourceCropB l Bottom T Keylight1.SourceCropB}
+ addUserKnob {41 SourceCropT l Top T Keylight1.SourceCropT}
+ addUserKnob {20 "" n -1}
+ addUserKnob {41 insideComponent l "InM Component" T Keylight1.insideComponent}
+ addUserKnob {41 outsideComponent l "OutM Component" -STARTLINE T Keylight1.outsideComponent}
+}
+ Input {
+  inputs 0
+  name Out
+  xpos 766
+  ypos 232
+  number 4
+ }
+set N19d98950 [stack 0]
+ Input {
+  inputs 0
+  name In
+  label "\n"
+  xpos 667
+  ypos 233
+  number 3
+ }
+set N19de7370 [stack 0]
+ Input {
+  inputs 0
+  name GS
+  xpos 513
+  ypos 230
+ }
+set N35bc3200 [stack 0]
+ OFXuk.co.thefoundry.keylight.keylight_v201 {
+  inputs 3
+  show "Screen Matte"
+  unPreMultiply false
+  screenColour 0
+  screenGain 1
+  screenBalance 0.5
+  alphaBias 0.5
+  despillBias {0.5 0.5 0.5}
+  gangBiases false
+  preBlur 0
+  "Screen Matte" 1
+  screenClipMin 0
+  screenClipMax 1
+  screenClipRollback 0
+  screenGrowShrink 0
+  screenSoftness 0
+  screenDespotBlack 0
+  screenDespotWhite 0
+  screenReplaceMethod "Soft Colour"
+  screenReplaceColour 0.5
+  Tuning 0
+  midPoint 0.5
+  lowGain 1
+  midGain 1
+  highGain 1
+  "Inside Mask" 0
+  sourceAlphaHandling Ignore
+  insideReplaceMethod "Soft Colour"
+  insideReplaceColour 0.5
+  Crops 0
+  SourceXMethod Colour
+  SourceYMethod Colour
+  SourceEdgeColour 0
+  SourceCropL 0
+  SourceCropR 1
+  SourceCropB 0
+  SourceCropT 1
+  balanceSet true
+  insideComponent None
+  outsideComponent None
+  cacheBreaker true
+  name Keylight1
+  selected true
+  xpos 621
+  ypos 374
+ }
+ set C35bc51b0 [stack 0]
+set N35bc51b0 [stack 0]
+ Dot {
+  name Dot1
+  xpos 414
+  ypos 378
+ }
+ Dot {
+  name Dot2
+  xpos 414
+  ypos 876
+ }
+push $N35bc3200
+ Input {
+  inputs 0
+  name Color
+  xpos 976
+  ypos 244
+  number 2
+ }
+ Input {
+  inputs 0
+  name BG
+  xpos 869
+  ypos 232
+  number 1
+ }
+set N35bca970 [stack 0]
+ Dot {
+  name Dot3
+  xpos 1091
+  ypos 509
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge15
+  xpos 1000
+  ypos 555
+ }
+push $N35bc51b0
+ Invert {
+  name Invert1
+  xpos 621
+  ypos 454
+ }
+push $N19d98950
+push $N19de7370
+push $N35bca970
+clone $C35bc51b0 {
+  inputs 3
+  xpos 788
+  ypos 369
+  selected false
+ }
+ Invert {
+  name Invert2
+  xpos 788
+  ypos 455
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge12
+  xpos 708
+  ypos 557
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge16
+  xpos 708
+  ypos 730
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge17
+  xpos 513
+  ypos 757
+ }
+ Switch {
+  inputs 2
+  which {{GizmoView i}}
+  name Switch1
+  xpos 513
+  ypos 872
+ }
+ Output {
+  name Output1
+  xpos 513
+  ypos 915
+ }
+end_group

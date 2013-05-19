@@ -1,0 +1,177 @@
+#! C:/Program Files/Nuke6.3v2/Nuke6.3.exe -nx
+version 6.3 v2
+Group {
+ inputs 2
+ help "DDisplace or Dan's Displace node is for creting heat and displacment based refractive distortions.  This node replicates the functionality of displacement nodes found in Fusion and AfterEffects"
+ name "DDisplace"
+ tile_color 0x184b7aff
+ addUserKnob {20 DDisplaceControls}
+ addUserKnob {41 mix l Refraction T Grade1.mix}
+ addUserKnob {41 size l Softness T BlurDisplace.size}
+ addUserKnob {41 uv_scale l "UV scale" T IDistort_DD.uv_scale}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 format l ReFormat T Reformat_DD.format}
+ addUserKnob {41 resize l "resize type" T Reformat_DD.resize}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {6 NoiseSwitch l "Add Noise" +STARTLINE}
+ addUserKnob {41 scale l "Noise scale" T Noise1.scale}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 Angle l "Light Angle" T EmbossDD.Angle}
+ addUserKnob {41 Width l "Light Width" T EmbossDD.Width}
+ addUserKnob {41 size_1 l Softness T BlurLight.size}
+ addUserKnob {41 mix_1 l Blend T Merge2.mix}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 mix_2 l Overlay T Merge1.mix}
+}
+ Input {
+  inputs 0
+  name Displacment
+  xpos -750
+  ypos 161
+ }
+ Reformat {
+  format "1280 720 0 0 1280 720 1 "
+  resize distort
+  name Reformat_DD
+  xpos -627
+  ypos 155
+ }
+ set C1e395aa0 [stack 0]
+ Dot {
+  name Dot1
+  xpos -384
+  ypos 164
+ }
+set N1e431540 [stack 0]
+push $N1e431540
+ Grade {
+  blackpoint 0.02
+  whitepoint 0.118
+  name Grade1
+  xpos -418
+  ypos 83
+ }
+set N1e394450 [stack 0]
+ Emboss {
+  Angle 45
+  Width 2
+  name EmbossDD
+  xpos -291
+  ypos 77
+ }
+ Blur {
+  size 15
+  name BlurLight
+  xpos -173
+  ypos 77
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format {{{Reformat_DD.format}}}
+  name Constant1
+  xpos -480
+  ypos -86
+ }
+ Noise {
+  center {{Reformat_DD.format.width/2 i} {Reformat_DD.format.height/2 i}}
+  ramp linear
+  color {2 0 0 1}
+  p1 {{Reformat_DD.format.width i} {Reformat_DD.format.height/2 i}}
+  color0 {0 2 0 0}
+  p0 {{Reformat_DD.format.width*0 i} {Reformat_DD.format.height/2 i}}
+  name Noise1
+  xpos -480
+  ypos -14
+ }
+push $N1e394450
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge3
+  xpos -480
+  ypos 10
+ }
+push $N1e394450
+ Switch {
+  inputs 2
+  which {{NoiseSwitch i}}
+  name Switch1
+  selected true
+  xpos -370
+  ypos 10
+ }
+ Dot {
+  name Dot2
+  xpos -260
+  ypos 13
+ }
+ Blur {
+  size 20
+  mix 0.9
+  name BlurDisplace
+  xpos -174
+  ypos 4
+ }
+ Input {
+  inputs 0
+  name Background
+  xpos -747
+  ypos -113
+  number 1
+ }
+clone $C1e395aa0 {
+  xpos -624
+  ypos -119
+  selected false
+ }
+ ShuffleCopy {
+  inputs 2
+  alpha red
+  black red
+  white green
+  red2 blue
+  green2 red
+  out2 motion
+  name ShuffleCopy_DD
+  xpos -174
+  ypos -113
+ }
+ IDistort {
+  uv motion
+  uv_scale 10
+  blur -rgba.alpha
+  name IDistort_DD
+  xpos 44
+  ypos -119
+ }
+ Merge2 {
+  inputs 2
+  operation overlay
+  mix 0.5
+  name Merge2
+  xpos 44
+  ypos 83
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  mix 0
+  name Merge1
+  xpos 44
+  ypos 161
+ }
+set N1e396760 [stack 0]
+ Output {
+  name Output1
+  xpos 44
+  ypos 261
+ }
+push $N1e396760
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -168
+  ypos 261
+ }
+end_group

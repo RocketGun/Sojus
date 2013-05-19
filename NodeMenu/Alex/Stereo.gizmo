@@ -1,0 +1,29 @@
+#! /usr/local/Nuke6.1v3/Nuke6.1 -nx
+version 6.1 v3
+Gizmo {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -895
+  ypos 505
+ }
+ Colorspace {
+  colorspace_out sRGB
+  name Colorspace2
+  xpos -895
+  ypos 545
+ }
+ svo_Visor_V3 {
+  name svo_Visor_V3_2
+  xpos -895
+  ypos 585
+  anaglyphMethod Interlaced
+  saturationSelect "Full Color"
+ }
+ Output {
+  name Output1
+  xpos -895
+  ypos 685
+ }
+end_group

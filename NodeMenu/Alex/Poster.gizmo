@@ -1,0 +1,5495 @@
+#! C:/Program Files (x86)/Nuke5.1v5/Nuke5.1.exe -nx
+version 5.1500
+Group {
+ inputs 3
+ addUserKnob {20 User}
+ addUserKnob {7 q l Rotation t "rotate to change poster" R 0 360}
+ q 92.5
+}
+ Axis {
+  inputs 0
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis51
+  xpos 369
+  ypos -266
+ }
+set N2fef4a10 [stack 0]
+push $N2fef4a10
+ Camera {
+  translate {42 0 176}
+  name Camera51
+  xpos 369
+  ypos -200
+ }
+ Input {
+  inputs 0
+  name Input2
+  xpos -2831
+  ypos -1556
+  number 1
+ }
+ Reformat {
+  format "914 778 0 0 914 778 2 1K_Cinemascope"
+  name Reformat2
+  xpos -2831
+  ypos -1529
+ }
+ NoOp {
+  name NoOp2
+  xpos -2831
+  ypos -1017
+ }
+set N2ff04870 [stack 0]
+ Project3D {
+  inputs 2
+  name Project3D51
+  xpos 359
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card51
+  xpos 359
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo51
+  xpos 359
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis101
+  xpos 6069
+  ypos -246
+ }
+ Camera {
+  translate {42 0 176}
+  name Camera101
+  xpos 6069
+  ypos -180
+ }
+ Input {
+  inputs 0
+  name Input3
+  xpos -2721
+  ypos -1555
+  number 2
+ }
+ Reformat {
+  format "914 778 0 0 914 778 2 1K_Cinemascope"
+  name Reformat3
+  xpos -2721
+  ypos -1528
+ }
+ NoOp {
+  name NoOp3
+  xpos 2869
+  ypos -997
+ }
+set N2ff10860 [stack 0]
+ Project3D {
+  inputs 2
+  name Project3D101
+  xpos 6059
+  ypos -66
+ }
+ Axis {
+  inputs 0
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis1
+  xpos -5486
+  ypos -186
+ }
+ Camera {
+  translate {42 0 176}
+  name Camera1
+  xpos -5486
+  ypos -120
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -2943
+  ypos -1556
+ }
+ Reformat {
+  format "914 778 0 0 914 778 2 1K_Cinemascope"
+  name Reformat1
+  xpos -2943
+  ypos -1529
+ }
+ NoOp {
+  name NoOp1
+  xpos -8576
+  ypos -747
+ }
+set N1a660c20 [stack 0]
+ Project3D {
+  inputs 2
+  name Project3D1
+  xpos -5496
+  ypos -6
+ }
+ Axis {
+  inputs 0
+  translate {1.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis102
+  xpos 5959
+  ypos -246
+ }
+set N2ff0dec0 [stack 0]
+push $N2ff0dec0
+ Camera {
+  translate {40.2 0 176}
+  name Camera102
+  xpos 5959
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D102
+  xpos 5949
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card102
+  xpos 5949
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo102
+  xpos 5949
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {3.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis103
+  xpos 5849
+  ypos -246
+ }
+set N2ff0dc70 [stack 0]
+push $N2ff0dc70
+ Camera {
+  translate {38.4 0 176}
+  name Camera103
+  xpos 5849
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D103
+  xpos 5839
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card103
+  xpos 5839
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo103
+  xpos 5839
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {5.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis104
+  xpos 5739
+  ypos -246
+ }
+set N2ff0e5b0 [stack 0]
+push $N2ff0e5b0
+ Camera {
+  translate {36.6 0 176}
+  name Camera104
+  xpos 5739
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D104
+  xpos 5729
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card104
+  xpos 5729
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo104
+  xpos 5729
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {7.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis105
+  xpos 5629
+  ypos -246
+ }
+set N2ff08dd0 [stack 0]
+push $N2ff08dd0
+ Camera {
+  translate {34.8 0 176}
+  name Camera105
+  xpos 5629
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D105
+  xpos 5619
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card105
+  xpos 5619
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo105
+  xpos 5619
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {9 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis106
+  xpos 5519
+  ypos -246
+ }
+set N2ff09710 [stack 0]
+push $N2ff09710
+ Camera {
+  translate {33 0 176}
+  name Camera106
+  xpos 5519
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D106
+  xpos 5509
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card106
+  xpos 5509
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo106
+  xpos 5509
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {10.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis107
+  xpos 5409
+  ypos -246
+ }
+set N2ff0a740 [stack 0]
+push $N2ff0a740
+ Camera {
+  translate {31.2 0 176}
+  name Camera107
+  xpos 5409
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D107
+  xpos 5399
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card107
+  xpos 5399
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo107
+  xpos 5399
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {12.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis108
+  xpos 5299
+  ypos -246
+ }
+set N2ff0c7a0 [stack 0]
+push $N2ff0c7a0
+ Camera {
+  translate {29.4 0 176}
+  name Camera108
+  xpos 5299
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D108
+  xpos 5289
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card108
+  xpos 5289
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo108
+  xpos 5289
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {14.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis109
+  xpos 5189
+  ypos -246
+ }
+set N2ff0f5e0 [stack 0]
+push $N2ff0f5e0
+ Camera {
+  translate {27.6 0 176}
+  name Camera109
+  xpos 5189
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D109
+  xpos 5179
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card109
+  xpos 5179
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo109
+  xpos 5179
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {16.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis110
+  xpos 5079
+  ypos -246
+ }
+set N2feefdc0 [stack 0]
+push $N2feefdc0
+ Camera {
+  translate {25.8 0 176}
+  name Camera110
+  xpos 5079
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D110
+  xpos 5069
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card110
+  xpos 5069
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo110
+  xpos 5069
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {18 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis111
+  xpos 4969
+  ypos -246
+ }
+set N2fef9fa0 [stack 0]
+push $N2fef9fa0
+ Camera {
+  translate {24 0 176}
+  name Camera111
+  xpos 4969
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D111
+  xpos 4959
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card111
+  xpos 4959
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo111
+  xpos 4959
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {19.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis112
+  xpos 4859
+  ypos -246
+ }
+set N2fef0700 [stack 0]
+push $N2fef0700
+ Camera {
+  translate {22.2 0 176}
+  name Camera112
+  xpos 4859
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D112
+  xpos 4849
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card112
+  xpos 4849
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo112
+  xpos 4849
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {21.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis113
+  xpos 4749
+  ypos -246
+ }
+set N2fee9a50 [stack 0]
+push $N2fee9a50
+ Camera {
+  translate {20.4 0 176}
+  name Camera113
+  xpos 4749
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D113
+  xpos 4739
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card113
+  xpos 4739
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo113
+  xpos 4739
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {23.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis114
+  xpos 4639
+  ypos -246
+ }
+set N2fee8330 [stack 0]
+push $N2fee8330
+ Camera {
+  translate {18.6 0 176}
+  name Camera114
+  xpos 4639
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D114
+  xpos 4629
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card114
+  xpos 4629
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo114
+  xpos 4629
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {25.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis115
+  xpos 4529
+  ypos -246
+ }
+set N2fee87d0 [stack 0]
+push $N2fee87d0
+ Camera {
+  translate {16.8 0 176}
+  name Camera115
+  xpos 4529
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D115
+  xpos 4519
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card115
+  xpos 4519
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo115
+  xpos 4519
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {27 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis116
+  xpos 4419
+  ypos -246
+ }
+set N2feeeb40 [stack 0]
+push $N2feeeb40
+ Camera {
+  translate {15 0 176}
+  name Camera116
+  xpos 4419
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D116
+  xpos 4409
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card116
+  xpos 4409
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo116
+  xpos 4409
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {28.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis117
+  xpos 4309
+  ypos -246
+ }
+set N2feed8c0 [stack 0]
+push $N2feed8c0
+ Camera {
+  translate {13.2 0 176}
+  name Camera117
+  xpos 4309
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D117
+  xpos 4299
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card117
+  xpos 4299
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo117
+  xpos 4299
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {30.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis118
+  xpos 4199
+  ypos -246
+ }
+set N2feec640 [stack 0]
+push $N2feec640
+ Camera {
+  translate {11.4 0 176}
+  name Camera118
+  xpos 4199
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D118
+  xpos 4189
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card118
+  xpos 4189
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo118
+  xpos 4189
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {32.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis119
+  xpos 4089
+  ypos -246
+ }
+set N2fee6770 [stack 0]
+push $N2fee6770
+ Camera {
+  translate {9.6 0 176}
+  name Camera119
+  xpos 4089
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D119
+  xpos 4079
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card119
+  xpos 4079
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo119
+  xpos 4079
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {34.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis120
+  xpos 3979
+  ypos -246
+ }
+set N2fed92b0 [stack 0]
+push $N2fed92b0
+ Camera {
+  translate {7.8 0 176}
+  name Camera120
+  xpos 3979
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D120
+  xpos 3969
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card120
+  xpos 3969
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo120
+  xpos 3969
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {36 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis121
+  xpos 3869
+  ypos -246
+ }
+set N2fedef30 [stack 0]
+push $N2fedef30
+ Camera {
+  translate {6 0 176}
+  name Camera121
+  xpos 3869
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D121
+  xpos 3859
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card121
+  xpos 3859
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo121
+  xpos 3859
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {37.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis122
+  xpos 3759
+  ypos -246
+ }
+set N2fee6520 [stack 0]
+push $N2fee6520
+ Camera {
+  translate {4.2 0 176}
+  name Camera122
+  xpos 3759
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D122
+  xpos 3749
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card122
+  xpos 3749
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo122
+  xpos 3749
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {39.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis123
+  xpos 3649
+  ypos -246
+ }
+set N2fef6cc0 [stack 0]
+push $N2fef6cc0
+ Camera {
+  translate {2.4 0 176}
+  name Camera123
+  xpos 3649
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D123
+  xpos 3639
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card123
+  xpos 3639
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo123
+  xpos 3639
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {41.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis124
+  xpos 3539
+  ypos -246
+ }
+set N2fef4c60 [stack 0]
+push $N2fef4c60
+ Camera {
+  translate {0.6 0 176}
+  name Camera124
+  xpos 3539
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D124
+  xpos 3529
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card124
+  xpos 3529
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo124
+  xpos 3529
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {43.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis125
+  xpos 3429
+  ypos -246
+ }
+set N2fef73b0 [stack 0]
+push $N2fef73b0
+ Camera {
+  translate {-1.2 0 176}
+  name Camera125
+  xpos 3429
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D125
+  xpos 3419
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card125
+  xpos 3419
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo125
+  xpos 3419
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {45 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis126
+  xpos 3319
+  ypos -246
+ }
+set N2ff05d40 [stack 0]
+push $N2ff05d40
+ Camera {
+  translate {-3 0 176}
+  name Camera126
+  xpos 3319
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D126
+  xpos 3309
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card126
+  xpos 3309
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo126
+  xpos 3309
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {46.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis127
+  xpos 3209
+  ypos -246
+ }
+set N2ff02370 [stack 0]
+push $N2ff02370
+ Camera {
+  translate {-4.8 0 176}
+  name Camera127
+  xpos 3209
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D127
+  xpos 3199
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card127
+  xpos 3199
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo127
+  xpos 3199
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {48.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis128
+  xpos 3099
+  ypos -246
+ }
+set N2ff02810 [stack 0]
+push $N2ff02810
+ Camera {
+  translate {-6.6 0 176}
+  name Camera128
+  xpos 3099
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D128
+  xpos 3089
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card128
+  xpos 3089
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo128
+  xpos 3089
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {50.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis129
+  xpos 2989
+  ypos -246
+ }
+set N2fef3790 [stack 0]
+push $N2fef3790
+ Camera {
+  translate {-8.4 0 176}
+  name Camera129
+  xpos 2989
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D129
+  xpos 2979
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card129
+  xpos 2979
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo129
+  xpos 2979
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {52.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis130
+  xpos 2879
+  ypos -246
+ }
+set N2fef3c30 [stack 0]
+push $N2fef3c30
+ Camera {
+  translate {-10.2 0 176}
+  name Camera130
+  xpos 2879
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D130
+  xpos 2869
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card130
+  xpos 2869
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo130
+  xpos 2869
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {54 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis131
+  xpos 2769
+  ypos -246
+ }
+set N2fefc4a0 [stack 0]
+push $N2fefc4a0
+ Camera {
+  translate {-12 0 176}
+  name Camera131
+  xpos 2769
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D131
+  xpos 2759
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card131
+  xpos 2759
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo131
+  xpos 2759
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {55.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis132
+  xpos 2659
+  ypos -246
+ }
+set N2fef7160 [stack 0]
+push $N2fef7160
+ Camera {
+  translate {-13.8 0 176}
+  name Camera132
+  xpos 2659
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D132
+  xpos 2649
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card132
+  xpos 2649
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo132
+  xpos 2649
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {57.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis133
+  xpos 2549
+  ypos -246
+ }
+set N2fef1290 [stack 0]
+push $N2fef1290
+ Camera {
+  translate {-15.6 0 176}
+  name Camera133
+  xpos 2549
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D133
+  xpos 2539
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card133
+  xpos 2539
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo133
+  xpos 2539
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {59.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis134
+  xpos 2439
+  ypos -246
+ }
+set N2fef1040 [stack 0]
+push $N2fef1040
+ Camera {
+  translate {-17.4 0 176}
+  name Camera134
+  xpos 2439
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D134
+  xpos 2429
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card134
+  xpos 2429
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo134
+  xpos 2429
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {61.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis135
+  xpos 2329
+  ypos -246
+ }
+set N2feeb170 [stack 0]
+push $N2feeb170
+ Camera {
+  translate {-19.2 0 176}
+  name Camera135
+  xpos 2329
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D135
+  xpos 2319
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card135
+  xpos 2319
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo135
+  xpos 2319
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {63 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis136
+  xpos 2219
+  ypos -246
+ }
+set N2feff9d0 [stack 0]
+push $N2feff9d0
+ Camera {
+  translate {-21 0 176}
+  name Camera136
+  xpos 2219
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D136
+  xpos 2209
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card136
+  xpos 2209
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo136
+  xpos 2209
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {64.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis137
+  xpos 2109
+  ypos -246
+ }
+set N2ff007b0 [stack 0]
+push $N2ff007b0
+ Camera {
+  translate {-22.8 0 176}
+  name Camera137
+  xpos 2109
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D137
+  xpos 2099
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card137
+  xpos 2099
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo137
+  xpos 2099
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {66.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis138
+  xpos 1999
+  ypos -246
+ }
+set N2feebab0 [stack 0]
+push $N2feebab0
+ Camera {
+  translate {-24.6 0 176}
+  name Camera138
+  xpos 1999
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D138
+  xpos 1989
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card138
+  xpos 1989
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo138
+  xpos 1989
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {68.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis139
+  xpos 1889
+  ypos -246
+ }
+set N2feda9d0 [stack 0]
+push $N2feda9d0
+ Camera {
+  translate {-26.4 0 176}
+  name Camera139
+  xpos 1889
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D139
+  xpos 1879
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card139
+  xpos 1879
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo139
+  xpos 1879
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {70.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis140
+  xpos 1779
+  ypos -246
+ }
+set N2feda090 [stack 0]
+push $N2feda090
+ Camera {
+  translate {-28.2 0 176}
+  name Camera140
+  xpos 1779
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D140
+  xpos 1769
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card140
+  xpos 1769
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo140
+  xpos 1769
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {72 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis141
+  xpos 1669
+  ypos -246
+ }
+set N2fed1130 [stack 0]
+push $N2fed1130
+ Camera {
+  translate {-30 0 176}
+  name Camera141
+  xpos 1669
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D141
+  xpos 1659
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card141
+  xpos 1659
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo141
+  xpos 1659
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {73.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis142
+  xpos 1559
+  ypos -246
+ }
+set N2fed8e10 [stack 0]
+push $N2fed8e10
+ Camera {
+  translate {-31.8 0 176}
+  name Camera142
+  xpos 1559
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D142
+  xpos 1549
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card142
+  xpos 1549
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo142
+  xpos 1549
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {75.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis143
+  xpos 1449
+  ypos -246
+ }
+set N2fed4b00 [stack 0]
+push $N2fed4b00
+ Camera {
+  translate {-33.6 0 176}
+  name Camera143
+  xpos 1449
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D143
+  xpos 1439
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card143
+  xpos 1439
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo143
+  xpos 1439
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {77.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis144
+  xpos 1339
+  ypos -246
+ }
+set N2fedc340 [stack 0]
+push $N2fedc340
+ Camera {
+  translate {-35.4 0 176}
+  name Camera144
+  xpos 1339
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D144
+  xpos 1329
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card144
+  xpos 1329
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo144
+  xpos 1329
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {79.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis145
+  xpos 1229
+  ypos -246
+ }
+set N2fee18d0 [stack 0]
+push $N2fee18d0
+ Camera {
+  translate {-37.2 0 176}
+  name Camera145
+  xpos 1229
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D145
+  xpos 1219
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card145
+  xpos 1219
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo145
+  xpos 1219
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {81 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis146
+  xpos 1119
+  ypos -246
+ }
+set N2fee08a0 [stack 0]
+push $N2fee08a0
+ Camera {
+  translate {-39 0 176}
+  name Camera146
+  xpos 1119
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D146
+  xpos 1109
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card146
+  xpos 1109
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo146
+  xpos 1109
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {82.8 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis147
+  xpos 1009
+  ypos -246
+ }
+set N2fee0650 [stack 0]
+push $N2fee0650
+ Camera {
+  translate {-40.8 0 176}
+  name Camera147
+  xpos 1009
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D147
+  xpos 999
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card147
+  xpos 999
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo147
+  xpos 999
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {84.6 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis148
+  xpos 899
+  ypos -246
+ }
+set N2fee2da0 [stack 0]
+push $N2fee2da0
+ Camera {
+  translate {-42.6 0 176}
+  name Camera148
+  xpos 899
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D148
+  xpos 889
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card148
+  xpos 889
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo148
+  xpos 889
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {86.4 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis149
+  xpos 789
+  ypos -246
+ }
+set N2fed41c0 [stack 0]
+push $N2fed41c0
+ Camera {
+  translate {-44.4 0 176}
+  name Camera149
+  xpos 789
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D149
+  xpos 779
+  ypos -66
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card149
+  xpos 779
+  ypos -39
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo149
+  xpos 779
+  ypos -20
+ }
+ Axis {
+  inputs 0
+  translate {88.2 0 0}
+  rotate {0 {parent.lider2.rotate.y i} 0}
+  name Axis150
+  xpos 679
+  ypos -246
+ }
+set N2fed2aa0 [stack 0]
+push $N2fed2aa0
+ Camera {
+  translate {-46.2 0 176}
+  name Camera150
+  xpos 679
+  ypos -180
+ }
+push $N2ff10860
+ Project3D {
+  inputs 2
+  name Project3D150
+  xpos 669
+  ypos -85
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card150
+  xpos 669
+  ypos -58
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo150
+  xpos 669
+  ypos -39
+ }
+ Scene {
+  inputs 49
+  name Scene4
+  xpos -1773
+  ypos 2394
+ }
+ Axis {
+  inputs 0
+  translate {1.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis52
+  xpos 259
+  ypos -266
+ }
+set N2fed1cc0 [stack 0]
+push $N2fed1cc0
+ Camera {
+  translate {40.2 0 176}
+  name Camera52
+  xpos 259
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D52
+  xpos 249
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card52
+  xpos 249
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo52
+  xpos 249
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {3.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis53
+  xpos 149
+  ypos -266
+ }
+set N2fed6910 [stack 0]
+push $N2fed6910
+ Camera {
+  translate {38.4 0 176}
+  name Camera53
+  xpos 149
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D53
+  xpos 139
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card53
+  xpos 139
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo53
+  xpos 139
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {5.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis54
+  xpos 39
+  ypos -266
+ }
+set N2fed5d80 [stack 0]
+push $N2fed5d80
+ Camera {
+  translate {36.6 0 176}
+  name Camera54
+  xpos 39
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D54
+  xpos 29
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card54
+  xpos 29
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo54
+  xpos 29
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {7.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis55
+  xpos -71
+  ypos -266
+ }
+set N2fed7b90 [stack 0]
+push $N2fed7b90
+ Camera {
+  translate {34.8 0 176}
+  name Camera55
+  xpos -71
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D55
+  xpos -81
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card55
+  xpos -81
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo55
+  xpos -81
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {9 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis56
+  xpos -181
+  ypos -266
+ }
+set N2fee69c0 [stack 0]
+push $N2fee69c0
+ Camera {
+  translate {33 0 176}
+  name Camera56
+  xpos -181
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D56
+  xpos -191
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card56
+  xpos -191
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo56
+  xpos -191
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {10.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis57
+  xpos -291
+  ypos -266
+ }
+set N2fee4020 [stack 0]
+push $N2fee4020
+ Camera {
+  translate {31.2 0 176}
+  name Camera57
+  xpos -291
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D57
+  xpos -301
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card57
+  xpos -301
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo57
+  xpos -301
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {12.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis58
+  xpos -401
+  ypos -266
+ }
+set N2fee3490 [stack 0]
+push $N2fee3490
+ Camera {
+  translate {29.4 0 176}
+  name Camera58
+  xpos -401
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D58
+  xpos -411
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card58
+  xpos -411
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo58
+  xpos -411
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {14.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis59
+  xpos -511
+  ypos -266
+ }
+set N2fefb6c0 [stack 0]
+push $N2fefb6c0
+ Camera {
+  translate {27.6 0 176}
+  name Camera59
+  xpos -511
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D59
+  xpos -521
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card59
+  xpos -521
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo59
+  xpos -521
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {16.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis60
+  xpos -621
+  ypos -266
+ }
+set N2fef47c0 [stack 0]
+push $N2fef47c0
+ Camera {
+  translate {25.8 0 176}
+  name Camera60
+  xpos -621
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D60
+  xpos -631
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card60
+  xpos -631
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo60
+  xpos -631
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {18 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis61
+  xpos -731
+  ypos -266
+ }
+set N2fefe060 [stack 0]
+push $N2fefe060
+ Camera {
+  translate {24 0 176}
+  name Camera61
+  xpos -731
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D61
+  xpos -741
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card61
+  xpos -741
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo61
+  xpos -741
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {19.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis62
+  xpos -841
+  ypos -266
+ }
+set N2fefde10 [stack 0]
+push $N2fefde10
+ Camera {
+  translate {22.2 0 176}
+  name Camera62
+  xpos -841
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D62
+  xpos -851
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card62
+  xpos -851
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo62
+  xpos -851
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {21.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis63
+  xpos -951
+  ypos -266
+ }
+set N2fef8ad0 [stack 0]
+push $N2fef8ad0
+ Camera {
+  translate {20.4 0 176}
+  name Camera63
+  xpos -951
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D63
+  xpos -961
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card63
+  xpos -961
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo63
+  xpos -961
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {23.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis64
+  xpos -1061
+  ypos -266
+ }
+set N2fef9b00 [stack 0]
+push $N2fef9b00
+ Camera {
+  translate {18.6 0 176}
+  name Camera64
+  xpos -1061
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D64
+  xpos -1071
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card64
+  xpos -1071
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo64
+  xpos -1071
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {25.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis65
+  xpos -1171
+  ypos -266
+ }
+set N2ff07da0 [stack 0]
+push $N2ff07da0
+ Camera {
+  translate {16.8 0 176}
+  name Camera65
+  xpos -1171
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D65
+  xpos -1181
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card65
+  xpos -1181
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo65
+  xpos -1181
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {27 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis66
+  xpos -1281
+  ypos -266
+ }
+set N1a67d160 [stack 0]
+push $N1a67d160
+ Camera {
+  translate {15 0 176}
+  name Camera66
+  xpos -1281
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D66
+  xpos -1291
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card66
+  xpos -1291
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo66
+  xpos -1291
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {28.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis67
+  xpos -1391
+  ypos -266
+ }
+set N1a67ead0 [stack 0]
+push $N1a67ead0
+ Camera {
+  translate {13.2 0 176}
+  name Camera67
+  xpos -1391
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D67
+  xpos -1401
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card67
+  xpos -1401
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo67
+  xpos -1401
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {30.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis68
+  xpos -1501
+  ypos -266
+ }
+set N1a67df40 [stack 0]
+push $N1a67df40
+ Camera {
+  translate {11.4 0 176}
+  name Camera68
+  xpos -1501
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D68
+  xpos -1511
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card68
+  xpos -1511
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo68
+  xpos -1511
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {32.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis69
+  xpos -1611
+  ypos -266
+ }
+set N1a6782c0 [stack 0]
+push $N1a6782c0
+ Camera {
+  translate {9.6 0 176}
+  name Camera69
+  xpos -1611
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D69
+  xpos -1621
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card69
+  xpos -1621
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo69
+  xpos -1621
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {34.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis70
+  xpos -1721
+  ypos -266
+ }
+set N1a67ef70 [stack 0]
+push $N1a67ef70
+ Camera {
+  translate {7.8 0 176}
+  name Camera70
+  xpos -1721
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D70
+  xpos -1731
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card70
+  xpos -1731
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo70
+  xpos -1731
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {36 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis71
+  xpos -1831
+  ypos -266
+ }
+set N1a67b7f0 [stack 0]
+push $N1a67b7f0
+ Camera {
+  translate {6 0 176}
+  name Camera71
+  xpos -1831
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D71
+  xpos -1841
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card71
+  xpos -1841
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo71
+  xpos -1841
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {37.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis72
+  xpos -1941
+  ypos -266
+ }
+set N1a67aa10 [stack 0]
+push $N1a67aa10
+ Camera {
+  translate {4.2 0 176}
+  name Camera72
+  xpos -1941
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D72
+  xpos -1951
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card72
+  xpos -1951
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo72
+  xpos -1951
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {39.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis73
+  xpos -2051
+  ypos -266
+ }
+set N1a676010 [stack 0]
+push $N1a676010
+ Camera {
+  translate {2.4 0 176}
+  name Camera73
+  xpos -2051
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D73
+  xpos -2061
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card73
+  xpos -2061
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo73
+  xpos -2061
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {41.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis74
+  xpos -2161
+  ypos -266
+ }
+set N1a6540a0 [stack 0]
+push $N1a6540a0
+ Camera {
+  translate {0.6 0 176}
+  name Camera74
+  xpos -2161
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D74
+  xpos -2171
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card74
+  xpos -2171
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo74
+  xpos -2171
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {43.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis75
+  xpos -2271
+  ypos -266
+ }
+set N1a663cb0 [stack 0]
+push $N1a663cb0
+ Camera {
+  translate {-1.2 0 176}
+  name Camera75
+  xpos -2271
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D75
+  xpos -2281
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card75
+  xpos -2281
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo75
+  xpos -2281
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {45 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis76
+  xpos -2381
+  ypos -266
+ }
+set N1a6671e0 [stack 0]
+push $N1a6671e0
+ Camera {
+  translate {-3 0 176}
+  name Camera76
+  xpos -2381
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D76
+  xpos -2391
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card76
+  xpos -2391
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo76
+  xpos -2391
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {46.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis77
+  xpos -2491
+  ypos -266
+ }
+set N1a670a80 [stack 0]
+push $N1a670a80
+ Camera {
+  translate {-4.8 0 176}
+  name Camera77
+  xpos -2491
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D77
+  xpos -2501
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card77
+  xpos -2501
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo77
+  xpos -2501
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {48.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis78
+  xpos -2601
+  ypos -266
+ }
+set N1a6661b0 [stack 0]
+push $N1a6661b0
+ Camera {
+  translate {-6.6 0 176}
+  name Camera78
+  xpos -2601
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D78
+  xpos -2611
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card78
+  xpos -2611
+  ypos -51
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo78
+  xpos -2611
+  ypos -8
+ }
+ Axis {
+  inputs 0
+  translate {50.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis79
+  xpos -2711
+  ypos -266
+ }
+set N1a6764b0 [stack 0]
+push $N1a6764b0
+ Camera {
+  translate {-8.4 0 176}
+  name Camera79
+  xpos -2711
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D79
+  xpos -2721
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card79
+  xpos -2721
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo79
+  xpos -2721
+  ypos -1
+ }
+ Axis {
+  inputs 0
+  translate {52.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis80
+  xpos -2821
+  ypos -266
+ }
+set N1a681b60 [stack 0]
+push $N1a681b60
+ Camera {
+  translate {-10.2 0 176}
+  name Camera80
+  xpos -2821
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D80
+  xpos -2831
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card80
+  xpos -2831
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo80
+  xpos -2831
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {54 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis81
+  xpos -2931
+  ypos -266
+ }
+set N1a6801f0 [stack 0]
+push $N1a6801f0
+ Camera {
+  translate {-12 0 176}
+  name Camera81
+  xpos -2931
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D81
+  xpos -2941
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card81
+  xpos -2941
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo81
+  xpos -2941
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {55.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis82
+  xpos -3041
+  ypos -266
+ }
+set N1a67e3e0 [stack 0]
+push $N1a67e3e0
+ Camera {
+  translate {-13.8 0 176}
+  name Camera82
+  xpos -3041
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D82
+  xpos -3051
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card82
+  xpos -3051
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo82
+  xpos -3051
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {57.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis83
+  xpos -3151
+  ypos -266
+ }
+set N1a675920 [stack 0]
+push $N1a675920
+ Camera {
+  translate {-15.6 0 176}
+  name Camera83
+  xpos -3151
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D83
+  xpos -3161
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card83
+  xpos -3161
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo83
+  xpos -3161
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {59.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis84
+  xpos -3261
+  ypos -266
+ }
+set N1a677bd0 [stack 0]
+push $N1a677bd0
+ Camera {
+  translate {-17.4 0 176}
+  name Camera84
+  xpos -3261
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D84
+  xpos -3271
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card84
+  xpos -3271
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo84
+  xpos -3271
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {61.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis85
+  xpos -3371
+  ypos -266
+ }
+set N1a66a270 [stack 0]
+push $N1a66a270
+ Camera {
+  translate {-19.2 0 176}
+  name Camera85
+  xpos -3371
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D85
+  xpos -3381
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card85
+  xpos -3381
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo85
+  xpos -3381
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {63 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis86
+  xpos -3481
+  ypos -266
+ }
+set N1a673fb0 [stack 0]
+push $N1a673fb0
+ Camera {
+  translate {-21 0 176}
+  name Camera86
+  xpos -3481
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D86
+  xpos -3491
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card86
+  xpos -3491
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo86
+  xpos -3491
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {64.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis87
+  xpos -3591
+  ypos -266
+ }
+set N1a672640 [stack 0]
+push $N1a672640
+ Camera {
+  translate {-22.8 0 176}
+  name Camera87
+  xpos -3591
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D87
+  xpos -3601
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card87
+  xpos -3601
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo87
+  xpos -3601
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {66.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis88
+  xpos -3701
+  ypos -266
+ }
+set N1a678c00 [stack 0]
+push $N1a678c00
+ Camera {
+  translate {-24.6 0 176}
+  name Camera88
+  xpos -3701
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D88
+  xpos -3711
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card88
+  xpos -3711
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo88
+  xpos -3711
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {68.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis89
+  xpos -3811
+  ypos -266
+ }
+set N1a65d940 [stack 0]
+push $N1a65d940
+ Camera {
+  translate {-26.4 0 176}
+  name Camera89
+  xpos -3811
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D89
+  xpos -3821
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card89
+  xpos -3821
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo89
+  xpos -3821
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {70.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis90
+  xpos -3921
+  ypos -266
+ }
+set N1a664840 [stack 0]
+push $N1a664840
+ Camera {
+  translate {-28.2 0 176}
+  name Camera90
+  xpos -3921
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D90
+  xpos -3931
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card90
+  xpos -3931
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo90
+  xpos -3931
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {72 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis91
+  xpos -4031
+  ypos -266
+ }
+set N1a672f80 [stack 0]
+push $N1a672f80
+ Camera {
+  translate {-30 0 176}
+  name Camera91
+  xpos -4031
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D91
+  xpos -4041
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card91
+  xpos -4041
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo91
+  xpos -4041
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {73.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis92
+  xpos -4141
+  ypos -266
+ }
+set N1a66e330 [stack 0]
+push $N1a66e330
+ Camera {
+  translate {-31.8 0 176}
+  name Camera92
+  xpos -4141
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D92
+  xpos -4151
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card92
+  xpos -4151
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo92
+  xpos -4151
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {75.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis93
+  xpos -4251
+  ypos -266
+ }
+set N1a66b2a0 [stack 0]
+push $N1a66b2a0
+ Camera {
+  translate {-33.6 0 176}
+  name Camera93
+  xpos -4251
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D93
+  xpos -4261
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card93
+  xpos -4261
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo93
+  xpos -4261
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {77.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis94
+  xpos -4361
+  ypos -266
+ }
+set N1a652980 [stack 0]
+push $N1a652980
+ Camera {
+  translate {-35.4 0 176}
+  name Camera94
+  xpos -4361
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D94
+  xpos -4371
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card94
+  xpos -4371
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo94
+  xpos -4371
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {79.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis95
+  xpos -4471
+  ypos -266
+ }
+set N1a652290 [stack 0]
+push $N1a652290
+ Camera {
+  translate {-37.2 0 176}
+  name Camera95
+  xpos -4471
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D95
+  xpos -4481
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card95
+  xpos -4481
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo95
+  xpos -4481
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {81 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis96
+  xpos -4581
+  ypos -266
+ }
+set N1a65bb30 [stack 0]
+push $N1a65bb30
+ Camera {
+  translate {-39 0 176}
+  name Camera96
+  xpos -4581
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D96
+  xpos -4591
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card96
+  xpos -4591
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo96
+  xpos -4591
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {82.8 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis97
+  xpos -4691
+  ypos -266
+ }
+set N1a661560 [stack 0]
+push $N1a661560
+ Camera {
+  translate {-40.8 0 176}
+  name Camera97
+  xpos -4691
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D97
+  xpos -4701
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card97
+  xpos -4701
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo97
+  xpos -4701
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {84.6 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis98
+  xpos -4801
+  ypos -266
+ }
+set N1a66e0e0 [stack 0]
+push $N1a66e0e0
+ Camera {
+  translate {-42.6 0 176}
+  name Camera98
+  xpos -4801
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D98
+  xpos -4811
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card98
+  xpos -4811
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo98
+  xpos -4811
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {86.4 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis99
+  xpos -4911
+  ypos -266
+ }
+set N1a658f40 [stack 0]
+push $N1a658f40
+ Camera {
+  translate {-44.4 0 176}
+  name Camera99
+  xpos -4911
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D99
+  xpos -4921
+  ypos -86
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card99
+  xpos -4921
+  ypos -59
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo99
+  xpos -4921
+  ypos -40
+ }
+ Axis {
+  inputs 0
+  translate {88.2 0 0}
+  rotate {0 {parent.lider1.rotate.y i} 0}
+  name Axis100
+  xpos -5021
+  ypos -266
+ }
+set N1a658cf0 [stack 0]
+push $N1a658cf0
+ Camera {
+  translate {-46.2 0 176}
+  name Camera100
+  xpos -5021
+  ypos -200
+ }
+push $N2ff04870
+ Project3D {
+  inputs 2
+  name Project3D100
+  xpos -5031
+  ypos -105
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card100
+  xpos -5031
+  ypos -78
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo100
+  xpos -5031
+  ypos -59
+ }
+ Scene {
+  inputs 49
+  name Scene2
+  xpos -2271
+  ypos 1917
+ }
+ Axis {
+  inputs 0
+  translate {1.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis2
+  xpos -5596
+  ypos -186
+ }
+set N1a65ee10 [stack 0]
+push $N1a65ee10
+ Camera {
+  translate {40.2 0 176}
+  name Camera2
+  xpos -5596
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D2
+  xpos -5606
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card2
+  xpos -5606
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo2
+  xpos -5606
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {3.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis3
+  xpos -5706
+  ypos -186
+ }
+set N1a65b440 [stack 0]
+push $N1a65b440
+ Camera {
+  translate {38.4 0 176}
+  name Camera3
+  xpos -5706
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D3
+  xpos -5716
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card3
+  xpos -5716
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo3
+  xpos -5716
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {5.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis4
+  xpos -5816
+  ypos -186
+ }
+set N1a657380 [stack 0]
+push $N1a657380
+ Camera {
+  translate {36.6 0 176}
+  name Camera4
+  xpos -5816
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D4
+  xpos -5826
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card4
+  xpos -5826
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo4
+  xpos -5826
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {7.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis5
+  xpos -5926
+  ypos -186
+ }
+set N1a657130 [stack 0]
+push $N1a657130
+ Camera {
+  translate {34.8 0 176}
+  name Camera5
+  xpos -5926
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D5
+  xpos -5936
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card5
+  xpos -5936
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo5
+  xpos -5936
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {9 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis6
+  xpos -6036
+  ypos -186
+ }
+set N1a65d250 [stack 0]
+push $N1a65d250
+ Camera {
+  translate {33 0 176}
+  name Camera6
+  xpos -6036
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D6
+  xpos -6046
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card6
+  xpos -6046
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo6
+  xpos -6046
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {10.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis7
+  xpos -6146
+  ypos -186
+ }
+set N1a64cd00 [stack 0]
+push $N1a64cd00
+ Camera {
+  translate {31.2 0 176}
+  name Camera7
+  xpos -6146
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D7
+  xpos -6156
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card7
+  xpos -6156
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo7
+  xpos -6156
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {12.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis8
+  xpos -6256
+  ypos -186
+ }
+set N1a648300 [stack 0]
+push $N1a648300
+ Camera {
+  translate {29.4 0 176}
+  name Camera8
+  xpos -6256
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D8
+  xpos -6266
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card8
+  xpos -6266
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo8
+  xpos -6266
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {14.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis9
+  xpos -6366
+  ypos -186
+ }
+set N1a64c170 [stack 0]
+push $N1a64c170
+ Camera {
+  translate {27.6 0 176}
+  name Camera9
+  xpos -6366
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D9
+  xpos -6376
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card9
+  xpos -6376
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo9
+  xpos -6376
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {16.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis10
+  xpos -6476
+  ypos -186
+ }
+set N1a649c70 [stack 0]
+push $N1a649c70
+ Camera {
+  translate {25.8 0 176}
+  name Camera10
+  xpos -6476
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D10
+  xpos -6486
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card10
+  xpos -6486
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo10
+  xpos -6486
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {18 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis11
+  xpos -6586
+  ypos -186
+ }
+set N1a648e90 [stack 0]
+push $N1a648e90
+ Camera {
+  translate {24 0 176}
+  name Camera11
+  xpos -6586
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D11
+  xpos -6596
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card11
+  xpos -6596
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo11
+  xpos -6596
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {19.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis12
+  xpos -6696
+  ypos -186
+ }
+set N1a64c3c0 [stack 0]
+push $N1a64c3c0
+ Camera {
+  translate {22.2 0 176}
+  name Camera12
+  xpos -6696
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D12
+  xpos -6706
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card12
+  xpos -6706
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo12
+  xpos -6706
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {21.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis13
+  xpos -6806
+  ypos -186
+ }
+set N1a649580 [stack 0]
+push $N1a649580
+ Camera {
+  translate {20.4 0 176}
+  name Camera13
+  xpos -6806
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D13
+  xpos -6816
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card13
+  xpos -6816
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo13
+  xpos -6816
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {23.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis14
+  xpos -6916
+  ypos -186
+ }
+set N1a64ffe0 [stack 0]
+push $N1a64ffe0
+ Camera {
+  translate {18.6 0 176}
+  name Camera14
+  xpos -6916
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D14
+  xpos -6926
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card14
+  xpos -6926
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo14
+  xpos -6926
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {25.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis15
+  xpos -7026
+  ypos -186
+ }
+set N1a65a8b0 [stack 0]
+push $N1a65a8b0
+ Camera {
+  translate {16.8 0 176}
+  name Camera15
+  xpos -7026
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D15
+  xpos -7036
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card15
+  xpos -7036
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo15
+  xpos -7036
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {27 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis16
+  xpos -7136
+  ypos -186
+ }
+set N1a64e420 [stack 0]
+push $N1a64e420
+ Camera {
+  translate {15 0 176}
+  name Camera16
+  xpos -7136
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D16
+  xpos -7146
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card16
+  xpos -7146
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo16
+  xpos -7146
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {28.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis17
+  xpos -7246
+  ypos -186
+ }
+set N1a643210 [stack 0]
+push $N1a643210
+ Camera {
+  translate {13.2 0 176}
+  name Camera17
+  xpos -7246
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D17
+  xpos -7256
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card17
+  xpos -7256
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo17
+  xpos -7256
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {30.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis18
+  xpos -7356
+  ypos -186
+ }
+set N1a6542f0 [stack 0]
+push $N1a6542f0
+ Camera {
+  translate {11.4 0 176}
+  name Camera18
+  xpos -7356
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D18
+  xpos -7366
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card18
+  xpos -7366
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo18
+  xpos -7366
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {32.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis19
+  xpos -7466
+  ypos -186
+ }
+set N1a654540 [stack 0]
+push $N1a654540
+ Camera {
+  translate {9.6 0 176}
+  name Camera19
+  xpos -7466
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D19
+  xpos -7476
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card19
+  xpos -7476
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo19
+  xpos -7476
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {34.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis20
+  xpos -7576
+  ypos -186
+ }
+set N1a644490 [stack 0]
+push $N1a644490
+ Camera {
+  translate {7.8 0 176}
+  name Camera20
+  xpos -7576
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D20
+  xpos -7586
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card20
+  xpos -7586
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo20
+  xpos -7586
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {36 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis21
+  xpos -7686
+  ypos -186
+ }
+set N1a64b830 [stack 0]
+push $N1a64b830
+ Camera {
+  translate {6 0 176}
+  name Camera21
+  xpos -7686
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D21
+  xpos -7696
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card21
+  xpos -7696
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo21
+  xpos -7696
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {37.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis22
+  xpos -7796
+  ypos -186
+ }
+set N1a647080 [stack 0]
+push $N1a647080
+ Camera {
+  translate {4.2 0 176}
+  name Camera22
+  xpos -7796
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D22
+  xpos -7806
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card22
+  xpos -7806
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo22
+  xpos -7806
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {39.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis23
+  xpos -7906
+  ypos -186
+ }
+set N17f4aa40 [stack 0]
+push $N17f4aa40
+ Camera {
+  translate {2.4 0 176}
+  name Camera23
+  xpos -7906
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D23
+  xpos -7916
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card23
+  xpos -7916
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo23
+  xpos -7916
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {41.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis24
+  xpos -8016
+  ypos -186
+ }
+set N17f4a350 [stack 0]
+push $N17f4a350
+ Camera {
+  translate {0.6 0 176}
+  name Camera24
+  xpos -8016
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D24
+  xpos -8026
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card24
+  xpos -8026
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo24
+  xpos -8026
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {43.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis25
+  xpos -8126
+  ypos -186
+ }
+set N17f44dc0 [stack 0]
+push $N17f44dc0
+ Camera {
+  translate {-1.2 0 176}
+  name Camera25
+  xpos -8126
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D25
+  xpos -8136
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card25
+  xpos -8136
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo25
+  xpos -8136
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {45 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis26
+  xpos -8236
+  ypos -186
+ }
+set N17f4d3e0 [stack 0]
+push $N17f4d3e0
+ Camera {
+  translate {-3 0 176}
+  name Camera26
+  xpos -8236
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D26
+  xpos -8246
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card26
+  xpos -8246
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo26
+  xpos -8246
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {46.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis27
+  xpos -8346
+  ypos -186
+ }
+set N17f4d630 [stack 0]
+push $N17f4d630
+ Camera {
+  translate {-4.8 0 176}
+  name Camera27
+  xpos -8346
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D27
+  xpos -8356
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card27
+  xpos -8356
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo27
+  xpos -8356
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {48.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis28
+  xpos -8456
+  ypos -186
+ }
+set N17f32a60 [stack 0]
+push $N17f32a60
+ Camera {
+  translate {-6.6 0 176}
+  name Camera28
+  xpos -8456
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D28
+  xpos -8466
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card28
+  xpos -8466
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo28
+  xpos -8466
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {50.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis29
+  xpos -8566
+  ypos -186
+ }
+set N17f41890 [stack 0]
+push $N17f41890
+ Camera {
+  translate {-8.4 0 176}
+  name Camera29
+  xpos -8566
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D29
+  xpos -8576
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card29
+  xpos -8576
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo29
+  xpos -8576
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {52.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis30
+  xpos -8676
+  ypos -186
+ }
+set N17f3d0e0 [stack 0]
+push $N17f3d0e0
+ Camera {
+  translate {-10.2 0 176}
+  name Camera30
+  xpos -8676
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D30
+  xpos -8686
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card30
+  xpos -8686
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo30
+  xpos -8686
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {54 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis31
+  xpos -8786
+  ypos -186
+ }
+set N17f42670 [stack 0]
+push $N17f42670
+ Camera {
+  translate {-12 0 176}
+  name Camera31
+  xpos -8786
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D31
+  xpos -8796
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card31
+  xpos -8796
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo31
+  xpos -8796
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {55.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis32
+  xpos -8896
+  ypos -186
+ }
+set N17f42420 [stack 0]
+push $N17f42420
+ Camera {
+  translate {-13.8 0 176}
+  name Camera32
+  xpos -8896
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D32
+  xpos -8906
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card32
+  xpos -8906
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo32
+  xpos -8906
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {57.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis33
+  xpos -9006
+  ypos -186
+ }
+set N17f48e80 [stack 0]
+push $N17f48e80
+ Camera {
+  translate {-15.6 0 176}
+  name Camera33
+  xpos -9006
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D33
+  xpos -9016
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card33
+  xpos -9016
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo33
+  xpos -9016
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {59.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis34
+  xpos -9116
+  ypos -186
+ }
+set N17f47c00 [stack 0]
+push $N17f47c00
+ Camera {
+  translate {-17.4 0 176}
+  name Camera34
+  xpos -9116
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D34
+  xpos -9126
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card34
+  xpos -9126
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo34
+  xpos -9126
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {61.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis35
+  xpos -9226
+  ypos -186
+ }
+set N17f43450 [stack 0]
+push $N17f43450
+ Camera {
+  translate {-19.2 0 176}
+  name Camera35
+  xpos -9226
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D35
+  xpos -9236
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card35
+  xpos -9236
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo35
+  xpos -9236
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {63 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis36
+  xpos -9336
+  ypos -186
+ }
+set N17f39960 [stack 0]
+push $N17f39960
+ Camera {
+  translate {-21 0 176}
+  name Camera36
+  xpos -9336
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D36
+  xpos -9346
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card36
+  xpos -9346
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo36
+  xpos -9346
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {64.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis37
+  xpos -9446
+  ypos -186
+ }
+set N17f2e2b0 [stack 0]
+push $N17f2e2b0
+ Camera {
+  translate {-22.8 0 176}
+  name Camera37
+  xpos -9446
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D37
+  xpos -9456
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card37
+  xpos -9456
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo37
+  xpos -9456
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {66.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis38
+  xpos -9556
+  ypos -186
+ }
+set N17f36430 [stack 0]
+push $N17f36430
+ Camera {
+  translate {-24.6 0 176}
+  name Camera38
+  xpos -9556
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D38
+  xpos -9566
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card38
+  xpos -9566
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo38
+  xpos -9566
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {68.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis39
+  xpos -9666
+  ypos -186
+ }
+set N17f27160 [stack 0]
+push $N17f27160
+ Camera {
+  translate {-26.4 0 176}
+  name Camera39
+  xpos -9666
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D39
+  xpos -9676
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card39
+  xpos -9676
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo39
+  xpos -9676
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {70.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis40
+  xpos -9776
+  ypos -186
+ }
+set N17f2b910 [stack 0]
+push $N17f2b910
+ Camera {
+  translate {-28.2 0 176}
+  name Camera40
+  xpos -9776
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D40
+  xpos -9786
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card40
+  xpos -9786
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo40
+  xpos -9786
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {72 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis41
+  xpos -9886
+  ypos -186
+ }
+set N17f46980 [stack 0]
+push $N17f46980
+ Camera {
+  translate {-30 0 176}
+  name Camera41
+  xpos -9886
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D41
+  xpos -9896
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card41
+  xpos -9896
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo41
+  xpos -9896
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {73.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis42
+  xpos -9996
+  ypos -186
+ }
+set N17f333a0 [stack 0]
+push $N17f333a0
+ Camera {
+  translate {-31.8 0 176}
+  name Camera42
+  xpos -9996
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D42
+  xpos -10006
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card42
+  xpos -10006
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo42
+  xpos -10006
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {75.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis43
+  xpos -10106
+  ypos -186
+ }
+set N17f3e800 [stack 0]
+push $N17f3e800
+ Camera {
+  translate {-33.6 0 176}
+  name Camera43
+  xpos -10106
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D43
+  xpos -10116
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card43
+  xpos -10116
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo43
+  xpos -10116
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {77.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis44
+  xpos -10216
+  ypos -186
+ }
+set N17f376b0 [stack 0]
+push $N17f376b0
+ Camera {
+  translate {-35.4 0 176}
+  name Camera44
+  xpos -10216
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D44
+  xpos -10226
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card44
+  xpos -10226
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo44
+  xpos -10226
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {79.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis45
+  xpos -10326
+  ypos -186
+ }
+set N17f38240 [stack 0]
+push $N17f38240
+ Camera {
+  translate {-37.2 0 176}
+  name Camera45
+  xpos -10326
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D45
+  xpos -10336
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card45
+  xpos -10336
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo45
+  xpos -10336
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {81 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis46
+  xpos -10436
+  ypos -186
+ }
+set N17f37210 [stack 0]
+push $N17f37210
+ Camera {
+  translate {-39 0 176}
+  name Camera46
+  xpos -10436
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D46
+  xpos -10446
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card46
+  xpos -10446
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo46
+  xpos -10446
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {82.8 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis47
+  xpos -10546
+  ypos -186
+ }
+set N17f3a990 [stack 0]
+push $N17f3a990
+ Camera {
+  translate {-40.8 0 176}
+  name Camera47
+  xpos -10546
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D47
+  xpos -10556
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card47
+  xpos -10556
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo47
+  xpos -10556
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {84.6 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis48
+  xpos -10656
+  ypos -186
+ }
+set N17f3e360 [stack 0]
+push $N17f3e360
+ Camera {
+  translate {-42.6 0 176}
+  name Camera48
+  xpos -10656
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D48
+  xpos -10666
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card48
+  xpos -10666
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo48
+  xpos -10666
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {86.4 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis49
+  xpos -10766
+  ypos -186
+ }
+set N17f403c0 [stack 0]
+push $N17f403c0
+ Camera {
+  translate {-44.4 0 176}
+  name Camera49
+  xpos -10766
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D49
+  xpos -10776
+  ypos -6
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card49
+  xpos -10776
+  ypos 21
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo49
+  xpos -10776
+  ypos 40
+ }
+ Axis {
+  inputs 0
+  translate {88.2 0 0}
+  rotate {0 {parent.lider.rotate.y i} 0}
+  name Axis50
+  xpos -10876
+  ypos -186
+ }
+set N17f2ad80 [stack 0]
+push $N17f2ad80
+ Camera {
+  translate {-46.2 0 176}
+  name Camera50
+  xpos -10876
+  ypos -120
+ }
+push $N1a660c20
+ Project3D {
+  inputs 2
+  name Project3D50
+  xpos -10886
+  ypos -25
+ }
+ Card {
+  z -0.51
+  scaling {3.47 170 1}
+  name Card50
+  xpos -10886
+  ypos 2
+ }
+ TransformGeo {
+  inputs 2
+  name TransformGeo50
+  xpos -10886
+  ypos 21
+ }
+ Scene {
+  inputs 49
+  name Scene1
+  xpos -2857
+  ypos 2394
+ }
+ Scene {
+  inputs 3
+  name Scene3
+  xpos -2271
+  ypos 2394
+ }
+ Output {
+  name Output1
+  xpos -2281
+  ypos 2504
+ }
+ Viewer {
+  inputs 0
+  frame_range 1,56
+  frame_range_lock true
+  name Viewer1
+  xpos -2267
+  ypos 2897
+ }
+ Axis {
+  inputs 0
+  rotate {0 {120+parent.boss.rotate.y i} 0}
+  name lider1
+  xpos -2431
+  ypos -1705
+ }
+ Axis {
+  inputs 0
+  rotate {0 {parent.boss.rotate.y i} 0}
+  name lider
+  xpos -2520
+  ypos -1703
+ }
+ Axis {
+  inputs 0
+  rotate {0 {240+parent.boss.rotate.y i} 0}
+  name lider2
+  xpos -2340
+  ypos -1708
+ }
+ Axis2 {
+  inputs 0
+  rotate {0 {parent.q i} 0}
+  name boss
+  selected true
+  xpos -2825
+  ypos -1673
+ }
+end_group

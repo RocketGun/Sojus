@@ -1,0 +1,323 @@
+#! /usr/local/Nuke6.1v3/Nuke6.1 -nx
+version 6.1 v3
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {6 Stereo +STARTLINE}
+ Stereo true
+ addUserKnob {6 PointCloud +STARTLINE}
+ addUserKnob {6 Displacement +STARTLINE}
+}
+ Input {
+  inputs 0
+  name Depth
+  xpos 437
+  ypos 260
+  number 1
+ }
+set N30faf740 [stack 0]
+ Input {
+  inputs 0
+  name Color
+  xpos 595
+  ypos 252
+ }
+set N310157a0 [stack 0]
+ Card2 {
+  rows 200
+  columns 200
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name Card1
+  xpos 677
+  ypos 307
+  disable {{Displacement==1?0:1 i}}
+ }
+ DisplaceGeo {
+  inputs 2
+  scale 0.5
+  name DisplaceGeo2
+  xpos 576
+  ypos 367
+ }
+ Light2 {
+  inputs 0
+  intensity 7
+  translate {1.320000052 0 1.105999947}
+  name Light3
+  xpos 728
+  ypos 454
+  disable {{Displacement==1?0:1 i}}
+ }
+ Light2 {
+  inputs 0
+  intensity 3
+  translate {-1.077999949 0 0.648999989}
+  name Light2
+  xpos 787
+  ypos 387
+  disable {{Displacement==1?0:1 i}}
+ }
+ Scene {
+  inputs 3
+  name Scene1
+  xpos 586
+  ypos 437
+ }
+push 0
+ ScanlineRender {
+  inputs 2
+  output_motion_vectors_type accurate
+  name ScanlineRender1
+  xpos 576
+  ypos 547
+ }
+set N311f8d70 [stack 0]
+ Viewer {
+  viewerProcess None
+  input_process false
+  name Viewer1
+  xpos 643
+  ypos 606
+ }
+push $N30faf740
+push $N310157a0
+ Group {
+  inputs 2
+  name Group2
+  xpos 158
+  ypos 501
+  addUserKnob {20 kvDepthPoints}
+  addUserKnob {41 screen T CTRLS.screen}
+  addUserKnob {26 ""}
+  addUserKnob {41 zScale T CTRLS.zScale}
+  addUserKnob {41 "Point size" T "kvPoints2.Point size"}
+  addUserKnob {41 nthPoint l "draw Nth point" T CTRLS.nthPoint}
+  addUserKnob {41 alphaTresh T CTRLS.alphaTresh}
+  addUserKnob {41 drawScreen T CTRLS.drawScreen}
+  addUserKnob {41 drawBBox T CTRLS.drawBBox}
+  addUserKnob {41 lin2Vid T CTRLS.lin2Vid}
+ }
+  Input {
+   inputs 0
+   name Z
+   xpos 943
+   ypos 16
+   number 1
+  }
+  Dot {
+   name Dot1
+   xpos 977
+   ypos 230
+  }
+set N4ae09980 [stack 0]
+  Expression {
+   temp_name0 nthP
+   temp_expr0 CTRLS.nthPoint
+   expr0 0
+   expr1 0
+   expr2 "(y < nthP || x < nthP || y > (Z.height-nthP) || x > (Z.width-nthP)) ? 1:0"
+   name exp_screen
+   xpos 764
+   ypos 225
+  }
+set N37e54a40 [stack 0]
+  Shuffle {
+   red black
+   green blue
+   blue black
+   alpha blue
+   name Shuffle1
+   xpos 684
+   ypos 345
+  }
+  Dot {
+   name Dot2
+   xpos 718
+   ypos 459
+  }
+  Input {
+   inputs 0
+   name RGBA
+   xpos 525
+   ypos 17
+  }
+  tx_lin2vid {
+   name tx_lin2vid2
+   note_font Futura
+   xpos 525
+   ypos 450
+   disable {{!CTRLS.lin2Vid i}}
+   channels rgb
+  }
+  Merge2 {
+   inputs 2
+   name Merge2
+   xpos 525
+   ypos 589
+   disable {{!CTRLS.drawScreen i x1 1 x183 1}}
+  }
+push $N37e54a40
+  Shuffle {
+   red black
+   green black
+   alpha blue
+   name Shuffle3
+   xpos 834
+   ypos 346
+  }
+  Grade {
+   white {{CTRLS.screen i}}
+   black_clamp false
+   name gr_screen
+   xpos 834
+   ypos 374
+  }
+push $N4ae09980
+  Merge2 {
+   inputs 2
+   name Merge1
+   xpos 943
+   ypos 435
+   disable {{!CTRLS.drawScreen i x183 1}}
+  }
+  Grade {
+   white {{CTRLS.zScale i}}
+   black_clamp false
+   name gr_zScale
+   xpos 943
+   ypos 498
+  }
+  Dot {
+   name Dot12
+   xpos 977
+   ypos 569
+  }
+push $N4ae09980
+  Shuffle {
+   red black
+   green black
+   blue black
+   alpha black
+   name Shuffle2
+   xpos 1097
+   ypos 330
+  }
+  Ramp {
+   output {-rgba.red rgba.green -rgba.blue -rgba.alpha}
+   p0 {0 0}
+   p1 {0 {Z.height i}}
+   color {{(Z.height)*0.001 i}}
+   name Ramp8
+   xpos 1097
+   ypos 394
+  }
+  Ramp {
+   output {rgba.red -rgba.green -rgba.blue -rgba.alpha}
+   p0 {0 0}
+   p1 {{Z.width i} 0}
+   color {{(Z.width)*0.001 i}}
+   name Ramp9
+   xpos 1097
+   ypos 436
+  }
+  Copy {
+   inputs 2
+   from0 rgba.blue
+   to0 rgba.blue
+   name Copy3
+   xpos 1097
+   ypos 557
+  }
+  Remove {
+   name Remove1
+   tile_color 1
+   selected true
+   xpos 849
+   ypos 701
+   disable {{!PointCloud==1?0:1 i}}
+  }
+  kvPoints {
+   inputs 2
+   "Point size" 10
+   "Read every n'th point" {{max(CTRLS.nthPoint,1) i}}
+   m_alphaThreshold {{CTRLS.alphaTresh i}}
+   m_showBoundingBox {{CTRLS.drawBBox i}}
+   name kvPoints2
+   xpos 725
+   ypos 781
+  }
+  Output {
+   name Output1
+   xpos 725
+   ypos 952
+  }
+  NoOp {
+   inputs 0
+   name CTRLS
+   xpos 729
+   ypos 19
+   addUserKnob {20 CTRLS}
+   addUserKnob {7 screen R -1 1}
+   screen 0.5
+   addUserKnob {7 zScale R 0 5}
+   zScale 1
+   addUserKnob {3 pointSize}
+   pointSize 3
+   addUserKnob {3 nthPoint l "draw Nth point"}
+   nthPoint 15
+   addUserKnob {7 alphaTresh}
+   addUserKnob {6 drawScreen +STARTLINE}
+   drawScreen true
+   addUserKnob {6 drawBBox +STARTLINE}
+   drawBBox true
+   addUserKnob {6 lin2Vid +STARTLINE}
+   lin2Vid true
+  }
+ end_group
+push $N310157a0
+ svo_Visor_V3 {
+  name svo_Visor_V3_2
+  xpos 362
+  ypos 490
+  anaglyphMethod Interlaced
+  saturationSelect "Full Color"
+ }
+push $N311f8d70
+push 0
+ Merge2 {
+  inputs 2
+  name Merge1
+  xpos 590
+  ypos 678
+  disable {{Displacement==1?0:1 i}}
+ }
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 576
+  ypos 761
+  disable {{Stereo==1?0:1 i}}
+ }
+ Merge2 {
+  inputs 2
+  name Merge3
+  xpos 576
+  ypos 834
+  disable {{PointCloud==1?0:1 i}}
+ }
+ Output {
+  name Output1
+  xpos 576
+  ypos 930
+ }
+end_group

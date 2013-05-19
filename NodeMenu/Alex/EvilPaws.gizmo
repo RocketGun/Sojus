@@ -1,0 +1,176 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+version 6.3 v4
+Group {
+ name EvilPaws
+ addUserKnob {20 User}
+ addUserKnob {41 value_3 l BlackLevel T Add4.value}
+ addUserKnob {26 ""}
+ addUserKnob {26 BackLight l "Back Light"}
+ addUserKnob {7 BacklightAmmountAdd}
+ addUserKnob {7 BacklightAmmountGamma -STARTLINE R 0 3}
+ BacklightAmmountGamma 1
+ addUserKnob {7 BacklightAmmountGain -STARTLINE R 0 3}
+ BacklightAmmountGain 1
+ addUserKnob {41 value l "Backlight Color" T Add1.value}
+ addUserKnob {26 ""}
+ addUserKnob {26 RimLight l "Rim Light"}
+ addUserKnob {7 RimlightAmmountAdd}
+ addUserKnob {7 RimlightAmmountGamma -STARTLINE R 0 3}
+ RimlightAmmountGamma 1
+ addUserKnob {7 RimlightAmmountGain -STARTLINE R 0 3}
+ addUserKnob {41 value_1 l "Rimlight Color" T Add2.value}
+ addUserKnob {26 ""}
+ addUserKnob {26 FillLight l "Fill Light"}
+ addUserKnob {7 FillLightAmmountAdd}
+ addUserKnob {7 FillLightAmmountGamma -STARTLINE R 0 3}
+ FillLightAmmountGamma 1
+ addUserKnob {7 FillLightAmmountGain -STARTLINE R 0 3}
+ addUserKnob {41 value_2 l "FillLight Color" T Add3.value}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 Transparency}
+ addUserKnob {7 Black R 0 2}
+ Black 1
+ addUserKnob {7 Gamma -STARTLINE R 0 2}
+ Gamma 1
+ addUserKnob {7 White -STARTLINE R -2 4}
+ White 1
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -517
+  ypos 379
+ }
+ Dot {
+  name Dot1
+  xpos -483
+  ypos 430
+ }
+set N128c7600 [stack 0]
+ Dot {
+  name Dot3
+  xpos -629
+  ypos 430
+ }
+ Grade {
+  channels alpha
+  blackpoint {{-parent.Black+1 i}}
+  whitepoint {{-parent.White+2 i}}
+  gamma {{parent.Gamma i}}
+  name Grade1
+  selected true
+  xpos -663
+  ypos 1021
+ }
+set N21d00980 [stack 0]
+ Dot {
+  name Dot4
+  xpos -629
+  ypos 1095
+ }
+push $N128c7600
+push $N128c7600
+add_layer {light light.backlight light.rim light.fill}
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 light.backlight
+  from1 rgba.green
+  to1 light.fill
+  from2 rgba.blue
+  to2 light.rim
+  from3 -rgba.alpha
+  name Copy1
+  xpos -517
+  ypos 463
+ }
+ ColorCorrect {
+  channels light
+  gamma {{parent.BacklightAmmountGamma i} {parent.RimlightAmmountGain i} {parent.FillLightAmmountGain i} 1}
+  gain {{parent.BacklightAmmountGain i} {parent.RimlightAmmountGamma i} {parent.FillLightAmmountGamma i} 1}
+  offset {{parent.BacklightAmmountAdd i} {parent.RimlightAmmountAdd i} {parent.FillLightAmmountAdd i} 0}
+  name ColorCorrect3
+  xpos -516
+  ypos 544
+ }
+set N1299aa20 [stack 0]
+ Dot {
+  name Dot5
+  xpos -364
+  ypos 554
+ }
+ Dot {
+  name Dot2
+  xpos -364
+  ypos 736
+ }
+push $N1299aa20
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha black
+  name Shuffle1
+  tile_color 0xff000000
+  label "Black Alpha"
+  xpos -516
+  ypos 610
+ }
+ Add {
+  inputs 1+1
+  name Add4
+  xpos -516
+  ypos 726
+ }
+ Add {
+  value 1
+  maskChannelInput light.fill
+  unpremult -rgba.alpha
+  name Add3
+  xpos -516
+  ypos 780
+ }
+ Add {
+  value 1
+  maskChannelInput light.rim
+  unpremult -rgba.alpha
+  name Add2
+  xpos -516
+  ypos 882
+ }
+ Add {
+  value 1
+  maskChannelInput light.backlight
+  unpremult -rgba.alpha
+  name Add1
+  xpos -516
+  ypos 1001
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -516
+  ypos 1085
+ }
+set N1299c3a0 [stack 0]
+ Output {
+  name Output1
+  xpos -516
+  ypos 1281
+ }
+push $N1299c3a0
+push $N21d00980
+ Viewer {
+  inputs 2
+  frame 125
+  rgb_only true
+  input_process false
+  translate {-0.1080000028 -0.0120000001}
+  name Viewer1
+  xpos -150
+  ypos -10
+  hide_input true
+ }
+end_group

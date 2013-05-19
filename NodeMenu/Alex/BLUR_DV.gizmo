@@ -1,0 +1,46 @@
+#! C:/Program Files (x86)/Nuke5.1v1/Nuke.exe -nx
+version 5.1100
+Group {
+ addUserKnob {20 User}
+ addUserKnob {41 BLUR_CB T Blur20.size}
+ addUserKnob {41 BLUR_CR T Blur21.size}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 333
+  ypos 184
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace13
+  selected true
+  xpos 333
+  ypos 224
+ }
+ Blur {
+  channels {-rgba.red rgba.green -rgba.blue}
+  size 3
+  name Blur20
+  xpos 333
+  ypos 242
+ }
+ Blur {
+  channels {-rgba.red -rgba.green rgba.blue}
+  size 4
+  name Blur21
+  xpos 333
+  ypos 281
+ }
+ Colorspace {
+  colorspace_in YCbCr
+  name Colorspace14
+  xpos 333
+  ypos 315
+ }
+ Output {
+  name Output1
+  xpos 333
+  ypos 415
+ }
+end_group

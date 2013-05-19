@@ -1,0 +1,2009 @@
+#! C:/Program Files/Nuke6.3v4/Nuke6.3.exe -nx
+version 6.3 v4
+Group {
+ inputs 3
+ addUserKnob {20 Defocus}
+ addUserKnob {7 scale t "Increase or decrease Defocus" R 0 10}
+ addUserKnob {7 multiplyer t "This one increase or decrease difference between steps in defocus values"}
+ multiplyer 1
+ addUserKnob {7 StepsBlur l Soften R 0 10}
+ addUserKnob {41 rotate T Defocus_09_.rotate}
+ addUserKnob {41 Shape l Shape1 T Defocus_09_.Shape}
+ addUserKnob {41 BreakShape l "Break Shape" -STARTLINE T Defocus_09_.BreakShape}
+ addUserKnob {41 mix_2 l InnerFade T Defocus_09_.mix_2}
+ addUserKnob {41 Erode T Defocus_09_.Erode}
+ addUserKnob {26 ""}
+ addUserKnob {41 Mask l "Use Mask" T Defocus_09_.Mask}
+ addUserKnob {20 BlowHighlights}
+ addUserKnob {41 value l Gain T Defocus_09_.value}
+ addUserKnob {41 LumaKey1 l LumaKey T Defocus_09_.LumaKey1}
+ addUserKnob {20 Abberation l "Color Offset"}
+ addUserKnob {41 abberation l skew T Defocus_09_.abberation}
+ addUserKnob {41 transl l scale T Defocus_09_.transl}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  tile_color 0x8018b354
+  label Shape
+  note_font "Helvetica bold"
+  note_font_size 100
+  xpos -2388
+  ypos -458
+  bdwidth 944
+  bdheight 1056
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant3
+  xpos -2050
+  ypos -373
+ }
+set Ne67170e0 [stack 0]
+add_layer {rgba rgba.water}
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Zwelf_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 48.9833 S 0 48.8833 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 36
+      0 S 0 0 S 0 0 0 0 S 0 15 S 0 81.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 36 S 0 94.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 62.6 S 0 94.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 82.6 S 0 82.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 94.2 S 0 62.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 94.2 S 0 35.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 82.2 S 0 15.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 62.6 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 35.8 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 15.8 S 0 15.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 3.6 S 0 36 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 3.2 S 0 61 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 36
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint4
+  label "12 \n"
+  note_font_size 20
+  xpos -1607
+  ypos -237
+ }
+ Dot {
+  name Dot5
+  xpos -1573
+  ypos 66
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant2
+  xpos -2343
+  ypos 96
+ }
+set Ne6717a70 [stack 0]
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "ten_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 49.46 S 0 48.8 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 30
+      0 S 0 0 S 0 0 0 0 S 0 34.6 S 0 93.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 64.2 S 0 93.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 87.8 S 0 76 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 96.8 S 0 49.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 87.2 S 0 20.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 64.6 S 0 4.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 34 S 0 5 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 11.8 S 0 21 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 2.2 S 0 48.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 11.4 S 0 76.4 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 30
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint5
+  label "10 \n"
+  note_font_size 20
+  xpos -1726
+  ypos -240
+ }
+ Dot {
+  name Dot14
+  xpos -1692
+  ypos -7
+ }
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Nein_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 49.6 S 0 48.6667 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 27
+      0 S 0 0 S 0 0 0 0 S 0 18.2 S 0 84.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 49.6 S 0 96.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0.400002 0 0 S 0 80.8 S 0 85 0 0 S 0 0 S 0 -0.400002 0 0 S 0 0 S 0 0 0 0 S 0 96.8 S 0 56.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 91 S 0 25.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 66.4 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 32.4 S 0 4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 8.6 S 0 24.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 2.6 S 0 57.2 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 27
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0.400002 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 -0.400002 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint6
+  label "9 \n"
+  note_font_size 20
+  xpos -1830
+  ypos -234
+ }
+ Dot {
+  name Dot24
+  xpos -1796
+  ypos -45
+ }
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Eght_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 49.3 S 0 48.75 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 24
+      0 S 0 0 S 0 0 0 0 S 0 30.2 S 0 92.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 68.6 S 0 92.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 93.2 S 0 67.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 93 S 0 29.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 67.8 S 0 4.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 30.6 S 0 5 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 5.8 S 0 30.2 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 5.2 S 0 67.2 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 24
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint7
+  label "8 \n"
+  note_font_size 20
+  xpos -1938
+  ypos -237
+ }
+ Dot {
+  name Dot37
+  xpos -1904
+  ypos -73
+ }
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "seven_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 50.2571 S 0 49.1143 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 21
+      0 S 0 0 S 0 0 0 0 S 0 49.6 S 0 96.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 88 S 0 78.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 97 S 0 38.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 71.6 S 0 5.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 29.2 S 0 6.2 0 0 S 0 0 S 0 0 0 0 S 0 0.4 S 0 0 0 0 S 0 3.4 S 0 38.8 0 0 S 0 -0.4 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 13 S 0 79.2 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 21
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0.4 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 -0.4 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint8
+  label "7 \n"
+  note_font_size 20
+  xpos -2050
+  ypos -236
+ }
+ Dot {
+  name Dot38
+  xpos -2016
+  ypos -57
+ }
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "six_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 50.1333 S 0 50.4 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 18
+      0 S 0 0 S 0 0 0 0 S 0 3.4 S 0 50.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 26.2 S 0 90.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 73.8 S 0 90.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 97 S 0 50 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 74.2 S 0 10.4 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 26.2 S 0 10.4 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 18
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint9
+  label "6 \n"
+  note_font_size 20
+  xpos -2157
+  ypos -237
+ }
+ Dot {
+  name Dot39
+  xpos -2123
+  ypos -9
+ }
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 10
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "five_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 49.92 S 0 46.12 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 15
+      0 S 0 0 S 0 0 0 0 S 0 4.2 S 0 60.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 50 S 0 94.6 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 95.4 S 0 60.8 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 78.4 S 0 7 0 0 S 0 0 S 0 0 0 0 S 0 0.4 S 0 0 0 0 S 0 21.6 S 0 7.4 0 0 S 0 -0.4 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 15
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0.4 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 -0.4 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint10
+  label "5 \n"
+  note_font_size 20
+  xpos -2268
+  ypos -236
+ }
+ Dot {
+  name Dot40
+  xpos -2234
+  ypos 14
+ }
+push $Ne6717a70
+push $Ne67170e0
+ RotoPaint {
+  format "100 100 0 0 100 100 1 Defocus"
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 0.4 S 0 0.4 S 0 0 S 0 48.9 S 0 46.7 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Three_angle" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 49.1333 S 0 37.8 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 9
+      0 S 0 0 S 0 0 0 0 S 0 49.3121 S 0 91.1316 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 94.5121 S 0 10.5316 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 3.91211 S 0 10.9316 0 0 S 0 0 S 0 0 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 9
+      0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 0 S 0 0 S 0 0 0 
+     }
+     NumOfAttributes: 43
+     "vis" S 0 1 "r" S 0 1 "g" S 0 1 "b" S 0 1 "a" S 0 1 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 0 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 960 "spy" S 0 540 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 89 "ltm" S 0 89 "ltt" S 0 0 "tt" S 0 4 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll ssx 1 ssy 1 sf 1 }
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 89
+  lifetime_end 89
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint3
+  label "3 \n"
+  note_font_size 20
+  xpos -2378
+  ypos -240
+ }
+ Dot {
+  name Dot41
+  xpos -2344
+  ypos 61
+ }
+push $Ne6717a70
+push $Ne6717a70
+push $Ne6717a70
+ Switch {
+  inputs 13
+  which {{"\[value Shape]" i x101 0}}
+  name Switch1
+  xpos -2084
+  ypos 30
+ }
+ Crop {
+  box {28.29999924 27.20000076 69.69999695 67.80000305}
+  reformat true
+  crop false
+  name Crop2
+  xpos -2084
+  ypos 93
+ }
+ TransformMasked {
+  rotate {{parent.parent.Defocus_09_.Transform1.rotate i}}
+  center {21 20.5}
+  name Transform11
+  xpos -2084
+  ypos 119
+ }
+set N10c6ac90 [stack 0]
+ Dot {
+  name Dot42
+  xpos -2154
+  ypos 129
+ }
+ FilterErode {
+  channels all
+  size {{parent.Erode i}}
+  filter gaussian
+  name FilterErode1
+  xpos -2188
+  ypos 160
+ }
+ Dot {
+  name Dot43
+  xpos -2154
+  ypos 209
+ }
+push $N10c6ac90
+ Merge2 {
+  inputs 2
+  operation stencil
+  mix {{parent.parent.Defocus_09_.Merge7.mix i}}
+  name Merge7
+  xpos -2084
+  ypos 205
+ }
+ RotoPaint {
+  curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 21 S 0 20.5 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 1
+  Node: {
+   NodeName: "Bezier1" {
+    Flag: 576
+    NodeType: 3
+    CurveGroup: "" {
+     Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 31.8 S 0 35.3 
+     Flag: 0
+     NumOfCubicCurves: 2
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 15
+      0 S 0 -0.2 S 0 0 0 0 S 0 -2.7 S 0 41.5 0 0 S 0 0.108 S 0 0 0 0 S 0 -13.3116 S 0 5.60222 0 0 S 0 34.1 S 0 43.1 0 0 S 0 11.3396 S 0 -4.77226 0 0 S 0 -0.184002 S 0 -0.0919991 0 0 S 0 47.2 S 0 20.7 0 0 S 0 0.399998 S 0 0.199999 0 0 S 0 0.200001 S 0 -0.200001 0 0 S 0 59.6 S 0 38.7 0 0 S 0 -0.200001 S 0 0.200001 0 0 S 0 1.2 S 0 0.0999985 0 0 S 0 25.2 S 0 52 0 0 S 0 -1.2 S 0 -0.0999985 0 
+     }
+     CubicCurve: "" {
+      Type: 0 Flag: 8192 Dim: 2
+      NumOfPoints: 15
+      0 S 0 -0.200001 S 0 0 0 0 S 0 -46.3 S 0 -11.9 0 0 S 0 0.108002 S 0 0 0 0 S 0 -29.3543 S 0 9.46533 0 0 S 0 -21.7744 S 0 -33.288 0 0 S 0 25.0055 S 0 -8.06306 0 0 S 0 -0.184002 S 0 -0.0919991 0 0 S 0 13.5 S 0 -26.3 0 0 S 0 0.399998 S 0 0.199999 0 0 S 0 0.200001 S 0 -0.200001 0 0 S 0 0 S 0 0 0 0 S 0 -0.200001 S 0 0.200001 0 0 S 0 1.2 S 0 0.0999985 0 0 S 0 0 S 0 0 0 0 S 0 -1.2 S 0 -0.0999985 0 
+     }
+     NumOfAttributes: 44
+     "vis" S 0 1 "r" S 0 0 "g" S 0 0 "b" S 0 0 "a" S 0 0 "ro" S 0 0 "go" S 0 0 "bo" S 0 0 "ao" S 0 0 "opc" S 0 1 "bm" S 0 0 "inv" S 0 0 "mbo" S 0 0 "mb" S 0 1 "mbs" S 0 0.5 "mbsot" S 0 0 "mbso" S 0 0 "fo" S 0 1 "fx" S 0 74 "fy" S 0 74 "ff" S 0 1.8 "ft" S 0 0 "src" S 0 0 "stx" S 0 0 "sty" S 0 0 "str" S 0 1 "sr" S 0 0 "ssx" S 0 1 "ssy" S 0 1 "ss" S 0 0 "spx" S 0 21 "spy" S 0 20.5 "stot" S 0 0 "sto" S 0 0 "sv" S 0 0 "sf" S 0 1 "sb" S 0 1 "nv" S 0 1 "view1" S 0 1 "ltn" S 0 101 "ltm" S 0 101 "ltt" S 0 0 "tt" S 0 4 "pt" S 0 0 
+    }
+   }
+   NumOfChildren: 0
+  }
+ }
+}
+}
+  toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_lifetime_type all
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {320 240}
+  toolbar_source_translate_round true
+  color 0
+  colorOverlay 0
+  lifetime_type "all frames"
+  lifetime_start 101
+  lifetime_end 101
+  feather 74
+  feather_falloff 1.799999952
+  motionblur_shutter_offset_type centred
+  source_translate_round true
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint2
+  xpos -2089
+  ypos 237
+  disable {{!parent.BreakShape i}}
+ }
+ Dot {
+  name Dot89
+  xpos -2050
+  ypos 293
+ }
+set N578d6a10 [stack 0]
+ Dot {
+  name Dot90
+  xpos -2178
+  ypos 293
+ }
+set N578d73a0 [stack 0]
+ Dot {
+  name Dot91
+  xpos -2247
+  ypos 293
+ }
+ Shuffle {
+  red black
+  green black
+  alpha blue
+  name BLUE
+  xpos -2279
+  ypos 461
+ }
+ Transform {
+  scale {{(parent.transl.b/100)+1 i}}
+  skew {{parent.abberation.b/100 i}}
+  center {960 540}
+  name T_BLUE
+  xpos -2279
+  ypos 487
+ }
+push $N578d73a0
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name GREEN
+  xpos -2212
+  ypos 336
+ }
+ Transform {
+  scale {{(parent.transl.g/100)+1 i}}
+  skew {{parent.abberation.g/100 i}}
+  center {960 540}
+  name T_GREEN
+  xpos -2212
+  ypos 381
+ }
+push $N578d6a10
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name RED
+  xpos -2084
+  ypos 332
+ }
+ Transform {
+  scale {{(parent.transl.r/100)+1 i}}
+  skew {{parent.abberation.r/100 i}}
+  center {960 540}
+  name T_red
+  xpos -2084
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  Bchannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  name Merge1
+  xpos -2084
+  ypos 439
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  Bchannels {rgba.red rgba.green -rgba.blue rgba.alpha}
+  name Merge14
+  xpos -2084
+  ypos 487
+ }
+ Dot {
+  name Dot44
+  xpos -2050
+  ypos 551
+ }
+ Dot {
+  name Dot58
+  xpos -628
+  ypos 551
+ }
+set Neac83070 [stack 0]
+ TransformMasked {
+  scale {{parent.scale+.1 i}}
+  center {21 20.5}
+  name Transform10
+  xpos -662
+  ypos 619
+ }
+ Dot {
+  name Dot66
+  xpos -628
+  ypos 720
+ }
+ Input {
+  inputs 0
+  name Depth
+  label "\n"
+  note_font_size 20
+  xpos -109
+  ypos -871
+  number 2
+ }
+ Dot {
+  name Dot55
+  xpos -75
+  ypos -692
+ }
+ Dot {
+  name Dot56
+  xpos 295
+  ypos -692
+ }
+ Dot {
+  name Dot3
+  xpos 295
+  ypos -433
+ }
+set N9a1fba0 [stack 0]
+ Dot {
+  name Dot22
+  xpos 178
+  ypos -433
+ }
+set N9a1f870 [stack 0]
+ Dot {
+  name Dot21
+  xpos 49
+  ypos -433
+ }
+set N9a23500 [stack 0]
+ Dot {
+  name Dot20
+  xpos -95
+  ypos -433
+ }
+set N9a23830 [stack 0]
+ Dot {
+  name Dot19
+  xpos -216
+  ypos -433
+ }
+set N31bbc8c0 [stack 0]
+ Dot {
+  name Dot17
+  xpos -369
+  ypos -433
+ }
+set N28a88940 [stack 0]
+ Dot {
+  name Dot27
+  xpos -498
+  ypos -430
+ }
+set N28a96530 [stack 0]
+ Dot {
+  name Dot26
+  xpos -685
+  ypos -430
+ }
+ Shuffle {
+  red white
+  green white
+  blue white
+  alpha white
+  name Shuffle1
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos -719
+  ypos -332
+ }
+ Dot {
+  name Dot36
+  xpos -685
+  ypos 109
+ }
+ Input {
+  inputs 0
+  name Image
+  xpos -821
+  ypos -872
+ }
+set Ne6707510 [stack 0]
+ Dot {
+  name Dot92
+  xpos -1441
+  ypos -868
+ }
+ Shuffle {
+  red white
+  green white
+  blue white
+  alpha white
+  name Shuffle2
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos -1475
+  ypos -850
+ }
+ Dot {
+  name Dot93
+  xpos -1441
+  ypos -613
+ }
+ Input {
+  inputs 0
+  name Mask
+  xpos -1276
+  ypos -955
+  number 1
+ }
+ Switch {
+  inputs 2
+  which {{Mask==1?0:1 i}}
+  name Masks
+  xpos -1276
+  ypos -617
+ }
+ Dot {
+  name Dot4
+  xpos -1242
+  ypos -492
+ }
+push $Ne6707510
+ Keyer {
+  operation "luminance key"
+  range {{parent.parent.Defocus_09_.LumaKey1 i} 1 1 1}
+  name Keyer1
+  xpos -705
+  ypos -782
+ }
+push $Ne6707510
+ Multiply {
+  inputs 1+1
+  value {{parent.parent.Defocus_09_.Multiply1.value+1 i}}
+  name Multiply1
+  label FADE
+  xpos -819
+  ypos -695
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge3
+  xpos -823
+  ypos -496
+ }
+ Dot {
+  name Dot54
+  xpos -787
+  ypos 58
+ }
+ Dot {
+  name Dot57
+  xpos -571
+  ypos 58
+ }
+set Neac82d40 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos -607
+  ypos 131
+ }
+ Premult {
+  name Premult1
+  xpos -607
+  ypos 169
+ }
+ Convolve {
+  inputs 2
+  name Convolve17
+  xpos -607
+  ypos 716
+ }
+ Dot {
+  name Dot88
+  xpos -573
+  ypos 1976
+ }
+push $Neac83070
+ Dot {
+  name Dot45
+  xpos -518
+  ypos 551
+ }
+set Ne6720050 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.9*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform1
+  xpos -547
+  ypos 610
+ }
+ Dot {
+  name Dot67
+  xpos -513
+  ypos 721
+ }
+push $N28a96530
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.9?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression8
+  label "0.9 \n"
+  note_font_size 20
+  xpos -532
+  ypos -335
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur8
+  xpos -532
+  ypos -213
+ }
+ Dot {
+  name Dot28
+  xpos -498
+  ypos 106
+ }
+push $Neac82d40
+ Dot {
+  name Dot29
+  xpos -430
+  ypos 58
+ }
+set N9a24820 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -465
+  ypos 128
+ }
+ Premult {
+  name Premult2
+  xpos -465
+  ypos 166
+ }
+ Convolve {
+  inputs 2
+  name Convolve4
+  xpos -465
+  ypos 717
+ }
+ Dot {
+  name Dot87
+  xpos -431
+  ypos 1857
+ }
+push $Ne6720050
+ Dot {
+  name Dot46
+  xpos -364
+  ypos 551
+ }
+set Ne6720380 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.8*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform2
+  xpos -398
+  ypos 611
+ }
+ Dot {
+  name Dot68
+  xpos -364
+  ypos 715
+ }
+push $N28a88940
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.8?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression1
+  label "0.8 \n"
+  note_font_size 20
+  xpos -403
+  ypos -336
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur2
+  xpos -403
+  ypos -216
+ }
+ Dot {
+  name Dot10
+  xpos -369
+  ypos -46
+ }
+ Dot {
+  name Dot59
+  xpos -369
+  ypos 104
+ }
+push $N9a24820
+ Dot {
+  name Dot6
+  xpos -301
+  ypos 55
+ }
+set N9a24b50 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy3
+  xpos -335
+  ypos 126
+ }
+ Premult {
+  name Premult3
+  xpos -335
+  ypos 164
+ }
+ Convolve {
+  inputs 2
+  name Convolve6
+  xpos -335
+  ypos 711
+ }
+ Dot {
+  name Dot86
+  xpos -301
+  ypos 1710
+ }
+push $Ne6720380
+ Dot {
+  name Dot47
+  xpos -223
+  ypos 551
+ }
+set Neac7f0b0 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.7*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform3
+  xpos -257
+  ypos 611
+ }
+ Dot {
+  name Dot69
+  xpos -223
+  ypos 718
+ }
+push $N31bbc8c0
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.7?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression7
+  label "0.7 \n\n"
+  note_font_size 20
+  xpos -250
+  ypos -330
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur1
+  xpos -250
+  ypos -215
+ }
+ Dot {
+  name Dot1
+  xpos -208
+  ypos -51
+ }
+ Dot {
+  name Dot60
+  xpos -208
+  ypos 103
+ }
+push $N9a24b50
+ Dot {
+  name Dot2
+  xpos -160
+  ypos 52
+ }
+set N9a24e80 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy4
+  xpos -194
+  ypos 125
+ }
+ Premult {
+  name Premult4
+  xpos -194
+  ypos 163
+ }
+ Convolve {
+  inputs 2
+  name Convolve10
+  xpos -194
+  ypos 714
+ }
+ Dot {
+  name Dot85
+  xpos -160
+  ypos 1561
+ }
+push $Neac7f0b0
+ Dot {
+  name Dot48
+  xpos -108
+  ypos 551
+ }
+set Neac7f3e0 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.6*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform4
+  xpos -142
+  ypos 607
+ }
+ Dot {
+  name Dot70
+  xpos -108
+  ypos 718
+ }
+push $N9a23830
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.6?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression2
+  label "0.6 \n\n"
+  note_font_size 20
+  xpos -129
+  ypos -335
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur3
+  xpos -129
+  ypos -218
+ }
+ Dot {
+  name Dot11
+  xpos -98
+  ypos -54
+ }
+ Dot {
+  name Dot61
+  xpos -98
+  ypos 99
+ }
+push $N9a24e80
+ Dot {
+  name Dot7
+  xpos -50
+  ypos 52
+ }
+set N9a251b0 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy5
+  xpos -84
+  ypos 121
+ }
+ Premult {
+  name Premult5
+  xpos -84
+  ypos 159
+ }
+ Convolve {
+  inputs 2
+  name Convolve11
+  xpos -84
+  ypos 714
+ }
+ Dot {
+  name Dot84
+  xpos -50
+  ypos 1468
+ }
+push $Neac7f3e0
+ Dot {
+  name Dot49
+  xpos 24
+  ypos 551
+ }
+set Neac7f710 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.5*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform5
+  xpos -10
+  ypos 606
+ }
+ Dot {
+  name Dot71
+  xpos 24
+  ypos 708
+ }
+push $N9a23500
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.5?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression9
+  label "0.5\n\n"
+  note_font_size 20
+  xpos 15
+  ypos -332
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur9
+  xpos 15
+  ypos -223
+ }
+ Dot {
+  name Dot30
+  xpos 49
+  ypos -54
+ }
+ Dot {
+  name Dot62
+  xpos 49
+  ypos 97
+ }
+push $N9a251b0
+ Dot {
+  name Dot31
+  xpos 94
+  ypos 52
+ }
+set N9a32da0 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy6
+  xpos 60
+  ypos 119
+ }
+ Premult {
+  name Premult6
+  xpos 60
+  ypos 157
+ }
+ Convolve {
+  inputs 2
+  name Convolve12
+  xpos 60
+  ypos 704
+ }
+ Dot {
+  name Dot83
+  xpos 94
+  ypos 1335
+ }
+push $Neac7f710
+ Dot {
+  name Dot50
+  xpos 166
+  ypos 551
+ }
+set Neac7fa40 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.4*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform6
+  xpos 132
+  ypos 606
+ }
+ Dot {
+  name Dot72
+  xpos 166
+  ypos 712
+ }
+push $N9a1f870
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.4?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression3
+  label "0.4 \n\n"
+  note_font_size 20
+  xpos 144
+  ypos -328
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur4
+  xpos 144
+  ypos -219
+ }
+ Dot {
+  name Dot12
+  xpos 178
+  ypos -54
+ }
+ Dot {
+  name Dot63
+  xpos 178
+  ypos 95
+ }
+push $N9a32da0
+ Dot {
+  name Dot8
+  xpos 223
+  ypos 52
+ }
+set N9a330d0 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy7
+  xpos 189
+  ypos 117
+ }
+ Premult {
+  name Premult7
+  xpos 189
+  ypos 155
+ }
+ Convolve {
+  inputs 2
+  name Convolve13
+  xpos 189
+  ypos 708
+ }
+ Dot {
+  name Dot82
+  xpos 223
+  ypos 1206
+ }
+push $Neac7fa40
+ Dot {
+  name Dot51
+  xpos 291
+  ypos 551
+ }
+set Neac7fd70 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.3*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform7
+  xpos 257
+  ypos 604
+ }
+ Dot {
+  name Dot73
+  xpos 291
+  ypos 705
+ }
+push $N9a1fba0
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.3?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression10
+  label "0.3\n\n\n"
+  note_font_size 20
+  xpos 261
+  ypos -332
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur10
+  xpos 260
+  ypos -222
+ }
+ Dot {
+  name Dot32
+  xpos 294
+  ypos -56
+ }
+ Dot {
+  name Dot64
+  xpos 294
+  ypos 94
+ }
+push $N9a330d0
+ Dot {
+  name Dot33
+  xpos 358
+  ypos 52
+ }
+set N97c91f0 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy8
+  xpos 324
+  ypos 116
+ }
+ Premult {
+  name Premult8
+  xpos 324
+  ypos 154
+ }
+ Convolve {
+  inputs 2
+  name Convolve14
+  xpos 324
+  ypos 701
+ }
+ Dot {
+  name Dot81
+  xpos 358
+  ypos 1097
+ }
+push $Neac7fd70
+ Dot {
+  name Dot52
+  xpos 434
+  ypos 551
+ }
+set Neac800a0 [stack 0]
+ TransformMasked {
+  scale {{parent.scale*.2*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform8
+  xpos 400
+  ypos 602
+ }
+ Dot {
+  name Dot74
+  xpos 434
+  ypos 708
+ }
+push $N9a1fba0
+ Dot {
+  name Dot23
+  xpos 443
+  ypos -433
+ }
+set N97c8530 [stack 0]
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.2?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression4
+  label "0.2\n\n\n"
+  note_font_size 20
+  xpos 409
+  ypos -329
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur5
+  xpos 408
+  ypos -219
+ }
+ Dot {
+  name Dot13
+  xpos 442
+  ypos -70
+ }
+ Dot {
+  name Dot65
+  xpos 442
+  ypos 92
+ }
+push $N97c91f0
+ Dot {
+  name Dot9
+  xpos 506
+  ypos 52
+ }
+set N97c9520 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy9
+  xpos 472
+  ypos 114
+ }
+ Premult {
+  name Premult9
+  xpos 472
+  ypos 152
+ }
+ Convolve {
+  inputs 2
+  name Convolve15
+  xpos 472
+  ypos 704
+ }
+ Dot {
+  name Dot80
+  xpos 506
+  ypos 994
+ }
+push $Neac800a0
+ Dot {
+  name Dot53
+  xpos 574
+  ypos 551
+ }
+ TransformMasked {
+  scale {{parent.scale*.1*multiplyer+.1 i}}
+  center {21 20.5}
+  name Transform9
+  xpos 540
+  ypos 595
+ }
+ Dot {
+  name Dot75
+  xpos 574
+  ypos 709
+ }
+push $N97c8530
+ Dot {
+  name Dot25
+  xpos 604
+  ypos -433
+ }
+set N97d6780 [stack 0]
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a<0.1?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression11
+  label "1\n\n\n\n"
+  note_font_size 20
+  xpos 570
+  ypos -326
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur11
+  xpos 566
+  ypos -220
+ }
+ Dot {
+  name Dot34
+  xpos 600
+  ypos -73
+ }
+ Dot {
+  name Dot77
+  xpos 600
+  ypos 99
+ }
+push $N97c9520
+ Dot {
+  name Dot35
+  xpos 652
+  ypos 52
+ }
+set N97d7770 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy10
+  xpos 618
+  ypos 121
+ }
+ Premult {
+  name Premult10
+  xpos 618
+  ypos 159
+ }
+ Convolve {
+  inputs 2
+  name Convolve16
+  xpos 618
+  ypos 705
+ }
+ Dot {
+  name Dot76
+  xpos 652
+  ypos 917
+ }
+push $N97d6780
+ Dot {
+  name Dot18
+  xpos 764
+  ypos -436
+ }
+ Expression {
+  temp_name0 treshhold
+  temp_expr0 a==0?1:0
+  expr0 treshhold
+  expr1 treshhold
+  expr2 treshhold
+  expr3 treshhold
+  name Expression6
+  label "0\n\n\n\n"
+  note_font_size 20
+  xpos 730
+  ypos -324
+ }
+ Blur {
+  size {{parent.StepsBlur i}}
+  name Blur7
+  selected true
+  xpos 730
+  ypos -215
+ }
+ Dot {
+  name Dot16
+  xpos 764
+  ypos -58
+ }
+ Dot {
+  name Dot78
+  xpos 765
+  ypos 100
+ }
+push $N97d7770
+ Dot {
+  name Dot15
+  xpos 833
+  ypos 52
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy11
+  xpos 799
+  ypos 122
+ }
+ Premult {
+  name Premult11
+  xpos 799
+  ypos 160
+ }
+ Dot {
+  name Dot79
+  xpos 833
+  ypos 708
+ }
+ Shuffle {
+  alpha black
+  name Shuffle3
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos 798
+  ypos 815
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge2
+  xpos 799
+  ypos 913
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge4
+  xpos 799
+  ypos 990
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge5
+  xpos 799
+  ypos 1093
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge6
+  xpos 799
+  ypos 1202
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge8
+  xpos 799
+  ypos 1331
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge9
+  xpos 799
+  ypos 1464
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge10
+  xpos 799
+  ypos 1557
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge11
+  xpos 799
+  ypos 1706
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge12
+  xpos 799
+  ypos 1853
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge13
+  xpos 799
+  ypos 1972
+ }
+set N33ef0370 [stack 0]
+ Output {
+  name Output1
+  xpos 799
+  ypos 3116
+ }
+push 0
+push $N33ef0370
+ Viewer {
+  inputs 3
+  rgb_only true
+  input_process false
+  name Viewer1
+  xpos 950
+  ypos -419
+  hide_input true
+ }
+end_group

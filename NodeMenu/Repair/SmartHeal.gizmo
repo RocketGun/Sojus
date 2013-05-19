@@ -1,0 +1,117 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ Name SmartHeal
+ inputs 2
+ addUserKnob {20 User l SmartHeal}
+ addUserKnob {41 size l rotoblur T rotoblur.size}
+ addUserKnob {41 size_1 l threshold T threshold.size}
+ addUserKnob {41 size_2 l maskdilate T maskdilate.size}
+ addUserKnob {41 size_3 l postmaskblur T postmaskblur.size}
+}
+ Input {
+  inputs 0
+  name roto
+  xpos 271
+  ypos -302
+  number 1
+ }
+ AddChannels {
+  channels rgba
+  name AddChannels1
+  xpos 271
+  ypos -253
+ }
+ Blur {
+  size 1.3
+  name rotoblur
+  label "size: \[value size]"
+  xpos 271
+  ypos -187
+ }
+set N2f947600 [stack 0]
+ Dot {
+  name Dot1
+  xpos 423
+  ypos -173
+ }
+ Dilate {
+  size 2
+  name maskdilate
+  xpos 389
+  ypos -23
+ }
+ Blur {
+  size 1.6
+  name postmaskblur
+  label "size: \[value size]"
+  xpos 389
+  ypos 35
+ }
+push $N2f947600
+ Invert {
+  name Invert1
+  xpos 271
+  ypos -141
+ }
+ Input {
+  inputs 0
+  name BG
+  xpos 643
+  ypos -243
+ }
+ Blur {
+  name Blur1
+  label "size: \[value size]"
+  xpos 643
+  ypos -204
+ }
+set N2f968e90 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 271
+  ypos -12
+ }
+ Premult {
+  name Premult1
+  xpos 271
+  ypos 22
+ }
+ Blur {
+  size 13.5
+  name threshold
+  label "size: \[value size]"
+  xpos 271
+  ypos 46
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 271
+  ypos 92
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 389
+  ypos 186
+ }
+push $N2f968e90
+ Merge2 {
+  inputs 2
+  operation matte
+  name Merge1
+  selected true
+  xpos 643
+  ypos 191
+ }
+ Output {
+  name Output1
+  xpos 643
+  ypos 291
+ }
+end_group

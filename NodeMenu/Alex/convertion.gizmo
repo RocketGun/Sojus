@@ -1,0 +1,177 @@
+#! /usr/local/Nuke6.2v4/Nuke6.2 -nx
+version 6.2 v4
+Gizmo {
+ inputs 2
+ help "This gizmo defines the displacement value for different media types like: monitor display (60), big cinema screen (10) etc.\n\nIn most cases there should be no need to define the displacent any other than 10 or 60 for render out.\n\nOffset is to be left at zero and only in special cases to be used to counter correct the displacement value.\n\nIn addition size and floating windows can be used to clean up caches and edges.\n\n2010 | Sebastian von Overheidt"
+ tile_color 0xffbf00ff
+ note_font "Bitstream Vera Sans"
+ mapsize {0.15 0.15}
+ addUserKnob {20 User}
+ addUserKnob {26 txt01 l "" +STARTLINE T "<b>BLACKBOX TNG</b>\n"}
+ addUserKnob {26 divider03 l "" +STARTLINE}
+ addUserKnob {26 txt02 l "" +STARTLINE T "Select the view you want the stereo eyes to be created from:"}
+ addUserKnob {41 view T OneView4.view}
+ addUserKnob {26 divider02 l "" +STARTLINE}
+ addUserKnob {41 from0 l "Depth Channel" T Copy1.from0}
+ addUserKnob {41 view_1 l view -STARTLINE T OneView5.view}
+ addUserKnob {7 center}
+ center 0.5
+ addUserKnob {1 displacement}
+ displacement 40
+ addUserKnob {26 divider01 l "" +STARTLINE}
+ addUserKnob {7 size R 0 0.5}
+ addUserKnob {7 floatingWindowL l "floating window left"}
+ addUserKnob {7 floatingWindowR l "floating window right"}
+}
+ Input {
+  inputs 0
+  name Source
+  selected true
+  xpos -340
+  ypos -181
+ }
+set Nfebc0d70 [stack 0]
+ OneView {
+  view middle
+  name OneView3
+  label middle
+  selected true
+  xpos -340
+  ypos 342
+ }
+ Input {
+  inputs 0
+  name DepthMap
+  selected true
+  xpos -687
+  ypos -206
+  number 1
+ }
+ OneView {
+  name OneView5
+  selected true
+  xpos -687
+  ypos -11
+ }
+ Dot {
+  name Dot2
+  selected true
+  xpos -653
+  ypos 78
+ }
+push $Nfebc0d70
+ OneView {
+  name OneView4
+  selected true
+  xpos -542
+  ypos -20
+ }
+ Dot {
+  name Dot1
+  selected true
+  xpos -508
+  ypos 24
+ }
+add_layer {stereo_displacement stereo_displacement.t}
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 stereo_displacement.t
+  name Copy1
+  selected true
+  xpos -542
+  ypos 66
+  disable {{"\[python nuke.thisNode().error()]" i}}
+ }
+ Add {
+  channels stereo_displacement
+  value {{-group.center i}}
+  name Add1
+  selected true
+  xpos -542
+  ypos 108
+ }
+add_layer {displacement displacement.front displacement.back displacement.combined}
+ IDistort {
+  channels {rgba.red rgba.green rgba.blue rgba.alpha}
+  uv stereo_displacement
+  uv_scale {(default {{parent.displacement i}} left {{-parent.displacement i}} middle {0})}
+  maskChannel -displacement.front
+  name IDistort11_front1
+  selected true
+  xpos -542
+  ypos 180
+ }
+ Transform {
+  scale {{parent.size+1 i}}
+  center {{Source.width/2 i} {Source.height/2 i}}
+  clamp true
+  name Size
+  selected true
+  xpos -542
+  ypos 268
+ }
+set Nfeb97a10 [stack 0]
+ OneView {
+  view right
+  name OneView2
+  label right
+  selected true
+  xpos -542
+  ypos 342
+ }
+ Crop {
+  box {0 0 {Source.width-(parent.floatingWindowR*parent.displacement) i} {Source.height i}}
+  name Crop_right
+  selected true
+  xpos -542
+  ypos 410
+ }
+push $Nfeb97a10
+ OneView {
+  name OneView1
+  label left
+  selected true
+  xpos -642
+  ypos 342
+ }
+ Crop {
+  box {(default {{parent.floatingWindowL i} 0 {Source.width i} {Source.height i}} left {{parent.floatingWindowL*parent.displacement i} 0 {Source.width i} {Source.height i}} right {{parent.floatingWindowL i} 0 {Source.width-parent.floatingWindowR i} {Source.height i}})}
+  name Crop_left
+  selected true
+  xpos -642
+  ypos 409
+ }
+ JoinViews {
+  inputs 3
+  name JoinViews1
+  selected true
+  xpos -542
+  ypos 481
+  viewassoc "left\nright\nmiddle"
+ }
+ Reformat {
+  type "to box"
+  box_width {{Source.width i}}
+  box_height {{Source.height i}}
+  box_fixed true
+  black_outside true
+  name Reformat1
+  selected true
+  xpos -542
+  ypos 536
+ }
+ Remove {
+  channels stereo_displacement
+  name Remove1
+  selected true
+  xpos -542
+  ypos 579
+ }
+ Output {
+  name Output2
+  selected true
+  xpos -542
+  ypos 657
+ }
+end_group

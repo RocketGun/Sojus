@@ -1,0 +1,191 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name "beautyfarm_ppo"
+ inputs 2
+ tile_color 0xadff00ff
+ addUserKnob {20 User l beautyfarm_ppo}
+ addUserKnob {26 i l "" +STARTLINE T "beautyfarm_ppo:     repairs/reduces  wrinkles & spots to make faces look younger, while keeping details.\n\noutput channels:\nrgba:              healed picture\nhealmask:     mask-channel for further editing"}
+ addUserKnob {26 ""}
+ addUserKnob {41 size l botox T Blur_pre.size}
+ addUserKnob {41 gain l highlights T ColorCorrect_lights.gain}
+ addUserKnob {41 gain_1 l shadows T ColorCorrect_shadows.gain}
+ addUserKnob {41 size_1 l "mask blur" T Blur_mask.size}
+ addUserKnob {7 age R 0 100}
+ age 55
+ addUserKnob {26 ""}
+ addUserKnob {26 c l "" +STARTLINE T "filter by:   ppo - Paul Poetsch - p.poetsch@gmx.de - 2010"}
+}
+ Input {
+  inputs 0
+  name in_healmask
+  xpos 951
+  ypos -400
+  number 1
+ }
+ Dot {
+  name Dot7
+  xpos 985
+  ypos -263
+ }
+ Blur {
+  size 15
+  name Blur_mask
+  xpos 951
+  ypos -38
+ }
+set N1cf33f80 [stack 0]
+ Input {
+  inputs 0
+  name in_pic
+  xpos 462
+  ypos -412
+ }
+ Dot {
+  name Dot6
+  xpos 496
+  ypos -257
+ }
+set N1cf3e230 [stack 0]
+push $N1cf3e230
+ Dot {
+  name Dot4
+  xpos 574
+  ypos -257
+ }
+set N1cf40f20 [stack 0]
+ Dot {
+  name Dot3
+  xpos 726
+  ypos -257
+ }
+set N1cf43bf0 [stack 0]
+ Blur {
+  size 53
+  name Blur_pre
+  xpos 692
+  ypos -146
+ }
+set N1cf468d0 [stack 0]
+push $N1cf43bf0
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos 760
+  ypos -86
+ }
+ Expression {
+  channel3 alpha
+  expr3 r+g+b
+  name Expression2
+  xpos 760
+  ypos -58
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  xpos 760
+  ypos -30
+ }
+push $N1cf33f80
+ Merge2 {
+  inputs 2
+  operation in
+  name In
+  xpos 760
+  ypos -2
+ }
+push $N1cf43bf0
+push $N1cf468d0
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge2
+  xpos 625
+  ypos -87
+ }
+ Expression {
+  channel3 alpha
+  expr3 r+g+b
+  name Expression1
+  xpos 625
+  ypos -59
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle1
+  xpos 625
+  ypos -31
+ }
+push $N1cf33f80
+ Merge2 {
+  inputs 2
+  operation in
+  name In1
+  xpos 625
+  ypos -3
+ }
+push $N1cf40f20
+ Dot {
+  name Dot5
+  xpos 574
+  ypos 5
+ }
+ ColorCorrect {
+  inputs 1+1
+  gain -1.5
+  name ColorCorrect_lights
+  xpos 540
+  ypos 59
+ }
+ ColorCorrect {
+  inputs 1+1
+  saturation 0.35
+  gain 8
+  name ColorCorrect_shadows
+  xpos 540
+  ypos 104
+ }
+set N1cf71870 [stack 0]
+ Dissolve {
+  inputs 2
+  which {{parent.age/100}}
+  name Dissolve_origmix
+  xpos 462
+  ypos 195
+ }
+add_layer {healmask healmask.red healmask.green healmask.blue healmask.alpha}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  out healmask
+  name ShuffleCopy1
+  xpos 462
+  ypos 271
+ }
+ Dot {
+  name Dot8
+  xpos 496
+  ypos 337
+ }
+ Output {
+  name Output1
+  xpos 462
+  ypos 396
+ }
+push $N1cf71870
+ Viewer {
+  frame_increment 8
+  input_process false
+  name Viewer1
+  xpos 645
+  ypos 99
+ }
+end_group

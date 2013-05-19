@@ -1,0 +1,451 @@
+#! /usr/local/Nuke6.1v3/Nuke6.1 -nx
+version 6.1 v3
+Group {
+ label "Depth Colored"
+ note_font "DejaVu Sans Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+ note_font_size 20
+ addUserKnob {20 User}
+ addUserKnob {41 Focus T Add1.value}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -222
+  ypos -112
+ }
+ Add {
+  value 0.23
+  name Add1
+  xpos -222
+  ypos -40
+ }
+ Group {
+  inputs 0
+  name Group2
+  help "@b;dGrad v1 @n;for Nuke 6.0v1\n\nA simple 2 to 8 colors linear gradient. Anything connected to the \"Custom\" input will override the linear gradient and use the luminance values of that input to drive the gradient disposition.\n\ncreated by Diogo Girondi\ndiogogirondi@gmail.com"
+  knobChanged "n = nuke.thisNode()\nk = nuke.thisKnob()\n\nif k.name() == 'colors' or k.name() == 'showPanel':\n    colors = int(n\['colors'].value())\n    if colors == 2:\n        n\['c3'].setEnabled(False)\n        n\['c4'].setEnabled(False)\n        n\['c5'].setEnabled(False)\n        n\['c6'].setEnabled(False)\n        n\['c7'].setEnabled(False)\n        n\['c8'].setEnabled(False)\n    elif colors == 3:\n        n\['c3'].setEnabled(True)\n        n\['c4'].setEnabled(False)\n        n\['c5'].setEnabled(False)\n        n\['c6'].setEnabled(False)\n        n\['c7'].setEnabled(False)\n        n\['c8'].setEnabled(False)\n    elif colors == 4:\n        n\['c3'].setEnabled(True)\n        n\['c4'].setEnabled(True)\n        n\['c5'].setEnabled(False)\n        n\['c6'].setEnabled(False)\n        n\['c7'].setEnabled(False)\n        n\['c8'].setEnabled(False)\n    elif colors == 5:\n        n\['c3'].setEnabled(True)\n        n\['c4'].setEnabled(True)\n        n\['c5'].setEnabled(True)\n        n\['c6'].setEnabled(False)\n        n\['c7'].setEnabled(False)\n        n\['c8'].setEnabled(False)\n    elif colors == 6:\n        n\['c3'].setEnabled(True)\n        n\['c4'].setEnabled(True)\n        n\['c5'].setEnabled(True)\n        n\['c6'].setEnabled(True)\n        n\['c7'].setEnabled(False)\n        n\['c8'].setEnabled(False)\n    elif colors == 7:\n        n\['c3'].setEnabled(True)\n        n\['c4'].setEnabled(True)\n        n\['c5'].setEnabled(True)\n        n\['c6'].setEnabled(True)\n        n\['c7'].setEnabled(True)\n        n\['c8'].setEnabled(False)\n    elif colors == 8:\n        n\['c3'].setEnabled(True)\n        n\['c4'].setEnabled(True)\n        n\['c5'].setEnabled(True)\n        n\['c6'].setEnabled(True)\n        n\['c7'].setEnabled(True)\n        n\['c8'].setEnabled(True)"
+  tile_color 0x777777ff
+  selected true
+  xpos -81
+  ypos -28
+  addUserKnob {20 dgrad l "dGrad v1"}
+  addUserKnob {4 colors l Colors M {2 3 4 5 6 7 8}}
+  colors 8
+  addUserKnob {7 softness l " Softness" -STARTLINE R 0 2}
+  softness 0.5
+  addUserKnob {7 mix l Mix}
+  mix 1
+  addUserKnob {26 ""}
+  addUserKnob {41 p0 l "Point 0" T Ramp1.p0}
+  addUserKnob {41 p1 l "Point 1" T Ramp1.p1}
+  addUserKnob {26 ""}
+  addUserKnob {19 c1 l "Color 1"}
+  c1 {5 0 0 0}
+  addUserKnob {19 c2 l "Color 2"}
+  c2 {1 0 0.716254 0}
+  addUserKnob {19 c3 l "Color 3"}
+  c3 {0.533427 0 1 0}
+  addUserKnob {19 c4 l "Color 4"}
+  c4 {0 0.245659 1.3 0}
+  addUserKnob {19 c5 l "Color 5"}
+  c5 {0 0.955853 1 0}
+  addUserKnob {19 c6 l "Color 6"}
+  c6 {0 1.5 0.294799 0}
+  addUserKnob {19 c7 l "Color 7"}
+  c7 {0.5 1 0 0}
+  addUserKnob {19 c8 l "Color 8"}
+  c8 {2 1.5 0 0}
+ }
+  Input {
+   inputs 0
+   name Custom
+   xpos 136
+   ypos -221
+   number 1
+   addUserKnob {20 User}
+   addUserKnob {6 connected +STARTLINE}
+   connected {{"\[exists input1.disable]" i}}
+  }
+  Saturation {
+   saturation 0
+   name Saturation1
+   xpos 136
+   ypos -140
+  }
+  Input {
+   inputs 0
+   name Input
+   xpos 0
+   ypos -213
+  }
+set N281464e0 [stack 0]
+  Ramp {
+   replace true
+   p0 {-78 352}
+   p1 {2100 346}
+   name Ramp1
+   xpos 0
+   ypos -113
+  }
+  Switch {
+   inputs 2
+   which {{Custom.connected i}}
+   name Type
+   xpos 51
+   ypos -7
+  }
+push $N281464e0
+  Rectangle {
+   area {0 0 {"input.width/\[value parent.colors]" i} {input.height i}}
+   color {{parent.c1.middle i} {parent.c1.middle i} {parent.c1.middle i} {parent.c1.middle i}}
+   name c1
+   xpos -107
+   ypos -164
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c2.middle i} {parent.c2.middle i} {parent.c2.middle i} {parent.c2.middle i}}
+   name c2
+   xpos -107
+   ypos -136
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c3.middle i} {parent.c3.middle i} {parent.c3.middle i} {parent.c3.middle i}}
+   name c3
+   xpos -107
+   ypos -106
+   disable {{"\[value parent.colors] < 3" i}}
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c4.middle i} {parent.c4.middle i} {parent.c4.middle i} {parent.c4.middle i}}
+   name c4
+   xpos -107
+   ypos -77
+   disable {{"\[value parent.colors] < 4" i}}
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c5.middle i} {parent.c5.middle i} {parent.c5.middle i} {parent.c5.middle i}}
+   name c5
+   xpos -107
+   ypos -49
+   disable {{"\[value parent.colors] < 5" i}}
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c6.middle i} {parent.c6.middle i} {parent.c6.middle i} {parent.c6.middle i}}
+   name c6
+   xpos -107
+   ypos -20
+   disable {{"\[value parent.colors] < 6" i}}
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c7.middle i} {parent.c7.middle i} {parent.c7.middle i} {parent.c7.middle i}}
+   name c7
+   xpos -107
+   ypos 9
+   disable {{"\[value parent.colors] < 7" i}}
+  }
+  Rectangle {
+   area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+   color {{parent.c8.middle i} {parent.c8.middle i} {parent.c8.middle i} {parent.c8.middle i}}
+   name c8
+   xpos -107
+   ypos 37
+   disable {{"\[value parent.colors] < 8" i}}
+  }
+  Tile {
+   columns 2
+   name Tile1
+   xpos -107
+   ypos 65
+  }
+  Blur {
+   size {{"(input.width*(1/\[value parent.colors]))*parent.softness" i}}
+   name Blur1
+   xpos -107
+   ypos 118
+  }
+  STMap {
+   inputs 2
+   channels rgb
+   uv {rgba.red -rgba.green}
+   name STMap1
+   xpos 51
+   ypos 125
+  }
+push $N281464e0
+  Dot {
+   name Dot1
+   xpos -165
+   ypos -208
+  }
+  Dot {
+   name Dot2
+   xpos -165
+   ypos 206
+  }
+  Dissolve {
+   inputs 2
+   which {{parent.mix i}}
+   name Dissolve1
+   xpos 51
+   ypos 194
+  }
+set N34d8a680 [stack 0]
+  Output {
+   name Output1
+   xpos 51
+   ypos 279
+  }
+  Group {
+   inputs 0
+   name Group1
+   label "Dept Checker"
+   xpos -318
+   ypos -117
+  }
+   Input {
+    inputs 0
+    name Input1
+    xpos -222
+    ypos 20
+   }
+   Input {
+    inputs 0
+    name Custom
+    xpos 594
+    ypos -444
+    number 1
+    addUserKnob {20 User}
+    addUserKnob {6 connected +STARTLINE}
+    connected {{"\[exists input1.disable]" i}}
+   }
+   Saturation {
+    saturation 0
+    name Saturation1
+    xpos 594
+    ypos -363
+   }
+   Input {
+    inputs 0
+    name Input
+    xpos 458
+    ypos -495
+    number 2
+   }
+   Ramp {
+    p0 {-92 366}
+    p1 {2982 366}
+    name Ramp7
+    xpos 458
+    ypos -446
+   }
+set N343aa700 [stack 0]
+   Ramp {
+    replace true
+    p0 {-78 352}
+    p1 {1898 338}
+    name Ramp1
+    xpos 472
+    ypos -339
+   }
+   Switch {
+    inputs 2
+    which {{Custom.connected i}}
+    name Type
+    xpos 509
+    ypos -230
+   }
+push $N343aa700
+   Rectangle {
+    area {0 0 {"input.width/\[value parent.colors]"} {input.height}}
+    color {5 0 0 0}
+    name c1
+    selected true
+    xpos 351
+    ypos -346
+   }
+set N340205d0 [stack 0]
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {1 0 0.716254 0}
+    name c2
+    xpos 351
+    ypos -305
+   }
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {0.533427 0 1 0}
+    name c3
+    xpos 351
+    ypos -277
+    disable {{"\[value parent.colors] < 3" i}}
+   }
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {0 0.245659 1 0}
+    name c4
+    xpos 351
+    ypos -249
+    disable {{"\[value parent.colors] < 4" i}}
+   }
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {{parent.c5.middle i} {parent.c5.middle i} {parent.c5.middle i} {parent.c5.middle i}}
+    name c5
+    xpos 351
+    ypos -221
+    disable {{"\[value parent.colors] < 5" i}}
+   }
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {{parent.c6.middle i} {parent.c6.middle i} {parent.c6.middle i} {parent.c6.middle i}}
+    name c6
+    xpos 351
+    ypos -192
+    disable {{"\[value parent.colors] < 6" i}}
+   }
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {{parent.c7.middle i} {parent.c7.middle i} {parent.c7.middle i} {parent.c7.middle i}}
+    name c7
+    xpos 351
+    ypos -163
+    disable {{"\[value parent.colors] < 7" i}}
+   }
+   Rectangle {
+    area {{input.area.r i} 0 {"input.area.r+(input.width/\[value parent.colors])" i} {input.height i}}
+    color {{parent.c8.middle i} {parent.c8.middle i} {parent.c8.middle i} {parent.c8.middle i}}
+    name c8
+    xpos 351
+    ypos -135
+    disable {{"\[value parent.colors] < 8" i}}
+   }
+   Blur {
+    size {{"(input.width*(1/\[value parent.colors]))*parent.softness" i}}
+    name Blur1
+    xpos 351
+    ypos -105
+   }
+   STMap {
+    inputs 2
+    channels rgb
+    uv {rgba.red -rgba.green}
+    name STMap2
+    xpos 509
+    ypos -98
+   }
+push $N343aa700
+   Dot {
+    name Dot1
+    xpos 293
+    ypos -431
+   }
+   Dot {
+    name Dot2
+    xpos 293
+    ypos -17
+   }
+   Dissolve {
+    inputs 2
+    which {{parent.mix i}}
+    name Dissolve1
+    xpos 509
+    ypos -29
+   }
+   STMap {
+    inputs 2
+    uv rgb
+    name STMap1
+    xpos -222
+    ypos 62
+   }
+   Output {
+    name Output1
+    xpos -222
+    ypos 160
+   }
+   ColorWheel {
+    inputs 0
+    format "1920 1080 0 0 1920 1080 1 HD"
+    gamma 0.45
+    name ColorWheel1
+    xpos 3
+    ypos -228
+   }
+   Crop {
+    box {418 0 1502 1076}
+    reformat true
+    crop false
+    name Crop2
+    xpos 3
+    ypos -115
+   }
+   SphericalTransform {
+    rx 90
+    out_rot_order YZX
+    fix true
+    name SphericalTransform1
+    xpos 3
+    ypos -87
+   }
+   Crop {
+    box {472 884 1922 965}
+    reformat true
+    crop false
+    name Crop1
+    xpos 3
+    ypos -30
+   }
+push $N340205d0
+   Viewer {
+    viewerProcess None
+    input_process false
+    name Viewer1
+    xpos 145
+    ypos 73
+   }
+  end_group
+push $N34d8a680
+  Viewer {
+   viewerProcess None
+   input_process false
+   name Viewer1
+   xpos 3
+   ypos -85
+  }
+ end_group
+set N2f0e7dd0 [stack 0]
+ Crop {
+  box {0 725 1940 795}
+  reformat true
+  crop false
+  name Crop1
+  xpos -81
+  ypos 66
+ }
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap1
+  xpos -222
+  ypos 59
+ }
+ Output {
+  name Output1
+  xpos -222
+  ypos 160
+ }
+push $N2f0e7dd0
+ Viewer {
+  viewerProcess None
+  input_process false
+  name Viewer1
+  xpos 311
+  ypos -5
+ }
+end_group

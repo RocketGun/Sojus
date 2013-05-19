@@ -1,0 +1,41 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name "ColorShredder"
+ addUserKnob {20 ColorShredder}
+ addUserKnob {41 f l frequency T Expression1.f}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 x l "" +STARTLINE T "v1.0 by jonas@mischlicht.com"}
+}
+ Input {
+  inputs 0
+  name In
+  label In
+  xpos 521
+  ypos 12
+ }
+ Expression {
+  temp_name0 xa
+  temp_expr0 -2
+  temp_name1 xb
+  temp_expr1 -2
+  temp_name2 xc
+  temp_expr2 pi
+  temp_name3 xd
+  temp_expr3 pi
+  expr0 ((xd-xb)/pi)*asin(cos(pi*((r*f)-xc)/(xc-xa)))+((xd+xb)/2)
+  expr1 ((xd-xb)/pi)*asin(cos(pi*((g*f)-xc)/(xc-xa)))+((xd+xb)/2)
+  expr2 ((xd-xb)/pi)*asin(cos(pi*((b*f)-xc)/(xc-xa)))+((xd+xb)/2)
+  name Expression1
+  xpos 521
+  ypos 57
+  addUserKnob {20 User}
+  addUserKnob {7 f l frequency R 1 5000}
+  f 60
+ }
+ Output {
+  name Output1
+  xpos 521
+  ypos 152
+ }
+end_group

@@ -1,0 +1,92 @@
+set cut_paste_input [stack 0]
+version 6.3 v4
+push $cut_paste_input
+Dot {
+ name Dot1
+ selected true
+ xpos -9
+ ypos -49
+}
+set N28c22e60 [stack 0]
+Dot {
+ name Dot2
+ selected true
+ xpos 101
+ ypos -49
+}
+Invert {
+ name Invert1
+ selected true
+ xpos 67
+ ypos -31
+}
+FilterErode {
+ name FilterErode1
+ selected true
+ xpos 67
+ ypos 3
+}
+Blur {
+ name Blur1
+ selected true
+ xpos 67
+ ypos 37
+}
+Roto {
+ curves {AnimTree: "" {
+ Version: 1.2
+ Flag: 0
+ RootNode: 1
+ Node: {
+  NodeName: "Root" {
+   Flag: 512
+   NodeType: 1
+   Transform: 0 0 S 0 0 S 0 0 S 0 0 S 0 1 S 0 1 S 0 0 S 0 360 S 0 288 
+   NumOfAttributes: 11
+   "vis" S 0 1 "opc" S 0 1 "mbo" S 0 1 "mb" S 0 1 "mbs" S 0 0.5 "fo" S 0 1 "fx" S 0 0 "fy" S 0 0 "ff" S 0 1 "ft" S 0 0 "pt" S 0 0 
+  }
+  NumOfChildren: 0
+ }
+}
+}
+ toolbox {createBezier {
+  { createBezier ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBSpline ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle ssx 1 ssy 1 sf 1 sb 1 }
+  { brush ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_lifetime_type all
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {360 288}
+ view {}
+ motionblur_on true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name Roto1
+ selected true
+ xpos 67
+ ypos 71
+}
+Dot {
+ name Dot3
+ selected true
+ xpos 101
+ ypos 95
+}
+push $N28c22e60
+ColorCorrect {
+ inputs 1+1
+ name ColorCorrect1
+ selected true
+ xpos -43
+ ypos 92
+}

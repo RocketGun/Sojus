@@ -1,0 +1,155 @@
+#! C:/Program Files/Nuke/Nuke5.1.exe -nx
+
+Group {
+ name GlowMy
+ addUserKnob {20 User}
+ addUserKnob {26 "" t TOLERANCE -STARTLINE T TOLERANCE}
+ addUserKnob {41 gamma T Tolerance.gamma}
+ addUserKnob {41 gain T Tolerance.gain}
+ addUserKnob {41 offset T Tolerance.offset}
+ addUserKnob {26 ""}
+ addUserKnob {3 MASTER_BLUR l "MASTER BLUR"}
+ MASTER_BLUR 5
+ addUserKnob {3 RED_X}
+ addUserKnob {3 GREEN_X -STARTLINE}
+ addUserKnob {3 BLUE_X -STARTLINE}
+ addUserKnob {3 RED_Y}
+ addUserKnob {3 GREEN_Y -STARTLINE}
+ addUserKnob {3 BLUE_Y -STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {41 gain_1 l gain T Brightness.gain}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -235
+  ypos 168
+ }
+ Dot {
+  name Dot6
+  xpos -201
+  ypos 228
+ }
+set Nd983050 [stack 0]
+ Dot {
+  name Dot5
+  xpos -114
+  ypos 228
+ }
+set N22151998 [stack 0]
+ ColorCorrect {
+  gamma 0.2
+  gain 4
+  offset -1
+  name Tolerance
+  xpos 3
+  ypos 224
+ }
+ Saturation {
+  saturation 0
+  mode Maximum
+  name Saturation1
+  xpos 3
+  ypos 281
+ }
+push $N22151998
+ Copy {
+  inputs 2
+  from0 rgba.red
+  to0 rgba.alpha
+  name Copy1
+  xpos -148
+  ypos 275
+ }
+ Grade {
+  channels rgba
+  white_clamp true
+  name Grade2
+  xpos -148
+  ypos 322
+ }
+set N1c16c410 [stack 0]
+ Blur {
+  size {{RED_X+MASTER_BLUR i} {RED_Y+MASTER_BLUR i}}
+  quality 17
+  name BlurRed
+  xpos -148
+  ypos 399
+ }
+ Dot {
+  name Dot3
+  xpos -114
+  ypos 479
+ }
+push $N1c16c410
+ Dot {
+  name Dot4
+  xpos -18
+  ypos 326
+ }
+set N2110c1f0 [stack 0]
+ Blur {
+  size {{GREEN_X+MASTER_BLUR i} {GREEN_Y+MASTER_BLUR i}}
+  name BlurGreen
+  xpos -52
+  ypos 400
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  Achannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  Bchannels {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  name Merge2
+  xpos -52
+  ypos 475
+ }
+push $N2110c1f0
+ Dot {
+  name Dot2
+  xpos 79
+  ypos 326
+ }
+ Blur {
+  size {{BLUE_X+MASTER_BLUR i} {BLUE_Y+MASTER_BLUR i}}
+  name BlurBlue
+  xpos 45
+  ypos 400
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  Achannels {rgba.red rgba.green -rgba.blue rgba.alpha}
+  Bchannels {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  name Merge3
+  xpos 45
+  ypos 475
+ }
+ ColorCorrect {
+  name Brightness
+  xpos 45
+  ypos 553
+ }
+ Premult {
+  name Premult1
+  xpos 45
+  ypos 606
+ }
+push $Nd983050
+ Dot {
+  name Dot1
+  xpos -201
+  ypos 637
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos 45
+  ypos 633
+ }
+ Output {
+  name Output1
+  xpos 45
+  ypos 733
+ }
+end_group

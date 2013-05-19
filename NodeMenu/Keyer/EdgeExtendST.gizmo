@@ -1,0 +1,2900 @@
+#! /Applications/Nuke6.3v4/NukeX6.3v4.app/../Nuke6.3v4.app/Contents/MacOS/Nuke6.3v4 -nx
+version 6.3 v4
+Group {
+ name EdgeExtendST
+ inputs 2
+ tile_color 0x3f00ff
+ addUserKnob {20 EdgeExtendST}
+ addUserKnob {14 strength t "this will define how strong will be extention" R 0 100}
+ strength 4
+ addUserKnob {7 plot t "this will erode your alpha to pick pixels you want to appear in your MB area" R 0 10}
+ plot 1
+ addUserKnob {7 width t "that one will define width of our edge" R 0 10}
+ width 1
+ addUserKnob {7 blurEdge R 0 10}
+ blurEdge 1
+ addUserKnob {4 output l Output M {Unpremult Premult "Edge Only"}}
+ addUserKnob {26 ""}
+ addUserKnob {6 plotLine t "this line will show where you will pick pixels for extention" +STARTLINE}
+ addUserKnob {6 showWidth t "this will show an area you will replace" -STARTLINE}
+ addUserKnob {41 maskChannel l "mask channel" T Keymix1.maskChannel}
+ addUserKnob {6 Keymix1_invertMask l invert -STARTLINE}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 c l "" +STARTLINE T "v1.0 Alexey Kuchinsky\nv1.1 jonas@mischlicht.com"}
+}
+ Input {
+  inputs 0
+  name mask
+  xpos 1431
+  ypos 1323
+  number 1
+ }
+ Dot {
+  name Dot28
+  xpos 1465
+  ypos 1434
+ }
+set N2e312ab0 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 1879
+  ypos 880
+ }
+set N5356c520 [stack 0]
+ Input {
+  inputs 0
+  name in
+  xpos 408
+  ypos 311
+ }
+ Dot {
+  name Dot7
+  xpos 442
+  ypos 548
+ }
+set N3c67eaa0 [stack 0]
+ Dot {
+  name Dot21
+  xpos 591
+  ypos 548
+ }
+set N3c6cb0d0 [stack 0]
+ Dot {
+  name Dot24
+  xpos 687
+  ypos 548
+ }
+set N3c669340 [stack 0]
+ Dot {
+  name Dot1
+  xpos 787
+  ypos 548
+ }
+set N36835500 [stack 0]
+ Dot {
+  name Dot20
+  xpos 913
+  ypos 548
+ }
+set N3680c1b0 [stack 0]
+ Remove {
+  operation keep
+  channels alpha
+  name Remove1
+  xpos 879
+  ypos 605
+ }
+ Group {
+  name ErodeMy
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  xpos 879
+  ypos 760
+  addUserKnob {20 erode}
+  addUserKnob {7 Erode R -80 80}
+  Erode {{parent.plot}}
+  addUserKnob {7 fine R -1 1}
+  addUserKnob {7 Blur R 0 100}
+  addUserKnob {6 Mask +STARTLINE}
+  addUserKnob {6 Inside -STARTLINE}
+ }
+  Input {
+   inputs 0
+   name Source
+   xpos -1971
+   ypos 2134
+  }
+set N36807820 [stack 0]
+  FilterErode {
+   channels all
+   size {{fine}}
+   filter gaussian
+   name fine
+   xpos -1971
+   ypos 2237
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode21
+   xpos -1971
+   ypos 2330
+   disable {{abs(parent.Erode)>79?0:1 i}}
+  }
+  Clamp {
+   name Clamp41
+   xpos -1823
+   ypos 2362
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode42
+   xpos -1971
+   ypos 2396
+   disable {{abs(parent.Erode)>68?0:1}}
+  }
+  Clamp {
+   name Clamp42
+   xpos -1825
+   ypos 2430
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode43
+   xpos -1971
+   ypos 2472
+   disable {{abs(parent.Erode)>76?0:1 i}}
+  }
+  Clamp {
+   name Clamp43
+   xpos -1815
+   ypos 2510
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode44
+   xpos -1971
+   ypos 2548
+   disable {{abs(parent.Erode)>77?0:1}}
+  }
+  Clamp {
+   name Clamp44
+   xpos -1803
+   ypos 2594
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode45
+   xpos -1971
+   ypos 2631
+   disable {{abs(parent.Erode)>78?0:1 i}}
+  }
+  Clamp {
+   name Clamp45
+   xpos -1799
+   ypos 2673
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode46
+   xpos -1971
+   ypos 2707
+   disable {{abs(parent.Erode)>69?0:1}}
+  }
+  Clamp {
+   name Clamp46
+   xpos -1799
+   ypos 2751
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode47
+   xpos -1971
+   ypos 2783
+   disable {{abs(parent.Erode)>70?0:1}}
+  }
+  Clamp {
+   name Clamp47
+   xpos -1807
+   ypos 2831
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode48
+   xpos -1971
+   ypos 2859
+   disable {{abs(parent.Erode)>71?0:1}}
+  }
+  Clamp {
+   name Clamp48
+   xpos -1815
+   ypos 2907
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode49
+   xpos -1971
+   ypos 2935
+   disable {{abs(parent.Erode)>72?0:1}}
+  }
+  Clamp {
+   name Clamp49
+   xpos -1815
+   ypos 2983
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode50
+   xpos -1971
+   ypos 3011
+   disable {{abs(parent.Erode)>73?0:1}}
+  }
+  Clamp {
+   name Clamp50
+   xpos -1805
+   ypos 3047
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode51
+   xpos -1955
+   ypos 3101
+   disable {{abs(parent.Erode)>74?0:1}}
+  }
+  Clamp {
+   name Clamp51
+   xpos -1807
+   ypos 3143
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode52
+   xpos -1955
+   ypos 3177
+   disable {{abs(parent.Erode)>75?0:1}}
+  }
+  Clamp {
+   name Clamp52
+   xpos -1809
+   ypos 3211
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode53
+   xpos -1955
+   ypos 3253
+   disable {{abs(parent.Erode)>62?0:1}}
+  }
+  Clamp {
+   name Clamp53
+   xpos -1799
+   ypos 3291
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode54
+   xpos -1955
+   ypos 3329
+   disable {{abs(parent.Erode)>63?0:1}}
+  }
+  Clamp {
+   name Clamp54
+   xpos -1787
+   ypos 3375
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode55
+   xpos -1955
+   ypos 3412
+   disable {{abs(parent.Erode)>64?0:1}}
+  }
+  Clamp {
+   name Clamp55
+   xpos -1783
+   ypos 3454
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode56
+   xpos -1955
+   ypos 3488
+   disable {{abs(parent.Erode)>65?0:1}}
+  }
+  Clamp {
+   name Clamp56
+   xpos -1783
+   ypos 3532
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode57
+   xpos -1955
+   ypos 3564
+   disable {{abs(parent.Erode)>66?0:1}}
+  }
+  Clamp {
+   name Clamp57
+   xpos -1791
+   ypos 3612
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode58
+   xpos -1955
+   ypos 3640
+   disable {{abs(parent.Erode)>67?0:1}}
+  }
+  Clamp {
+   name Clamp58
+   xpos -1799
+   ypos 3688
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode59
+   xpos -1955
+   ypos 3716
+   disable {{abs(parent.Erode)>58?0:1}}
+  }
+  Clamp {
+   name Clamp59
+   xpos -1799
+   ypos 3764
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode60
+   xpos -1955
+   ypos 3792
+   disable {{abs(parent.Erode)>59?0:1}}
+  }
+  Clamp {
+   name Clamp60
+   xpos -1789
+   ypos 3828
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode61
+   xpos -1948
+   ypos 3884
+   disable {{abs(parent.Erode)>61?0:1 i}}
+  }
+  Clamp {
+   name Clamp61
+   xpos -1800
+   ypos 3916
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode62
+   xpos -1948
+   ypos 3950
+   disable {{abs(parent.Erode)>60?0:1}}
+  }
+  Clamp {
+   name Clamp62
+   xpos -1802
+   ypos 3984
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode63
+   xpos -1948
+   ypos 4026
+   disable {{abs(parent.Erode)>54?0:1 i}}
+  }
+  Clamp {
+   name Clamp63
+   xpos -1792
+   ypos 4064
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode64
+   xpos -1948
+   ypos 4102
+   disable {{abs(parent.Erode)>55?0:1}}
+  }
+  Clamp {
+   name Clamp64
+   xpos -1780
+   ypos 4148
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode65
+   xpos -1948
+   ypos 4185
+   disable {{abs(parent.Erode)>56?0:1 i}}
+  }
+  Clamp {
+   name Clamp65
+   xpos -1776
+   ypos 4227
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode66
+   xpos -1948
+   ypos 4261
+   disable {{abs(parent.Erode)>57?0:1}}
+  }
+  Clamp {
+   name Clamp66
+   xpos -1776
+   ypos 4305
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode67
+   xpos -1948
+   ypos 4337
+   disable {{abs(parent.Erode)>50?0:1}}
+  }
+  Clamp {
+   name Clamp67
+   xpos -1784
+   ypos 4385
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode68
+   xpos -1948
+   ypos 4413
+   disable {{abs(parent.Erode)>51?0:1}}
+  }
+  Clamp {
+   name Clamp68
+   xpos -1792
+   ypos 4461
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode69
+   xpos -1948
+   ypos 4489
+   disable {{abs(parent.Erode)>52?0:1}}
+  }
+  Clamp {
+   name Clamp69
+   xpos -1792
+   ypos 4537
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode70
+   xpos -1948
+   ypos 4565
+   disable {{abs(parent.Erode)>53?0:1}}
+  }
+  Clamp {
+   name Clamp70
+   xpos -1782
+   ypos 4601
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode71
+   xpos -1932
+   ypos 4655
+   disable {{abs(parent.Erode)>30?0:1}}
+  }
+  Clamp {
+   name Clamp71
+   xpos -1784
+   ypos 4697
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode72
+   xpos -1932
+   ypos 4731
+   disable {{abs(parent.Erode)>31?0:1}}
+  }
+  Clamp {
+   name Clamp72
+   xpos -1786
+   ypos 4765
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode73
+   xpos -1932
+   ypos 4807
+   disable {{abs(parent.Erode)>32?0:1}}
+  }
+  Clamp {
+   name Clamp73
+   xpos -1776
+   ypos 4845
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode74
+   xpos -1932
+   ypos 4883
+   disable {{abs(parent.Erode)>33?0:1}}
+  }
+  Clamp {
+   name Clamp74
+   xpos -1764
+   ypos 4929
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode75
+   xpos -1932
+   ypos 4966
+   disable {{abs(parent.Erode)>34?0:1}}
+  }
+  Clamp {
+   name Clamp75
+   xpos -1760
+   ypos 5008
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode76
+   xpos -1932
+   ypos 5042
+   disable {{abs(parent.Erode)>35?0:1}}
+  }
+  Clamp {
+   name Clamp76
+   xpos -1760
+   ypos 5086
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode77
+   xpos -1932
+   ypos 5118
+   disable {{abs(parent.Erode)>36?0:1}}
+  }
+  Clamp {
+   name Clamp77
+   xpos -1768
+   ypos 5166
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode78
+   xpos -1932
+   ypos 5194
+   disable {{abs(parent.Erode)>37?0:1}}
+  }
+  Clamp {
+   name Clamp78
+   xpos -1776
+   ypos 5242
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode79
+   xpos -1932
+   ypos 5270
+   disable {{abs(parent.Erode)>38?0:1}}
+  }
+  Clamp {
+   name Clamp79
+   xpos -1776
+   ypos 5318
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode80
+   xpos -1932
+   ypos 5346
+   disable {{abs(parent.Erode)>39?0:1}}
+  }
+  Clamp {
+   name Clamp80
+   xpos -1766
+   ypos 5382
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode81
+   xpos -1924
+   ypos 5460
+   disable {{abs(parent.Erode)>49?0:1 i}}
+  }
+set N3dc90d40 [stack 0]
+  Clamp {
+   name Clamp81
+   xpos -1776
+   ypos 5492
+  }
+push $N36807820
+  Dot {
+   name Dot2
+   xpos -1515
+   ypos 2134
+  }
+  Dot {
+   name Dot4
+   xpos -1517
+   ypos 8616
+  }
+set N3dcb6e00 [stack 0]
+  Dot {
+   name Dot5
+   xpos -1603
+   ypos 8616
+  }
+  Dot {
+   name Dot6
+   xpos -1603
+   ypos 8908
+  }
+  Input {
+   inputs 0
+   name Mask
+   xpos -1434
+   ypos 8535
+   number 1
+  }
+  Shuffle {
+   alpha white
+   name Shuffle1
+   xpos -1434
+   ypos 8610
+   disable {{parent.Mask i}}
+  }
+  Dot {
+   name Dot3
+   xpos -1400
+   ypos 8770
+  }
+push $N3dc90d40
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode82
+   xpos -1924
+   ypos 5526
+   disable {{abs(parent.Erode)>40?0:1}}
+  }
+  Clamp {
+   name Clamp82
+   xpos -1778
+   ypos 5560
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode83
+   xpos -1924
+   ypos 5602
+   disable {{abs(parent.Erode)>41?0:1 i}}
+  }
+  Clamp {
+   name Clamp83
+   xpos -1768
+   ypos 5640
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode84
+   xpos -1924
+   ypos 5678
+   disable {{abs(parent.Erode)>42?0:1}}
+  }
+  Clamp {
+   name Clamp84
+   xpos -1756
+   ypos 5724
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode85
+   xpos -1924
+   ypos 5761
+   disable {{abs(parent.Erode)>43?0:1 i}}
+  }
+  Clamp {
+   name Clamp85
+   xpos -1752
+   ypos 5803
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode86
+   xpos -1924
+   ypos 5837
+   disable {{abs(parent.Erode)>44?0:1}}
+  }
+  Clamp {
+   name Clamp86
+   xpos -1752
+   ypos 5881
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode87
+   xpos -1924
+   ypos 5913
+   disable {{abs(parent.Erode)>45?0:1}}
+  }
+  Clamp {
+   name Clamp87
+   xpos -1760
+   ypos 5961
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode88
+   xpos -1924
+   ypos 5989
+   disable {{abs(parent.Erode)>46?0:1}}
+  }
+  Clamp {
+   name Clamp88
+   xpos -1768
+   ypos 6037
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode89
+   xpos -1924
+   ypos 6065
+   disable {{abs(parent.Erode)>47?0:1}}
+  }
+  Clamp {
+   name Clamp89
+   xpos -1768
+   ypos 6113
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode90
+   xpos -1924
+   ypos 6141
+   disable {{abs(parent.Erode)>48?0:1}}
+  }
+  Clamp {
+   name Clamp90
+   xpos -1758
+   ypos 6177
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode91
+   xpos -1908
+   ypos 6231
+   disable {{abs(parent.Erode)>20?0:1}}
+  }
+  Clamp {
+   name Clamp91
+   xpos -1760
+   ypos 6273
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode92
+   xpos -1908
+   ypos 6307
+   disable {{abs(parent.Erode)>21?0:1}}
+  }
+  Clamp {
+   name Clamp92
+   xpos -1762
+   ypos 6341
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode93
+   xpos -1908
+   ypos 6383
+   disable {{abs(parent.Erode)>22?0:1}}
+  }
+  Clamp {
+   name Clamp93
+   xpos -1752
+   ypos 6421
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode94
+   xpos -1908
+   ypos 6459
+   disable {{abs(parent.Erode)>23?0:1}}
+  }
+  Clamp {
+   name Clamp94
+   xpos -1740
+   ypos 6505
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode95
+   xpos -1908
+   ypos 6542
+   disable {{abs(parent.Erode)>24?0:1}}
+  }
+  Clamp {
+   name Clamp95
+   xpos -1736
+   ypos 6584
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode96
+   xpos -1908
+   ypos 6618
+   disable {{abs(parent.Erode)>25?0:1}}
+  }
+  Clamp {
+   name Clamp96
+   xpos -1736
+   ypos 6662
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode97
+   xpos -1908
+   ypos 6694
+   disable {{abs(parent.Erode)>26?0:1}}
+  }
+  Clamp {
+   name Clamp97
+   xpos -1744
+   ypos 6742
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode98
+   xpos -1908
+   ypos 6770
+   disable {{abs(parent.Erode)>27?0:1}}
+  }
+  Clamp {
+   name Clamp98
+   xpos -1752
+   ypos 6818
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode99
+   xpos -1908
+   ypos 6846
+   disable {{abs(parent.Erode)>28?0:1}}
+  }
+  Clamp {
+   name Clamp99
+   xpos -1752
+   ypos 6894
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode100
+   xpos -1908
+   ypos 6922
+   disable {{abs(parent.Erode)>29?0:1}}
+  }
+  Clamp {
+   name Clamp100
+   xpos -1742
+   ypos 6958
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode101
+   xpos -1901
+   ypos 7014
+   disable {{abs(parent.Erode)>10?0:1 i}}
+  }
+  Clamp {
+   name Clamp101
+   xpos -1753
+   ypos 7046
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode102
+   xpos -1901
+   ypos 7080
+   disable {{abs(parent.Erode)>11?0:1}}
+  }
+  Clamp {
+   name Clamp102
+   xpos -1755
+   ypos 7114
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode103
+   xpos -1901
+   ypos 7156
+   disable {{abs(parent.Erode)>12?0:1 i}}
+  }
+  Clamp {
+   name Clamp103
+   xpos -1745
+   ypos 7194
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode104
+   xpos -1901
+   ypos 7232
+   disable {{abs(parent.Erode)>13?0:1}}
+  }
+  Clamp {
+   name Clamp104
+   xpos -1733
+   ypos 7278
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode105
+   xpos -1901
+   ypos 7315
+   disable {{abs(parent.Erode)>14?0:1 i}}
+  }
+  Clamp {
+   name Clamp105
+   xpos -1729
+   ypos 7357
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode106
+   xpos -1901
+   ypos 7391
+   disable {{abs(parent.Erode)>15?0:1}}
+  }
+  Clamp {
+   name Clamp106
+   xpos -1729
+   ypos 7435
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode107
+   xpos -1901
+   ypos 7467
+   disable {{abs(parent.Erode)>16?0:1}}
+  }
+  Clamp {
+   name Clamp107
+   xpos -1737
+   ypos 7515
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode108
+   xpos -1901
+   ypos 7543
+   disable {{abs(parent.Erode)>17?0:1}}
+  }
+  Clamp {
+   name Clamp108
+   xpos -1745
+   ypos 7591
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode109
+   xpos -1901
+   ypos 7619
+   disable {{abs(parent.Erode)>18?0:1}}
+  }
+  Clamp {
+   name Clamp109
+   xpos -1745
+   ypos 7667
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode110
+   xpos -1901
+   ypos 7695
+   disable {{abs(parent.Erode)>19?0:1}}
+  }
+  Clamp {
+   name Clamp110
+   xpos -1735
+   ypos 7731
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode111
+   xpos -1885
+   ypos 7785
+   disable {{abs(parent.Erode)>0?0:1}}
+  }
+  Clamp {
+   name Clamp111
+   xpos -1737
+   ypos 7827
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode112
+   xpos -1885
+   ypos 7861
+   disable {{abs(parent.Erode)>1?0:1}}
+  }
+  Clamp {
+   name Clamp112
+   xpos -1739
+   ypos 7895
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode113
+   xpos -1885
+   ypos 7937
+   disable {{abs(parent.Erode)>2?0:1}}
+  }
+  Clamp {
+   name Clamp113
+   xpos -1729
+   ypos 7975
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode114
+   xpos -1885
+   ypos 8013
+   disable {{abs(parent.Erode)>3?0:1}}
+  }
+  Clamp {
+   name Clamp114
+   xpos -1717
+   ypos 8059
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode115
+   xpos -1885
+   ypos 8096
+   disable {{abs(parent.Erode)>4?0:1 i}}
+  }
+  Clamp {
+   name Clamp115
+   xpos -1713
+   ypos 8138
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode116
+   xpos -1885
+   ypos 8172
+   disable {{abs(parent.Erode)>5?0:1}}
+  }
+  Clamp {
+   name Clamp116
+   xpos -1713
+   ypos 8216
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode117
+   xpos -1885
+   ypos 8245
+   disable {{abs(parent.Erode)>6?0:1 i}}
+  }
+  Clamp {
+   name Clamp117
+   xpos -1721
+   ypos 8296
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode118
+   xpos -1885
+   ypos 8324
+   disable {{abs(parent.Erode)>7?0:1}}
+  }
+  Clamp {
+   name Clamp118
+   xpos -1729
+   ypos 8372
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode119
+   xpos -1885
+   ypos 8400
+   disable {{abs(parent.Erode)>8?0:1}}
+  }
+  Clamp {
+   name Clamp119
+   xpos -1719
+   ypos 8422
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode120
+   xpos -1880
+   ypos 8461
+   disable {{abs(parent.Erode)>9?0:1 i}}
+  }
+  Clamp {
+   name Clamp120
+   xpos -1719
+   ypos 8512
+  }
+  Blur {
+   size {{parent.Blur i}}
+   name Blur1
+   xpos -1719
+   ypos 8550
+  }
+  Clamp {
+   name Clamp1
+   xpos -1719
+   ypos 8588
+  }
+  Dot {
+   name Dot1
+   xpos -1685
+   ypos 8770
+  }
+push $N3dcb6e00
+  Merge2 {
+   inputs 2+1
+   operation copy
+   name Merge1
+   xpos -1549
+   ypos 8766
+  }
+  Merge2 {
+   inputs 2
+   operation mask
+   name Merge2
+   xpos -1549
+   ypos 8904
+   disable {{!parent.Inside i}}
+  }
+  Output {
+   name Output1
+   xpos -1549
+   ypos 9118
+  }
+ end_group
+set N368c92e0 [stack 0]
+ Dot {
+  name Dot22
+  xpos 498
+  ypos 763
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle3
+  xpos 464
+  ypos 781
+ }
+ Group {
+  name EdgeDetect_My
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  xpos 464
+  ypos 855
+  addUserKnob {20 User}
+  addUserKnob {7 Size R 0 20}
+  Size 0.5
+  addUserKnob {7 Blur R 0 20}
+  Blur 1
+  addUserKnob {41 translate l offset T InnerTransform.translate}
+  addUserKnob {6 Mask +STARTLINE}
+  addUserKnob {6 Inside -STARTLINE}
+  addUserKnob {6 Outside -STARTLINE}
+  addUserKnob {41 disable_1 l "Use alpha" t "Use alpha as pattern for edge detect, otherwise rgb will be used" -STARTLINE T Expression1.disable}
+  addUserKnob {26 ""}
+  addUserKnob {26 sence l "" +STARTLINE T "Threshhold tweek"}
+  addUserKnob {7 blacks R -1 1}
+  addUserKnob {7 whites R -1 1}
+  addUserKnob {18 colorsContribution R 0 3}
+  colorsContribution {1 1 1}
+ }
+  Input {
+   inputs 0
+   name Mask
+   xpos -351
+   ypos -498
+   number 1
+  }
+  Shuffle {
+   alpha white
+   name Shuffle1
+   xpos -311
+   ypos 160
+   disable {{parent.Mask i}}
+  }
+  Dot {
+   name Dot8
+   xpos -277
+   ypos 291
+  }
+  Input {
+   inputs 0
+   name Source
+   xpos -450
+   ypos -740
+  }
+  Grade {
+   channels rgba
+   blackpoint {{-parent.blacks/20}}
+   whitepoint {{parent.whites+1}}
+   white {{parent.colorsContribution} {parent.colorsContribution} {parent.colorsContribution} {parent.colorsContribution}}
+   black_clamp false
+   name Tweek
+   xpos -450
+   ypos -649
+  }
+  Expression {
+   expr3 (r+g+b)/3
+   name Expression1
+   xpos -450
+   ypos -545
+   disable true
+  }
+  Dot {
+   name Dot10
+   xpos -416
+   ypos -476
+  }
+set N4c1ac780 [stack 0]
+  Dot {
+   name Dot1
+   xpos -550
+   ypos -476
+  }
+set N4c1af3e0 [stack 0]
+  Dot {
+   name Dot3
+   xpos -801
+   ypos -476
+  }
+set N4c1b20f0 [stack 0]
+  Dot {
+   name Dot5
+   xpos -962
+   ypos -476
+  }
+  Dot {
+   name Dot6
+   xpos -962
+   ypos -26
+  }
+set N4c1b7b50 [stack 0]
+  Dot {
+   name Dot7
+   xpos -962
+   ypos 75
+  }
+push $N4c1b7b50
+push $N4c1b20f0
+  Blur {
+   size {{parent.Size i}}
+   name Blur1
+   xpos -835
+   ypos -438
+  }
+  set C4c1bd5c0 [stack 0]
+  Clamp {
+   name Clamp1
+   xpos -835
+   ypos -400
+  }
+  TransformMasked {
+   center {1024 778}
+   name InnerTransform
+   xpos -835
+   ypos -362
+  }
+  Dot {
+   name Dot4
+   xpos -801
+   ypos -272
+  }
+push $N4c1af3e0
+clone $C4c1bd5c0 {
+   xpos -584
+   ypos -436
+   selected false
+  }
+  Clamp {
+   name Clamp2
+   xpos -581
+   ypos -398
+  }
+  Dot {
+   name Dot2
+   xpos -547
+   ypos -272
+  }
+  Merge2 {
+   inputs 2
+   operation stencil
+   name Merge1
+   xpos -719
+   ypos -276
+  }
+  Grade {
+   channels alpha
+   multiply 20
+   gamma 0.4
+   black_clamp false
+   name Grade1
+   xpos -719
+   ypos -239
+  }
+  Clamp {
+   name Clamp3
+   xpos -719
+   ypos -201
+  }
+  Blur {
+   size {{parent.Blur i}}
+   name Blur2
+   xpos -719
+   ypos -153
+  }
+  Merge2 {
+   inputs 2
+   operation mask
+   name Merge2
+   xpos -719
+   ypos -30
+   disable {{!parent.Inside i}}
+  }
+  Merge2 {
+   inputs 2
+   operation stencil
+   name Merge3
+   xpos -719
+   ypos 71
+   disable {{!parent.Outside i}}
+  }
+  Dot {
+   name Dot9
+   xpos -685
+   ypos 291
+  }
+push $N4c1ac780
+  Merge2 {
+   inputs 2+1
+   operation copy
+   name Merge4
+   xpos -450
+   ypos 287
+  }
+set N4c2241a0 [stack 0]
+  Output {
+   name Output1
+   xpos -450
+   ypos 487
+  }
+push $N4c2241a0
+  Viewer {
+   viewerProcess None
+   input_process false
+   name Viewer1
+   selected true
+   xpos -40
+   ypos -10
+   hide_input true
+  }
+ end_group
+ Dot {
+  name Dot19
+  xpos 498
+  ypos 939
+ }
+push $N3c6cb0d0
+ Grade {
+  add {1 0 0 0}
+  name Grade2
+  xpos 557
+  ypos 892
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge6
+  xpos 557
+  ypos 935
+ }
+ Keymix {
+  inputs 3
+  maskChannel {{{parent.Keymix1.maskChannel}}}
+  invertMask {{parent.Keymix1.invertMask}}
+  name Keymix4
+  xpos 557
+  ypos 959
+ }
+ Dot {
+  name Dot25
+  xpos 591
+  ypos 1007
+ }
+push $N3c669340
+ Merge2 {
+  inputs 2
+  name Merge10
+  xpos 653
+  ypos 1004
+ }
+ Dot {
+  name Dot23
+  xpos 687
+  ypos 1675
+ }
+push $N2e312ab0
+push $N5356c520
+push $N3680c1b0
+ Dot {
+  name Dot5
+  xpos 1096
+  ypos 548
+ }
+set N4c263270 [stack 0]
+ Dot {
+  name Dot9
+  xpos 1185
+  ypos 548
+ }
+ Dot {
+  name Dot29
+  xpos 1272
+  ypos 548
+ }
+set N4b46fde0 [stack 0]
+ Dot {
+  name Dot11
+  xpos 1433
+  ypos 548
+ }
+set N4c268c70 [stack 0]
+ Group {
+  name ErodeMy1
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  xpos 1399
+  ypos 741
+  addUserKnob {20 erode}
+  addUserKnob {7 Erode R -80 80}
+  Erode {{parent.knob.width i}}
+  addUserKnob {7 fine R -1 1}
+  addUserKnob {7 Blur R 0 100}
+  Blur {{parent.blurEdge i}}
+  addUserKnob {6 Mask +STARTLINE}
+  addUserKnob {6 Inside -STARTLINE}
+ }
+  Input {
+   inputs 0
+   name Source
+   xpos -1971
+   ypos 2134
+  }
+set N4c271140 [stack 0]
+  FilterErode {
+   channels all
+   size {{fine}}
+   filter gaussian
+   name fine
+   xpos -1971
+   ypos 2237
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode21
+   xpos -1971
+   ypos 2330
+   disable {{abs(parent.Erode)>79?0:1 i}}
+  }
+  Clamp {
+   name Clamp41
+   xpos -1823
+   ypos 2362
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode42
+   xpos -1971
+   ypos 2396
+   disable {{abs(parent.Erode)>68?0:1}}
+  }
+  Clamp {
+   name Clamp42
+   xpos -1825
+   ypos 2430
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode43
+   xpos -1971
+   ypos 2472
+   disable {{abs(parent.Erode)>76?0:1 i}}
+  }
+  Clamp {
+   name Clamp43
+   xpos -1815
+   ypos 2510
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode44
+   xpos -1971
+   ypos 2548
+   disable {{abs(parent.Erode)>77?0:1}}
+  }
+  Clamp {
+   name Clamp44
+   xpos -1803
+   ypos 2594
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode45
+   xpos -1971
+   ypos 2631
+   disable {{abs(parent.Erode)>78?0:1 i}}
+  }
+  Clamp {
+   name Clamp45
+   xpos -1799
+   ypos 2673
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode46
+   xpos -1971
+   ypos 2707
+   disable {{abs(parent.Erode)>69?0:1}}
+  }
+  Clamp {
+   name Clamp46
+   xpos -1799
+   ypos 2751
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode47
+   xpos -1971
+   ypos 2783
+   disable {{abs(parent.Erode)>70?0:1}}
+  }
+  Clamp {
+   name Clamp47
+   xpos -1807
+   ypos 2831
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode48
+   xpos -1971
+   ypos 2859
+   disable {{abs(parent.Erode)>71?0:1}}
+  }
+  Clamp {
+   name Clamp48
+   xpos -1815
+   ypos 2907
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode49
+   xpos -1971
+   ypos 2935
+   disable {{abs(parent.Erode)>72?0:1}}
+  }
+  Clamp {
+   name Clamp49
+   xpos -1815
+   ypos 2983
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode50
+   xpos -1971
+   ypos 3011
+   disable {{abs(parent.Erode)>73?0:1}}
+  }
+  Clamp {
+   name Clamp50
+   xpos -1805
+   ypos 3047
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode51
+   xpos -1955
+   ypos 3101
+   disable {{abs(parent.Erode)>74?0:1}}
+  }
+  Clamp {
+   name Clamp51
+   xpos -1807
+   ypos 3143
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode52
+   xpos -1955
+   ypos 3177
+   disable {{abs(parent.Erode)>75?0:1}}
+  }
+  Clamp {
+   name Clamp52
+   xpos -1809
+   ypos 3211
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode53
+   xpos -1955
+   ypos 3253
+   disable {{abs(parent.Erode)>62?0:1}}
+  }
+  Clamp {
+   name Clamp53
+   xpos -1799
+   ypos 3291
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode54
+   xpos -1955
+   ypos 3329
+   disable {{abs(parent.Erode)>63?0:1}}
+  }
+  Clamp {
+   name Clamp54
+   xpos -1787
+   ypos 3375
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode55
+   xpos -1955
+   ypos 3412
+   disable {{abs(parent.Erode)>64?0:1}}
+  }
+  Clamp {
+   name Clamp55
+   xpos -1783
+   ypos 3454
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode56
+   xpos -1955
+   ypos 3488
+   disable {{abs(parent.Erode)>65?0:1}}
+  }
+  Clamp {
+   name Clamp56
+   xpos -1783
+   ypos 3532
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode57
+   xpos -1955
+   ypos 3564
+   disable {{abs(parent.Erode)>66?0:1}}
+  }
+  Clamp {
+   name Clamp57
+   xpos -1791
+   ypos 3612
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode58
+   xpos -1955
+   ypos 3640
+   disable {{abs(parent.Erode)>67?0:1}}
+  }
+  Clamp {
+   name Clamp58
+   xpos -1799
+   ypos 3688
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode59
+   xpos -1955
+   ypos 3716
+   disable {{abs(parent.Erode)>58?0:1}}
+  }
+  Clamp {
+   name Clamp59
+   xpos -1799
+   ypos 3764
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode60
+   xpos -1955
+   ypos 3792
+   disable {{abs(parent.Erode)>59?0:1}}
+  }
+  Clamp {
+   name Clamp60
+   xpos -1789
+   ypos 3828
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode61
+   xpos -1948
+   ypos 3884
+   disable {{abs(parent.Erode)>61?0:1 i}}
+  }
+  Clamp {
+   name Clamp61
+   xpos -1800
+   ypos 3916
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode62
+   xpos -1948
+   ypos 3950
+   disable {{abs(parent.Erode)>60?0:1}}
+  }
+  Clamp {
+   name Clamp62
+   xpos -1802
+   ypos 3984
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode63
+   xpos -1948
+   ypos 4026
+   disable {{abs(parent.Erode)>54?0:1 i}}
+  }
+  Clamp {
+   name Clamp63
+   xpos -1792
+   ypos 4064
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode64
+   xpos -1948
+   ypos 4102
+   disable {{abs(parent.Erode)>55?0:1}}
+  }
+  Clamp {
+   name Clamp64
+   xpos -1780
+   ypos 4148
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode65
+   xpos -1948
+   ypos 4185
+   disable {{abs(parent.Erode)>56?0:1 i}}
+  }
+  Clamp {
+   name Clamp65
+   xpos -1776
+   ypos 4227
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode66
+   xpos -1948
+   ypos 4261
+   disable {{abs(parent.Erode)>57?0:1}}
+  }
+  Clamp {
+   name Clamp66
+   xpos -1776
+   ypos 4305
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode67
+   xpos -1948
+   ypos 4337
+   disable {{abs(parent.Erode)>50?0:1}}
+  }
+  Clamp {
+   name Clamp67
+   xpos -1784
+   ypos 4385
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode68
+   xpos -1948
+   ypos 4413
+   disable {{abs(parent.Erode)>51?0:1}}
+  }
+  Clamp {
+   name Clamp68
+   xpos -1792
+   ypos 4461
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode69
+   xpos -1948
+   ypos 4489
+   disable {{abs(parent.Erode)>52?0:1}}
+  }
+  Clamp {
+   name Clamp69
+   xpos -1792
+   ypos 4537
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode70
+   xpos -1948
+   ypos 4565
+   disable {{abs(parent.Erode)>53?0:1}}
+  }
+  Clamp {
+   name Clamp70
+   xpos -1782
+   ypos 4601
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode71
+   xpos -1932
+   ypos 4655
+   disable {{abs(parent.Erode)>30?0:1}}
+  }
+  Clamp {
+   name Clamp71
+   xpos -1784
+   ypos 4697
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode72
+   xpos -1932
+   ypos 4731
+   disable {{abs(parent.Erode)>31?0:1}}
+  }
+  Clamp {
+   name Clamp72
+   xpos -1786
+   ypos 4765
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode73
+   xpos -1932
+   ypos 4807
+   disable {{abs(parent.Erode)>32?0:1}}
+  }
+  Clamp {
+   name Clamp73
+   xpos -1776
+   ypos 4845
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode74
+   xpos -1932
+   ypos 4883
+   disable {{abs(parent.Erode)>33?0:1}}
+  }
+  Clamp {
+   name Clamp74
+   xpos -1764
+   ypos 4929
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode75
+   xpos -1932
+   ypos 4966
+   disable {{abs(parent.Erode)>34?0:1}}
+  }
+  Clamp {
+   name Clamp75
+   xpos -1760
+   ypos 5008
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode76
+   xpos -1932
+   ypos 5042
+   disable {{abs(parent.Erode)>35?0:1}}
+  }
+  Clamp {
+   name Clamp76
+   xpos -1760
+   ypos 5086
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode77
+   xpos -1932
+   ypos 5118
+   disable {{abs(parent.Erode)>36?0:1}}
+  }
+  Clamp {
+   name Clamp77
+   xpos -1768
+   ypos 5166
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode78
+   xpos -1932
+   ypos 5194
+   disable {{abs(parent.Erode)>37?0:1}}
+  }
+  Clamp {
+   name Clamp78
+   xpos -1776
+   ypos 5242
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode79
+   xpos -1932
+   ypos 5270
+   disable {{abs(parent.Erode)>38?0:1}}
+  }
+  Clamp {
+   name Clamp79
+   xpos -1776
+   ypos 5318
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode80
+   xpos -1932
+   ypos 5346
+   disable {{abs(parent.Erode)>39?0:1}}
+  }
+  Clamp {
+   name Clamp80
+   xpos -1766
+   ypos 5382
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode81
+   xpos -1924
+   ypos 5460
+   disable {{abs(parent.Erode)>49?0:1 i}}
+  }
+set N4c490400 [stack 0]
+  Clamp {
+   name Clamp81
+   xpos -1776
+   ypos 5492
+  }
+push $N4c271140
+  Dot {
+   name Dot2
+   xpos -1515
+   ypos 2134
+  }
+  Dot {
+   name Dot4
+   xpos -1517
+   ypos 8616
+  }
+set N2e34c920 [stack 0]
+  Dot {
+   name Dot5
+   xpos -1603
+   ypos 8616
+  }
+  Dot {
+   name Dot6
+   xpos -1603
+   ypos 8908
+  }
+  Input {
+   inputs 0
+   name Mask
+   xpos -1434
+   ypos 8535
+   number 1
+  }
+  Shuffle {
+   alpha white
+   name Shuffle1
+   xpos -1434
+   ypos 8610
+   disable {{parent.Mask i}}
+  }
+  Dot {
+   name Dot3
+   xpos -1400
+   ypos 8770
+  }
+push $N4c490400
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode82
+   xpos -1924
+   ypos 5526
+   disable {{abs(parent.Erode)>40?0:1}}
+  }
+  Clamp {
+   name Clamp82
+   xpos -1778
+   ypos 5560
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode83
+   xpos -1924
+   ypos 5602
+   disable {{abs(parent.Erode)>41?0:1 i}}
+  }
+  Clamp {
+   name Clamp83
+   xpos -1768
+   ypos 5640
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode84
+   xpos -1924
+   ypos 5678
+   disable {{abs(parent.Erode)>42?0:1}}
+  }
+  Clamp {
+   name Clamp84
+   xpos -1756
+   ypos 5724
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode85
+   xpos -1924
+   ypos 5761
+   disable {{abs(parent.Erode)>43?0:1 i}}
+  }
+  Clamp {
+   name Clamp85
+   xpos -1752
+   ypos 5803
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode86
+   xpos -1924
+   ypos 5837
+   disable {{abs(parent.Erode)>44?0:1}}
+  }
+  Clamp {
+   name Clamp86
+   xpos -1752
+   ypos 5881
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode87
+   xpos -1924
+   ypos 5913
+   disable {{abs(parent.Erode)>45?0:1}}
+  }
+  Clamp {
+   name Clamp87
+   xpos -1760
+   ypos 5961
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode88
+   xpos -1924
+   ypos 5989
+   disable {{abs(parent.Erode)>46?0:1}}
+  }
+  Clamp {
+   name Clamp88
+   xpos -1768
+   ypos 6037
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode89
+   xpos -1924
+   ypos 6065
+   disable {{abs(parent.Erode)>47?0:1}}
+  }
+  Clamp {
+   name Clamp89
+   xpos -1768
+   ypos 6113
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode90
+   xpos -1924
+   ypos 6141
+   disable {{abs(parent.Erode)>48?0:1}}
+  }
+  Clamp {
+   name Clamp90
+   xpos -1758
+   ypos 6177
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode91
+   xpos -1908
+   ypos 6231
+   disable {{abs(parent.Erode)>20?0:1}}
+  }
+  Clamp {
+   name Clamp91
+   xpos -1760
+   ypos 6273
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode92
+   xpos -1908
+   ypos 6307
+   disable {{abs(parent.Erode)>21?0:1}}
+  }
+  Clamp {
+   name Clamp92
+   xpos -1762
+   ypos 6341
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode93
+   xpos -1908
+   ypos 6383
+   disable {{abs(parent.Erode)>22?0:1}}
+  }
+  Clamp {
+   name Clamp93
+   xpos -1752
+   ypos 6421
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode94
+   xpos -1908
+   ypos 6459
+   disable {{abs(parent.Erode)>23?0:1}}
+  }
+  Clamp {
+   name Clamp94
+   xpos -1740
+   ypos 6505
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode95
+   xpos -1908
+   ypos 6542
+   disable {{abs(parent.Erode)>24?0:1}}
+  }
+  Clamp {
+   name Clamp95
+   xpos -1736
+   ypos 6584
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode96
+   xpos -1908
+   ypos 6618
+   disable {{abs(parent.Erode)>25?0:1}}
+  }
+  Clamp {
+   name Clamp96
+   xpos -1736
+   ypos 6662
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode97
+   xpos -1908
+   ypos 6694
+   disable {{abs(parent.Erode)>26?0:1}}
+  }
+  Clamp {
+   name Clamp97
+   xpos -1744
+   ypos 6742
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode98
+   xpos -1908
+   ypos 6770
+   disable {{abs(parent.Erode)>27?0:1}}
+  }
+  Clamp {
+   name Clamp98
+   xpos -1752
+   ypos 6818
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode99
+   xpos -1908
+   ypos 6846
+   disable {{abs(parent.Erode)>28?0:1}}
+  }
+  Clamp {
+   name Clamp99
+   xpos -1752
+   ypos 6894
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode100
+   xpos -1908
+   ypos 6922
+   disable {{abs(parent.Erode)>29?0:1}}
+  }
+  Clamp {
+   name Clamp100
+   xpos -1742
+   ypos 6958
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode101
+   xpos -1901
+   ypos 7014
+   disable {{abs(parent.Erode)>10?0:1 i}}
+  }
+  Clamp {
+   name Clamp101
+   xpos -1753
+   ypos 7046
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode102
+   xpos -1901
+   ypos 7080
+   disable {{abs(parent.Erode)>11?0:1}}
+  }
+  Clamp {
+   name Clamp102
+   xpos -1755
+   ypos 7114
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode103
+   xpos -1901
+   ypos 7156
+   disable {{abs(parent.Erode)>12?0:1 i}}
+  }
+  Clamp {
+   name Clamp103
+   xpos -1745
+   ypos 7194
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode104
+   xpos -1901
+   ypos 7232
+   disable {{abs(parent.Erode)>13?0:1}}
+  }
+  Clamp {
+   name Clamp104
+   xpos -1733
+   ypos 7278
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode105
+   xpos -1901
+   ypos 7315
+   disable {{abs(parent.Erode)>14?0:1 i}}
+  }
+  Clamp {
+   name Clamp105
+   xpos -1729
+   ypos 7357
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode106
+   xpos -1901
+   ypos 7391
+   disable {{abs(parent.Erode)>15?0:1}}
+  }
+  Clamp {
+   name Clamp106
+   xpos -1729
+   ypos 7435
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode107
+   xpos -1901
+   ypos 7467
+   disable {{abs(parent.Erode)>16?0:1}}
+  }
+  Clamp {
+   name Clamp107
+   xpos -1737
+   ypos 7515
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode108
+   xpos -1901
+   ypos 7543
+   disable {{abs(parent.Erode)>17?0:1}}
+  }
+  Clamp {
+   name Clamp108
+   xpos -1745
+   ypos 7591
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode109
+   xpos -1901
+   ypos 7619
+   disable {{abs(parent.Erode)>18?0:1}}
+  }
+  Clamp {
+   name Clamp109
+   xpos -1745
+   ypos 7667
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode110
+   xpos -1901
+   ypos 7695
+   disable {{abs(parent.Erode)>19?0:1}}
+  }
+  Clamp {
+   name Clamp110
+   xpos -1735
+   ypos 7731
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode111
+   xpos -1885
+   ypos 7785
+   disable {{abs(parent.Erode)>0?0:1}}
+  }
+  Clamp {
+   name Clamp111
+   xpos -1737
+   ypos 7827
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode112
+   xpos -1885
+   ypos 7861
+   disable {{abs(parent.Erode)>1?0:1}}
+  }
+  Clamp {
+   name Clamp112
+   xpos -1739
+   ypos 7895
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode113
+   xpos -1885
+   ypos 7937
+   disable {{abs(parent.Erode)>2?0:1}}
+  }
+  Clamp {
+   name Clamp113
+   xpos -1729
+   ypos 7975
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode114
+   xpos -1885
+   ypos 8013
+   disable {{abs(parent.Erode)>3?0:1}}
+  }
+  Clamp {
+   name Clamp114
+   xpos -1717
+   ypos 8059
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode115
+   xpos -1885
+   ypos 8096
+   disable {{abs(parent.Erode)>4?0:1 i}}
+  }
+  Clamp {
+   name Clamp115
+   xpos -1713
+   ypos 8138
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode116
+   xpos -1885
+   ypos 8172
+   disable {{abs(parent.Erode)>5?0:1}}
+  }
+  Clamp {
+   name Clamp116
+   xpos -1713
+   ypos 8216
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode117
+   xpos -1885
+   ypos 8245
+   disable {{abs(parent.Erode)>6?0:1 i}}
+  }
+  Clamp {
+   name Clamp117
+   xpos -1721
+   ypos 8296
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode118
+   xpos -1885
+   ypos 8324
+   disable {{abs(parent.Erode)>7?0:1}}
+  }
+  Clamp {
+   name Clamp118
+   xpos -1729
+   ypos 8372
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1}}
+   name Erode119
+   xpos -1885
+   ypos 8400
+   disable {{abs(parent.Erode)>8?0:1}}
+  }
+  Clamp {
+   name Clamp119
+   xpos -1719
+   ypos 8422
+  }
+  Erode {
+   size {{parent.Erode>0?1:-1 i}}
+   name Erode120
+   xpos -1880
+   ypos 8461
+   disable {{abs(parent.Erode)>9?0:1 i}}
+  }
+  Clamp {
+   name Clamp120
+   xpos -1719
+   ypos 8512
+  }
+  Blur {
+   size {{parent.Blur i}}
+   name Blur1
+   xpos -1719
+   ypos 8550
+  }
+  Clamp {
+   name Clamp1
+   xpos -1719
+   ypos 8588
+  }
+  Dot {
+   name Dot1
+   xpos -1685
+   ypos 8770
+  }
+push $N2e34c920
+  Merge2 {
+   inputs 2+1
+   operation copy
+   name Merge1
+   xpos -1549
+   ypos 8766
+  }
+  Merge2 {
+   inputs 2
+   operation mask
+   name Merge2
+   xpos -1549
+   ypos 8904
+   disable {{!parent.Inside i}}
+  }
+  Output {
+   name Output1
+   xpos -1549
+   ypos 9118
+  }
+ end_group
+ Dot {
+  name Dot17
+  xpos 1433
+  ypos 874
+ }
+set N2e6b0540 [stack 0]
+push $N4c268c70
+ Dot {
+  name Dot6
+  xpos 1543
+  ypos 548
+ }
+set N2e6b1b00 [stack 0]
+ Grade {
+  add {1 0 0 0}
+  name Grade1
+  xpos 1509
+  ypos 797
+ }
+ ChannelMerge {
+  inputs 2
+  operation stencil
+  name ChannelMerge2
+  xpos 1509
+  ypos 860
+ }
+ Premult {
+  name Premult2
+  xpos 1509
+  ypos 969
+ }
+ Keymix {
+  inputs 3
+  maskChannel {{{parent.Keymix1.maskChannel}}}
+  invertMask {{parent.Keymix1.invertMask}}
+  name Keymix3
+  xpos 1509
+  ypos 1029
+ }
+ Dot {
+  name Dot13
+  xpos 1522
+  ypos 1235
+ }
+push $N2e6b1b00
+ Dot {
+  name Dot3
+  xpos 1680
+  ypos 548
+ }
+ Merge2 {
+  inputs 2
+  Achannels rgba
+  Bchannels rgba
+  output rgba
+  name Merge1
+  xpos 1646
+  ypos 1221
+ }
+ Dot {
+  name Dot18
+  xpos 1680
+  ypos 1622
+ }
+push $N2e312ab0
+push $N5356c520
+push $N368c92e0
+ Dot {
+  name Dot12
+  xpos 913
+  ypos 891
+ }
+push $N4c263270
+ Reformat {
+  type scale
+  black_outside true
+  name Reformat1
+  xpos 1062
+  ypos 631
+ }
+ Group {
+  name UV1
+  help "Please insert your BG image to set resolution of your UV image :)"
+  tile_color 0x9900ff
+  note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+  note_font_color 0x510000ff
+  xpos 1062
+  ypos 686
+  addUserKnob {20 User}
+  addUserKnob {26 tip l "" +STARTLINE T "Hi, if i forgot - this node will generate UV map in size of my input image, good luck to me"}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -293
+   ypos -52
+  }
+  Remove {
+   name Remove1
+   xpos -293
+   ypos -26
+  }
+  Reformat {
+   type "to box"
+   format "720 576 0 0 720 576 1.067 PAL_1"
+   box_width {{Input1.bbox.w i}}
+   box_height {{Input1.bbox.t i}}
+   box_fixed true
+   scale {1 1}
+   name Reformat1
+   xpos -293
+   ypos 42
+  }
+set N2e6f1ec0 [stack 0]
+  Ramp {
+   p0 {-0.5 0}
+   p1 {{parent.Reformat1.box_width-0.5 i} 0}
+   color {1 0 0 1}
+   name Ramp1
+   xpos -379
+   ypos 82
+  }
+push $N2e6f1ec0
+  Ramp {
+   p0 {0 -0.5}
+   p1 {0 {parent.Reformat1.box_height-0.5 i}}
+   color {0 1 0 1}
+   name Ramp2
+   xpos -202
+   ypos 79
+  }
+  Merge2 {
+   inputs 2
+   operation plus
+   name Merge1
+   xpos -302
+   ypos 135
+  }
+  Shuffle {
+   alpha white
+   name Shuffle1
+   xpos -302
+   ypos 162
+  }
+  Output {
+   name Output1
+   xpos -302
+   ypos 235
+  }
+ end_group
+ Shuffle {
+  alpha white
+  name Shuffle2
+  tile_color 0xffffffff
+  label "White Alpha"
+  xpos 1062
+  ypos 730
+ }
+ Dot {
+  name Dot14
+  xpos 1096
+  ypos 818
+ }
+set N4f82cb10 [stack 0]
+ Dot {
+  name Dot15
+  xpos 1016
+  ypos 818
+ }
+ Merge2 {
+  inputs 2
+  operation mask
+  name Merge3
+  xpos 982
+  ypos 887
+ }
+ Blur {
+  size {{parent.strength i} {parent.strength i}}
+  name Blur3
+  xpos 982
+  ypos 951
+ }
+ Dot {
+  name Dot2
+  xpos 1016
+  ypos 1029
+ }
+set N4f842da0 [stack 0]
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push $N4f842da0
+push 0
+push $N4f842da0
+push $N4f82cb10
+ Merge2 {
+  inputs 12+1
+  name Merge2
+  xpos 1062
+  ypos 1025
+ }
+ Dot {
+  name Dot8
+  xpos 1096
+  ypos 1113
+ }
+push $N36835500
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap2
+  xpos 753
+  ypos 1105
+ }
+ Dot {
+  name Dot30
+  xpos 787
+  ypos 1183
+ }
+set N4f8f4830 [stack 0]
+ Dot {
+  name Dot4
+  xpos 913
+  ypos 1183
+ }
+push $N2e6b0540
+ Dot {
+  name Dot16
+  xpos 1433
+  ypos 1239
+ }
+ ChannelMerge {
+  inputs 2
+  operation out
+  name ChannelMerge1
+  xpos 879
+  ypos 1225
+ }
+push $N4f8f4830
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos 753
+  ypos 1231
+ }
+ Premult {
+  name Premult3
+  xpos 753
+  ypos 1265
+ }
+set N4b31e740 [stack 0]
+ Keymix {
+  inputs 3
+  maskChannel {{{parent.Keymix1.maskChannel}}}
+  invertMask {{parent.Keymix1.invertMask i}}
+  name Keymix2
+  selected true
+  xpos 1342
+  ypos 1543
+ }
+push $N3c67eaa0
+ Remove {
+  operation keep
+  channels alpha
+  name Remove3
+  xpos 408
+  ypos 588
+ }
+ Dot {
+  name Dot10
+  xpos 442
+  ypos 1365
+ }
+push $N2e312ab0
+push $N3c67eaa0
+ Dot {
+  name Dot26
+  xpos 261
+  ypos 548
+ }
+ Dot {
+  name Dot27
+  xpos 261
+  ypos 1434
+ }
+push $N4b31e740
+push $N4b31e740
+push $N4b46fde0
+ Merge2 {
+  inputs 2
+  name Merge9
+  xpos 1229
+  ypos 1270
+ }
+set N4febe860 [stack 0]
+push $N4febe860
+ Switch {
+  inputs 3
+  which {{parent.output}}
+  name Switch1
+  xpos 1229
+  ypos 1315
+ }
+ Keymix {
+  inputs 3
+  maskChannel -rgba.alpha
+  invertMask {{parent.Keymix1_invertMask i x1041 0}}
+  name Keymix1
+  xpos 1229
+  ypos 1413
+ }
+set N4f94c570 [stack 0]
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 1229
+  ypos 1447
+ }
+ Dot {
+  name Dot31
+  xpos 1263
+  ypos 1538
+ }
+set N60a7ecb0 [stack 0]
+ Premult {
+  name Premult1
+  xpos 1127
+  ypos 1530
+ }
+push $N60a7ecb0
+ Switch {
+  inputs 3
+  which {{parent.output i}}
+  name Switch2
+  xpos 1229
+  ypos 1579
+ }
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge5
+  xpos 1229
+  ypos 1619
+  disable {{!parent.showWidth i}}
+ }
+ Merge2 {
+  inputs 2
+  operation copy
+  name Merge7
+  xpos 1229
+  ypos 1672
+  disable {{!parent.plotLine i}}
+ }
+ Output {
+  name Output1
+  xpos 1229
+  ypos 1761
+ }
+push $N4f94c570
+ Viewer {
+  frame 1041
+  input_process false
+  name Viewer1
+  xpos 843
+  ypos 1790
+  hide_input true
+ }
+end_group

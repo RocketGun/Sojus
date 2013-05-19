@@ -1,0 +1,30 @@
+#! C:/Program Files/Nuke6.0v4/Nuke6.0.exe -nx
+version 6.0 v4
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 ca l Axis1 T NoOp1.ca}
+ addUserKnob {41 po l Axis2 T NoOp1.po}
+ addUserKnob {41 Distance T NoOp1.Distance}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -531
+  ypos -231
+ }
+ NoOp {
+  name NoOp1
+  xpos -531
+  ypos -191
+  addUserKnob {20 User}
+  addUserKnob {13 ca l Axis1}
+  addUserKnob {13 po l Axis2}
+  addUserKnob {7 Distance R 0 0}
+  Distance {{sqrt(pow((ca.x-po.x),2)+pow((ca.y-po.y),2)+pow((ca.z-po.z),2))}}
+ }
+ Output {
+  name Output1
+  xpos -531
+  ypos -91
+ }
+end_group

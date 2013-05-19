@@ -1,0 +1,416 @@
+#! /Applications/Nuke7.0v6/NukeX7.0v6.app/../Nuke7.0v6.app/Contents/MacOS/Nuke7.0v6 -nx
+version 7.0 v6
+Gizmo {
+ inputs 6
+ addUserKnob {20 User l IBTGizmo}
+ addUserKnob {41 position l Position T driver.position}
+ addUserKnob {41 translation l Translation T driver.translation}
+ addUserKnob {20 HalfStep l "Half Steps" n 1}
+ addUserKnob {41 halfstepvertical l Vertikal T driver.halfstepvertical}
+ addUserKnob {41 halfstephorizontal l Horizontal -STARTLINE T driver.halfstephorizontal}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 TextureProjection l "Texture Projection" n 1}
+ addUserKnob {41 projectmode l "Project Mode" T driver.projectmode}
+ addUserKnob {41 projektionmode l "" -STARTLINE T driver.projektionmode}
+ addUserKnob {41 bigid l "16 IDs (2nd Texture Input needed)" T driver.bigid}
+ addUserKnob {41 matrixdimension l "Matrix Dimension" T driver.matrixdimension}
+ addUserKnob {26 version l "v0.4.2 by jonas@mischlicht.com"}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+}
+ Input {
+  inputs 0
+  name transform
+  xpos 1656
+  ypos -233
+  number 2
+ }
+ Input {
+  inputs 0
+  name texture16
+  xpos -81
+  ypos -190
+  number 5
+ }
+ Dot {
+  name Dot8
+  xpos -47
+  ypos 199
+ }
+set N20f714a0 [stack 0]
+add_layer {stream_8 stream_8.red stream_8.green stream_8.blue stream_8.alpha}
+ Shuffle {
+  in stream_8
+  name Shuffle9
+  xpos 265
+  ypos 296
+ }
+push $N20f714a0
+add_layer {stream_7 stream_7.red stream_7.green stream_7.blue stream_7.alpha}
+ Shuffle {
+  in stream_7
+  name Shuffle10
+  xpos 171
+  ypos 297
+ }
+push $N20f714a0
+add_layer {stream_6 stream_6.red stream_6.green stream_6.blue stream_6.alpha}
+ Shuffle {
+  in stream_6
+  name Shuffle11
+  xpos 76
+  ypos 298
+ }
+push $N20f714a0
+add_layer {stream_5 stream_5.red stream_5.green stream_5.blue stream_5.alpha}
+ Shuffle {
+  in stream_5
+  name Shuffle12
+  xpos -13
+  ypos 301
+ }
+push $N20f714a0
+add_layer {stream_4 stream_4.red stream_4.green stream_4.blue stream_4.alpha}
+ Shuffle {
+  in stream_4
+  name Shuffle13
+  xpos -102
+  ypos 299
+ }
+push $N20f714a0
+add_layer {stream_3 stream_3.red stream_3.green stream_3.blue stream_3.alpha}
+ Shuffle {
+  in stream_3
+  name Shuffle14
+  xpos -209
+  ypos 299
+ }
+push $N20f714a0
+add_layer {stream_2 stream_2.red stream_2.green stream_2.blue stream_2.alpha}
+ Shuffle {
+  in stream_2
+  name Shuffle15
+  xpos -309
+  ypos 297
+ }
+push $N20f714a0
+add_layer {stream_1 stream_1.red stream_1.green stream_1.blue stream_1.alpha}
+ Shuffle {
+  in stream_1
+  name Shuffle16
+  xpos -414
+  ypos 299
+ }
+ Input {
+  inputs 0
+  name texture
+  xpos -923
+  ypos -173
+  number 3
+ }
+ Dot {
+  name Dot1
+  xpos -889
+  ypos 118
+ }
+set N20fd39c0 [stack 0]
+ Dot {
+  name Dot6
+  xpos -889
+  ypos 168
+ }
+set N20fd73c0 [stack 0]
+ Dot {
+  name Dot10
+  xpos -889
+  ypos 219
+ }
+set N20fdade0 [stack 0]
+ Shuffle {
+  in stream_8
+  name Shuffle8
+  xpos -577
+  ypos 306
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_7
+  name Shuffle7
+  xpos -671
+  ypos 307
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_6
+  name Shuffle6
+  xpos -766
+  ypos 308
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_5
+  name Shuffle5
+  xpos -855
+  ypos 311
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_4
+  name Shuffle4
+  xpos -944
+  ypos 309
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_3
+  name Shuffle3
+  xpos -1051
+  ypos 309
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_2
+  name Shuffle2
+  xpos -1151
+  ypos 307
+ }
+push $N20fdade0
+ Shuffle {
+  in stream_1
+  name Shuffle1
+  xpos -1256
+  ypos 309
+ }
+ Switch {
+  inputs 16
+  which {{parent.driver.id}}
+  name Switch3
+  xpos -929
+  ypos 461
+ }
+ Dot {
+  name Dot5
+  xpos -895
+  ypos 567
+ }
+set N21043610 [stack 0]
+ Dot {
+  name Dot3
+  xpos -785
+  ypos 567
+ }
+set N21047220 [stack 0]
+ Input {
+  inputs 0
+  name cam
+  xpos 901
+  ypos -219
+  number 4
+ }
+set N2104ac40 [stack 0]
+push $N21047220
+ Project3D {
+  inputs 2
+  name Project3D1
+  xpos 901
+  ypos 564
+ }
+push $N20fd73c0
+ Dot {
+  name Dot7
+  xpos 762
+  ypos 168
+ }
+ Crop {
+  box {{(position.x-1)*tiledimension.x} {(position.y-1)*tiledimension.y} {position.x*tiledimension.x} {position.y*tiledimension.y}}
+  reformat true
+  crop false
+  name Crop2
+  xpos 728
+  ypos 449
+  addUserKnob {20 User}
+  addUserKnob {12 tiledimension}
+  tiledimension {{input.width/dimension.x} {input.height/dimension.y}}
+  addUserKnob {12 position}
+  position {{parent.driver.position} {parent.driver.position}}
+  addUserKnob {12 dimension}
+  dimension {{parent.driver.matrixdimension} {parent.driver.matrixdimension}}
+ }
+push $N21043610
+push $N20fd39c0
+ Dot {
+  name Dot4
+  xpos -1380
+  ypos 118
+ }
+ Crop {
+  box {{(position.x-1)*tiledimension.x} {(position.y-1)*tiledimension.y} {position.x*tiledimension.x} {position.y*tiledimension.y}}
+  reformat true
+  crop false
+  name Crop1
+  xpos -1414
+  ypos 302
+  disable {{!parent.driver.tiletexture}}
+  addUserKnob {20 User}
+  addUserKnob {12 tiledimension}
+  tiledimension {{input.width/dimension.x} {input.height/dimension.y}}
+  addUserKnob {12 position}
+  position {{parent.driver.position} {parent.driver.position}}
+  addUserKnob {12 dimension}
+  dimension {{parent.driver.matrixdimension} {parent.driver.matrixdimension}}
+ }
+ Constant {
+  inputs 0
+  color {{"\[sample ID red driver.position.x driver.position.y]"} {"\[sample ID green driver.position.x driver.position.y]"} {"\[sample ID blue driver.position.x driver.position.y]"} {"\[sample ID alpha driver.position.x driver.position.y]"}}
+  format "256 256 0 0 256 256 1 square_256"
+  name Constant4
+  xpos -1596
+  ypos 41
+ }
+set N2106dc00 [stack 0]
+ Dot {
+  name Dot2
+  xpos -1562
+  ypos 894
+ }
+ Switch {
+  inputs 6
+  which {{driver.projektionmode}}
+  name Switch5
+  xpos -929
+  ypos 891
+ }
+push $N2104ac40
+ Camera2 {
+  vaperture {{haperture*(texture.height/texture.width)}}
+  name Camera1
+  xpos 1222
+  ypos 73
+ }
+ Input {
+  inputs 0
+  name Geo
+  xpos 1429
+  ypos -235
+ }
+ TransformGeo {
+  translate {{"(\n  (\n    (\n      fmod(position.y,2)? 0 : driver.halfstepvertical?0.5*translation.x:0\n    )\n   +((position.x-1)*(driver.halfstephorizontal?translation.x/2:translation.x))\n  )\n)\n"} {"(\n  (\n    (\n      fmod(position.x,2)? 0 : driver.halfstephorizontal?0.5*translation.y:0\n    )\n   +((position.y-1)*(driver.halfstepvertical?translation.y/2:translation.y))\n  )\n)\n"} {o}}
+  name TransformGeo3
+  xpos 1433
+  ypos 106
+  disable {{parent.UVProject1.disable}}
+  addUserKnob {20 User}
+  addUserKnob {12 position l Position}
+  position {{parent.driver.position} {parent.driver.position}}
+  addUserKnob {12 translation l Translation}
+  translation {{parent.driver.translation} {parent.driver.translation}}
+ }
+ UVProject {
+  inputs 2
+  name UVProject1
+  xpos 1433
+  ypos 159
+  disable {{!(driver.projectmode==5)}}
+ }
+ TransformGeo {
+  translate {{-parent.TransformGeo3.translate} {-parent.TransformGeo3.translate} {-parent.TransformGeo3.translate}}
+  name TransformGeo1
+  xpos 1433
+  ypos 255
+  disable {{parent.UVProject1.disable}}
+  addUserKnob {20 User}
+  addUserKnob {12 position l Position}
+  position {{parent.driver.position} {parent.driver.position}}
+  addUserKnob {12 translation l Translation}
+  translation {{parent.driver.translation} {parent.driver.translation}}
+ }
+ TransformGeo {
+  translate {{"(\n  (\n    (\n      fmod(position.y,2)? 0 : driver.halfstepvertical?0.5*translation.x:0\n    )\n   +((position.x-1)*(driver.halfstephorizontal?translation.x/2:translation.x))\n  )\n)\n\n+\[sample parent.transform translate.x driver.position.x driver.position.y]"} {"(\n  (\n    (\n      fmod(position.x,2)? 0 : driver.halfstephorizontal?0.5*translation.y:0\n    )\n   +((position.y-1)*(driver.halfstepvertical?translation.y/2:translation.y))\n  )\n)\n\n+\[sample parent.transform translate.y driver.position.x driver.position.y]"} {"\[sample parent.transform translate.z driver.position.x driver.position.y]"}}
+  rotate {{"\[sample parent.transform rotation.x driver.position.x driver.position.y]*360"} {"\[sample parent.transform rotation.y driver.position.x driver.position.y]*360"} {"\[sample parent.transform rotation.z driver.position.x driver.position.y]*360"}}
+  scaling {{"\[sample parent.transform scale.x driver.position.x driver.position.y]"} {"\[sample parent.transform scale.y driver.position.x driver.position.y]"} {"\[sample parent.transform scale.z driver.position.x driver.position.y]"}}
+  name TransformGeo194
+  xpos 1433
+  ypos 420
+  addUserKnob {20 User}
+  addUserKnob {12 position l Position}
+  position {{parent.driver.position} {parent.driver.position}}
+  addUserKnob {12 translation l Translation}
+  translation {{parent.driver.translation} {parent.driver.translation}}
+ }
+set N210b3ec0 [stack 0]
+ ApplyMaterial {
+  inputs 2
+  name ApplyMaterial2
+  xpos 1429
+  ypos 891
+ }
+ Output {
+  name Output1
+  xpos 1429
+  ypos 979
+ }
+push $N2106dc00
+ Input {
+  inputs 0
+  name ID
+  xpos -1594
+  ypos -226
+  number 1
+ }
+ Viewer {
+  inputs 2
+  input_process false
+  name Viewer1
+  xpos 949
+  ypos 1083
+ }
+ NoOp {
+  inputs 0
+  name driver
+  xpos 1187
+  ypos 220
+  addUserKnob {20 User}
+  addUserKnob {4 projectmode l "Project Mode" M {"ID Color" "Tiled Texture" Streams "Tiled Streams" "3D Project" "3D Project Backed"}}
+  projectmode Streams
+  addUserKnob {3 projektionmode l "" -STARTLINE}
+  projektionmode {{projectmode}}
+  addUserKnob {12 matrixdimension l "Matrix Dimension"}
+  matrixdimension {3 3}
+  addUserKnob {12 position l Position}
+  position {1 2}
+  addUserKnob {12 translation l Translation}
+  translation {0.877 1.414}
+  addUserKnob {20 HalfStep l "Half Steps" n 1}
+  addUserKnob {6 halfstepvertical l Vertikal +STARTLINE}
+  halfstepvertical true
+  addUserKnob {6 halfstephorizontal l Horizontal -STARTLINE}
+  addUserKnob {20 endGroup n -1}
+  addUserKnob {6 bigid l "16 IDs (2nd Texture Input needed)" +STARTLINE}
+  addUserKnob {26 ""}
+  addUserKnob {3 id l ID}
+  id {{"\[sample IDExpression red 0 0]"}}
+ }
+push $N210b3ec0
+push $N2106dc00
+ Posterize {
+  Colors 2
+  name Posterize1
+  xpos -1733
+  ypos 175
+ }
+ Expression {
+  temp_name0 id
+  temp_expr0 r*pow(2,0)+g*pow(2,1)+b*pow(2,2)+(driver.bigid?a*pow(2,2):0)
+  expr0 id
+  expr2 dd
+  name IDExpression
+  xpos -1733
+  ypos 236
+ }
+ Viewer {
+  inputs 2
+  input_process false
+  name Viewer2
+  xpos -1372
+  ypos -132
+ }
+end_group

@@ -1,0 +1,29 @@
+#! z:/job/SWDEVL/SOFTWARE/w2k_intel/nuke4.1/14/nuke4.1.14.exe -nx
+version 4.1014
+Group {
+  addUserKnob { 20 "" User } 
+  addUserKnob { 1 inches Inches t inches } 
+  addUserKnob { 7 imeter Meters R 0 1 t im } 
+  addUserKnob { 26 "" "" } 
+  addUserKnob { 1 feet Feet t feet } 
+  addUserKnob { 7 fmeter Meters R 0 1 t fmeter } 
+  addUserKnob { 26 "" "" } 
+  addUserKnob { 1 yard Yards t yard } 
+  addUserKnob { 7 ymeter Meters R 0 1 t ymeter } 
+  addUserKnob { 26 "" "" } 
+  addUserKnob { 1 mile Miles t mile } 
+  addUserKnob { 7 mmeter Meters R 0 1 t mmeter } 
+  name English_Metric_Converter
+  selected true
+  xpos -178
+  ypos -165
+  inches 12
+  imeter {{inches*.0254}}
+  feet 1
+  fmeter {{feet*.03048}}
+  yard 1
+  ymeter {{yard*.9144}}
+  mile 1
+  mmeter {{mile*1069.3}}
+}
+end_group

@@ -1,0 +1,49 @@
+#
+# Copyright (c) 2003 Digital Domain Inc.  All Rights Reserved.
+#
+
+#! Z:/job/SWDEVL/SOFTWARE/w2k_intel/nuke4.0/nuke4.0.exe -nx
+version 4.0044
+Group {
+  inputs 1
+  addUserKnob { 20 "" User } 
+  addUserKnob { 16 int_offset "TC Offset" t int_offset } 
+  addUserKnob { 16 Timecode_Text1_size "Text size" t Timecode_Text1_size } 
+  addUserKnob { 12 Timecode_Text1_translate Position t Timecode_Text1_translate }
+  addUserKnob { 25 "" "" M monkey_prod.xpm } 
+  name "TimeCode Display"
+  selected true
+  xpos 97
+  ypos 99
+  Timecode_Text1_size 88
+  Timecode_Text1_translate {60 50}
+}
+  Input {
+    name Input1
+    xpos 255
+    ypos 218
+  }
+  Text {
+    addUserKnob { 20 "" User } 
+    addUserKnob { 16 Text1_size "Text size" t "size of text used" } 
+    addUserKnob { 12 Text1_translate Position t "position of timecode" } 
+    message "\[format %2.2d \[expression int((frame+int_offset)/1800)]]:\[format %2.2d \[expression int(fmod(floor((frame+int_offset)/root.fps),60))]]:\[format %2.2d \[expression int(fmod(frame+int_offset,root.fps))]]"
+    size {{Text1_size}}
+    translate {{Text1_translate.x} {Text1_translate.y}}
+    p1 {100 400}
+    p0 {100 100}
+    name Timecode
+    selected true
+    xpos 255
+    ypos 242
+    indicators 2
+    tile_color 0xc0c0c000
+    Font 1
+    font C:/Windows/Fonts/Arial.ttf
+    Text1_size {{parent.Timecode_Text1_size}}
+    Text1_translate {{parent.Timecode_Text1_translate.x} {parent.Timecode_Text1_translate.y}}
+  }
+  Output {
+    name Output1
+  }
+end_group

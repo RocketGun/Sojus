@@ -1,0 +1,38 @@
+#! /Applications/Nuke5.0v1/Nuke5.0v1.app/Contents/MacOS/Nuke5.0 -nx
+version 5.0100
+Group {
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 360
+  ypos 32
+ }
+set N77ebd340 [stack 0]
+push $N77ebd340
+ Erode {
+  channels alpha
+  name Erode4
+  xpos 447
+  ypos 26
+ }
+ Dilate {
+  channels alpha
+  size -4.84554
+  name Dilate3
+  xpos 447
+  ypos 86
+ }
+ ChannelMerge {
+  inputs 2
+  name ChannelMerge4
+  xpos 360
+  ypos 79
+ }
+ Output {
+  name Output1
+  selected true
+  xpos 360
+  ypos 132
+ }
+end_group

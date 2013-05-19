@@ -1,0 +1,77 @@
+#! C:/Program Files (x86)/Nuke5.1v5/Nuke5.1.exe -nx
+version 5.1500
+Group {
+ name ColorPremult
+ inputs 3
+}
+ Input {
+  inputs 0
+  name Image
+  label 3d
+  xpos -325
+  ypos 181
+ }
+ Dot {
+  name Dot1
+  xpos -293
+  ypos 267
+ }
+set N9c72fb0 [stack 0]
+ Dot {
+  name Dot2
+  xpos -293
+  ypos 358
+ }
+push $N9c72fb0
+ Expression {
+  expr0 -1*a+1
+  expr1 -1*a+1
+  expr2 -1*a+1
+  channel3 alpha
+  expr3 -1*a+1
+  name Expression1
+  xpos -235
+  ypos 265
+ }
+ Input {
+  inputs 0
+  name BG_color
+  xpos -108
+  ypos 214
+  number 1
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge1
+  xpos -108
+  ypos 265
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge2
+  xpos -108
+  ypos 356
+ }
+ Input {
+  inputs 0
+  name New_BG
+  xpos 61
+  ypos 348
+  number 2
+ }
+ Merge2 {
+  inputs 2
+  name Merge3
+  xpos -108
+  ypos 434
+ }
+ Output {
+  name Output1
+  xpos -108
+  ypos 534
+ }
+end_group
