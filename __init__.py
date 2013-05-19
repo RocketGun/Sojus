@@ -10,7 +10,7 @@ import nuke, os, sys
 
 nuke.pluginAddPath(os.path.dirname(__file__))
 
-class myd503menu():
+class sojus():
     def __init__(self):
         
         
@@ -37,7 +37,7 @@ class myd503menu():
         # set up menu
         self.NodeMenu = nuke.menu( "Nodes" ).findItem( "RocketGunNodes" )
         if not self.NodeMenu:
-            self.NodeMenu = nuke.menu( "Nodes" ).addMenu("RocketGunNodes", icon="d503Menu.png")
+            self.NodeMenu = nuke.menu( "Nodes" ).addMenu("RocketGunNodes", icon="sojus.png")
 
         #autMenu
         self._builMenuFromPath(self.NodeMenu, os.path.dirname(__file__), "NodeMenu")
