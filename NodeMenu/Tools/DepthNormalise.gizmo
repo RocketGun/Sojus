@@ -1,0 +1,50 @@
+#! /Applications/Nuke7.0v6/NukeX7.0v6.app/../Nuke7.0v6.app/Contents/MacOS/Nuke7.0v6 -nx
+version 7.0 v6
+Group {
+ name "DepthNormalise"
+ knobChanged "group = nuke.thisNode()\nk=nuke.thisKnob()\n\nif k.name()==\"positionFar\" and group.knob(\"lock\").getValue()==False:\n    p_node=group.node(\"Input1\")\n    x = group.knob(\"positionFar\").getValue()\[0]\n    y = group.knob(\"positionFar\").getValue()\[1]\n\n    far_point = group.knob(\"colorFar\")\n    far_point.setValue(p_node.sample(\"red\",x,y),0)\n    far_point.setValue(p_node.sample(\"green\",x,y),1)\n    far_point.setValue(p_node.sample(\"blue\",x,y),2)\nif k.name()==\"positionNear\" and group.knob(\"lock\").getValue()==False:\n    p_node=group.node(\"Input1\")\n    x = group.knob(\"positionNear\").getValue()\[0]\n    y = group.knob(\"positionNear\").getValue()\[1]\n\n    near_point = group.knob(\"colorNear\")\n    near_point.setValue(p_node.sample(\"red\",x,y),0)\n    near_point.setValue(p_node.sample(\"green\",x,y),1)\n    near_point.setValue(p_node.sample(\"blue\",x,y),2)"
+ addUserKnob {20 User l DepthNormalize}
+ addUserKnob {18 colorNear l INVISIBLE +INVISIBLE}
+ colorNear {0.6420898438 0.6420898438 0.6420898438}
+ addUserKnob {12 positionNear l Near}
+ positionNear {234 982}
+ addUserKnob {18 colorFar l INVISIBLE +INVISIBLE}
+ colorFar {0.6748046875 0.6748046875 0.6748046875}
+ addUserKnob {12 positionFar l Far}
+ positionFar {972 584}
+ addUserKnob {26 ""}
+ addUserKnob {6 lock l "lock positions" +STARTLINE}
+ addUserKnob {6 invertinput l "invert input" +STARTLINE}
+ addUserKnob {26 ""}
+ addUserKnob {7 low}
+ addUserKnob {7 high}
+ high 1
+ addUserKnob {26 ""}
+}
+ Input {
+  inputs 0
+  name Input1
+  label wpos
+  xpos 130
+  ypos 134
+ }
+ Invert {
+  name Invert1
+  xpos 130
+  ypos 170
+  disable {{parent.invertinput-1}}
+ }
+ Histogram {
+  in {{parent.colorFar} 1 {parent.colorNear}}
+  out {{parent.low} {parent.high}}
+  name Histogram1
+  selected true
+  xpos 130
+  ypos 285
+ }
+ Output {
+  name Output1
+  xpos 130
+  ypos 347
+ }
+end_group
