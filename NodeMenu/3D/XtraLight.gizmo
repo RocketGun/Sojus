@@ -1,0 +1,300 @@
+#! /Applications/Nuke7.0v6/NukeX7.0v6.app/../Nuke7.0v6.app/Contents/MacOS/Nuke7.0v6 -nx
+version 7.0 v6
+Group {
+ name "XtraLight"
+ addUserKnob {20 xtraLight l XtraLight}
+ addUserKnob {41 in l Normals T Shuffle2.in}
+ addUserKnob {4 out l Output M {"Light Only" "Add (Light premult by rgb)" Add Screen "" ""}}
+ out "Add (Light premult by rgb)"
+ addUserKnob {20 gPos l Position n 1}
+ addUserKnob {7 LightX l x R -2 2}
+ LightX 0.44
+ addUserKnob {7 LightY l y R -2 2}
+ LightY 0.38
+ addUserKnob {7 LightZ l z R -2 2}
+ LightZ 0.57
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 gLight l Light n 1}
+ addUserKnob {18 int l Intensity R 0 100}
+ int {40 20 10}
+ addUserKnob {7 falloff l Falloff R 0 2}
+ falloff 0.5
+ addUserKnob {7 diameter l Diameter R 0 2}
+ diameter 1.2
+ addUserKnob {7 ambient l Ambient}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 gAd l "Advanced Settings" n 1}
+ gAd 0
+ addUserKnob {7 preadd l "Pre Add"}
+ preadd 0.001
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {26 ""}
+ addUserKnob {26 t1 l "" +STARTLINE T "v001 2013 by joans@mischlicht.com"}
+}
+ Input {
+  inputs 0
+  name img
+  xpos -142
+  ypos -247
+ }
+ Dot {
+  name Dot8
+  xpos -108
+  ypos -201
+ }
+set N1ad5a930 [stack 0]
+ Shuffle {
+  in rgb
+  in2 alpha
+  alpha red2
+  out rgb
+  name Shuffle2
+  xpos -142
+  ypos -133
+ }
+ Expression {
+  temp_name0 LX
+  temp_expr0 parent.LightX
+  temp_name1 LY
+  temp_expr1 parent.LightY
+  temp_name2 LZ
+  temp_expr2 parent.LightZ
+  channel0 none
+  expr0 r
+  channel1 none
+  expr1 g
+  channel2 none
+  expr2 b
+  expr3 sqrt((pow((LX-r),2))+(pow((LY-g),2))+(pow((LZ-b),2)))
+  name Expression2
+  xpos -142
+  ypos -47
+ }
+ Invert {
+  channels alpha
+  name Invert1
+  label (all)
+  xpos -142
+  ypos -23
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos -142
+  ypos 23
+ }
+ Grade {
+  blackpoint {{-(parent.diameter-1)}}
+  gamma {{parent.falloff}}
+  name Grade1
+  xpos -142
+  ypos 62
+ }
+ Grade {
+  multiply {{pow(parent.int,2)} {pow(parent.int,2)} {pow(parent.int,2)} {curve}}
+  name Grade2
+  xpos -142
+  ypos 97
+ }
+ Dot {
+  name Dot16
+  xpos -108
+  ypos 180
+ }
+set N1ad9ef80 [stack 0]
+ Expression {
+  expr0 r/(parent.int*4)
+  expr1 g/(parent.int*4)
+  expr2 b/(parent.int*4)
+  name Expression1
+  xpos -142
+  ypos 227
+ }
+set N1ada2a10 [stack 0]
+ Dot {
+  name Dot14
+  xpos 644
+  ypos 230
+ }
+set N1adace00 [stack 0]
+ Dot {
+  name Dot12
+  xpos 878
+  ypos 230
+ }
+ Dot {
+  name Dot21
+  xpos 878
+  ypos 740
+ }
+push $N1ad5a930
+ Dot {
+  name Dot9
+  xpos 198
+  ypos -201
+ }
+ Dot {
+  name Dot1
+  xpos 198
+  ypos 324
+ }
+set N1adbb750 [stack 0]
+ Unpremult {
+  name Unpremult1
+  xpos 164
+  ypos 387
+ }
+ Dot {
+  name Dot2
+  xpos 198
+  ypos 440
+ }
+set N1adc5530 [stack 0]
+ Dot {
+  name Dot15
+  xpos 321
+  ypos 440
+ }
+set N1adc9040 [stack 0]
+ Dot {
+  name Dot13
+  xpos 567
+  ypos 440
+ }
+set N1adcca70 [stack 0]
+ Dot {
+  name Dot10
+  xpos 802
+  ypos 440
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge2
+  xpos 768
+  ypos 737
+ }
+ Premult {
+  name Premult3
+  xpos 768
+  ypos 761
+ }
+ Dot {
+  name Dot4
+  xpos 802
+  ypos 925
+ }
+push $N1adace00
+ Dot {
+  name Dot20
+  xpos 644
+  ypos 727
+ }
+push $N1adcca70
+ Merge2 {
+  inputs 2
+  operation plus
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge1
+  xpos 533
+  ypos 724
+ }
+ Premult {
+  name Premult2
+  xpos 533
+  ypos 760
+ }
+ Dot {
+  name Dot5
+  xpos 567
+  ypos 933
+ }
+push $N1ad9ef80
+ Dot {
+  name Dot17
+  xpos 455
+  ypos 180
+ }
+ Dot {
+  name Dot18
+  xpos 455
+  ypos 590
+ }
+push $N1adc9040
+ Grade {
+  multiply 0.185
+  name Grade3
+  selected true
+  xpos 287
+  ypos 479
+ }
+ Add {
+  value {{parent.preadd}}
+  name Add1
+  xpos 287
+  ypos 513
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge4
+  xpos 287
+  ypos 587
+ }
+ Add {
+  value {{sqrt(parent.Grade2.multiply)} {sqrt(parent.Grade2.multiply)} {sqrt(parent.Grade2.multiply)} {sqrt(parent.Grade2.multiply)}}
+  mix {{parent.ambient/100}}
+  name Add2
+  xpos 287
+  ypos 631
+ }
+ Dot {
+  name Dot19
+  xpos 321
+  ypos 711
+ }
+push $N1adc5530
+ Merge2 {
+  inputs 2
+  operation plus
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge5
+  xpos 170
+  ypos 708
+ }
+ Premult {
+  name Premult1
+  xpos 170
+  ypos 752
+ }
+push $N1adbb750
+push $N1ada2a10
+ Multiply {
+  inputs 1+1
+  value 0
+  invert_mask true
+  name Multiply2
+  xpos -142
+  ypos 316
+ }
+ Dot {
+  name Dot7
+  xpos -108
+  ypos 913
+ }
+ Switch {
+  inputs 4
+  which {{parent.out}}
+  name Switch1
+  xpos 374
+  ypos 1121
+ }
+ Output {
+  name Output1
+  xpos 374
+  ypos 1166
+ }
+end_group
