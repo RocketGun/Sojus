@@ -36,7 +36,7 @@ Gizmo {
   xpos -47
   ypos 199
  }
-set N20f714a0 [stack 0]
+set N63832d0 [stack 0]
 add_layer {stream_8 stream_8.red stream_8.green stream_8.blue stream_8.alpha}
  Shuffle {
   in stream_8
@@ -44,7 +44,7 @@ add_layer {stream_8 stream_8.red stream_8.green stream_8.blue stream_8.alpha}
   xpos 265
   ypos 296
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_7 stream_7.red stream_7.green stream_7.blue stream_7.alpha}
  Shuffle {
   in stream_7
@@ -52,7 +52,7 @@ add_layer {stream_7 stream_7.red stream_7.green stream_7.blue stream_7.alpha}
   xpos 171
   ypos 297
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_6 stream_6.red stream_6.green stream_6.blue stream_6.alpha}
  Shuffle {
   in stream_6
@@ -60,7 +60,7 @@ add_layer {stream_6 stream_6.red stream_6.green stream_6.blue stream_6.alpha}
   xpos 76
   ypos 298
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_5 stream_5.red stream_5.green stream_5.blue stream_5.alpha}
  Shuffle {
   in stream_5
@@ -68,7 +68,7 @@ add_layer {stream_5 stream_5.red stream_5.green stream_5.blue stream_5.alpha}
   xpos -13
   ypos 301
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_4 stream_4.red stream_4.green stream_4.blue stream_4.alpha}
  Shuffle {
   in stream_4
@@ -76,7 +76,7 @@ add_layer {stream_4 stream_4.red stream_4.green stream_4.blue stream_4.alpha}
   xpos -102
   ypos 299
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_3 stream_3.red stream_3.green stream_3.blue stream_3.alpha}
  Shuffle {
   in stream_3
@@ -84,7 +84,7 @@ add_layer {stream_3 stream_3.red stream_3.green stream_3.blue stream_3.alpha}
   xpos -209
   ypos 299
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_2 stream_2.red stream_2.green stream_2.blue stream_2.alpha}
  Shuffle {
   in stream_2
@@ -92,7 +92,7 @@ add_layer {stream_2 stream_2.red stream_2.green stream_2.blue stream_2.alpha}
   xpos -309
   ypos 297
  }
-push $N20f714a0
+push $N63832d0
 add_layer {stream_1 stream_1.red stream_1.green stream_1.blue stream_1.alpha}
  Shuffle {
   in stream_1
@@ -112,68 +112,68 @@ add_layer {stream_1 stream_1.red stream_1.green stream_1.blue stream_1.alpha}
   xpos -889
   ypos 118
  }
-set N20fd39c0 [stack 0]
+set N23c204b0 [stack 0]
  Dot {
   name Dot6
   xpos -889
   ypos 168
  }
-set N20fd73c0 [stack 0]
+set N23c23eb0 [stack 0]
  Dot {
   name Dot10
   xpos -889
   ypos 219
  }
-set N20fdade0 [stack 0]
+set N23c278d0 [stack 0]
  Shuffle {
   in stream_8
   name Shuffle8
   xpos -577
   ypos 306
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_7
   name Shuffle7
   xpos -671
   ypos 307
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_6
   name Shuffle6
   xpos -766
   ypos 308
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_5
   name Shuffle5
   xpos -855
   ypos 311
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_4
   name Shuffle4
   xpos -944
   ypos 309
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_3
   name Shuffle3
   xpos -1051
   ypos 309
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_2
   name Shuffle2
   xpos -1151
   ypos 307
  }
-push $N20fdade0
+push $N23c278d0
  Shuffle {
   in stream_1
   name Shuffle1
@@ -192,13 +192,13 @@ push $N20fdade0
   xpos -895
   ypos 567
  }
-set N21043610 [stack 0]
+set N23c8c180 [stack 0]
  Dot {
   name Dot3
   xpos -785
   ypos 567
  }
-set N21047220 [stack 0]
+set N23c8fd90 [stack 0]
  Input {
   inputs 0
   name cam
@@ -206,15 +206,15 @@ set N21047220 [stack 0]
   ypos -219
   number 4
  }
-set N2104ac40 [stack 0]
-push $N21047220
+set N23c937b0 [stack 0]
+push $N23c8fd90
  Project3D {
   inputs 2
   name Project3D1
   xpos 901
   ypos 564
  }
-push $N20fd73c0
+push $N23c23eb0
  Dot {
   name Dot7
   xpos 762
@@ -235,8 +235,8 @@ push $N20fd73c0
   addUserKnob {12 dimension}
   dimension {{parent.driver.matrixdimension} {parent.driver.matrixdimension}}
  }
-push $N21043610
-push $N20fd39c0
+push $N23c8c180
+push $N23c204b0
  Dot {
   name Dot4
   xpos -1380
@@ -266,7 +266,7 @@ push $N20fd39c0
   xpos -1596
   ypos 41
  }
-set N2106dc00 [stack 0]
+set N23cb6770 [stack 0]
  Dot {
   name Dot2
   xpos -1562
@@ -279,7 +279,7 @@ set N2106dc00 [stack 0]
   xpos -929
   ypos 891
  }
-push $N2104ac40
+push $N23c937b0
  Camera2 {
   vaperture {{haperture*(texture.height/texture.width)}}
   name Camera1
@@ -336,7 +336,7 @@ push $N2104ac40
   addUserKnob {12 translation l Translation}
   translation {{parent.driver.translation} {parent.driver.translation}}
  }
-set N210b3ec0 [stack 0]
+set N23d009e0 [stack 0]
  ApplyMaterial {
   inputs 2
   name ApplyMaterial2
@@ -348,7 +348,7 @@ set N210b3ec0 [stack 0]
   xpos 1429
   ypos 979
  }
-push $N2106dc00
+push $N23cb6770
  Input {
   inputs 0
   name ID
@@ -389,8 +389,8 @@ push $N2106dc00
   addUserKnob {3 id l ID}
   id {{"\[sample IDExpression red 0 0]"}}
  }
-push $N210b3ec0
-push $N2106dc00
+push $N23d009e0
+push $N23cb6770
  Posterize {
   Colors 2
   name Posterize1
@@ -401,8 +401,8 @@ push $N2106dc00
   temp_name0 id
   temp_expr0 r*pow(2,0)+g*pow(2,1)+b*pow(2,2)+(driver.bigid?a*pow(2,2):0)
   expr0 id
-  expr2 dd
   name IDExpression
+  selected true
   xpos -1733
   ypos 236
  }
