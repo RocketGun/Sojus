@@ -29,7 +29,7 @@ Group {
  preadd 0.001
  addUserKnob {20 endGroup_2 l endGroup n -1}
  addUserKnob {26 ""}
- addUserKnob {26 t1 l "" +STARTLINE T "v001 2013 by joans@mischlicht.com"}
+ addUserKnob {26 t1 l "" +STARTLINE T "v001 2013 by jonas@mischlicht.com"}
 }
  Input {
   inputs 0
