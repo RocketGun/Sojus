@@ -1,8 +1,8 @@
 #! C:/Program Files/Nuke6.3v1/Nuke6.3.exe -nx
 version 6.3 v1
 Group {
- name "PositionToMask"
  help "This gizmo will create a spherical mask based on the world space coordinates of a position channel."
+ name "PointPositionToMask"
  addUserKnob {20 PointPositionToMask l PositionToMask}
  addUserKnob {18 center l Center}
  center {0 0 0}

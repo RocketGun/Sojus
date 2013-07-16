@@ -27,9 +27,6 @@ class sojus():
         if not self.NukeMenu:
             self.NukeMenu = nuke.menu( "Nuke"  ).addMenu("RG")
 
-        # Funzt unter Windoof nicht
-        nuke.load(os.path.join(os.path.dirname(__file__),"LockViewer.py"))
-
         self._builMenuFromPath(self.NukeMenu, os.path.dirname(__file__), "NukeMenu")
 
     def buildNodeMenu(self):
