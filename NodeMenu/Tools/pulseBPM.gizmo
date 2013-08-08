@@ -1,0 +1,21 @@
+#! /Applications/Nuke7.0v8/NukeX7.0v8.app/../Nuke7.0v8.app/Contents/MacOS/Nuke7.0v8 -nx
+version 7.0 v8
+Group {
+ name "pulseBPM"
+ inputs 0
+ addUserKnob {20 User}
+ addUserKnob {7 bpm l BPM R 0 150}
+ bpm 119
+ addUserKnob {3 tbase l Base}
+ tbase 4
+ addUserKnob {7 offset R -10 10}
+ addUserKnob {7 divide R 1 8}
+ divide 1
+ addUserKnob {3 takt}
+ takt {{int(((beat-1)/tbase)+1)}}
+ addUserKnob {3 beat}
+ beat {{int(((frame+offset)/((root.fps*60)/bpm))/divide)+1}}
+ addUserKnob {26 ""}
+ addUserKnob {26 version l v001 T "2013 by jonas@mischlicht.com"}
+}
+end_group
